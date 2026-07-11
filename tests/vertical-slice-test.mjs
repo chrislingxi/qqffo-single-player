@@ -55,6 +55,7 @@ for (const mapId of ["fangcao", "yangyuan_mid", "dungeon_nest"]) {
   assert(zones.length >= 1, `slice map needs spawn zones: ${mapId}`);
   assert(zones.every((zone) => zone.radius > 0 && zone.respawn > 0), `spawn zones need radius and respawn: ${mapId}`);
 }
+assert(slice.maps.some((map) => map.id === "longcheng" && map.role.includes("主城")), "slice must explicitly include main city longcheng");
 
 const mainBefore20 = quests.filter((quest) => quest.chain === "main" && quest.levelReq <= 20);
 assert(mainBefore20.length >= 8, "slice needs a meaningful 1-20 main quest chain");
