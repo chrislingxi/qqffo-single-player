@@ -10,8 +10,9 @@
       { "monsterIds": ["elite_boar"], "count": 1 },
       { "monsterIds": ["flower_queen"], "count": 1 }
     ],
-    "rewards": { "exp": 1500, "gold": 600, "items": ["forest_weapon", "starlit_ring"] },
-    "source_confidence": "inferred"
+    "rewards": { "exp": 6200, "gold": 600, "items": ["forest_weapon", "starlit_ring"] },
+    "source_confidence": "single_player_slice_balance",
+    "notes": "P2.5 刺客1-20纵切版尾段经验收束，奖励为本地单机平衡。"
   },
   {
     "id": "dungeon_tower",

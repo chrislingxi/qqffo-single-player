@@ -1397,6 +1397,14 @@ button.danger {
   border: 1px solid #d6a84f;
   background: #29352d;
   flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.portrait img {
+  width: 58px;
+  height: 64px;
+  object-fit: contain;
+  transform: translateY(5px);
 }
 
 .name-line {
@@ -2016,6 +2024,17 @@ button.danger {
   margin-bottom: 14px;
 }
 
+.slice-badge {
+  width: fit-content;
+  padding: 5px 10px;
+  border: 1px solid rgba(232, 194, 108, .55);
+  border-radius: 999px;
+  color: #ffe7a6;
+  background: rgba(68, 42, 24, .58);
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .create-head h1 {
   margin: 0;
   font-size: clamp(28px, 8vw, 54px);
@@ -2051,6 +2070,18 @@ button.danger {
   background: #22281d;
 }
 
+.class-card.locked {
+  cursor: not-allowed;
+  filter: saturate(.45);
+  opacity: .58;
+}
+
+.class-card.locked .class-art {
+  background:
+    linear-gradient(135deg, rgba(116, 119, 110, .34), rgba(57, 64, 60, .22)),
+    #1a1d1b;
+}
+
 .class-art {
   height: 62px;
   border-radius: 8px;
@@ -2061,6 +2092,15 @@ button.danger {
   background:
     linear-gradient(135deg, rgba(214, 168, 79, 0.3), rgba(113, 197, 130, 0.14)),
     #202923;
+  overflow: hidden;
+}
+
+.class-art img {
+  width: 92px;
+  height: 86px;
+  object-fit: contain;
+  transform: translateY(9px);
+  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, .36));
 }
 
 .class-swordsman { background: linear-gradient(135deg, #e5c16b, #496c86); }

@@ -5,7 +5,9 @@ ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT_DIR"
 
 npm run verify:p2-six
+npm run verify:vertical-slice
 npm run test:smoke
+npm run test:vertical-player
 npm run test:player
 
 REMOTE_URL="$(git remote get-url origin)"

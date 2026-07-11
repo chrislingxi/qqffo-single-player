@@ -23,8 +23,10 @@
 
 ```bash
 npm run verify:p2-six
+npm run verify:vertical-slice
 npm run test:smoke
 npm run test:player
+npm run test:vertical-player
 ```
 
 `npm run test:browser` 用于本机浏览器体验验收，需要本地浏览器环境时再运行。

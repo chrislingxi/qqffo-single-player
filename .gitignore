@@ -6,6 +6,8 @@ _site/
 .playwright-mcp/
 test-results/
 ffo-current-main.png
+p25-*.png
+p25-*.md
 
 # Original/reference capture material is kept local, not published to GitHub.
 docs/reference/

@@ -5,9 +5,10 @@
     "levelReq": 12,
     "dailyLimit": 3,
     "target": { "type": "kill_any", "count": 18 },
-    "rewards": { "exp": 1600, "gold": 520, "items": ["pet_food"] },
+    "rewards": { "exp": 4200, "gold": 520, "items": ["pet_food"] },
     "source_file": "docs/reference/raw/ffobaike/ffobaike-试炼-QQ自由幻想百科-804b0d31.html",
-    "source_confidence": "official_name_inferred_rule"
+    "source_confidence": "single_player_slice_balance",
+    "notes": "P2.5 刺客1-20纵切版将试炼作为18-20级收口日课，经验为本地单机平衡。"
   },
   {
     "id": "hunt_order",

@@ -40,7 +40,15 @@ const DATA_FILES = {
 
 const SAVE_KEY = "ffo_p2_save_v1";
 const LEGACY_SAVE_KEYS = ["ffo_p1_save_v1"];
-const DATA_VERSION = "p2-experience-02";
+const DATA_VERSION = "p25-assassin-slice-01";
+const VERTICAL_SLICE = {
+  enabled: true,
+  classId: "assassin",
+  maxLevel: 20,
+  startMapId: "taoyuan_village",
+  title: "2.5D 刺客纵切 Demo",
+  tagline: "1-20级主线、自动寻路、生态刷怪、连击战斗、宠物与装备闭环"
+};
 const app = document.querySelector("#app");
 let data;
 let state;
@@ -49,7 +57,7 @@ let ctx;
 let lastTime = performance.now();
 let renderTimer = 0;
 let currentTab = "quest";
-let selectedClass = "swordsman";
+let selectedClass = VERTICAL_SLICE.classId;
 let logs = [];
 let spriteImages = {};
 
@@ -114,6 +122,7 @@ async function loadSprites() {
 }
 
 function freshState(classId, name) {
+  if (VERTICAL_SLICE.enabled) classId = VERTICAL_SLICE.classId;
   const classDef = data.classById[classId];
   const weapon = data.equipment.find((item) => item.classIds.includes(classId) && item.slot === "weapon");
   return {
@@ -128,7 +137,7 @@ function freshState(classId, name) {
     skillPoints: 0,
     hp: 0,
     mp: 0,
-    mapId: "taoyuan_village",
+    mapId: VERTICAL_SLICE.startMapId,
     x: 240,
     y: 260,
     target: null,
@@ -172,7 +181,8 @@ function freshState(classId, name) {
       deaths: 0,
       dungeons: 0,
       playSeconds: 0
-    }
+    },
+    verticalSlice: VERTICAL_SLICE.enabled ? "assassin_1_20" : null
   };
 }
 
@@ -363,7 +373,8 @@ function itemName(id) {
 
 function addExp(amount) {
   state.exp += Math.floor(amount);
-  while (state.level < data.levels.maxLevel && state.exp >= expToNext()) {
+  const maxLevel = VERTICAL_SLICE.enabled ? VERTICAL_SLICE.maxLevel : data.levels.maxLevel;
+  while (state.level < maxLevel && state.exp >= expToNext()) {
     state.exp -= expToNext();
     state.level += 1;
     state.freeAttr += data.levels.attributePointsPerLevel;
@@ -372,6 +383,9 @@ function addExp(amount) {
     state.hp = stats.maxHp;
     state.mp = stats.maxMp;
     addLog(`升级到 ${state.level} 级`);
+  }
+  if (VERTICAL_SLICE.enabled && state.level >= VERTICAL_SLICE.maxLevel) {
+    state.exp = Math.min(state.exp, expToNext() - 1);
   }
 }
 
@@ -671,6 +685,7 @@ function tickCombat(dt) {
   }
   if (!state.combat) return;
   const combat = state.combat;
+  tickCombatPosition(dt, combat);
   combat.elapsed += dt;
   combat.enemy.debuffs = (combat.enemy.debuffs || []).filter((debuff) => debuff.until > now());
   combat.playerTimer -= dt;
@@ -690,6 +705,25 @@ function tickCombat(dt) {
   }
   if (combat.enemy.hp <= 0) finishEnemy();
   if (state.hp <= 0) revive();
+}
+
+function tickCombatPosition(dt, combat) {
+  if (!combat?.enemy) return;
+  const desiredGap = combat.enemy.type === "boss" ? 92 : 74;
+  const targetX = combat.enemyX - desiredGap;
+  const targetY = combat.enemyY + 8;
+  const dx = targetX - state.x;
+  const dy = targetY - state.y;
+  const dist = Math.hypot(dx, dy);
+  if (dist < 8) return;
+  const speed = 210;
+  const step = Math.min(dist, speed * dt);
+  const nx = state.x + (dx / dist) * step;
+  const ny = state.y + (dy / dist) * step;
+  if (isWalkable(state.mapId, nx, ny)) {
+    state.x = nx;
+    state.y = ny;
+  }
 }
 
 function tickDungeonMechanics() {
@@ -734,11 +768,18 @@ function questMonsterTarget(quest) {
 }
 
 function startCombat(monster, spawn = null) {
+  const enemyX = spawn?.x || state.x + 138;
+  const enemyY = spawn?.y || state.y - 4;
+  const dist = Math.hypot(state.x - enemyX, state.y - enemyY);
+  if (dist < 58) {
+    state.x = clamp(enemyX - 78, 60, currentMap().size[0] - 60);
+    state.y = clamp(enemyY + 8, 76, currentMap().size[1] - 58);
+  }
   state.combat = {
     enemy: { ...monster, maxHp: monster.hp, hp: monster.hp },
     spawnUid: spawn?.uid || null,
-    enemyX: spawn?.x || state.x + 138,
-    enemyY: spawn?.y || state.y - 4,
+    enemyX,
+    enemyY,
     playerTimer: 0.2,
     enemyTimer: 1.2,
     petTimer: 0.8,
@@ -821,7 +862,7 @@ function castSkill(skill) {
     state.combat.lastSkillName = skill.name;
     state.combat.skillLabelUntil = now() + 0.75;
     addFx(skill.name, state.x, state.y - 70, "#bde8ff", "skill");
-    addFx("", state.x, state.y - 18, "#bde8ff", "aura");
+    addFx("", state.x, state.y - 18, skillColor(skill), "poisonTrail");
     addFx("", state.x, state.y + 10, "#fff2a6", "rune");
     return;
   }
@@ -842,6 +883,16 @@ function castSkill(skill) {
     combat.enemy.debuffs.push({ name: skill.name, stats: debuffStats, until: now() + duration });
     const point = combatTextPoint();
     addFx("破防", point.x, point.y - 18, "#bde8ff", "status");
+  }
+  if (skill.id === "qingli_yiji") {
+    combat.enemy.stunnedUntil = now() + 0.8;
+    addFx("眩晕", point.x, point.y - 34, "#fff08a", "stun");
+    addFx("", state.x + 55, state.y - 18, "#d9b2ff", "shadowDash");
+  }
+  if (skill.id === "juji") {
+    combat.enemy.rootedUntil = now() + 1.0;
+    addFx("定身", point.x, point.y - 34, "#aee8ff", "status");
+    addFx("", state.x + 92, state.y - 42, "#bde8ff", "projectile");
   }
   addLog(`${skill.name} -${damage}`);
   const hitCount = skill.hits || (skill.target === "aoe" ? 2 : 1);
@@ -911,6 +962,10 @@ function enemyDefenseValue(enemy) {
 }
 
 function enemyAttack() {
+  if ((state.combat.enemy.stunnedUntil || 0) > now()) {
+    addFx("眩晕中", state.combat.enemyX, state.combat.enemyY - 78, "#fff08a", "status");
+    return;
+  }
   const stats = getStats();
   const enemy = state.combat.enemy;
   if (Math.random() * 100 < stats.dodge) {
@@ -974,7 +1029,7 @@ function addFx(text, x, y, color = "#fff7dc", type = "status") {
     color,
     type,
     age: 0,
-    life: ["drop", "beam", "burst", "ring", "projectile", "aura", "rune", "flame", "ice", "poison", "light", "spear", "petClaw"].includes(type) ? 1.8 : 1.15,
+    life: ["drop", "beam", "burst", "ring", "projectile", "aura", "rune", "flame", "ice", "poison", "light", "spear", "petClaw", "shadowDash", "poisonTrail", "stun"].includes(type) ? 1.8 : 1.15,
     vy: type === "drop" ? 16 : 28
   });
   state.fx = state.fx.slice(-18);
@@ -1227,22 +1282,27 @@ function finishDungeon(dungeon) {
 }
 
 function renderCreate() {
-  const classCards = data.classes.map((classDef) => `
-    <div class="class-card ${selectedClass === classDef.id ? "selected" : ""}" data-class="${classDef.id}">
-      <div class="class-art class-${classDef.id}">${classDef.name.slice(0, 1)}</div>
+  const classCards = data.classes.map((classDef) => {
+    const locked = VERTICAL_SLICE.enabled && classDef.id !== VERTICAL_SLICE.classId;
+    const art = qAssetPath(`character_${classDef.id}`);
+    return `
+    <div class="class-card ${selectedClass === classDef.id ? "selected" : ""} ${locked ? "locked" : ""}" data-class="${classDef.id}">
+      <div class="class-art class-${classDef.id}">${art ? `<img src="${art}" alt="${classDef.name}" />` : classDef.name.slice(0, 1)}</div>
       <div>
         <h3>${classDef.name}</h3>
-        <div class="muted small">${classDef.role} · ${classDef.weapon}</div>
+        <div class="muted small">${locked ? "纵切版暂未开放" : `${classDef.role} · ${classDef.weapon}`}</div>
       </div>
-      <div class="small">攻速 ${classDef.attackInterval}s</div>
+      <div class="small">${locked ? "后续版本" : `攻速 ${classDef.attackInterval}s`}</div>
     </div>
-  `).join("");
+  `;
+  }).join("");
   app.innerHTML = `
-    <main class="create">
+    <main class="create slice-create">
       <section class="create-box">
         <div class="create-head">
-          <h1>自由幻想单机 P3 数据底座</h1>
-          <p>横屏手游样式重制版：创建职业后进入 2.5D 场景，自动寻路、刷怪、掉装、养宠和后期养成。</p>
+          <span class="slice-badge">${VERTICAL_SLICE.title}</span>
+          <h1>刺客 1-20 级极致纵切</h1>
+          <p>${VERTICAL_SLICE.tagline}。这一版先把一条线打磨成“像手游”，再扩全职业与全地图。</p>
         </div>
         <div class="class-grid">${classCards}</div>
         <div class="create-form">
@@ -1254,6 +1314,7 @@ function renderCreate() {
   `;
   document.querySelectorAll(".class-card").forEach((node) => {
     node.addEventListener("click", () => {
+      if (VERTICAL_SLICE.enabled && node.dataset.class !== VERTICAL_SLICE.classId) return;
       selectedClass = node.dataset.class;
       renderCreate();
     });
@@ -1264,6 +1325,11 @@ function renderCreate() {
     save();
     renderGameShell();
   });
+}
+
+function qAssetPath(id) {
+  const asset = data.qAssetById?.[id];
+  return asset?.q_asset && asset.q_asset !== "missing" ? asset.q_asset : "";
 }
 
 function renderGameShell() {
@@ -1460,7 +1526,7 @@ function renderTopbar() {
   const stats = getStats();
   document.querySelector(".topbar").innerHTML = `
     <div class="identity">
-      <div class="portrait"><span>${classDef.name[0]}</span></div>
+      <div class="portrait">${qAssetPath(`character_${state.classId}`) ? `<img src="${qAssetPath(`character_${state.classId}`)}" alt="${classDef.name}" />` : `<span>${classDef.name[0]}</span>`}</div>
       <div class="bars">
         <div class="name-line"><strong>${state.name}</strong><span class="pill">Lv.${state.level} ${classDef.name}</span><span class="pill">${currentMap().name}</span></div>
         <div class="bar hp"><i style="width:${pct(state.hp, stats.maxHp)}"></i></div>
@@ -2161,8 +2227,13 @@ function renderCanvas() {
   };
   drawMap(w, h, camera);
   drawMarkers(camera);
-  drawCombatEnemy(camera);
-  drawPlayer(camera);
+  if (state.combat && (state.combat.enemyY || 0) > state.y) {
+    drawPlayer(camera);
+    drawCombatEnemy(camera);
+  } else {
+    drawCombatEnemy(camera);
+    drawPlayer(camera);
+  }
   drawFx(camera);
   drawCombatHud(w);
 }
@@ -2765,6 +2836,7 @@ function drawMarkers(camera) {
     drawNpc(x, y, npc.name);
   });
   spawnInstancesForMap().forEach((spawn) => {
+    if (spawn.uid === state.combat?.spawnUid) return;
     const x = spawn.x - camera.x;
     const y = spawn.y - camera.y;
     const monster = data.monsterById[spawn.monsterId];
@@ -2873,6 +2945,36 @@ function drawFx(camera) {
       ctx.beginPath();
       ctx.arc(x + 102, y - 18, 5 + fx.age * 4, 0, Math.PI * 2);
       ctx.fill();
+    }
+    if (fx.type === "shadowDash") {
+      ctx.strokeStyle = `rgba(143, 93, 255, ${alpha * 0.72})`;
+      ctx.lineWidth = 9;
+      ctx.lineCap = "round";
+      ctx.beginPath();
+      ctx.moveTo(x - 72 + fx.age * 54, y + 24);
+      ctx.quadraticCurveTo(x - 18, y - 36, x + 56, y - 18);
+      ctx.stroke();
+      ctx.fillStyle = `rgba(26, 18, 42, ${alpha * 0.38})`;
+      ctx.beginPath();
+      ctx.ellipse(x - 26, y + 18, 34, 12, -0.2, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    if (fx.type === "poisonTrail") {
+      for (let i = 0; i < 10; i += 1) {
+        ctx.fillStyle = `rgba(128,255,107,${alpha * (0.18 + i * 0.03)})`;
+        ctx.beginPath();
+        ctx.arc(x + Math.cos(i * 1.7 + fx.age * 4) * (18 + i * 2), y + 18 + Math.sin(i + fx.age * 5) * 12, 5 + (i % 3), 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    if (fx.type === "stun") {
+      ctx.strokeStyle = `rgba(255, 235, 120, ${alpha * 0.9})`;
+      ctx.lineWidth = 4;
+      for (let i = 0; i < 3; i += 1) {
+        ctx.beginPath();
+        ctx.ellipse(x, y - i * 10, 18 + i * 10 + fx.age * 8, 6 + i * 2, fx.age * 2, 0, Math.PI * 2);
+        ctx.stroke();
+      }
     }
     if (fx.type === "ring" || fx.type === "aura") {
       ctx.strokeStyle = fx.color;

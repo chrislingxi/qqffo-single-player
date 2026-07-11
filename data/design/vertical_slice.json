@@ -1,0 +1,56 @@
+{
+  "id": "assassin_1_20_commercial_demo",
+  "name": "2.5D Q版商业手游 Demo 纵切",
+  "classId": "assassin",
+  "levelRange": [1, 20],
+  "positioning": "先把刺客 1-20 级主线体验做到接近商业手游 Demo，再扩展五职业和 P3 全量系统。",
+  "maps": [
+    {
+      "id": "taoyuan_village",
+      "role": "新手村/安全区",
+      "mustHave": ["石板/村落识别", "NPC聚合", "任务交付", "无野怪压迫"]
+    },
+    {
+      "id": "fangcao",
+      "role": "第一野外刷怪场",
+      "mustHave": ["草地/泥路", "粉粉兔和食人花分区", "可见刷怪生态", "任务自动传送和自动寻路"]
+    },
+    {
+      "id": "yangyuan_mid",
+      "role": "10-18级开阔战斗场",
+      "mustHave": ["开阔黄绿地表", "野猪群", "精英野猪头目", "可见刷新区"]
+    },
+    {
+      "id": "dungeon_nest",
+      "role": "20级前小Boss试炼",
+      "mustHave": ["暗色巢穴", "波次战斗", "花妖头目", "掉落和通关反馈"]
+    }
+  ],
+  "combat": {
+    "requiredSkills": ["qingli_yiji", "juji", "cuipoison", "dual_blade_mastery"],
+    "mustHave": [
+      "玩家接近怪物后才进入战斗",
+      "战斗中玩家会自动调整站位",
+      "怪物不与玩家错误重叠",
+      "普攻、突进、弹道、毒雾、眩晕、暴击、掉落都有独立反馈",
+      "怪物死亡后进入刷新计时"
+    ]
+  },
+  "ui": {
+    "mustHave": [
+      "横屏优先",
+      "职业创建页只开放刺客",
+      "HUD图形icon优先，文字仅做label",
+      "任务、角色/技能、背包、宠物、地图面板完整可打开",
+      "任务可跨地图传送并继续寻路"
+    ]
+  },
+  "qa": {
+    "requiredCommands": [
+      "npm run verify:vertical-slice",
+      "npm run verify:p2-six",
+      "npm run test:smoke",
+      "npm run test:player"
+    ]
+  }
+}
