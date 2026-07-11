@@ -3242,6 +3242,10 @@ function gameLoop(time) {
 
 async function boot() {
   await loadData();
+  if (new URLSearchParams(location.search).has("reset")) {
+    localStorage.removeItem(SAVE_KEY);
+    LEGACY_SAVE_KEYS.forEach((key) => localStorage.removeItem(key));
+  }
   state = loadSave();
   if (state) {
     initVitals();
