@@ -1,0 +1,16 @@
+{
+  "name": "ffo-single-player-p3",
+  "version": "0.3.0",
+  "private": true,
+  "description": "QQ自由幻想端游本地单机化 P3 iPhone PWA data build",
+  "scripts": {
+    "dev": "python3 -m http.server 5173",
+    "test:smoke": "node tests/smoke-test.mjs",
+    "test:player": "node tests/player-simulation.mjs",
+    "test:browser": "node tests/browser-cdp-test.mjs",
+    "verify:p2-six": "node tools/verify_p2_six_blocks.mjs",
+    "audit:p2": "node tools/audit_p2_readiness.mjs",
+    "audit:p2:strict": "node tools/audit_p2_readiness.mjs --strict",
+    "publish:pages": "bash tools/publish_pages.sh"
+  }
+}

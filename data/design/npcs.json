@@ -1,0 +1,13 @@
+[
+  { "id": "tianqing", "name": "指引仙子天晴", "original_name": "指引仙子天晴", "mapId": "taoyuan_village", "x": 150, "y": 190, "role": ["quest"], "source_file": "docs/reference/markdown/official/official-QQ自由幻想-资料专区-8da41f02.md", "source_confidence": "official" },
+  { "id": "rong_dapang", "name": "容大胖子", "original_name": "容大胖子", "mapId": "taoyuan_village", "x": 260, "y": 260, "role": ["quest"], "source_file": "docs/reference/markdown/official/official-QQ自由幻想-资料专区-8da41f02.md", "source_confidence": "official" },
+  { "id": "rong_dasao", "name": "容大嫂", "original_name": "容大嫂", "mapId": "taoyuan_village", "x": 410, "y": 330, "role": ["quest"], "source_file": "docs/reference/markdown/official/official-QQ自由幻想-资料专区-8da41f02.md", "source_confidence": "official" },
+  { "id": "ha_jun", "name": "武器师匠哈骏", "original_name": "武器师匠哈骏", "mapId": "taoyuan_village", "x": 590, "y": 350, "role": ["repair", "shop", "quest"], "source_file": "docs/reference/markdown/official/official-QQ自由幻想-资料专区-8da41f02.md", "source_confidence": "official" },
+  { "id": "hu_gong", "name": "壶公", "original_name": "壶公", "mapId": "taoyuan_village", "x": 720, "y": 440, "role": ["quest"], "source_file": "docs/reference/markdown/official_deep/7_5.htm.md", "source_confidence": "official" },
+  { "id": "yi_yuan", "name": "伊源", "original_name": "伊源", "mapId": "taoyuan_village", "x": 780, "y": 250, "role": ["quest"], "source_file": "docs/reference/markdown/official/official-QQ自由幻想-资料专区-8da41f02.md", "source_confidence": "official" },
+  { "id": "ji_zixun", "name": "奇医蓟子训", "original_name": "奇医蓟子训", "mapId": "longcheng", "x": 380, "y": 300, "role": ["quest"], "source_file": "docs/reference/markdown/official/official-QQ自由幻想-资料专区-8da41f02.md", "source_confidence": "official" },
+  { "id": "longcheng_guard", "name": "守城卫兵阿卡", "original_name": "守城卫兵阿卡", "mapId": "longcheng", "x": 680, "y": 380, "role": ["quest"], "source_file": "docs/reference/markdown/official_deep/2_5_1.htm.md", "source_confidence": "official" },
+  { "id": "trainer", "name": "职业导师", "original_name": "职业导师", "mapId": "longcheng", "x": 560, "y": 240, "role": ["skill", "quest"], "source_confidence": "inferred" },
+  { "id": "pet_keeper", "name": "灵宠使", "original_name": "宠物相关NPC", "mapId": "longcheng", "x": 860, "y": 250, "role": ["pet", "quest"], "source_confidence": "inferred" },
+  { "id": "medic_shop", "name": "道具商人铃铛", "original_name": "道具商人铃铛", "mapId": "longcheng", "x": 470, "y": 500, "role": ["shop"], "source_file": "docs/reference/markdown/official_deep/2_5_1.htm.md", "source_confidence": "official" }
+]

@@ -1,0 +1,23 @@
+{
+  "source_confidence": "mixed",
+  "notes": "P2 宠物喂养、技能丸、培育、法阵的单机体验版。",
+  "maxSkillLevel": 5,
+  "train": {
+    "gold": 160,
+    "materials": { "pet_food": 1 },
+    "trust": 8,
+    "exp": 180
+  },
+  "skillPill": {
+    "gold": 420,
+    "materials": { "ghost_ash": 3 },
+    "attackBonusPerLevel": 8,
+    "defenseBonusPerLevel": 3
+  },
+  "circle": {
+    "levelReq": 18,
+    "gold": 900,
+    "materials": { "flower_petal": 8, "snail_shell": 8 },
+    "bonus": { "maxHp": 70, "attack": 9, "magicAttack": 9 }
+  }
+}

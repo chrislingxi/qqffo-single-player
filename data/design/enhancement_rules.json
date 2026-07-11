@@ -1,0 +1,26 @@
+{
+  "source_confidence": "mixed",
+  "notes": "P2 单机装备加工规则。装备名和加工方向参考本地化功能 feature，消耗和成功率为单机体验曲线。",
+  "maxPlus": 9,
+  "levels": [
+    { "plus": 1, "gold": 120, "materials": { "rabbit_fur": 4 }, "success": 1, "statRate": 0.08 },
+    { "plus": 2, "gold": 220, "materials": { "snail_shell": 5 }, "success": 0.95, "statRate": 0.16 },
+    { "plus": 3, "gold": 360, "materials": { "flower_petal": 6 }, "success": 0.9, "statRate": 0.25 },
+    { "plus": 4, "gold": 540, "materials": { "boar_tusk": 6 }, "success": 0.82, "statRate": 0.36 },
+    { "plus": 5, "gold": 760, "materials": { "branch": 7 }, "success": 0.74, "statRate": 0.48 },
+    { "plus": 6, "gold": 1040, "materials": { "ghost_ash": 7 }, "success": 0.68, "statRate": 0.62 },
+    { "plus": 7, "gold": 1380, "materials": { "ghost_ash": 10, "flower_petal": 8 }, "success": 0.58, "statRate": 0.78 },
+    { "plus": 8, "gold": 1800, "materials": { "ghost_ash": 12, "boar_tusk": 10 }, "success": 0.48, "statRate": 0.96 },
+    { "plus": 9, "gold": 2360, "materials": { "ghost_ash": 16, "branch": 14 }, "success": 0.38, "statRate": 1.18 }
+  ],
+  "socket": {
+    "gold": 480,
+    "materials": { "snail_shell": 6, "branch": 3 },
+    "bonus": { "crit": 1, "maxHp": 35 }
+  },
+  "soul": {
+    "gold": 760,
+    "materials": { "ghost_ash": 5, "flower_petal": 5 },
+    "bonus": { "attack": 8, "magicAttack": 8, "defense": 5 }
+  }
+}

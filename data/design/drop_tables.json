@@ -1,0 +1,220 @@
+[
+  {
+    "monsterId": "fenfen_rabbit",
+    "drops": [
+      {
+        "id": "rabbit_fur",
+        "chance": 0.55
+      },
+      {
+        "id": "small_hp",
+        "chance": 0.18
+      },
+      {
+        "id": "linen_armor",
+        "chance": 0.05
+      }
+    ],
+    "id": "drop_fenfen_rabbit"
+  },
+  {
+    "monsterId": "snail",
+    "drops": [
+      {
+        "id": "snail_shell",
+        "chance": 0.52
+      },
+      {
+        "id": "small_hp",
+        "chance": 0.16
+      }
+    ],
+    "id": "drop_snail"
+  },
+  {
+    "monsterId": "walking_bird",
+    "drops": [
+      {
+        "id": "bird_beak",
+        "chance": 0.5
+      },
+      {
+        "id": "pet_food",
+        "chance": 0.08
+      }
+    ],
+    "id": "drop_walking_bird"
+  },
+  {
+    "monsterId": "man_eater_flower",
+    "drops": [
+      {
+        "id": "flower_petal",
+        "chance": 0.45
+      },
+      {
+        "id": "forest_armor",
+        "chance": 0.06
+      }
+    ],
+    "id": "drop_man_eater_flower"
+  },
+  {
+    "monsterId": "boar",
+    "drops": [
+      {
+        "id": "boar_tusk",
+        "chance": 0.42
+      },
+      {
+        "id": "forest_weapon",
+        "chance": 0.05
+      }
+    ],
+    "id": "drop_boar"
+  },
+  {
+    "monsterId": "white_rabbit",
+    "drops": [
+      {
+        "id": "white_rabbit_fur",
+        "chance": 0.45
+      },
+      {
+        "id": "small_hp",
+        "chance": 0.18
+      }
+    ],
+    "id": "drop_white_rabbit"
+  },
+  {
+    "monsterId": "tree_demon",
+    "drops": [
+      {
+        "id": "branch",
+        "chance": 0.44
+      },
+      {
+        "id": "starlit_ring",
+        "chance": 0.04
+      }
+    ],
+    "id": "drop_tree_demon"
+  },
+  {
+    "monsterId": "ghost_fire",
+    "drops": [
+      {
+        "id": "ghost_ash",
+        "chance": 0.42
+      },
+      {
+        "id": "small_mp",
+        "chance": 0.18
+      }
+    ],
+    "id": "drop_ghost_fire"
+  },
+  {
+    "monsterId": "elite_boar",
+    "drops": [
+      {
+        "id": "boar_tusk",
+        "chance": 0.75
+      },
+      {
+        "id": "forest_weapon",
+        "chance": 0.28
+      },
+      {
+        "id": "starlit_ring",
+        "chance": 0.12
+      }
+    ],
+    "id": "drop_elite_boar"
+  },
+  {
+    "monsterId": "flower_queen",
+    "drops": [
+      {
+        "id": "forest_weapon",
+        "chance": 0.55
+      },
+      {
+        "id": "starlit_ring",
+        "chance": 0.35
+      },
+      {
+        "id": "pet_food",
+        "chance": 0.8
+      },
+      {
+        "id": "skill_pill",
+        "chance": 0.22
+      }
+    ],
+    "id": "drop_flower_queen"
+  },
+  {
+    "monsterId": "tower_guardian",
+    "drops": [
+      {
+        "id": "mine_weapon",
+        "chance": 0.55
+      },
+      {
+        "id": "tower_charm",
+        "chance": 0.45
+      },
+      {
+        "id": "mine_armor",
+        "chance": 0.35
+      },
+      {
+        "id": "socket_stone",
+        "chance": 0.35
+      }
+    ],
+    "id": "drop_tower_guardian"
+  },
+  {
+    "monsterId": "spirit_guardian",
+    "drops": [
+      {
+        "id": "spirit_weapon",
+        "chance": 0.48
+      },
+      {
+        "id": "spirit_armor",
+        "chance": 0.42
+      },
+      {
+        "id": "soul_charm",
+        "chance": 0.45
+      },
+      {
+        "id": "skill_pill",
+        "chance": 0.38
+      }
+    ],
+    "id": "drop_spirit_guardian"
+  },
+  {
+    "monsterId": "dragon_relic_boss",
+    "drops": [
+      {
+        "id": "dragon_wing_charm",
+        "chance": 0.38
+      },
+      {
+        "id": "spirit_weapon",
+        "chance": 0.52
+      },
+      {
+        "id": "soul_charm",
+        "chance": 0.72
+      }
+    ],
+    "id": "drop_dragon_relic_boss"
+  }
+]

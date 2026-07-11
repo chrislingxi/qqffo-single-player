@@ -1,0 +1,133 @@
+{
+  "source_confidence": "mixed",
+  "systems": [
+    {
+      "id": "phantoms",
+      "name": "幻神",
+      "table": "data/design/phantoms.json",
+      "source_confidence": "uncertain",
+      "source_files": [
+        "docs/reference/raw/p3_official_supplement/ffo.qq.com_webplat_info_news_version3_120_3487_3488_3490_m3157_200902_120995.shtml.html"
+      ],
+      "gaps": [
+        "解锁规则",
+        "升级经验",
+        "技能",
+        "全量属性"
+      ]
+    },
+    {
+      "id": "artifacts",
+      "name": "法宝",
+      "table": "data/design/artifacts.json",
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/raw/p3_official_supplement/ffo.qq.com_act_a20120328years_fabao.htm.html"
+      ],
+      "gaps": [
+        "全量法宝",
+        "秘/真系列材料",
+        "附魂/加工公式"
+      ]
+    },
+    {
+      "id": "spirits",
+      "name": "灵",
+      "table": "data/design/spirits.json",
+      "source_confidence": "uncertain",
+      "source_files": [
+        "docs/reference/raw/ffobaike/ffobaike-黄金灵与霸者无双-QQ自由幻想百科-dbedc1e1.html"
+      ],
+      "gaps": [
+        "系统边界",
+        "等级上限",
+        "属性上限",
+        "升级材料"
+      ]
+    },
+    {
+      "id": "battle_souls",
+      "name": "战魂",
+      "table": "data/design/battle_souls.json",
+      "source_confidence": "uncertain",
+      "source_files": [
+        "docs/reference/raw/p3_official_supplement/ffo.qq.com_gicp_news_814_18713379.html.html"
+      ],
+      "gaps": [
+        "槽位",
+        "品质",
+        "升级",
+        "套装效果"
+      ]
+    },
+    {
+      "id": "codex_cards",
+      "name": "典籍卡",
+      "table": "data/design/codex_cards.json",
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/raw/official/official-典籍卡牌属性介绍-8eb6ed28.html"
+      ],
+      "gaps": [
+        "产出概率",
+        "活动来源",
+        "升星升阶全量消耗"
+      ]
+    },
+    {
+      "id": "titles",
+      "name": "称号",
+      "table": "data/design/titles.json",
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/raw/ffobaike/ffobaike-称号系统-QQ自由幻想百科-673c3147.html"
+      ],
+      "gaps": [
+        "全量达成条件",
+        "时效",
+        "属性"
+      ]
+    },
+    {
+      "id": "equipment_blessing",
+      "name": "装备祝福",
+      "table": "data/design/equipment_blessing.json",
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/raw/ffobaike/ffobaike-装备祝福系统-QQ自由幻想百科-7ae8bd88.html"
+      ],
+      "gaps": [
+        "成功率",
+        "部位公式",
+        "材料来源"
+      ]
+    },
+    {
+      "id": "dragon_wing_treasures",
+      "name": "龙翼秘宝",
+      "table": "data/design/dragon_wing_treasures.json",
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/raw/ffobaike/ffobaike-龙翼秘宝-QQ自由幻想百科-d5304206.html"
+      ],
+      "gaps": [
+        "强化概率",
+        "替代产出",
+        "高阶材料"
+      ]
+    },
+    {
+      "id": "wing_carving",
+      "name": "翅膀雕花",
+      "table": "data/design/wing_carving.json",
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/raw/ffobaike/ffobaike-翅膀雕花-QQ自由幻想百科.html"
+      ],
+      "gaps": [
+        "五彩绢丝来源",
+        "全翅膀图标"
+      ]
+    }
+  ]
+}

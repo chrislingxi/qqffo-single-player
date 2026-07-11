@@ -1,0 +1,54 @@
+{
+  "source_confidence": "partial",
+  "source_files": [
+    "docs/reference/raw/ffobaike/ffobaike-110级新等级系统-QQ自由幻想百科-25e59a0f.html",
+    "docs/reference/raw/p3_official_supplement/ffo.qq.com_gicp_news_814_18656583.html.html"
+  ],
+  "max_level": 110,
+  "implemented_curve": {
+    "start_level": 56,
+    "end_level": 110,
+    "base_exp": 520000,
+    "growth": 1.145,
+    "attribute_points_per_level": 5,
+    "skill_points_per_level": 1
+  },
+  "milestones": [
+    {
+      "level": 80,
+      "unlock": [
+        "高阶地图",
+        "飞升任务链",
+        "后期副本"
+      ]
+    },
+    {
+      "level": 90,
+      "unlock": [
+        "幻神",
+        "典籍卡",
+        "称号养成"
+      ]
+    },
+    {
+      "level": 100,
+      "unlock": [
+        "装备祝福",
+        "龙翼秘宝"
+      ]
+    },
+    {
+      "level": 110,
+      "unlock": [
+        "P3毕业追求",
+        "翅膀雕花"
+      ]
+    }
+  ],
+  "gaps": [
+    "完整经验曲线",
+    "101-110突破条件",
+    "突破奖励属性点",
+    "102/108装备升级消耗"
+  ]
+}

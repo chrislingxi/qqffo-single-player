@@ -1,0 +1,21 @@
+[
+  { "id": "fangcao_rabbit_meadow", "mapId": "fangcao", "monsterIds": ["fenfen_rabbit"], "x": 470, "y": 330, "radius": 150, "maxAlive": 5, "respawn": 7, "source_confidence": "official_location_inferred_coord" },
+  { "id": "fangcao_rabbit_path", "mapId": "fangcao", "monsterIds": ["fenfen_rabbit", "man_eater_flower"], "x": 760, "y": 500, "radius": 170, "maxAlive": 5, "respawn": 8, "source_confidence": "official_location_inferred_coord" },
+  { "id": "fangcao_flower_grove", "mapId": "fangcao", "monsterIds": ["man_eater_flower"], "x": 900, "y": 300, "radius": 130, "maxAlive": 3, "respawn": 10, "source_confidence": "official_location_inferred_coord" },
+  { "id": "fangcao_east_bamboo", "mapId": "fangcao_east", "monsterIds": ["walking_bird"], "x": 360, "y": 290, "radius": 135, "maxAlive": 4, "respawn": 8, "source_confidence": "official_location_inferred_coord" },
+  { "id": "fangcao_east_flower", "mapId": "fangcao_east", "monsterIds": ["man_eater_flower", "walking_bird"], "x": 715, "y": 455, "radius": 185, "maxAlive": 5, "respawn": 8, "source_confidence": "official_location_inferred_coord" },
+  { "id": "fangcao_east_riverside", "mapId": "fangcao_east", "monsterIds": ["man_eater_flower"], "x": 920, "y": 250, "radius": 125, "maxAlive": 3, "respawn": 11, "source_confidence": "official_location_inferred_coord" },
+  { "id": "fangcao_west_snail_mud", "mapId": "fangcao_west", "monsterIds": ["snail"], "x": 430, "y": 500, "radius": 165, "maxAlive": 5, "respawn": 8, "source_confidence": "official_location_inferred_coord" },
+  { "id": "fangcao_west_bird_wood", "mapId": "fangcao_west", "monsterIds": ["walking_bird"], "x": 780, "y": 320, "radius": 165, "maxAlive": 4, "respawn": 9, "source_confidence": "official_location_inferred_coord" },
+  { "id": "yangyuan_boar_plain", "mapId": "yangyuan_mid", "monsterIds": ["boar"], "x": 550, "y": 455, "radius": 210, "maxAlive": 6, "respawn": 9, "source_confidence": "official_location_inferred_coord" },
+  { "id": "yangyuan_elite_ridge", "mapId": "yangyuan_mid", "monsterIds": ["elite_boar"], "x": 900, "y": 350, "radius": 130, "maxAlive": 1, "respawn": 22, "source_confidence": "official_location_inferred_coord" },
+  { "id": "longcheng_south_rabbit", "mapId": "longcheng_south", "monsterIds": ["white_rabbit"], "x": 470, "y": 500, "radius": 180, "maxAlive": 5, "respawn": 8, "source_confidence": "official_location_inferred_coord" },
+  { "id": "longcheng_south_tree", "mapId": "longcheng_south", "monsterIds": ["tree_demon"], "x": 860, "y": 360, "radius": 170, "maxAlive": 4, "respawn": 11, "source_confidence": "official_location_inferred_coord" },
+  { "id": "longcheng_north_rabbit", "mapId": "longcheng_north", "monsterIds": ["white_rabbit"], "x": 470, "y": 440, "radius": 160, "maxAlive": 4, "respawn": 8, "source_confidence": "official_location_inferred_coord" },
+  { "id": "longcheng_north_ghost_fire", "mapId": "longcheng_north", "monsterIds": ["ghost_fire"], "x": 810, "y": 330, "radius": 155, "maxAlive": 4, "respawn": 12, "source_confidence": "official_location_inferred_coord" },
+  { "id": "nest_boss", "mapId": "dungeon_nest", "monsterIds": ["man_eater_flower", "boar", "flower_queen"], "x": 640, "y": 350, "radius": 180, "respawn": 18, "source_confidence": "inferred" },
+  { "id": "tower_boss", "mapId": "dungeon_tower", "monsterIds": ["ghost_fire", "tree_demon", "tower_guardian"], "x": 640, "y": 380, "radius": 180, "respawn": 18, "source_confidence": "inferred" },
+  { "id": "lingze_wild", "mapId": "lingze_field", "monsterIds": ["spirit_guardian", "ghost_fire"], "x": 690, "y": 470, "radius": 290, "respawn": 10, "source_confidence": "inferred" },
+  { "id": "lingze_boss", "mapId": "dungeon_lingze", "monsterIds": ["spirit_guardian", "tower_guardian"], "x": 650, "y": 390, "radius": 190, "respawn": 18, "source_confidence": "inferred" },
+  { "id": "dragon_relic", "mapId": "dungeon_dragon_relic", "monsterIds": ["spirit_guardian", "dragon_relic_boss"], "x": 650, "y": 390, "radius": 190, "respawn": 18, "source_confidence": "inferred" }
+]

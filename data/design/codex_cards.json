@@ -1,0 +1,103 @@
+{
+  "system": "典籍卡",
+  "source_confidence": "partial",
+  "source_files": [
+    "docs/reference/markdown/ffobaike_entity/system-poker.md",
+    "docs/reference/raw/official/official-典籍卡牌属性介绍-8eb6ed28.html"
+  ],
+  "single_player_adaptation": "保留成长与属性追求，剔除交易、排行、多人依赖；材料来源转化为单人副本/日常/挂机循环。",
+  "status": "wiki_rules_structured",
+  "levels": [
+    {
+      "level": 1,
+      "materials": [],
+      "rewards": [],
+      "source_confidence": "schema_placeholder"
+    }
+  ],
+  "rewards": [],
+  "materials": [],
+  "gaps": [
+    "54张卡逐项属性已在源文但尚未全量解析成数组",
+    "典籍卡具体产出概率"
+  ],
+  "schema_version": "p3-loop1",
+  "single_player_sources": [
+    "高阶副本",
+    "日常",
+    "挂机刷怪"
+  ],
+  "rules": {
+    "total_cards": 54,
+    "ranks": [
+      "灰",
+      "绿",
+      "蓝",
+      "紫",
+      "橙"
+    ],
+    "max_stars": 5
+  },
+  "rank_up": [
+    {
+      "from": "灰",
+      "to": "绿",
+      "material": "低级升阶卡",
+      "count": 5,
+      "jade_cost": 50
+    },
+    {
+      "from": "绿",
+      "to": "蓝",
+      "material": "低级升阶卡",
+      "count": 50,
+      "jade_cost": 500
+    },
+    {
+      "from": "蓝",
+      "to": "紫",
+      "material": "高级升阶卡",
+      "count": 25,
+      "jade_cost": 25000
+    },
+    {
+      "from": "紫",
+      "to": "橙",
+      "material": "高级升阶卡",
+      "count": 50,
+      "jade_cost": 50000
+    }
+  ],
+  "star_up": [
+    {
+      "from": 0,
+      "to": 1,
+      "material": "同名灰卡",
+      "count": 5
+    },
+    {
+      "from": 1,
+      "to": 2,
+      "material": "同名绿卡",
+      "count": 5
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "material": "同名蓝卡",
+      "count": 5
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "material": "同名紫卡",
+      "count": 5
+    },
+    {
+      "from": 4,
+      "to": 5,
+      "material": "同名橙卡",
+      "count": 5
+    }
+  ]
+}

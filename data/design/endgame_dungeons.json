@@ -1,0 +1,745 @@
+{
+  "generated_from": "docs/reference/entities/dungeon-catalog.json",
+  "source_confidence": "mixed",
+  "records": [
+    {
+      "id": "endgame_夜影村",
+      "original_name": "夜影村",
+      "project_name": "夜影村·单机",
+      "level_requirement": "70",
+      "entry_npc": "",
+      "entry_item": "",
+      "map_style": "夜影村地图",
+      "bosses": [
+        "夜影村"
+      ],
+      "drops": [
+        "装备 ​",
+        "鬼怪术士 ​",
+        "子龙帽",
+        "穿山之风",
+        "啸海帽",
+        "天苍之风",
+        "穿山帽",
+        "定海之风",
+        "天苍帽",
+        "子龙之风",
+        "定海冠",
+        "啸海之风",
+        "轻灵+1",
+        "闪灵+1",
+        "冲击+1",
+        "魔能+1",
+        "夜光玉",
+        "鬼怪剑客 ​",
+        "子龙战靴",
+        "啸海战靴",
+        "穿山神靴",
+        "天苍履",
+        "定海云履",
+        "见龙卸甲",
+        "啸海黄金甲",
+        "九宫八卦穿山甲",
+        "天外烟罗衣",
+        "定海慈航袍",
+        "轻灵+1",
+        "闪灵+1",
+        "冲击+1",
+        "魔能+1",
+        "夜光玉",
+        "幽灵恶狼 ​",
+        "夜光玉",
+        "子龙战靴",
+        "啸海战靴",
+        "穿山神靴",
+        "天苍履",
+        "定海云履",
+        "终极手之魂",
+        "蟠桃",
+        "秘灵药",
+        "捆仙索",
+        "冲击+1",
+        "闪灵+1",
+        "轻灵+1",
+        "魔能+1",
+        "天地绫",
+        "荣光宝石",
+        "秘魂药",
+        "厄运之神 ​",
+        "夜光玉",
+        "子龙之风",
+        "啸海之风",
+        "穿山之风",
+        "天苍之风",
+        "定海之风",
+        "终极面之魂",
+        "蟠桃"
+      ],
+      "frequency": "",
+      "source_urls": [
+        "https://www.ffobaike.com/pworld/yeyingcun.html"
+      ],
+      "local_paths": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "source_confidence": "partial",
+      "gaps": [
+        "entry_npc",
+        "entry_item",
+        "frequency"
+      ],
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "multiplayer_removed": true,
+        "frequency_rule": {
+          "mode": "local_rule",
+          "free_entries": 1,
+          "extra_entry": "local_endgame_key",
+          "display": "单机挑战次数按本地日常规则配置"
+        },
+        "frequency_display": "单机挑战次数按本地日常规则配置",
+        "display_bosses": [
+          "夜影村"
+        ],
+        "display_rewards": [
+          "装备",
+          "鬼怪术士",
+          "子龙帽",
+          "穿山之风",
+          "啸海帽",
+          "天苍之风",
+          "穿山帽",
+          "定海之风",
+          "天苍帽",
+          "子龙之风",
+          "定海冠",
+          "啸海之风",
+          "轻灵+1",
+          "闪灵+1",
+          "冲击+1",
+          "魔能+1",
+          "夜光玉",
+          "鬼怪剑客"
+        ],
+        "reward_count_from_source": 60,
+        "source_terms_removed_count": 0,
+        "source_text_policy": "原始资料只作考据；运行 UI 不读取 drops 原文。"
+      }
+    },
+    {
+      "id": "endgame_迷雾沼泽",
+      "original_name": "迷雾沼泽",
+      "project_name": "迷雾沼泽·单机",
+      "level_requirement": "73级以上",
+      "entry_npc": "银月湖—NPC紫轩（199，113）",
+      "entry_item": "",
+      "map_style": "迷雾沼泽地图",
+      "bosses": [
+        "闪灵+1",
+        "轻灵+1",
+        "魔能+1",
+        "终极戒之魂",
+        "羽族护法幻化书",
+        "水魔"
+      ],
+      "drops": [
+        "物",
+        "图标",
+        "朱雀碎片",
+        "[图片: 朱雀碎片]",
+        "图谱·朱雀之戒",
+        "[图片: 图谱·朱雀之戒]",
+        "终极衣之魂",
+        "[图片: 终极衣之魂]",
+        "荣光宝石",
+        "[图片: 荣光宝石]",
+        "冲击+1",
+        "[图片: 冲击+1]",
+        "闪灵+1",
+        "[图片: 闪灵+1]",
+        "轻灵+1",
+        "[图片: 轻灵+1]",
+        "魔能+1",
+        "[图片: 魔能+1]",
+        "羽族仙子幻化书",
+        "[图片: 羽族仙子幻化书]",
+        "朱雀套装 ​",
+        "注意",
+        "朱雀套装为绑定在玩家身上的装备，不可解绑。朱雀图谱同样是不可交易的，玩家必须靠自己努力才能获得，朱雀碎片玩家可以相互交易。",
+        "这次推出的绑定装备朱雀套装以后也一定会有继承性，所以玩家不用担心绑定身上的装备以后会没用。同样的怒颜者套装、坚定者套装等以后也会考虑到它们的继承性，请玩家不用担心自己的装备会在未来失去它们的价值。",
+        "朱雀套装兑换规则 ​",
+        "玩家可以拿齐材料到合成炉上合成朱雀套装，具体合成规则如下",
+        "合成方式",
+        "所需材料",
+        "方式一",
+        "对应位置的朱雀图谱 + 朱雀碎片105个 = 朱雀套装",
+        "方式二",
+        "龙套装装备 + 对应位置的朱雀图谱 + 朱雀碎片90个 = 朱雀套装",
+        "方式三",
+        "虎套装装备 + 对应位置的朱雀图谱 + 朱雀碎片45个 = 朱雀套装",
+        "破魂·朱雀（战士） ​",
+        "图标",
+        "名称",
+        "位置",
+        "[图片: 破魂翼·朱雀]",
+        "破魂翼·朱雀",
+        "手套",
+        "[图片: 破魂顏·朱雀]",
+        "破魂顏·朱雀",
+        "面饰",
+        "[图片: 破魂环·朱雀]",
+        "破魂环·朱雀",
+        "戒指",
+        "[图片: 破魂坠·朱雀]",
+        "破魂坠·朱雀",
+        "项链",
+        "套装属性： 最大攻击:24，最大生命:628",
+        "套装技能： 战争之灵·肆",
+        "擎力·朱雀（剑客） ​",
+        "图标",
+        "名称",
+        "位置",
+        "[图片: 擎力翼·朱雀]",
+        "擎力翼·朱雀",
+        "手套",
+        "[图片: 擎力顏·朱雀]"
+      ],
+      "frequency": "每天免费1次，使用平行世界开门钥匙可不限次数进入",
+      "source_urls": [
+        "https://www.ffobaike.com/pworld/miwuzhaoze.html"
+      ],
+      "local_paths": [
+        "docs/reference/markdown/ffobaike_entity/pworld-miwuzhaoze.md"
+      ],
+      "source_confidence": "partial",
+      "gaps": [
+        "entry_item"
+      ],
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "multiplayer_removed": true,
+        "frequency_rule": {
+          "mode": "daily",
+          "free_entries": 1,
+          "extra_entry": "local_endgame_key",
+          "display": "每天免费1次；单机钥匙可追加挑战"
+        },
+        "frequency_display": "每天免费1次；单机钥匙可追加挑战",
+        "display_bosses": [
+          "闪灵+1",
+          "轻灵+1",
+          "魔能+1",
+          "终极戒之魂",
+          "羽族护法幻化书",
+          "水魔"
+        ],
+        "display_rewards": [
+          "朱雀碎片",
+          "图谱·朱雀之戒",
+          "终极衣之魂",
+          "荣光宝石",
+          "冲击+1",
+          "闪灵+1",
+          "轻灵+1",
+          "魔能+1",
+          "羽族仙子幻化书",
+          "朱雀套装",
+          "破魂·朱雀（战士）",
+          "破魂翼·朱雀",
+          "破魂顏·朱雀",
+          "破魂环·朱雀",
+          "破魂坠·朱雀",
+          "擎力·朱雀（剑客）",
+          "擎力翼·朱雀"
+        ],
+        "reward_count_from_source": 60,
+        "source_terms_removed_count": 2,
+        "source_text_policy": "原始资料只作考据；运行 UI 不读取 drops 原文。"
+      }
+    },
+    {
+      "id": "endgame_冰火双螺",
+      "original_name": "冰火双螺",
+      "project_name": "冰火双螺·单机",
+      "level_requirement": "78级以上（含78级）",
+      "entry_npc": "人鱼之乡—水姬岚裳",
+      "entry_item": "",
+      "map_style": "冰火双螺地图",
+      "bosses": [
+        "妖喉莲姬",
+        "冰火幽冥兽",
+        "夺喉鱼人",
+        "珊瑚妖·静"
+      ],
+      "drops": [
+        "背包）",
+        "荣光宝石",
+        "终极戒之魂",
+        "终极衣之魂",
+        "各种珍贵卡片",
+        "珊瑚妖·寂 ​",
+        "[图片: 珊瑚妖·寂]",
+        "怪物特性",
+        "魔法防御较高，适合物理系职业击杀",
+        "夺喉鱼人 ​",
+        "[图片: 夺喉鱼人]",
+        "怪物特性",
+        "恶魔怪物，各项防御较高",
+        "幻神可对此怪物造成额外的恶魔伤害",
+        "珊瑚妖·静 ​",
+        "[图片: 珊瑚妖·静]",
+        "怪物特性",
+        "物理防御较高，适合魔法系职业击杀",
+        "隐藏规则 ​",
+        "副本中的BOSS 冰火幽冥兽 为隐藏BOSS。",
+        "出现条件： 进入副本10分钟内击杀BOSS妖喉莲姬。",
+        "参考资料 ​",
+        "78级副本：冰火双螺-QQ自由幻想",
+        "Pager",
+        "上一页迷雾沼泽",
+        "下一页灵泽殿"
+      ],
+      "frequency": "",
+      "source_urls": [
+        "https://www.ffobaike.com/pworld/binghuoshuangluo.html"
+      ],
+      "local_paths": [
+        "docs/reference/markdown/ffobaike_entity/pworld-binghuoshuangluo.md"
+      ],
+      "source_confidence": "partial",
+      "gaps": [
+        "entry_item",
+        "frequency"
+      ],
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "multiplayer_removed": true,
+        "frequency_rule": {
+          "mode": "local_rule",
+          "free_entries": 1,
+          "extra_entry": "local_endgame_key",
+          "display": "单机挑战次数按本地日常规则配置"
+        },
+        "frequency_display": "单机挑战次数按本地日常规则配置",
+        "display_bosses": [
+          "妖喉莲姬",
+          "冰火幽冥兽",
+          "夺喉鱼人",
+          "珊瑚妖·静"
+        ],
+        "display_rewards": [
+          "背包）",
+          "荣光宝石",
+          "终极戒之魂",
+          "终极衣之魂",
+          "各种珍贵卡片",
+          "珊瑚妖·寂",
+          "夺喉鱼人",
+          "恶魔怪物，各项防御较高",
+          "幻神可对此怪物造成额外的恶魔伤害",
+          "珊瑚妖·静",
+          "副本中的BOSS 冰火幽冥兽 为隐藏BOSS。",
+          "78级副本：冰火双螺-QQ自由幻想"
+        ],
+        "reward_count_from_source": 26,
+        "source_terms_removed_count": 0,
+        "source_text_policy": "原始资料只作考据；运行 UI 不读取 drops 原文。"
+      }
+    },
+    {
+      "id": "endgame_灵泽殿",
+      "original_name": "灵泽殿",
+      "project_name": "灵泽殿·单机",
+      "level_requirement": "",
+      "entry_npc": "",
+      "entry_item": "",
+      "map_style": "灵泽殿地图",
+      "bosses": [],
+      "drops": [
+        "也越丰厚！玩家也可以在排行榜公布官中查询到最高评价的10个队伍！欢迎有能力的玩家前来挑战！",
+        "副本分一般难度和英雄级难度。",
+        "5号BOSS双头恶蛟是隐藏BOSS需要达到一定目标才能召唤双头恶蛟。",
+        "背景故事 ​",
+        "古语云，蛟者无角龙也。",
+        "五百年过去了，八仙未聚，龙族自种的恶果水魔珠一直未除，侵蚀着整个海底。外有水魔，内有蛟龙，海底可真谓水深火热。如何能摆脱这噩梦之魇，曹国舅转世何在，海底还有多少秘密？谜底由你揭开……",
+        "副本地图 ​",
+        "[图片: 灵泽殿地图]",
+        "参考资料 ​",
+        "QQ自由幻想 灵泽殿专题页",
+        "Pager",
+        "上一页冰火双螺",
+        "下一页先祖山"
+      ],
+      "frequency": "",
+      "source_urls": [
+        "https://www.ffobaike.com/pworld/lingzedian.html"
+      ],
+      "local_paths": [
+        "docs/reference/markdown/ffobaike_entity/pworld-lingzedian.md"
+      ],
+      "source_confidence": "partial",
+      "gaps": [
+        "level_requirement",
+        "entry_npc",
+        "entry_item",
+        "bosses",
+        "boss_skills",
+        "boss_features",
+        "boss_images",
+        "frequency"
+      ],
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "multiplayer_removed": true,
+        "frequency_rule": {
+          "mode": "local_rule",
+          "free_entries": 1,
+          "extra_entry": "local_endgame_key",
+          "display": "单机挑战次数按本地日常规则配置"
+        },
+        "frequency_display": "单机挑战次数按本地日常规则配置",
+        "display_bosses": [
+          "灵泽殿"
+        ],
+        "display_rewards": [
+          "副本分一般难度和英雄级难度。",
+          "古语云，蛟者无角龙也。"
+        ],
+        "reward_count_from_source": 13,
+        "source_terms_removed_count": 2,
+        "source_text_policy": "原始资料只作考据；运行 UI 不读取 drops 原文。"
+      }
+    },
+    {
+      "id": "endgame_先祖山",
+      "original_name": "先祖山",
+      "project_name": "先祖山·单机",
+      "level_requirement": "85级以上",
+      "entry_npc": "水晶宫—NPC支轩",
+      "entry_item": "",
+      "map_style": "副本地图",
+      "bosses": [
+        "先祖山",
+        "副本体验",
+        "BOSS多多",
+        "猥琐的制作者",
+        "污浊树妖",
+        "罗刹门",
+        "赤练蛇",
+        "如龙鲛",
+        "四臂巨灵",
+        "熔岩骨龙",
+        "白垩龙",
+        "黑魔龙",
+        "水魔大人"
+      ],
+      "drops": [
+        "-QQ自由幻想官方网站-腾讯游戏",
+        "Pager",
+        "上一页灵泽殿",
+        "下一页八仙东海战"
+      ],
+      "frequency": "简单、普通和英雄模式共用每天1次的免费副本进入次数，之后需要使用钥匙才可以继续进入。王者模式则不能享受每天的免费进入次数。",
+      "source_urls": [
+        "https://www.ffobaike.com/pworld/xianzushan.html"
+      ],
+      "local_paths": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "source_confidence": "partial",
+      "gaps": [
+        "entry_item"
+      ],
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "multiplayer_removed": true,
+        "frequency_rule": {
+          "mode": "source_text_structured",
+          "free_entries": null,
+          "extra_entry": "local_endgame_key",
+          "display": "简单、普通和英雄模式共用每天1次的免费副本进入次数，之后需要使用钥匙才可以继续进入。王者模式则不能享受每天的免费进入次数。"
+        },
+        "frequency_display": "简单、普通和英雄模式共用每天1次的免费副本进入次数，之后需要使用钥匙才可以继续进入。王者模式则不能享受每天的免费进入次数。",
+        "display_bosses": [
+          "先祖山",
+          "副本体验",
+          "BOSS多多",
+          "猥琐的制作者",
+          "污浊树妖",
+          "罗刹门",
+          "赤练蛇",
+          "如龙鲛"
+        ],
+        "display_rewards": [
+          "-QQ自由幻想官方网站-腾讯游戏"
+        ],
+        "reward_count_from_source": 4,
+        "source_terms_removed_count": 0,
+        "source_text_policy": "原始资料只作考据；运行 UI 不读取 drops 原文。"
+      }
+    },
+    {
+      "id": "endgame_八仙东海战",
+      "original_name": "八仙东海战",
+      "project_name": "八仙东海战·单机",
+      "level_requirement": "",
+      "entry_npc": "",
+      "entry_item": "",
+      "map_style": "",
+      "bosses": [],
+      "drops": [
+        "物品",
+        "图标",
+        "仙之碎片",
+        "[图片: 仙之碎片]",
+        "凤元九回灯*火图谱",
+        "[图片: 凤元九回灯*火图谱]",
+        "宿阙化云牌*火图谱",
+        "[图片: 宿阙化云牌*火图谱]",
+        "天穹剑印鼎*金图谱",
+        "[图片: 天穹剑印鼎*金图谱]",
+        "天龙护法印*金图谱",
+        "[图片: 天龙护法印*金图谱]",
+        "秘·五行法宝升级图谱",
+        "[图片: 秘·五行法宝升级图谱]",
+        "参考资料 ​",
+        "再续仙缘 情定幻想四周年 - QQ自由幻想官网",
+        "Pager",
+        "上一页先祖山",
+        "下一页妖皇府"
+      ],
+      "frequency": "",
+      "source_urls": [
+        "https://www.ffobaike.com/pworld/baxiandonghaizhan.html"
+      ],
+      "local_paths": [
+        "docs/reference/markdown/ffobaike_entity/pworld-baxiandonghaizhan.md"
+      ],
+      "source_confidence": "partial",
+      "gaps": [
+        "level_requirement",
+        "entry_npc",
+        "entry_item",
+        "map_style",
+        "map_image",
+        "bosses",
+        "boss_skills",
+        "boss_features",
+        "boss_images",
+        "frequency"
+      ],
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "multiplayer_removed": true,
+        "frequency_rule": {
+          "mode": "local_rule",
+          "free_entries": 1,
+          "extra_entry": "local_endgame_key",
+          "display": "单机挑战次数按本地日常规则配置"
+        },
+        "frequency_display": "单机挑战次数按本地日常规则配置",
+        "display_bosses": [
+          "八仙东海战"
+        ],
+        "display_rewards": [
+          "物品",
+          "仙之碎片",
+          "秘·五行法宝升级图谱"
+        ],
+        "reward_count_from_source": 19,
+        "source_terms_removed_count": 0,
+        "source_text_policy": "原始资料只作考据；运行 UI 不读取 drops 原文。"
+      }
+    },
+    {
+      "id": "endgame_妖皇府",
+      "original_name": "妖皇府",
+      "project_name": "妖皇府·单机",
+      "level_requirement": "35级以上",
+      "entry_npc": "无泪城—妖婢婵儿",
+      "entry_item": "",
+      "map_style": "妖皇府地图",
+      "bosses": [],
+      "drops": [
+        "琉璃石（绑），将胸针装备在各大主城的铁匠处花费金币进行拆解可以得到痴心石，1个痴心石+1个枭王石=1个琉璃石（不绑定）。枭王石在货架上有售。",
+        "风靡全球的片姐小吃 ​",
+        "施工中……",
+        "副本视频 ​",
+        "副本背景 ​",
+        "点击查看",
+        "原本司马卿家是朝中大官，因父亲犯密谋造反被全家满门抄斩，只剩他落荒而逃。无奈自己皮毛功夫还是被赶来的追兵杀死抛入河中，尸体漂到了清幽小径，无奈此处已不能还魂，游魂中被妖王后看中。 妖王后用尸合咒将司马卿的魂体重新注入在强化过的尸体中，自此，这孤魂便放弃了司马卿这个名字，他要妖王后下令，众人必须称其万妖皇……",
+        "痴心的妖王后一心爱着从人类变为妖鬼的美男子万妖皇，他说什么，她就要为他全力做到。而他，在拥有了妖鬼力量后，开始密谋自己复仇人间界的计划……",
+        "在人间界饱受妖鬼欺凌的时候，上天派众神将下凡助人战胜了万妖皇。不但战胜了万妖皇，还将妖鬼栖息之地妖域破坏的七零八落，妖兽四散而逃。这现如今，妖域威风不在，只剩下残力的妖王后和一心称霸人间万妖皇。",
+        "参考资料 ​",
+        "妖皇府-自由幻想官方网站-腾讯游戏",
+        "Pager",
+        "上一页八仙东海战",
+        "下一页昆仑雪"
+      ],
+      "frequency": "每周免费1次，钥匙额外1次（道具商人10金）",
+      "source_urls": [
+        "https://www.ffobaike.com/pworld/yaohuangfu.html"
+      ],
+      "local_paths": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "source_confidence": "partial",
+      "gaps": [
+        "entry_item",
+        "bosses",
+        "boss_skills",
+        "boss_features",
+        "boss_images"
+      ],
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "multiplayer_removed": true,
+        "frequency_rule": {
+          "mode": "source_text_structured",
+          "free_entries": null,
+          "extra_entry": "local_endgame_key",
+          "display": "每周免费1次，钥匙额外1次（道具商人10金）"
+        },
+        "frequency_display": "每周免费1次，钥匙额外1次（道具商人10金）",
+        "display_bosses": [
+          "妖皇府"
+        ],
+        "display_rewards": [
+          "风靡全球的片姐小吃",
+          "副本背景",
+          "妖皇府-自由幻想官方网站-腾讯游戏"
+        ],
+        "reward_count_from_source": 14,
+        "source_terms_removed_count": 0,
+        "source_text_policy": "原始资料只作考据；运行 UI 不读取 drops 原文。"
+      }
+    },
+    {
+      "id": "endgame_昆仑雪",
+      "original_name": "昆仑雪",
+      "project_name": "昆仑雪·单机",
+      "level_requirement": "80级以上",
+      "entry_npc": "无泪城—汉钟离",
+      "entry_item": "",
+      "map_style": "",
+      "bosses": [
+        "青鸟探路",
+        "昆仑雪"
+      ],
+      "drops": [
+        "的收集品跟昆仑装备大师交换。",
+        "昆仑装备大师",
+        "获得根据等级计算相应数值的宝石精华。轮回记忆碎片10个。",
+        "参考资料 ​",
+        "7谜幻想 - QQ自由幻想官方网站 - 腾讯游戏",
+        "7谜幻想 传说剧情 - QQ自由幻想官方网站 - 腾讯游戏",
+        "Pager",
+        "上一页妖皇府",
+        "下一页百晓生野外生存"
+      ],
+      "frequency": "每天免费1次、钥匙额外1次（货架200彩玉），普通版和英雄版共用次数",
+      "source_urls": [
+        "https://www.ffobaike.com/pworld/kunlunxue.html"
+      ],
+      "local_paths": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "source_confidence": "partial",
+      "gaps": [
+        "entry_item",
+        "map_style",
+        "map_image",
+        "boss_features"
+      ],
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "multiplayer_removed": true,
+        "frequency_rule": {
+          "mode": "daily",
+          "free_entries": 1,
+          "extra_entry": "local_endgame_key",
+          "display": "每天免费1次；单机钥匙可追加挑战"
+        },
+        "frequency_display": "每天免费1次；单机钥匙可追加挑战",
+        "display_bosses": [
+          "青鸟探路",
+          "昆仑雪"
+        ],
+        "display_rewards": [
+          "的收集品跟昆仑装备大师交换。",
+          "昆仑装备大师",
+          "7谜幻想 - QQ自由幻想官方网站 - 腾讯游戏",
+          "7谜幻想 传说剧情 - QQ自由幻想官方网站 - 腾讯游戏"
+        ],
+        "reward_count_from_source": 9,
+        "source_terms_removed_count": 0,
+        "source_text_policy": "原始资料只作考据；运行 UI 不读取 drops 原文。"
+      }
+    },
+    {
+      "id": "endgame_通天魔劫塔",
+      "original_name": "通天魔劫塔",
+      "project_name": "通天魔劫塔·单机",
+      "level_requirement": "30级以上",
+      "entry_npc": "龙城—裴头陀",
+      "entry_item": "",
+      "map_style": "",
+      "bosses": [
+        "通天魔劫塔"
+      ],
+      "drops": [
+        "玩家一件见习千幻项链或者见习千幻戒指（可组成套装）（根据人物等级随机赠与）。",
+        "副本视频 ​",
+        "参考资料 ​",
+        "QQ自由幻想1月22日全服停机更新公告",
+        "Pager",
+        "上一页百晓生野外生存",
+        "下一页宠物图鉴"
+      ],
+      "frequency": "每天免费1次",
+      "source_urls": [
+        "https://www.ffobaike.com/pworld/tongtianmojieta.html"
+      ],
+      "local_paths": [
+        "docs/reference/markdown/ffobaike_entity/pworld-tongtianmojieta.md"
+      ],
+      "source_confidence": "partial",
+      "gaps": [
+        "entry_item",
+        "map_style",
+        "map_image"
+      ],
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "multiplayer_removed": true,
+        "frequency_rule": {
+          "mode": "daily",
+          "free_entries": 1,
+          "extra_entry": "local_endgame_key",
+          "display": "每天免费1次；单机钥匙可追加挑战"
+        },
+        "frequency_display": "每天免费1次；单机钥匙可追加挑战",
+        "display_bosses": [
+          "通天魔劫塔"
+        ],
+        "display_rewards": [
+          "QQ自由幻想1月22日全服停机更新公告"
+        ],
+        "reward_count_from_source": 7,
+        "source_terms_removed_count": 0,
+        "source_text_policy": "原始资料只作考据；运行 UI 不读取 drops 原文。"
+      }
+    }
+  ],
+  "schema_version": "p3-agent-loop-02",
+  "runtime_policy": "records.*.drops/frequency 保留资料原文；游戏 UI 和玩法逻辑只能使用 single_player_runtime。"
+}

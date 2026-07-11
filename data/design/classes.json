@@ -1,0 +1,67 @@
+[
+  {
+    "id": "swordsman",
+    "name": "剑客",
+    "role": "近战防御",
+    "weapon": "剑/盾",
+    "attackInterval": 1.35,
+    "base": { "str": 8, "int": 3, "vit": 10, "agi": 5, "spi": 4 },
+    "autoPointPerLevel": { "str": 2, "int": 0, "agi": 1, "dex": 1.5, "vit": 4, "spi": 1.5 },
+    "growth": { "hp": 38, "mp": 8, "atk": 3.2, "matk": 0.8, "def": 2.4 },
+    "source_file": "docs/reference/markdown/official_deep/1_5_2.htm.md",
+    "source_confidence": "mixed",
+    "notes": "职业定位、武器、每级自动配点来自腾讯官方旧资料；attackInterval/base/growth 仍为当前单机战斗参数。"
+  },
+  {
+    "id": "warrior",
+    "name": "战士",
+    "role": "近战爆发",
+    "weapon": "长枪",
+    "attackInterval": 1.55,
+    "base": { "str": 11, "int": 2, "vit": 8, "agi": 5, "spi": 4 },
+    "autoPointPerLevel": { "str": 2, "int": 0, "agi": 1, "dex": 1, "vit": 5, "spi": 1 },
+    "growth": { "hp": 34, "mp": 7, "atk": 4.1, "matk": 0.5, "def": 1.8 },
+    "source_file": "docs/reference/markdown/official_deep/1_5_1.htm.md",
+    "source_confidence": "mixed",
+    "notes": "职业定位、武器、每级自动配点来自腾讯官方旧资料；attackInterval/base/growth 仍为当前单机战斗参数。"
+  },
+  {
+    "id": "assassin",
+    "name": "刺客",
+    "role": "高速连击",
+    "weapon": "双刃/暗器",
+    "attackInterval": 0.9,
+    "base": { "str": 8, "int": 3, "vit": 6, "agi": 11, "spi": 4 },
+    "autoPointPerLevel": { "str": 1, "int": 0, "agi": 3, "dex": 2, "vit": 3, "spi": 1 },
+    "growth": { "hp": 28, "mp": 9, "atk": 3.3, "matk": 0.8, "def": 1.4 },
+    "source_file": "docs/reference/markdown/official_deep/1_5_3.htm.md",
+    "source_confidence": "mixed",
+    "notes": "职业定位、武器、每级自动配点来自腾讯官方旧资料；attackInterval/base/growth 仍为当前单机战斗参数。"
+  },
+  {
+    "id": "medic",
+    "name": "药师",
+    "role": "治疗续航",
+    "weapon": "法杖",
+    "attackInterval": 1.25,
+    "base": { "str": 3, "int": 8, "vit": 7, "agi": 4, "spi": 10 },
+    "autoPointPerLevel": { "str": 1.5, "int": 1.5, "agi": 1, "dex": 1, "vit": 3, "spi": 2 },
+    "growth": { "hp": 30, "mp": 16, "atk": 1.0, "matk": 2.8, "def": 1.4 },
+    "source_file": "docs/reference/markdown/official_deep/1_5_5.htm.md",
+    "source_confidence": "mixed",
+    "notes": "职业定位、武器、每级自动配点来自腾讯官方旧资料；attackInterval/base/growth 仍为当前单机战斗参数。"
+  },
+  {
+    "id": "mage",
+    "name": "术士",
+    "role": "远程法术",
+    "weapon": "法杖",
+    "attackInterval": 1.4,
+    "base": { "str": 2, "int": 12, "vit": 5, "agi": 4, "spi": 9 },
+    "autoPointPerLevel": { "str": 0, "int": 2, "agi": 1, "dex": 1, "vit": 3, "spi": 3 },
+    "growth": { "hp": 24, "mp": 18, "atk": 0.7, "matk": 4.4, "def": 1.1 },
+    "source_file": "docs/reference/markdown/official_deep/1_5_4.htm.md",
+    "source_confidence": "mixed",
+    "notes": "职业定位、武器、每级自动配点来自腾讯官方旧资料；attackInterval/base/growth 仍为当前单机战斗参数。"
+  }
+]

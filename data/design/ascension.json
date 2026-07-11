@@ -1,0 +1,26 @@
+{
+  "source_confidence": "partial",
+  "source_files": [
+    "docs/prd/p3-feature-audit.md",
+    "docs/reference/markdown/official_deep/1_5_*.md"
+  ],
+  "stages": [
+    {
+      "id": "first_job",
+      "name": "转职",
+      "level_req": 20,
+      "implemented_in": "data/design/advancement.json"
+    },
+    {
+      "id": "ascension",
+      "name": "飞升",
+      "level_req": 80,
+      "project_rule": "P3阶段作为高阶突破入口；具体任务链待官方资料补齐。",
+      "gaps": [
+        "任务链",
+        "消耗",
+        "飞升技能"
+      ]
+    }
+  ]
+}

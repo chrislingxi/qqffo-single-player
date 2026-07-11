@@ -1,0 +1,2246 @@
+{
+  "schema_version": "p3-agent-loop-03",
+  "generated_from": "data/design/endgame_dungeons.json",
+  "policy": "从 endgame_dungeons 的运行安全字段拆出单机副本/BOSS/奖励组；不使用 raw drops 作为运行 UI。",
+  "dungeon_count": 9,
+  "boss_count": 59,
+  "dungeons": [
+    {
+      "id": "endgame_夜影村",
+      "original_name": "夜影村",
+      "project_name": "夜影村·单机",
+      "level_requirement": "70",
+      "entry_npc": "",
+      "frequency_rule": {
+        "mode": "local_rule",
+        "free_entries": 1,
+        "extra_entry": "local_endgame_key",
+        "display": "单机挑战次数按本地日常规则配置"
+      },
+      "boss_ids": [
+        "endgame_夜影村_boss_1_亡魂术士",
+        "endgame_夜影村_boss_2_亡魂剑客",
+        "endgame_夜影村_boss_3_幽灵恶狼",
+        "endgame_夜影村_boss_4_厄运之神",
+        "endgame_夜影村_boss_5_死神",
+        "endgame_夜影村_boss_6_凶灵王",
+        "endgame_夜影村_boss_7_堕灵王",
+        "endgame_夜影村_boss_8_漂浮的幽灵",
+        "endgame_夜影村_boss_9_游荡的幽灵",
+        "endgame_夜影村_boss_10_幽灵公主"
+      ],
+      "reward_groups": [
+        {
+          "id": "endgame_夜影村_equipment",
+          "type": "equipment_or_cosmetic",
+          "items": [
+            "装备",
+            "鬼怪术士",
+            "子龙帽",
+            "穿山之风",
+            "啸海帽",
+            "天苍之风",
+            "穿山帽",
+            "定海之风",
+            "天苍帽",
+            "子龙之风",
+            "定海冠",
+            "啸海之风",
+            "轻灵+1",
+            "闪灵+1",
+            "冲击+1",
+            "魔能+1"
+          ],
+          "source_confidence": "partial"
+        }
+      ],
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_directory": "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun",
+      "gaps": [
+        "entry_npc",
+        "entry_item",
+        "frequency"
+      ]
+    },
+    {
+      "id": "endgame_迷雾沼泽",
+      "original_name": "迷雾沼泽",
+      "project_name": "迷雾沼泽·单机",
+      "level_requirement": "73级以上",
+      "entry_npc": "银月湖—NPC紫轩（199，113）",
+      "frequency_rule": {
+        "mode": "daily",
+        "free_entries": 1,
+        "extra_entry": "local_endgame_key",
+        "display": "每天免费1次；单机钥匙可追加挑战"
+      },
+      "boss_ids": [
+        "endgame_迷雾沼泽_boss_1_水魔侍犬",
+        "endgame_迷雾沼泽_boss_2_藤蔓公主",
+        "endgame_迷雾沼泽_boss_3_影龙",
+        "endgame_迷雾沼泽_boss_4_水魔"
+      ],
+      "reward_groups": [
+        {
+          "id": "endgame_迷雾沼泽_materials",
+          "type": "materials",
+          "items": [
+            "朱雀碎片",
+            "图谱·朱雀之戒",
+            "终极衣之魂",
+            "荣光宝石",
+            "破魂·朱雀（战士）",
+            "破魂翼·朱雀",
+            "破魂顏·朱雀",
+            "破魂环·朱雀",
+            "破魂坠·朱雀"
+          ],
+          "source_confidence": "partial"
+        },
+        {
+          "id": "endgame_迷雾沼泽_equipment",
+          "type": "equipment_or_cosmetic",
+          "items": [
+            "冲击+1",
+            "闪灵+1",
+            "轻灵+1",
+            "魔能+1",
+            "羽族仙子幻化书",
+            "朱雀套装",
+            "擎力·朱雀（剑客）",
+            "擎力翼·朱雀"
+          ],
+          "source_confidence": "partial"
+        }
+      ],
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-miwuzhaoze.md"
+      ],
+      "asset_directory": "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-miwuzhaoze",
+      "gaps": [
+        "entry_item"
+      ]
+    },
+    {
+      "id": "endgame_冰火双螺",
+      "original_name": "冰火双螺",
+      "project_name": "冰火双螺·单机",
+      "level_requirement": "78级以上（含78级）",
+      "entry_npc": "人鱼之乡—水姬岚裳",
+      "frequency_rule": {
+        "mode": "local_rule",
+        "free_entries": 1,
+        "extra_entry": "local_endgame_key",
+        "display": "单机挑战次数按本地日常规则配置"
+      },
+      "boss_ids": [
+        "endgame_冰火双螺_boss_1_妖喉莲姬",
+        "endgame_冰火双螺_boss_2_冰火幽冥兽",
+        "endgame_冰火双螺_boss_3_珊瑚妖-寂",
+        "endgame_冰火双螺_boss_4_夺喉鱼人",
+        "endgame_冰火双螺_boss_5_珊瑚妖-静"
+      ],
+      "reward_groups": [
+        {
+          "id": "endgame_冰火双螺_materials",
+          "type": "materials",
+          "items": [
+            "荣光宝石",
+            "终极戒之魂",
+            "终极衣之魂"
+          ],
+          "source_confidence": "partial"
+        },
+        {
+          "id": "endgame_冰火双螺_equipment",
+          "type": "equipment_or_cosmetic",
+          "items": [
+            "背包）",
+            "各种珍贵卡片",
+            "珊瑚妖·寂",
+            "夺喉鱼人",
+            "恶魔怪物，各项防御较高",
+            "幻神可对此怪物造成额外的恶魔伤害",
+            "珊瑚妖·静",
+            "副本中的BOSS 冰火幽冥兽 为隐藏BOSS。",
+            "78级副本：冰火双螺-QQ自由幻想"
+          ],
+          "source_confidence": "partial"
+        }
+      ],
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-binghuoshuangluo.md"
+      ],
+      "asset_directory": "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-binghuoshuangluo",
+      "gaps": [
+        "entry_item",
+        "frequency"
+      ]
+    },
+    {
+      "id": "endgame_灵泽殿",
+      "original_name": "灵泽殿",
+      "project_name": "灵泽殿·单机",
+      "level_requirement": "unknown",
+      "entry_npc": "",
+      "frequency_rule": {
+        "mode": "local_rule",
+        "free_entries": 1,
+        "extra_entry": "local_endgame_key",
+        "display": "单机挑战次数按本地日常规则配置"
+      },
+      "boss_ids": [
+        "endgame_灵泽殿_boss_1_蛟龙神",
+        "endgame_灵泽殿_boss_2_双头恶蛟"
+      ],
+      "reward_groups": [
+        {
+          "id": "endgame_灵泽殿_equipment",
+          "type": "equipment_or_cosmetic",
+          "items": [
+            "副本分一般难度和英雄级难度。",
+            "古语云，蛟者无角龙也。"
+          ],
+          "source_confidence": "partial"
+        }
+      ],
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-lingzedian.md"
+      ],
+      "asset_directory": "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-lingzedian",
+      "gaps": [
+        "level_requirement",
+        "entry_npc",
+        "entry_item",
+        "bosses",
+        "boss_skills",
+        "boss_features",
+        "boss_images",
+        "frequency",
+        "本地未找到实体图片目录，BOSS 名称来自结构化审计，掉落表/召唤条件待补"
+      ]
+    },
+    {
+      "id": "endgame_先祖山",
+      "original_name": "先祖山",
+      "project_name": "先祖山·单机",
+      "level_requirement": "85级以上",
+      "entry_npc": "水晶宫—NPC支轩",
+      "frequency_rule": {
+        "mode": "source_text_structured",
+        "free_entries": null,
+        "extra_entry": "local_endgame_key",
+        "display": "简单、普通和英雄模式共用每天1次的免费副本进入次数，之后需要使用钥匙才可以继续进入。王者模式则不能享受每天的免费进入次数。"
+      },
+      "boss_ids": [
+        "endgame_先祖山_boss_1_污浊树妖",
+        "endgame_先祖山_boss_2_罗刹门",
+        "endgame_先祖山_boss_3_赤练蛇",
+        "endgame_先祖山_boss_4_如龙鲛",
+        "endgame_先祖山_boss_5_四臂巨灵",
+        "endgame_先祖山_boss_6_熔岩骨龙",
+        "endgame_先祖山_boss_7_白垩龙",
+        "endgame_先祖山_boss_8_黑魔龙",
+        "endgame_先祖山_boss_9_真-黑魔龙王",
+        "endgame_先祖山_boss_10_水魔大人",
+        "endgame_先祖山_boss_11_真-白垩龙王"
+      ],
+      "reward_groups": [
+        {
+          "id": "endgame_先祖山_equipment",
+          "type": "equipment_or_cosmetic",
+          "items": [
+            "-QQ自由幻想官方网站-腾讯游戏"
+          ],
+          "source_confidence": "partial"
+        }
+      ],
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_directory": "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan",
+      "gaps": [
+        "entry_item"
+      ]
+    },
+    {
+      "id": "endgame_八仙东海战",
+      "original_name": "八仙东海战",
+      "project_name": "八仙东海战·单机",
+      "level_requirement": "unknown",
+      "entry_npc": "",
+      "frequency_rule": {
+        "mode": "local_rule",
+        "free_entries": 1,
+        "extra_entry": "local_endgame_key",
+        "display": "单机挑战次数按本地日常规则配置"
+      },
+      "boss_ids": [
+        "endgame_八仙东海战_boss_1_王母",
+        "endgame_八仙东海战_boss_2_龙子",
+        "endgame_八仙东海战_boss_3_龙女"
+      ],
+      "reward_groups": [
+        {
+          "id": "endgame_八仙东海战_materials",
+          "type": "materials",
+          "items": [
+            "仙之碎片",
+            "秘·五行法宝升级图谱"
+          ],
+          "source_confidence": "partial"
+        },
+        {
+          "id": "endgame_八仙东海战_equipment",
+          "type": "equipment_or_cosmetic",
+          "items": [
+            "物品"
+          ],
+          "source_confidence": "partial"
+        }
+      ],
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-baxiandonghaizhan.md"
+      ],
+      "asset_directory": "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-baxiandonghaizhan",
+      "gaps": [
+        "level_requirement",
+        "entry_npc",
+        "entry_item",
+        "map_style",
+        "map_image",
+        "bosses",
+        "boss_skills",
+        "boss_features",
+        "boss_images",
+        "frequency"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府",
+      "original_name": "妖皇府",
+      "project_name": "妖皇府·单机",
+      "level_requirement": "35级以上",
+      "entry_npc": "无泪城—妖婢婵儿",
+      "frequency_rule": {
+        "mode": "source_text_structured",
+        "free_entries": null,
+        "extra_entry": "local_endgame_key",
+        "display": "每周免费1次，钥匙额外1次（道具商人10金）"
+      },
+      "boss_ids": [
+        "endgame_妖皇府_boss_1_钢拳",
+        "endgame_妖皇府_boss_2_利爪",
+        "endgame_妖皇府_boss_3_鬼影",
+        "endgame_妖皇府_boss_4_玄冥将军",
+        "endgame_妖皇府_boss_5_妖皇分身",
+        "endgame_妖皇府_boss_6_妖皇枪骑兵",
+        "endgame_妖皇府_boss_7_飞龙巫术者",
+        "endgame_妖皇府_boss_8_蝎精侍女",
+        "endgame_妖皇府_boss_9_狐妖侍女",
+        "endgame_妖皇府_boss_10_督鸦巡卫",
+        "endgame_妖皇府_boss_11_暗袭人",
+        "endgame_妖皇府_boss_12_卑卢王",
+        "endgame_妖皇府_boss_13_卑擎王",
+        "endgame_妖皇府_boss_14_妖王后",
+        "endgame_妖皇府_boss_15_万妖皇"
+      ],
+      "reward_groups": [
+        {
+          "id": "endgame_妖皇府_equipment",
+          "type": "equipment_or_cosmetic",
+          "items": [
+            "风靡全球的片姐小吃",
+            "副本背景",
+            "妖皇府-自由幻想官方网站-腾讯游戏"
+          ],
+          "source_confidence": "partial"
+        }
+      ],
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_directory": "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu",
+      "gaps": [
+        "entry_item",
+        "bosses",
+        "boss_skills",
+        "boss_features",
+        "boss_images"
+      ]
+    },
+    {
+      "id": "endgame_昆仑雪",
+      "original_name": "昆仑雪",
+      "project_name": "昆仑雪·单机",
+      "level_requirement": "80级以上",
+      "entry_npc": "无泪城—汉钟离",
+      "frequency_rule": {
+        "mode": "daily",
+        "free_entries": 1,
+        "extra_entry": "local_endgame_key",
+        "display": "每天免费1次；单机钥匙可追加挑战"
+      },
+      "boss_ids": [
+        "endgame_昆仑雪_boss_1_青鸟探路",
+        "endgame_昆仑雪_boss_2_首领雪狼之主",
+        "endgame_昆仑雪_boss_3_首领毒龙",
+        "endgame_昆仑雪_boss_4_妖母",
+        "endgame_昆仑雪_boss_5_首领火窟盗君",
+        "endgame_昆仑雪_boss_6_三圣兽朱雀",
+        "endgame_昆仑雪_boss_7_三圣兽玄武",
+        "endgame_昆仑雪_boss_8_三圣兽青龙"
+      ],
+      "reward_groups": [
+        {
+          "id": "endgame_昆仑雪_equipment",
+          "type": "equipment_or_cosmetic",
+          "items": [
+            "的收集品跟昆仑装备大师交换。",
+            "昆仑装备大师",
+            "7谜幻想 - QQ自由幻想官方网站 - 腾讯游戏",
+            "7谜幻想 传说剧情 - QQ自由幻想官方网站 - 腾讯游戏"
+          ],
+          "source_confidence": "partial"
+        }
+      ],
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_directory": "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-kunlunxue",
+      "gaps": [
+        "entry_item",
+        "map_style",
+        "map_image",
+        "boss_features",
+        "本地图片目录只含青鸟探路/昆仑雪，其他首领名称来自结构化审计，图片待补"
+      ]
+    },
+    {
+      "id": "endgame_通天魔劫塔",
+      "original_name": "通天魔劫塔",
+      "project_name": "通天魔劫塔·单机",
+      "level_requirement": "30级以上",
+      "entry_npc": "龙城—裴头陀",
+      "frequency_rule": {
+        "mode": "daily",
+        "free_entries": 1,
+        "extra_entry": "local_endgame_key",
+        "display": "每天免费1次；单机钥匙可追加挑战"
+      },
+      "boss_ids": [
+        "endgame_通天魔劫塔_boss_1_通天魔劫塔守关BOSS"
+      ],
+      "reward_groups": [
+        {
+          "id": "endgame_通天魔劫塔_equipment",
+          "type": "equipment_or_cosmetic",
+          "items": [
+            "QQ自由幻想1月22日全服停机更新公告"
+          ],
+          "source_confidence": "partial"
+        }
+      ],
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-tongtianmojieta.md"
+      ],
+      "asset_directory": "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-tongtianmojieta",
+      "gaps": [
+        "entry_item",
+        "map_style",
+        "map_image",
+        "本地资料确认30层与300秒限时，但逐层BOSS名单待补，当前仅保留守关BOSS占位"
+      ]
+    }
+  ],
+  "bosses": [
+    {
+      "id": "endgame_夜影村_boss_1_亡魂术士",
+      "dungeon_id": "endgame_夜影村",
+      "original_name": "亡魂术士",
+      "project_name": "亡魂术士·单机",
+      "type": "elite",
+      "role": "elite",
+      "level_requirement": "70",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/003-亡魂术士-9918d87b5c.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_夜影村_boss_2_亡魂剑客",
+      "dungeon_id": "endgame_夜影村",
+      "original_name": "亡魂剑客",
+      "project_name": "亡魂剑客·单机",
+      "type": "elite",
+      "role": "elite",
+      "level_requirement": "70",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/004-亡魂剑客-5502c446d3.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_夜影村_boss_3_幽灵恶狼",
+      "dungeon_id": "endgame_夜影村",
+      "original_name": "幽灵恶狼",
+      "project_name": "幽灵恶狼·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "70",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/006-幽灵恶狼-9bbcd239ad.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_夜影村_boss_4_厄运之神",
+      "dungeon_id": "endgame_夜影村",
+      "original_name": "厄运之神",
+      "project_name": "厄运之神·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "70",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/007-厄运之神-ecd732e0e1.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_夜影村_boss_5_死神",
+      "dungeon_id": "endgame_夜影村",
+      "original_name": "死神",
+      "project_name": "死神·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "70",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/008-死神-95ba5977e4.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_夜影村_boss_6_凶灵王",
+      "dungeon_id": "endgame_夜影村",
+      "original_name": "凶灵王",
+      "project_name": "凶灵王·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "70",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/009-凶灵王-453884e232.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_夜影村_boss_7_堕灵王",
+      "dungeon_id": "endgame_夜影村",
+      "original_name": "堕灵王",
+      "project_name": "堕灵王·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "70",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/011-堕灵王-7fb0bc1a1d.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_夜影村_boss_8_漂浮的幽灵",
+      "dungeon_id": "endgame_夜影村",
+      "original_name": "漂浮的幽灵",
+      "project_name": "漂浮的幽灵·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "70",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/012-漂浮的幽灵-1f07d73ba3.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_夜影村_boss_9_游荡的幽灵",
+      "dungeon_id": "endgame_夜影村",
+      "original_name": "游荡的幽灵",
+      "project_name": "游荡的幽灵·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "70",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/013-游荡的幽灵-1f07d73ba3.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_夜影村_boss_10_幽灵公主",
+      "dungeon_id": "endgame_夜影村",
+      "original_name": "幽灵公主",
+      "project_name": "幽灵公主·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "70",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/015-幽灵公主-6b1a4377f1.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_迷雾沼泽_boss_1_水魔侍犬",
+      "dungeon_id": "endgame_迷雾沼泽",
+      "original_name": "水魔侍犬",
+      "project_name": "水魔侍犬·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "73级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "daily_entry_or_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-miwuzhaoze.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-miwuzhaoze/002-水魔侍犬-19f59e0cf5.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_迷雾沼泽_boss_2_藤蔓公主",
+      "dungeon_id": "endgame_迷雾沼泽",
+      "original_name": "藤蔓公主",
+      "project_name": "藤蔓公主·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "73级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "daily_entry_or_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-miwuzhaoze.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-miwuzhaoze/021-藤蔓公主-f85bd8bc2a.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_迷雾沼泽_boss_3_影龙",
+      "dungeon_id": "endgame_迷雾沼泽",
+      "original_name": "影龙",
+      "project_name": "影龙·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "73级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "daily_entry_or_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-miwuzhaoze.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-miwuzhaoze/032-影龙-d58dcd3166.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_迷雾沼泽_boss_4_水魔",
+      "dungeon_id": "endgame_迷雾沼泽",
+      "original_name": "水魔",
+      "project_name": "水魔·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "73级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "daily_entry_or_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-miwuzhaoze.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-miwuzhaoze/042-水魔-c5fbaffc2a.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_冰火双螺_boss_1_妖喉莲姬",
+      "dungeon_id": "endgame_冰火双螺",
+      "original_name": "妖喉莲姬",
+      "project_name": "妖喉莲姬·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "78级以上（含78级）",
+      "mechanics": [
+        "hidden_boss_condition",
+        "high_physical_defense",
+        "high_magic_defense",
+        "demon_damage_bonus"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-binghuoshuangluo.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-binghuoshuangluo/002-妖喉莲姬-7c5935cf18.gif"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_冰火双螺_boss_2_冰火幽冥兽",
+      "dungeon_id": "endgame_冰火双螺",
+      "original_name": "冰火幽冥兽",
+      "project_name": "冰火幽冥兽·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "78级以上（含78级）",
+      "mechanics": [
+        "hidden_boss_condition",
+        "high_physical_defense",
+        "high_magic_defense",
+        "demon_damage_bonus"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-binghuoshuangluo.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-binghuoshuangluo/003-冰火幽冥兽-656aabb52a.gif"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_冰火双螺_boss_3_珊瑚妖-寂",
+      "dungeon_id": "endgame_冰火双螺",
+      "original_name": "珊瑚妖-寂",
+      "project_name": "珊瑚妖-寂·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "78级以上（含78级）",
+      "mechanics": [
+        "hidden_boss_condition",
+        "high_physical_defense",
+        "high_magic_defense",
+        "demon_damage_bonus"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-binghuoshuangluo.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-binghuoshuangluo/004-珊瑚妖-寂-92d4ef6600.gif"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_冰火双螺_boss_4_夺喉鱼人",
+      "dungeon_id": "endgame_冰火双螺",
+      "original_name": "夺喉鱼人",
+      "project_name": "夺喉鱼人·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "78级以上（含78级）",
+      "mechanics": [
+        "hidden_boss_condition",
+        "high_physical_defense",
+        "high_magic_defense",
+        "demon_damage_bonus"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-binghuoshuangluo.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-binghuoshuangluo/005-夺喉鱼人-c4ea3e36a6.gif"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_冰火双螺_boss_5_珊瑚妖-静",
+      "dungeon_id": "endgame_冰火双螺",
+      "original_name": "珊瑚妖-静",
+      "project_name": "珊瑚妖-静·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "78级以上（含78级）",
+      "mechanics": [
+        "hidden_boss_condition",
+        "high_physical_defense",
+        "high_magic_defense",
+        "demon_damage_bonus"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-binghuoshuangluo.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-binghuoshuangluo/006-珊瑚妖-静-2d629cca3c.gif"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_灵泽殿_boss_1_蛟龙神",
+      "dungeon_id": "endgame_灵泽殿",
+      "original_name": "蛟龙神",
+      "project_name": "蛟龙神·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "unknown",
+      "mechanics": [
+        "hidden_boss_condition",
+        "summon_disabled_or_single_player_adjusted"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-lingzedian.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "endgame_灵泽殿_boss_2_双头恶蛟",
+      "dungeon_id": "endgame_灵泽殿",
+      "original_name": "双头恶蛟",
+      "project_name": "双头恶蛟·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "unknown",
+      "mechanics": [
+        "hidden_boss_condition",
+        "summon_disabled_or_single_player_adjusted"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-lingzedian.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "endgame_先祖山_boss_1_污浊树妖",
+      "dungeon_id": "endgame_先祖山",
+      "original_name": "污浊树妖",
+      "project_name": "污浊树妖·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "85级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/007-污浊树妖-53ea52a05f.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_先祖山_boss_2_罗刹门",
+      "dungeon_id": "endgame_先祖山",
+      "original_name": "罗刹门",
+      "project_name": "罗刹门·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "85级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/008-罗刹门-71e6da4612.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_先祖山_boss_3_赤练蛇",
+      "dungeon_id": "endgame_先祖山",
+      "original_name": "赤练蛇",
+      "project_name": "赤练蛇·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "85级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/009-赤练蛇-b4e7ef8ed3.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_先祖山_boss_4_如龙鲛",
+      "dungeon_id": "endgame_先祖山",
+      "original_name": "如龙鲛",
+      "project_name": "如龙鲛·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "85级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/010-如龙鲛-706af9edb0.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_先祖山_boss_5_四臂巨灵",
+      "dungeon_id": "endgame_先祖山",
+      "original_name": "四臂巨灵",
+      "project_name": "四臂巨灵·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "85级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/011-四臂巨灵-b2331f82e0.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_先祖山_boss_6_熔岩骨龙",
+      "dungeon_id": "endgame_先祖山",
+      "original_name": "熔岩骨龙",
+      "project_name": "熔岩骨龙·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "85级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/012-熔岩骨龙-52a9efd21c.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_先祖山_boss_7_白垩龙",
+      "dungeon_id": "endgame_先祖山",
+      "original_name": "白垩龙",
+      "project_name": "白垩龙·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "85级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/013-白垩龙-fcd8661a25.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_先祖山_boss_8_黑魔龙",
+      "dungeon_id": "endgame_先祖山",
+      "original_name": "黑魔龙",
+      "project_name": "黑魔龙·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "85级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/014-黑魔龙-2720dc44da.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_先祖山_boss_9_真-黑魔龙王",
+      "dungeon_id": "endgame_先祖山",
+      "original_name": "真-黑魔龙王",
+      "project_name": "真-黑魔龙王·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "85级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/016-真-黑魔龙王-72f869ec62.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_先祖山_boss_10_水魔大人",
+      "dungeon_id": "endgame_先祖山",
+      "original_name": "水魔大人",
+      "project_name": "水魔大人·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "85级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/017-水魔大人-3cc7926a30.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_先祖山_boss_11_真-白垩龙王",
+      "dungeon_id": "endgame_先祖山",
+      "original_name": "真-白垩龙王",
+      "project_name": "真-白垩龙王·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "85级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/018-真-白垩龙王-5fde9ecd9a.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_八仙东海战_boss_1_王母",
+      "dungeon_id": "endgame_八仙东海战",
+      "original_name": "王母",
+      "project_name": "王母·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "unknown",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-baxiandonghaizhan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-baxiandonghaizhan/005-王母-b616f282f7.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_八仙东海战_boss_2_龙子",
+      "dungeon_id": "endgame_八仙东海战",
+      "original_name": "龙子",
+      "project_name": "龙子·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "unknown",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-baxiandonghaizhan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-baxiandonghaizhan/027-龙子-09deca8f1a.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_八仙东海战_boss_3_龙女",
+      "dungeon_id": "endgame_八仙东海战",
+      "original_name": "龙女",
+      "project_name": "龙女·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "unknown",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-baxiandonghaizhan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-baxiandonghaizhan/028-龙女-3e83ea37c0.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_1_钢拳",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "钢拳",
+      "project_name": "钢拳·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/008-钢拳-a005b6a7f3.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_2_利爪",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "利爪",
+      "project_name": "利爪·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/009-利爪-d09ee85780.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_3_鬼影",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "鬼影",
+      "project_name": "鬼影·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/010-鬼影-c5cad3a70e.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_4_玄冥将军",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "玄冥将军",
+      "project_name": "玄冥将军·单机",
+      "type": "elite",
+      "role": "elite",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/011-玄冥将军-6bc83f311e.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_5_妖皇分身",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "妖皇分身",
+      "project_name": "妖皇分身·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/012-妖皇分身-b43f8bc2f0.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_6_妖皇枪骑兵",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "妖皇枪骑兵",
+      "project_name": "妖皇枪骑兵·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/013-妖皇枪骑兵-ac9d40ae2f.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_7_飞龙巫术者",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "飞龙巫术者",
+      "project_name": "飞龙巫术者·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/014-飞龙巫术者-9aeb41becb.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_8_蝎精侍女",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "蝎精侍女",
+      "project_name": "蝎精侍女·单机",
+      "type": "elite",
+      "role": "elite",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/015-蝎精侍女-2bfdf881a1.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_9_狐妖侍女",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "狐妖侍女",
+      "project_name": "狐妖侍女·单机",
+      "type": "elite",
+      "role": "elite",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/016-狐妖侍女-c3ef32645b.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_10_督鸦巡卫",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "督鸦巡卫",
+      "project_name": "督鸦巡卫·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/017-督鸦巡卫-dd051f3376.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_11_暗袭人",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "暗袭人",
+      "project_name": "暗袭人·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/018-暗袭人-478a9e0f0e.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_12_卑卢王",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "卑卢王",
+      "project_name": "卑卢王·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/019-卑卢王-5dd9e5bc28.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_13_卑擎王",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "卑擎王",
+      "project_name": "卑擎王·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/020-卑擎王-b21eaea5da.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_14_妖王后",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "妖王后",
+      "project_name": "妖王后·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/022-妖王后-e636ce8369.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_妖皇府_boss_15_万妖皇",
+      "dungeon_id": "endgame_妖皇府",
+      "original_name": "万妖皇",
+      "project_name": "万妖皇·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "35级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "local_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/023-万妖皇-a877c2163d.webp"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_昆仑雪_boss_1_青鸟探路",
+      "dungeon_id": "endgame_昆仑雪",
+      "original_name": "青鸟探路",
+      "project_name": "青鸟探路·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "80级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "daily_entry_or_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-kunlunxue/001-青鸟探路-2ff1eeaa56.png"
+      ],
+      "source_confidence": "confirmed",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "endgame_昆仑雪_boss_2_首领雪狼之主",
+      "dungeon_id": "endgame_昆仑雪",
+      "original_name": "首领雪狼之主",
+      "project_name": "首领雪狼之主·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "80级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "daily_entry_or_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "endgame_昆仑雪_boss_3_首领毒龙",
+      "dungeon_id": "endgame_昆仑雪",
+      "original_name": "首领毒龙",
+      "project_name": "首领毒龙·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "80级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "daily_entry_or_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "endgame_昆仑雪_boss_4_妖母",
+      "dungeon_id": "endgame_昆仑雪",
+      "original_name": "妖母",
+      "project_name": "妖母·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "80级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "daily_entry_or_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "endgame_昆仑雪_boss_5_首领火窟盗君",
+      "dungeon_id": "endgame_昆仑雪",
+      "original_name": "首领火窟盗君",
+      "project_name": "首领火窟盗君·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "80级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "daily_entry_or_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "endgame_昆仑雪_boss_6_三圣兽朱雀",
+      "dungeon_id": "endgame_昆仑雪",
+      "original_name": "三圣兽朱雀",
+      "project_name": "三圣兽朱雀·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "80级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "daily_entry_or_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "endgame_昆仑雪_boss_7_三圣兽玄武",
+      "dungeon_id": "endgame_昆仑雪",
+      "original_name": "三圣兽玄武",
+      "project_name": "三圣兽玄武·单机",
+      "type": "encounter",
+      "role": "encounter",
+      "level_requirement": "80级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "daily_entry_or_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "endgame_昆仑雪_boss_8_三圣兽青龙",
+      "dungeon_id": "endgame_昆仑雪",
+      "original_name": "三圣兽青龙",
+      "project_name": "三圣兽青龙·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "80级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "daily_entry_or_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "endgame_通天魔劫塔_boss_1_通天魔劫塔守关BOSS",
+      "dungeon_id": "endgame_通天魔劫塔",
+      "original_name": "通天魔劫塔守关BOSS",
+      "project_name": "通天魔劫塔守关BOSS·单机",
+      "type": "boss",
+      "role": "boss",
+      "level_requirement": "30级以上",
+      "mechanics": [
+        "solo_dps_check"
+      ],
+      "single_player_rules": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "auto_battle_supported": true,
+        "fail_condition": "daily_entry_or_revive_limit"
+      },
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-tongtianmojieta.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "system": "龙翼秘宝",
+  "source_confidence": "partial",
+  "source_files": [
+    "docs/reference/markdown/ffobaike_entity/system-longyi.md"
+  ],
+  "single_player_adaptation": "保留成长与属性追求，剔除交易、排行、多人依赖；材料来源转化为单人副本/日常/挂机循环。",
+  "status": "wiki_rules_structured",
+  "levels": [
+    {
+      "level": 1,
+      "materials": [],
+      "rewards": [],
+      "source_confidence": "schema_placeholder"
+    }
+  ],
+  "rewards": [],
+  "materials": [],
+  "gaps": [
+    "单机掉落率",
+    "完整加工石材料来源"
+  ],
+  "schema_version": "p3-loop1",
+  "single_player_sources": [
+    "高阶副本",
+    "日常",
+    "挂机刷怪"
+  ],
+  "equip_requirements": {
+    "reputation_gt": 6000,
+    "physical": {
+      "strength_gt": 600,
+      "constitution_gt": 500
+    },
+    "magical": {
+      "wisdom_gt": 600,
+      "constitution_gt": 500
+    }
+  },
+  "processing": {
+    "max_level": 10,
+    "formula": "龙翼法宝灵韵*3 + 加工石*10",
+    "failure_downgrade": false,
+    "hidden_property": "加工成功或失败后有几率产生最大生命+50",
+    "success_rates": [
+      [
+        "0->1",
+        50
+      ],
+      [
+        "1->2",
+        50
+      ],
+      [
+        "2->3",
+        50
+      ],
+      [
+        "3->4",
+        50
+      ],
+      [
+        "4->5",
+        50
+      ],
+      [
+        "5->6",
+        30
+      ],
+      [
+        "6->7",
+        30
+      ],
+      [
+        "7->8",
+        30
+      ],
+      [
+        "8->9",
+        30
+      ],
+      [
+        "9->10",
+        30
+      ]
+    ]
+  },
+  "strengthen": {
+    "formula": "困龙渊宝石*3 + 困龙泪*1",
+    "failure_can_reduce_attribute": true,
+    "rows": [
+      {
+        "attributes": [
+          "攻击",
+          "魔法攻击"
+        ],
+        "success_effect": "+1/2/3",
+        "success_rate": "50%",
+        "fail_effect": "-1/2",
+        "fail_rate": "50%"
+      },
+      {
+        "attributes": [
+          "韧性等级",
+          "坚定等级",
+          "防御",
+          "魔法防御"
+        ],
+        "success_effect": "+1/2",
+        "success_rate": "40%",
+        "fail_effect": "-1/2",
+        "fail_rate": "60%"
+      },
+      {
+        "attributes": [
+          "最终命中率",
+          "最终回避率"
+        ],
+        "success_effect": "+1",
+        "success_rate": "20%",
+        "fail_effect": "-1/2/3",
+        "fail_rate": "80%"
+      },
+      {
+        "attributes": [
+          "对昏迷免疫"
+        ],
+        "success_effect": "+1%",
+        "success_rate": "20%",
+        "fail_effect": "-1%/2%/3%",
+        "fail_rate": "80%"
+      },
+      {
+        "attributes": [
+          "最大生命"
+        ],
+        "success_effect": "+25",
+        "success_rate": "20%",
+        "fail_effect": "-25/50/75",
+        "fail_rate": "80%"
+      },
+      {
+        "attributes": [
+          "技能暴击率"
+        ],
+        "success_effect": "+100",
+        "success_rate": "20%",
+        "fail_effect": "-100/200/300",
+        "fail_rate": "80%"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "自由幻想单机",
+  "short_name": "幻想单机",
+  "description": "QQ自由幻想精神复刻，本地 iPhone 单人自玩版。",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#17140f",
+  "theme_color": "#17140f",
+  "icons": [
+    {
+      "src": "assets/pwa/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/pwa/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

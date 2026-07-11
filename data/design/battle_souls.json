@@ -1,0 +1,31 @@
+{
+  "system": "战魂",
+  "source_confidence": "uncertain",
+  "source_files": [
+    "docs/reference/raw/p3_official_supplement/ffo.qq.com_gicp_news_814_18713379.html.html"
+  ],
+  "single_player_adaptation": "保留成长与属性追求，剔除交易、排行、多人依赖；材料来源转化为单人副本/日常/挂机循环。",
+  "status": "needs_official_supplement",
+  "levels": [
+    {
+      "level": 1,
+      "materials": [],
+      "rewards": [],
+      "source_confidence": "schema_placeholder"
+    }
+  ],
+  "rewards": [],
+  "materials": [],
+  "gaps": [
+    "槽位",
+    "品质",
+    "升级",
+    "套装效果"
+  ],
+  "schema_version": "p3-loop1",
+  "single_player_sources": [
+    "高阶副本",
+    "日常",
+    "挂机刷怪"
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  { "id": "small_hp", "name": "小瓶红药", "original_name": "生命药水", "type": "consumable", "effect": { "hp": 260 }, "price": 20, "source_confidence": "inferred" },
+  { "id": "small_mp", "name": "小瓶蓝药", "original_name": "魔法药水", "type": "consumable", "effect": { "mp": 180 }, "price": 24, "source_confidence": "inferred" },
+  { "id": "rabbit_fur", "name": "兔毛", "original_name": "兔毛", "type": "collectible", "price": 6, "source_file": "docs/reference/markdown/official_deep/2_4_1.htm.md", "source_confidence": "official" },
+  { "id": "white_rabbit_fur", "name": "洁白的兔毛", "original_name": "洁白的兔毛", "type": "collectible", "price": 10, "source_file": "docs/reference/markdown/official_deep/2_4_2.htm.md", "source_confidence": "official" },
+  { "id": "snail_shell", "name": "蜗牛壳", "original_name": "蜗牛壳", "type": "collectible", "price": 5, "source_file": "docs/reference/markdown/official_deep/7_3.htm.md", "source_confidence": "official" },
+  { "id": "bird_beak", "name": "步行鸟嘴", "original_name": "步行鸟嘴", "type": "collectible", "price": 7, "source_file": "docs/reference/markdown/official_deep/7_3.htm.md", "source_confidence": "official" },
+  { "id": "flower_petal", "name": "花瓣", "original_name": "花瓣", "type": "collectible", "price": 8, "source_file": "docs/reference/markdown/official_deep/2_5_1.htm.md", "source_confidence": "official" },
+  { "id": "boar_tusk", "name": "野猪牙", "original_name": "野猪牙", "type": "collectible", "price": 12, "source_file": "docs/reference/markdown/official/official-QQ自由幻想-资料专区-8da41f02.md", "source_confidence": "official" },
+  { "id": "branch", "name": "树枝", "original_name": "树枝", "type": "collectible", "price": 14, "source_file": "docs/reference/markdown/official_deep/2_5_1.htm.md", "source_confidence": "official" },
+  { "id": "ghost_ash", "name": "鬼火灰", "original_name": "鬼火掉落", "type": "collectible", "price": 18, "source_file": "docs/reference/markdown/official_deep/2_5_1.htm.md", "source_confidence": "inferred" },
+  { "id": "repair_kit", "name": "便携修理锤", "type": "consumable", "effect": { "repair": 35 }, "price": 80, "source_file": "docs/reference/markdown/official_deep/2_1.htm.md", "source_confidence": "inferred" },
+  { "id": "pet_food", "name": "灵宠口粮", "type": "consumable", "effect": { "petTrust": 5 }, "price": 35, "source_confidence": "inferred" },
+  { "id": "skill_pill", "name": "宠物技能丸", "original_name": "宠物技能丸", "type": "pet_material", "price": 180, "source_file": "docs/reference/raw/bwiki/bwiki-art-宠物道具.html", "source_confidence": "official_name" },
+  { "id": "socket_stone", "name": "初阶打孔石", "original_name": "打孔/镶嵌材料", "type": "enhance_material", "price": 120, "source_confidence": "inferred" },
+  { "id": "soul_charm", "name": "附魂符", "original_name": "附魂", "type": "enhance_material", "price": 160, "source_confidence": "inferred" }
+]

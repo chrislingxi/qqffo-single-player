@@ -1,0 +1,18 @@
+{
+  "source_confidence": "mixed",
+  "notes": "P2 单机化转职/飞升节点。保留原 feature 的成长体验，门槛和奖励为本地单人节奏。",
+  "firstJob": {
+    "levelReq": 20,
+    "gold": 1200,
+    "materials": { "boar_tusk": 8, "flower_petal": 8 },
+    "bonus": { "attack": 10, "magicAttack": 10, "defense": 8, "maxHp": 80 },
+    "titleSuffix": "进阶"
+  },
+  "ascension": {
+    "levelReq": 35,
+    "gold": 3200,
+    "materials": { "ghost_ash": 12, "branch": 12 },
+    "bonus": { "attack": 24, "magicAttack": 24, "defense": 18, "maxHp": 180, "crit": 2 },
+    "titleSuffix": "飞升"
+  }
+}

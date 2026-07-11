@@ -1,0 +1,13 @@
+.DS_Store
+node_modules/
+_site/
+
+# Local browser/test artifacts
+.playwright-mcp/
+test-results/
+ffo-current-main.png
+
+# Original/reference capture material is kept local, not published to GitHub.
+docs/reference/
+assets/reference/
+tools/__pycache__/

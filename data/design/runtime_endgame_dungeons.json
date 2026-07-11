@@ -1,0 +1,2700 @@
+{
+  "schema_version": "p3-agent-loop-04",
+  "generated_from": "data/design/endgame_bosses.json",
+  "policy": "把高阶副本目录适配成当前单机副本引擎可运行的数据。所有数值均标 single_player_balance，不冒充官方完整资料。",
+  "dungeon_count": 9,
+  "monster_count": 59,
+  "map_count": 9,
+  "maps": [
+    {
+      "id": "runtime_endgame_夜影村",
+      "name": "夜影村·单机试打",
+      "original_name": "夜影村",
+      "type": "dungeon",
+      "levelRange": [
+        55,
+        65
+      ],
+      "size": [
+        980,
+        720
+      ],
+      "connections": [
+        "lingze_field"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "source_confidence": "partial",
+      "art_status": "needs_ai_qstyle_map",
+      "notes": "Loop04 单机运行适配地图，地图美术仍需基于本地原图AI二创。"
+    },
+    {
+      "id": "runtime_endgame_迷雾沼泽",
+      "name": "迷雾沼泽·单机试打",
+      "original_name": "迷雾沼泽",
+      "type": "dungeon",
+      "levelRange": [
+        62,
+        72
+      ],
+      "size": [
+        980,
+        720
+      ],
+      "connections": [
+        "lingze_field"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-miwuzhaoze.md"
+      ],
+      "source_confidence": "partial",
+      "art_status": "needs_ai_qstyle_map",
+      "notes": "Loop04 单机运行适配地图，地图美术仍需基于本地原图AI二创。"
+    },
+    {
+      "id": "runtime_endgame_冰火双螺",
+      "name": "冰火双螺·单机试打",
+      "original_name": "冰火双螺",
+      "type": "dungeon",
+      "levelRange": [
+        68,
+        78
+      ],
+      "size": [
+        980,
+        720
+      ],
+      "connections": [
+        "lingze_field"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-binghuoshuangluo.md"
+      ],
+      "source_confidence": "partial",
+      "art_status": "needs_ai_qstyle_map",
+      "notes": "Loop04 单机运行适配地图，地图美术仍需基于本地原图AI二创。"
+    },
+    {
+      "id": "runtime_endgame_灵泽殿",
+      "name": "灵泽殿·单机试打",
+      "original_name": "灵泽殿",
+      "type": "dungeon",
+      "levelRange": [
+        74,
+        84
+      ],
+      "size": [
+        980,
+        720
+      ],
+      "connections": [
+        "lingze_field"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-lingzedian.md"
+      ],
+      "source_confidence": "partial",
+      "art_status": "needs_ai_qstyle_map",
+      "notes": "Loop04 单机运行适配地图，地图美术仍需基于本地原图AI二创。"
+    },
+    {
+      "id": "runtime_endgame_先祖山",
+      "name": "先祖山·单机试打",
+      "original_name": "先祖山",
+      "type": "dungeon",
+      "levelRange": [
+        80,
+        90
+      ],
+      "size": [
+        980,
+        720
+      ],
+      "connections": [
+        "lingze_field"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "source_confidence": "partial",
+      "art_status": "needs_ai_qstyle_map",
+      "notes": "Loop04 单机运行适配地图，地图美术仍需基于本地原图AI二创。"
+    },
+    {
+      "id": "runtime_endgame_八仙东海战",
+      "name": "八仙东海战·单机试打",
+      "original_name": "八仙东海战",
+      "type": "dungeon",
+      "levelRange": [
+        86,
+        96
+      ],
+      "size": [
+        980,
+        720
+      ],
+      "connections": [
+        "lingze_field"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-baxiandonghaizhan.md"
+      ],
+      "source_confidence": "partial",
+      "art_status": "needs_ai_qstyle_map",
+      "notes": "Loop04 单机运行适配地图，地图美术仍需基于本地原图AI二创。"
+    },
+    {
+      "id": "runtime_endgame_妖皇府",
+      "name": "妖皇府·单机试打",
+      "original_name": "妖皇府",
+      "type": "dungeon",
+      "levelRange": [
+        92,
+        102
+      ],
+      "size": [
+        980,
+        720
+      ],
+      "connections": [
+        "lingze_field"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "source_confidence": "partial",
+      "art_status": "needs_ai_qstyle_map",
+      "notes": "Loop04 单机运行适配地图，地图美术仍需基于本地原图AI二创。"
+    },
+    {
+      "id": "runtime_endgame_昆仑雪",
+      "name": "昆仑雪·单机试打",
+      "original_name": "昆仑雪",
+      "type": "dungeon",
+      "levelRange": [
+        98,
+        108
+      ],
+      "size": [
+        980,
+        720
+      ],
+      "connections": [
+        "lingze_field"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "source_confidence": "partial",
+      "art_status": "needs_ai_qstyle_map",
+      "notes": "Loop04 单机运行适配地图，地图美术仍需基于本地原图AI二创。"
+    },
+    {
+      "id": "runtime_endgame_通天魔劫塔",
+      "name": "通天魔劫塔·单机试打",
+      "original_name": "通天魔劫塔",
+      "type": "dungeon",
+      "levelRange": [
+        100,
+        110
+      ],
+      "size": [
+        980,
+        720
+      ],
+      "connections": [
+        "lingze_field"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-tongtianmojieta.md"
+      ],
+      "source_confidence": "partial",
+      "art_status": "needs_ai_qstyle_map",
+      "notes": "Loop04 单机运行适配地图，地图美术仍需基于本地原图AI二创。"
+    }
+  ],
+  "monsters": [
+    {
+      "id": "runtime_endgame_夜影村_monster_1_亡魂术士",
+      "name": "亡魂术士",
+      "original_name": "亡魂术士",
+      "type": "elite",
+      "level": 55,
+      "hp": 29106,
+      "attack": 566,
+      "defense": 191,
+      "exp": 5076,
+      "mapIds": [
+        "runtime_endgame_夜影村"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/003-亡魂术士-9918d87b5c.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_夜影村_monster_2_亡魂剑客",
+      "name": "亡魂剑客",
+      "original_name": "亡魂剑客",
+      "type": "elite",
+      "level": 56,
+      "hp": 30416,
+      "attack": 587,
+      "defense": 199,
+      "exp": 5449,
+      "mapIds": [
+        "runtime_endgame_夜影村"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/004-亡魂剑客-5502c446d3.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_夜影村_monster_3_幽灵恶狼",
+      "name": "幽灵恶狼",
+      "original_name": "幽灵恶狼",
+      "type": "elite",
+      "level": 57,
+      "hp": 23514,
+      "attack": 608,
+      "defense": 208,
+      "exp": 4312,
+      "mapIds": [
+        "runtime_endgame_夜影村"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/006-幽灵恶狼-9bbcd239ad.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_夜影村_monster_4_厄运之神",
+      "name": "厄运之神",
+      "original_name": "厄运之神",
+      "type": "boss",
+      "level": 58,
+      "hp": 46568,
+      "attack": 743,
+      "defense": 217,
+      "exp": 8717,
+      "mapIds": [
+        "runtime_endgame_夜影村"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/007-厄运之神-ecd732e0e1.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_夜影村_monster_5_死神",
+      "name": "死神",
+      "original_name": "死神",
+      "type": "boss",
+      "level": 59,
+      "hp": 48485,
+      "attack": 768,
+      "defense": 225,
+      "exp": 9242,
+      "mapIds": [
+        "runtime_endgame_夜影村"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/008-死神-95ba5977e4.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_夜影村_monster_6_凶灵王",
+      "name": "凶灵王",
+      "original_name": "凶灵王",
+      "type": "boss",
+      "level": 60,
+      "hp": 50426,
+      "attack": 793,
+      "defense": 234,
+      "exp": 9766,
+      "mapIds": [
+        "runtime_endgame_夜影村"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/009-凶灵王-453884e232.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_夜影村_monster_7_堕灵王",
+      "name": "堕灵王",
+      "original_name": "堕灵王",
+      "type": "boss",
+      "level": 61,
+      "hp": 52391,
+      "attack": 818,
+      "defense": 243,
+      "exp": 10290,
+      "mapIds": [
+        "runtime_endgame_夜影村"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/011-堕灵王-7fb0bc1a1d.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_夜影村_monster_8_漂浮的幽灵",
+      "name": "漂浮的幽灵",
+      "original_name": "漂浮的幽灵",
+      "type": "elite",
+      "level": 62,
+      "hp": 28622,
+      "attack": 714,
+      "defense": 251,
+      "exp": 5692,
+      "mapIds": [
+        "runtime_endgame_夜影村"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/012-漂浮的幽灵-1f07d73ba3.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_夜影村_monster_9_游荡的幽灵",
+      "name": "游荡的幽灵",
+      "original_name": "游荡的幽灵",
+      "type": "elite",
+      "level": 63,
+      "hp": 29682,
+      "attack": 736,
+      "defense": 260,
+      "exp": 5968,
+      "mapIds": [
+        "runtime_endgame_夜影村"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/013-游荡的幽灵-1f07d73ba3.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_夜影村_monster_10_幽灵公主",
+      "name": "幽灵公主",
+      "original_name": "幽灵公主",
+      "type": "boss",
+      "level": 64,
+      "hp": 58433,
+      "attack": 893,
+      "defense": 269,
+      "exp": 11864,
+      "mapIds": [
+        "runtime_endgame_夜影村"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yeyingcun.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yeyingcun/015-幽灵公主-6b1a4377f1.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_迷雾沼泽_monster_1_水魔侍犬",
+      "name": "水魔侍犬",
+      "original_name": "水魔侍犬",
+      "type": "boss",
+      "level": 62,
+      "hp": 50923,
+      "attack": 736,
+      "defense": 209,
+      "exp": 7889,
+      "mapIds": [
+        "runtime_endgame_迷雾沼泽"
+      ],
+      "drops": [
+        "skill_pill",
+        "soul_charm"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-miwuzhaoze.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-miwuzhaoze/002-水魔侍犬-19f59e0cf5.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_迷雾沼泽_monster_2_藤蔓公主",
+      "name": "藤蔓公主",
+      "original_name": "藤蔓公主",
+      "type": "boss",
+      "level": 63,
+      "hp": 52937,
+      "attack": 761,
+      "defense": 218,
+      "exp": 8413,
+      "mapIds": [
+        "runtime_endgame_迷雾沼泽"
+      ],
+      "drops": [
+        "skill_pill",
+        "soul_charm"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-miwuzhaoze.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-miwuzhaoze/021-藤蔓公主-f85bd8bc2a.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_迷雾沼泽_monster_3_影龙",
+      "name": "影龙",
+      "original_name": "影龙",
+      "type": "boss",
+      "level": 64,
+      "hp": 54975,
+      "attack": 786,
+      "defense": 227,
+      "exp": 8938,
+      "mapIds": [
+        "runtime_endgame_迷雾沼泽"
+      ],
+      "drops": [
+        "skill_pill",
+        "soul_charm"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-miwuzhaoze.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-miwuzhaoze/032-影龙-d58dcd3166.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_迷雾沼泽_monster_4_水魔",
+      "name": "水魔",
+      "original_name": "水魔",
+      "type": "boss",
+      "level": 65,
+      "hp": 57038,
+      "attack": 811,
+      "defense": 236,
+      "exp": 9462,
+      "mapIds": [
+        "runtime_endgame_迷雾沼泽"
+      ],
+      "drops": [
+        "skill_pill",
+        "soul_charm"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-miwuzhaoze.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-miwuzhaoze/042-水魔-c5fbaffc2a.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_冰火双螺_monster_1_妖喉莲姬",
+      "name": "妖喉莲姬",
+      "original_name": "妖喉莲姬",
+      "type": "elite",
+      "level": 68,
+      "hp": 31794,
+      "attack": 673,
+      "defense": 226,
+      "exp": 4488,
+      "mapIds": [
+        "runtime_endgame_冰火双螺"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-binghuoshuangluo.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-binghuoshuangluo/002-妖喉莲姬-7c5935cf18.gif"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_冰火双螺_monster_2_冰火幽冥兽",
+      "name": "冰火幽冥兽",
+      "original_name": "冰火幽冥兽",
+      "type": "elite",
+      "level": 69,
+      "hp": 32930,
+      "attack": 694,
+      "defense": 234,
+      "exp": 4764,
+      "mapIds": [
+        "runtime_endgame_冰火双螺"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-binghuoshuangluo.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-binghuoshuangluo/003-冰火幽冥兽-656aabb52a.gif"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_冰火双螺_monster_3_珊瑚妖-寂",
+      "name": "珊瑚妖-寂",
+      "original_name": "珊瑚妖-寂",
+      "type": "elite",
+      "level": 70,
+      "hp": 34080,
+      "attack": 715,
+      "defense": 243,
+      "exp": 5040,
+      "mapIds": [
+        "runtime_endgame_冰火双螺"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-binghuoshuangluo.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-binghuoshuangluo/004-珊瑚妖-寂-92d4ef6600.gif"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_冰火双螺_monster_4_夺喉鱼人",
+      "name": "夺喉鱼人",
+      "original_name": "夺喉鱼人",
+      "type": "elite",
+      "level": 71,
+      "hp": 35242,
+      "attack": 736,
+      "defense": 252,
+      "exp": 5316,
+      "mapIds": [
+        "runtime_endgame_冰火双螺"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-binghuoshuangluo.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-binghuoshuangluo/005-夺喉鱼人-c4ea3e36a6.gif"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_冰火双螺_monster_5_珊瑚妖-静",
+      "name": "珊瑚妖-静",
+      "original_name": "珊瑚妖-静",
+      "type": "elite",
+      "level": 72,
+      "hp": 36418,
+      "attack": 757,
+      "defense": 260,
+      "exp": 5592,
+      "mapIds": [
+        "runtime_endgame_冰火双螺"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-binghuoshuangluo.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-binghuoshuangluo/006-珊瑚妖-静-2d629cca3c.gif"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_灵泽殿_monster_1_蛟龙神",
+      "name": "蛟龙神",
+      "original_name": "蛟龙神",
+      "type": "boss",
+      "level": 74,
+      "hp": 70768,
+      "attack": 852,
+      "defense": 242,
+      "exp": 9166,
+      "mapIds": [
+        "runtime_endgame_灵泽殿"
+      ],
+      "drops": [
+        "pet_food",
+        "skill_pill"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-lingzedian.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_灵泽殿_monster_2_双头恶蛟",
+      "name": "双头恶蛟",
+      "original_name": "双头恶蛟",
+      "type": "elite",
+      "level": 75,
+      "hp": 38460,
+      "attack": 743,
+      "defense": 251,
+      "exp": 5100,
+      "mapIds": [
+        "runtime_endgame_灵泽殿"
+      ],
+      "drops": [
+        "pet_food",
+        "skill_pill"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-lingzedian.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_先祖山_monster_1_污浊树妖",
+      "name": "污浊树妖",
+      "original_name": "污浊树妖",
+      "type": "elite",
+      "level": 80,
+      "hp": 43160,
+      "attack": 771,
+      "defense": 258,
+      "exp": 5160,
+      "mapIds": [
+        "runtime_endgame_先祖山"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/007-污浊树妖-53ea52a05f.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_先祖山_monster_2_罗刹门",
+      "name": "罗刹门",
+      "original_name": "罗刹门",
+      "type": "elite",
+      "level": 81,
+      "hp": 44450,
+      "attack": 792,
+      "defense": 267,
+      "exp": 5436,
+      "mapIds": [
+        "runtime_endgame_先祖山"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/008-罗刹门-71e6da4612.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_先祖山_monster_3_赤练蛇",
+      "name": "赤练蛇",
+      "original_name": "赤练蛇",
+      "type": "elite",
+      "level": 82,
+      "hp": 45754,
+      "attack": 813,
+      "defense": 275,
+      "exp": 5712,
+      "mapIds": [
+        "runtime_endgame_先祖山"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/009-赤练蛇-b4e7ef8ed3.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_先祖山_monster_4_如龙鲛",
+      "name": "如龙鲛",
+      "original_name": "如龙鲛",
+      "type": "boss",
+      "level": 83,
+      "hp": 89432,
+      "attack": 985,
+      "defense": 284,
+      "exp": 11377,
+      "mapIds": [
+        "runtime_endgame_先祖山"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/010-如龙鲛-706af9edb0.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_先祖山_monster_5_四臂巨灵",
+      "name": "四臂巨灵",
+      "original_name": "四臂巨灵",
+      "type": "elite",
+      "level": 84,
+      "hp": 48398,
+      "attack": 856,
+      "defense": 293,
+      "exp": 6264,
+      "mapIds": [
+        "runtime_endgame_先祖山"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/011-四臂巨灵-b2331f82e0.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_先祖山_monster_6_熔岩骨龙",
+      "name": "熔岩骨龙",
+      "original_name": "熔岩骨龙",
+      "type": "boss",
+      "level": 85,
+      "hp": 94506,
+      "attack": 1035,
+      "defense": 302,
+      "exp": 12426,
+      "mapIds": [
+        "runtime_endgame_先祖山"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/012-熔岩骨龙-52a9efd21c.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_先祖山_monster_7_白垩龙",
+      "name": "白垩龙",
+      "original_name": "白垩龙",
+      "type": "boss",
+      "level": 86,
+      "hp": 97079,
+      "attack": 1060,
+      "defense": 310,
+      "exp": 12950,
+      "mapIds": [
+        "runtime_endgame_先祖山"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/013-白垩龙-fcd8661a25.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_先祖山_monster_8_黑魔龙",
+      "name": "黑魔龙",
+      "original_name": "黑魔龙",
+      "type": "boss",
+      "level": 87,
+      "hp": 99677,
+      "attack": 1085,
+      "defense": 319,
+      "exp": 13475,
+      "mapIds": [
+        "runtime_endgame_先祖山"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/014-黑魔龙-2720dc44da.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_先祖山_monster_9_真-黑魔龙王",
+      "name": "真-黑魔龙王",
+      "original_name": "真-黑魔龙王",
+      "type": "boss",
+      "level": 88,
+      "hp": 102299,
+      "attack": 1110,
+      "defense": 328,
+      "exp": 13999,
+      "mapIds": [
+        "runtime_endgame_先祖山"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/016-真-黑魔龙王-72f869ec62.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_先祖山_monster_10_水魔大人",
+      "name": "水魔大人",
+      "original_name": "水魔大人",
+      "type": "boss",
+      "level": 89,
+      "hp": 104945,
+      "attack": 1135,
+      "defense": 336,
+      "exp": 14524,
+      "mapIds": [
+        "runtime_endgame_先祖山"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/017-水魔大人-3cc7926a30.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_先祖山_monster_11_真-白垩龙王",
+      "name": "真-白垩龙王",
+      "original_name": "真-白垩龙王",
+      "type": "boss",
+      "level": 90,
+      "hp": 107616,
+      "attack": 1160,
+      "defense": 345,
+      "exp": 15048,
+      "mapIds": [
+        "runtime_endgame_先祖山"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-xianzushan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-xianzushan/018-真-白垩龙王-5fde9ecd9a.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_八仙东海战_monster_1_王母",
+      "name": "王母",
+      "original_name": "王母",
+      "type": "boss",
+      "level": 86,
+      "hp": 94115,
+      "attack": 968,
+      "defense": 274,
+      "exp": 10442,
+      "mapIds": [
+        "runtime_endgame_八仙东海战"
+      ],
+      "drops": [
+        "skill_pill",
+        "soul_charm"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-baxiandonghaizhan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-baxiandonghaizhan/005-王母-b616f282f7.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_八仙东海战_monster_2_龙子",
+      "name": "龙子",
+      "original_name": "龙子",
+      "type": "boss",
+      "level": 87,
+      "hp": 96713,
+      "attack": 993,
+      "defense": 283,
+      "exp": 10967,
+      "mapIds": [
+        "runtime_endgame_八仙东海战"
+      ],
+      "drops": [
+        "skill_pill",
+        "soul_charm"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-baxiandonghaizhan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-baxiandonghaizhan/027-龙子-09deca8f1a.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_八仙东海战_monster_3_龙女",
+      "name": "龙女",
+      "original_name": "龙女",
+      "type": "boss",
+      "level": 88,
+      "hp": 99335,
+      "attack": 1018,
+      "defense": 292,
+      "exp": 11491,
+      "mapIds": [
+        "runtime_endgame_八仙东海战"
+      ],
+      "drops": [
+        "skill_pill",
+        "soul_charm"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-baxiandonghaizhan.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-baxiandonghaizhan/028-龙女-3e83ea37c0.jpg"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_1_钢拳",
+      "name": "钢拳",
+      "original_name": "钢拳",
+      "type": "elite",
+      "level": 92,
+      "hp": 56370,
+      "attack": 869,
+      "defense": 290,
+      "exp": 5832,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/008-钢拳-a005b6a7f3.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_2_利爪",
+      "name": "利爪",
+      "original_name": "利爪",
+      "type": "elite",
+      "level": 93,
+      "hp": 57814,
+      "attack": 891,
+      "defense": 299,
+      "exp": 6108,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/009-利爪-d09ee85780.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_3_鬼影",
+      "name": "鬼影",
+      "original_name": "鬼影",
+      "type": "elite",
+      "level": 94,
+      "hp": 59270,
+      "attack": 912,
+      "defense": 308,
+      "exp": 6384,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/010-鬼影-c5cad3a70e.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_4_玄冥将军",
+      "name": "玄冥将军",
+      "original_name": "玄冥将军",
+      "type": "elite",
+      "level": 95,
+      "hp": 81999,
+      "attack": 933,
+      "defense": 317,
+      "exp": 8991,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/011-玄冥将军-6bc83f311e.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_5_妖皇分身",
+      "name": "妖皇分身",
+      "original_name": "妖皇分身",
+      "type": "boss",
+      "level": 96,
+      "hp": 118223,
+      "attack": 1126,
+      "defense": 325,
+      "exp": 13178,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/012-妖皇分身-b43f8bc2f0.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_6_妖皇枪骑兵",
+      "name": "妖皇枪骑兵",
+      "original_name": "妖皇枪骑兵",
+      "type": "boss",
+      "level": 97,
+      "hp": 121063,
+      "attack": 1151,
+      "defense": 334,
+      "exp": 13703,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/013-妖皇枪骑兵-ac9d40ae2f.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_7_飞龙巫术者",
+      "name": "飞龙巫术者",
+      "original_name": "飞龙巫术者",
+      "type": "boss",
+      "level": 98,
+      "hp": 123929,
+      "attack": 1176,
+      "defense": 343,
+      "exp": 14227,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/014-飞龙巫术者-9aeb41becb.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_8_蝎精侍女",
+      "name": "蝎精侍女",
+      "original_name": "蝎精侍女",
+      "type": "elite",
+      "level": 99,
+      "hp": 90108,
+      "attack": 1018,
+      "defense": 351,
+      "exp": 10481,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/015-蝎精侍女-2bfdf881a1.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_9_狐妖侍女",
+      "name": "狐妖侍女",
+      "original_name": "狐妖侍女",
+      "type": "elite",
+      "level": 100,
+      "hp": 92178,
+      "attack": 1039,
+      "defense": 360,
+      "exp": 10854,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/016-狐妖侍女-c3ef32645b.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_10_督鸦巡卫",
+      "name": "督鸦巡卫",
+      "original_name": "督鸦巡卫",
+      "type": "elite",
+      "level": 101,
+      "hp": 69826,
+      "attack": 1060,
+      "defense": 369,
+      "exp": 8316,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/017-督鸦巡卫-dd051f3376.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_11_暗袭人",
+      "name": "暗袭人",
+      "original_name": "暗袭人",
+      "type": "elite",
+      "level": 102,
+      "hp": 71386,
+      "attack": 1081,
+      "defense": 377,
+      "exp": 8592,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/018-暗袭人-478a9e0f0e.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_12_卑卢王",
+      "name": "卑卢王",
+      "original_name": "卑卢王",
+      "type": "boss",
+      "level": 102,
+      "hp": 136127,
+      "attack": 1291,
+      "defense": 383,
+      "exp": 16743,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/019-卑卢王-5dd9e5bc28.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_13_卑擎王",
+      "name": "卑擎王",
+      "original_name": "卑擎王",
+      "type": "boss",
+      "level": 102,
+      "hp": 136621,
+      "attack": 1307,
+      "defense": 389,
+      "exp": 17161,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/020-卑擎王-b21eaea5da.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_14_妖王后",
+      "name": "妖王后",
+      "original_name": "妖王后",
+      "type": "boss",
+      "level": 102,
+      "hp": 137115,
+      "attack": 1322,
+      "defense": 395,
+      "exp": 17579,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/022-妖王后-e636ce8369.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府_monster_15_万妖皇",
+      "name": "万妖皇",
+      "original_name": "万妖皇",
+      "type": "boss",
+      "level": 102,
+      "hp": 137609,
+      "attack": 1337,
+      "defense": 401,
+      "exp": 17997,
+      "mapIds": [
+        "runtime_endgame_妖皇府"
+      ],
+      "drops": [
+        "repair_kit",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-yaohuangfu.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-yaohuangfu/023-万妖皇-a877c2163d.webp"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_昆仑雪_monster_1_青鸟探路",
+      "name": "青鸟探路",
+      "original_name": "青鸟探路",
+      "type": "elite",
+      "level": 98,
+      "hp": 63666,
+      "attack": 919,
+      "defense": 307,
+      "exp": 6168,
+      "mapIds": [
+        "runtime_endgame_昆仑雪"
+      ],
+      "drops": [
+        "pet_food",
+        "skill_pill"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [
+        "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-kunlunxue/001-青鸟探路-2ff1eeaa56.png"
+      ],
+      "source_confidence": "confirmed",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_昆仑雪_monster_2_首领雪狼之主",
+      "name": "首领雪狼之主",
+      "original_name": "首领雪狼之主",
+      "type": "boss",
+      "level": 99,
+      "hp": 123854,
+      "attack": 1109,
+      "defense": 315,
+      "exp": 12244,
+      "mapIds": [
+        "runtime_endgame_昆仑雪"
+      ],
+      "drops": [
+        "pet_food",
+        "skill_pill"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_昆仑雪_monster_3_首领毒龙",
+      "name": "首领毒龙",
+      "original_name": "首领毒龙",
+      "type": "boss",
+      "level": 100,
+      "hp": 126768,
+      "attack": 1134,
+      "defense": 324,
+      "exp": 12768,
+      "mapIds": [
+        "runtime_endgame_昆仑雪"
+      ],
+      "drops": [
+        "pet_food",
+        "skill_pill"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_昆仑雪_monster_4_妖母",
+      "name": "妖母",
+      "original_name": "妖母",
+      "type": "elite",
+      "level": 101,
+      "hp": 68266,
+      "attack": 982,
+      "defense": 333,
+      "exp": 6996,
+      "mapIds": [
+        "runtime_endgame_昆仑雪"
+      ],
+      "drops": [
+        "pet_food",
+        "skill_pill"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_昆仑雪_monster_5_首领火窟盗君",
+      "name": "首领火窟盗君",
+      "original_name": "首领火窟盗君",
+      "type": "elite",
+      "level": 102,
+      "hp": 69826,
+      "attack": 1003,
+      "defense": 341,
+      "exp": 7272,
+      "mapIds": [
+        "runtime_endgame_昆仑雪"
+      ],
+      "drops": [
+        "pet_food",
+        "skill_pill"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_昆仑雪_monster_6_三圣兽朱雀",
+      "name": "三圣兽朱雀",
+      "original_name": "三圣兽朱雀",
+      "type": "boss",
+      "level": 103,
+      "hp": 135655,
+      "attack": 1209,
+      "defense": 350,
+      "exp": 14341,
+      "mapIds": [
+        "runtime_endgame_昆仑雪"
+      ],
+      "drops": [
+        "pet_food",
+        "skill_pill"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_昆仑雪_monster_7_三圣兽玄武",
+      "name": "三圣兽玄武",
+      "original_name": "三圣兽玄武",
+      "type": "elite",
+      "level": 104,
+      "hp": 72982,
+      "attack": 1046,
+      "defense": 359,
+      "exp": 7824,
+      "mapIds": [
+        "runtime_endgame_昆仑雪"
+      ],
+      "drops": [
+        "pet_food",
+        "skill_pill"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_昆仑雪_monster_8_三圣兽青龙",
+      "name": "三圣兽青龙",
+      "original_name": "三圣兽青龙",
+      "type": "boss",
+      "level": 105,
+      "hp": 141702,
+      "attack": 1259,
+      "defense": 368,
+      "exp": 15390,
+      "mapIds": [
+        "runtime_endgame_昆仑雪"
+      ],
+      "drops": [
+        "pet_food",
+        "skill_pill"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-kunlunxue.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_通天魔劫塔_monster_1_通天魔劫塔守关BOSS",
+      "name": "通天魔劫塔守关BOSS",
+      "original_name": "通天魔劫塔守关BOSS",
+      "type": "boss",
+      "level": 100,
+      "hp": 125780,
+      "attack": 1103,
+      "defense": 312,
+      "exp": 11932,
+      "mapIds": [
+        "runtime_endgame_通天魔劫塔"
+      ],
+      "drops": [
+        "soul_charm",
+        "socket_stone"
+      ],
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-tongtianmojieta.md"
+      ],
+      "asset_refs": [],
+      "source_confidence": "partial",
+      "stat_confidence": "single_player_balance",
+      "gaps": [
+        "血量/攻击/防御数值待结构化",
+        "技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "运行美术素材待AI二创Q版化"
+      ]
+    }
+  ],
+  "dungeons": [
+    {
+      "id": "runtime_endgame_夜影村",
+      "name": "夜影村·单机试打",
+      "original_name": "夜影村",
+      "levelReq": 55,
+      "entryMap": "lingze_field",
+      "waves": [
+        {
+          "monsterIds": [
+            "runtime_endgame_夜影村_monster_1_亡魂术士"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_夜影村_monster_2_亡魂剑客"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_夜影村_monster_3_幽灵恶狼"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_夜影村_monster_4_厄运之神"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_夜影村_monster_5_死神"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_夜影村_monster_6_凶灵王"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_夜影村_monster_7_堕灵王"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_夜影村_monster_8_漂浮的幽灵"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_夜影村_monster_9_游荡的幽灵"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_夜影村_monster_10_幽灵公主"
+          ],
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "exp": 98300,
+        "gold": 9400,
+        "items": [
+          "soul_charm",
+          "socket_stone"
+        ]
+      },
+      "source_confidence": "single_player_runtime_adapter",
+      "source_dungeon_id": "endgame_夜影村",
+      "single_player_balance": true,
+      "mechanics": {
+        "boss_count_source": 10,
+        "runtime_wave_count": 10,
+        "entry_mode": "solo",
+        "auto_battle_supported": true,
+        "revive_pool": 3,
+        "timer_seconds": null
+      },
+      "gaps": [
+        "血量/攻击/防御为单机平衡模板，非官方原始数值",
+        "BOSS技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "地图与BOSS美术待AI Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_迷雾沼泽",
+      "name": "迷雾沼泽·单机试打",
+      "original_name": "迷雾沼泽",
+      "levelReq": 62,
+      "entryMap": "lingze_field",
+      "waves": [
+        {
+          "monsterIds": [
+            "runtime_endgame_迷雾沼泽_monster_1_水魔侍犬"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_迷雾沼泽_monster_2_藤蔓公主"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_迷雾沼泽_monster_3_影龙"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_迷雾沼泽_monster_4_水魔"
+          ],
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "exp": 79120,
+        "gold": 10240,
+        "items": [
+          "skill_pill",
+          "soul_charm"
+        ]
+      },
+      "source_confidence": "single_player_runtime_adapter",
+      "source_dungeon_id": "endgame_迷雾沼泽",
+      "single_player_balance": true,
+      "mechanics": {
+        "boss_count_source": 4,
+        "runtime_wave_count": 4,
+        "entry_mode": "solo",
+        "auto_battle_supported": true,
+        "revive_pool": 3,
+        "timer_seconds": null
+      },
+      "gaps": [
+        "血量/攻击/防御为单机平衡模板，非官方原始数值",
+        "BOSS技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "地图与BOSS美术待AI Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_冰火双螺",
+      "name": "冰火双螺·单机试打",
+      "original_name": "冰火双螺",
+      "levelReq": 68,
+      "entryMap": "lingze_field",
+      "waves": [
+        {
+          "monsterIds": [
+            "runtime_endgame_冰火双螺_monster_1_妖喉莲姬"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_冰火双螺_monster_2_冰火幽冥兽"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_冰火双螺_monster_3_珊瑚妖-寂"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_冰火双螺_monster_4_夺喉鱼人"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_冰火双螺_monster_5_珊瑚妖-静"
+          ],
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "exp": 88480,
+        "gold": 10960,
+        "items": [
+          "repair_kit",
+          "socket_stone"
+        ]
+      },
+      "source_confidence": "single_player_runtime_adapter",
+      "source_dungeon_id": "endgame_冰火双螺",
+      "single_player_balance": true,
+      "mechanics": {
+        "boss_count_source": 5,
+        "runtime_wave_count": 5,
+        "entry_mode": "solo",
+        "auto_battle_supported": true,
+        "revive_pool": 3,
+        "timer_seconds": null
+      },
+      "gaps": [
+        "血量/攻击/防御为单机平衡模板，非官方原始数值",
+        "BOSS技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "地图与BOSS美术待AI Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_灵泽殿",
+      "name": "灵泽殿·单机试打",
+      "original_name": "灵泽殿",
+      "levelReq": 74,
+      "entryMap": "lingze_field",
+      "waves": [
+        {
+          "monsterIds": [
+            "runtime_endgame_灵泽殿_monster_1_蛟龙神"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_灵泽殿_monster_2_双头恶蛟"
+          ],
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "exp": 81040,
+        "gold": 11680,
+        "items": [
+          "pet_food",
+          "skill_pill"
+        ]
+      },
+      "source_confidence": "single_player_runtime_adapter",
+      "source_dungeon_id": "endgame_灵泽殿",
+      "single_player_balance": true,
+      "mechanics": {
+        "boss_count_source": 2,
+        "runtime_wave_count": 2,
+        "entry_mode": "solo",
+        "auto_battle_supported": true,
+        "revive_pool": 3,
+        "timer_seconds": null
+      },
+      "gaps": [
+        "血量/攻击/防御为单机平衡模板，非官方原始数值",
+        "BOSS技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "地图与BOSS美术待AI Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_先祖山",
+      "name": "先祖山·单机试打",
+      "original_name": "先祖山",
+      "levelReq": 80,
+      "entryMap": "lingze_field",
+      "waves": [
+        {
+          "monsterIds": [
+            "runtime_endgame_先祖山_monster_1_污浊树妖"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_先祖山_monster_2_罗刹门"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_先祖山_monster_3_赤练蛇"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_先祖山_monster_4_如龙鲛"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_先祖山_monster_5_四臂巨灵"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_先祖山_monster_6_熔岩骨龙"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_先祖山_monster_7_白垩龙"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_先祖山_monster_8_黑魔龙"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_先祖山_monster_9_真-黑魔龙王"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_先祖山_monster_10_水魔大人"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_先祖山_monster_11_真-白垩龙王"
+          ],
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "exp": 124000,
+        "gold": 12400,
+        "items": [
+          "soul_charm",
+          "socket_stone"
+        ]
+      },
+      "source_confidence": "single_player_runtime_adapter",
+      "source_dungeon_id": "endgame_先祖山",
+      "single_player_balance": true,
+      "mechanics": {
+        "boss_count_source": 11,
+        "runtime_wave_count": 11,
+        "entry_mode": "solo",
+        "auto_battle_supported": true,
+        "revive_pool": 3,
+        "timer_seconds": null
+      },
+      "gaps": [
+        "血量/攻击/防御为单机平衡模板，非官方原始数值",
+        "BOSS技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "地图与BOSS美术待AI Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_八仙东海战",
+      "name": "八仙东海战·单机试打",
+      "original_name": "八仙东海战",
+      "levelReq": 86,
+      "entryMap": "lingze_field",
+      "waves": [
+        {
+          "monsterIds": [
+            "runtime_endgame_八仙东海战_monster_1_王母"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_八仙东海战_monster_2_龙子"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_八仙东海战_monster_3_龙女"
+          ],
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "exp": 95560,
+        "gold": 13120,
+        "items": [
+          "skill_pill",
+          "soul_charm"
+        ]
+      },
+      "source_confidence": "single_player_runtime_adapter",
+      "source_dungeon_id": "endgame_八仙东海战",
+      "single_player_balance": true,
+      "mechanics": {
+        "boss_count_source": 3,
+        "runtime_wave_count": 3,
+        "entry_mode": "solo",
+        "auto_battle_supported": true,
+        "revive_pool": 3,
+        "timer_seconds": null
+      },
+      "gaps": [
+        "血量/攻击/防御为单机平衡模板，非官方原始数值",
+        "BOSS技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "地图与BOSS美术待AI Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_妖皇府",
+      "name": "妖皇府·单机试打",
+      "original_name": "妖皇府",
+      "levelReq": 92,
+      "entryMap": "lingze_field",
+      "waves": [
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_1_钢拳"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_2_利爪"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_3_鬼影"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_4_玄冥将军"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_5_妖皇分身"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_6_妖皇枪骑兵"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_7_飞龙巫术者"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_8_蝎精侍女"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_9_狐妖侍女"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_10_督鸦巡卫"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_11_暗袭人"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_12_卑卢王"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_13_卑擎王"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_14_妖王后"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_妖皇府_monster_15_万妖皇"
+          ],
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "exp": 151120,
+        "gold": 13840,
+        "items": [
+          "repair_kit",
+          "socket_stone"
+        ]
+      },
+      "source_confidence": "single_player_runtime_adapter",
+      "source_dungeon_id": "endgame_妖皇府",
+      "single_player_balance": true,
+      "mechanics": {
+        "boss_count_source": 15,
+        "runtime_wave_count": 15,
+        "entry_mode": "solo",
+        "auto_battle_supported": true,
+        "revive_pool": 3,
+        "timer_seconds": null
+      },
+      "gaps": [
+        "血量/攻击/防御为单机平衡模板，非官方原始数值",
+        "BOSS技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "地图与BOSS美术待AI Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_昆仑雪",
+      "name": "昆仑雪·单机试打",
+      "original_name": "昆仑雪",
+      "levelReq": 98,
+      "entryMap": "lingze_field",
+      "waves": [
+        {
+          "monsterIds": [
+            "runtime_endgame_昆仑雪_monster_1_青鸟探路"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_昆仑雪_monster_2_首领雪狼之主"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_昆仑雪_monster_3_首领毒龙"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_昆仑雪_monster_4_妖母"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_昆仑雪_monster_5_首领火窟盗君"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_昆仑雪_monster_6_三圣兽朱雀"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_昆仑雪_monster_7_三圣兽玄武"
+          ],
+          "count": 1
+        },
+        {
+          "monsterIds": [
+            "runtime_endgame_昆仑雪_monster_8_三圣兽青龙"
+          ],
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "exp": 126880,
+        "gold": 14560,
+        "items": [
+          "pet_food",
+          "skill_pill"
+        ]
+      },
+      "source_confidence": "single_player_runtime_adapter",
+      "source_dungeon_id": "endgame_昆仑雪",
+      "single_player_balance": true,
+      "mechanics": {
+        "boss_count_source": 8,
+        "runtime_wave_count": 8,
+        "entry_mode": "solo",
+        "auto_battle_supported": true,
+        "revive_pool": 3,
+        "timer_seconds": null
+      },
+      "gaps": [
+        "血量/攻击/防御为单机平衡模板，非官方原始数值",
+        "BOSS技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "地图与BOSS美术待AI Q版化"
+      ]
+    },
+    {
+      "id": "runtime_endgame_通天魔劫塔",
+      "name": "通天魔劫塔·单机试打",
+      "original_name": "通天魔劫塔",
+      "levelReq": 100,
+      "entryMap": "lingze_field",
+      "waves": [
+        {
+          "monsterIds": [
+            "runtime_endgame_通天魔劫塔_monster_1_通天魔劫塔守关BOSS"
+          ],
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "exp": 99200,
+        "gold": 14800,
+        "items": [
+          "soul_charm",
+          "socket_stone"
+        ]
+      },
+      "source_confidence": "single_player_runtime_adapter",
+      "source_dungeon_id": "endgame_通天魔劫塔",
+      "single_player_balance": true,
+      "mechanics": {
+        "boss_count_source": 1,
+        "runtime_wave_count": 1,
+        "entry_mode": "solo",
+        "auto_battle_supported": true,
+        "revive_pool": 5,
+        "timer_seconds": 300
+      },
+      "gaps": [
+        "血量/攻击/防御为单机平衡模板，非官方原始数值",
+        "BOSS技能时间轴待结构化",
+        "精确掉落权重待结构化",
+        "地图与BOSS美术待AI Q版化"
+      ]
+    }
+  ]
+}

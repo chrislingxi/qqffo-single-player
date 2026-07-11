@@ -1,0 +1,486 @@
+{
+  "generated_from": "docs/reference/structured/pet_level_exp_ffobaike.json",
+  "max_level": 80,
+  "rows": [
+    {
+      "level": 1,
+      "upgrade_exp": 300,
+      "total_exp": 0,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 2,
+      "upgrade_exp": 1100,
+      "total_exp": 300,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 3,
+      "upgrade_exp": 2700,
+      "total_exp": 1400,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 4,
+      "upgrade_exp": 5460,
+      "total_exp": 4100,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 5,
+      "upgrade_exp": 8750,
+      "total_exp": 9560,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 6,
+      "upgrade_exp": 13500,
+      "total_exp": 18310,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 7,
+      "upgrade_exp": 20160,
+      "total_exp": 31810,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 8,
+      "upgrade_exp": 28380,
+      "total_exp": 51970,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 9,
+      "upgrade_exp": 39780,
+      "total_exp": 80350,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 10,
+      "upgrade_exp": 54600,
+      "total_exp": 120130,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 11,
+      "upgrade_exp": 77700,
+      "total_exp": 174730,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 12,
+      "upgrade_exp": 114210,
+      "total_exp": 252430,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 13,
+      "upgrade_exp": 168330,
+      "total_exp": 366640,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 14,
+      "upgrade_exp": 244860,
+      "total_exp": 534970,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 15,
+      "upgrade_exp": 349200,
+      "total_exp": 779830,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 16,
+      "upgrade_exp": 487350,
+      "total_exp": 1129030,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 17,
+      "upgrade_exp": 665910,
+      "total_exp": 1616380,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 18,
+      "upgrade_exp": 892080,
+      "total_exp": 2282290,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 19,
+      "upgrade_exp": 1173660,
+      "total_exp": 3174370,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 20,
+      "upgrade_exp": 1519050,
+      "total_exp": 4348030,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 21,
+      "upgrade_exp": 1937250,
+      "total_exp": 5867080,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 22,
+      "upgrade_exp": 2437860,
+      "total_exp": 7804330,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 23,
+      "upgrade_exp": 3031080,
+      "total_exp": 10242190,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 24,
+      "upgrade_exp": 3727710,
+      "total_exp": 13273270,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 25,
+      "upgrade_exp": 4539150,
+      "total_exp": 17000980,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 26,
+      "upgrade_exp": 5477400,
+      "total_exp": 21540130,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 27,
+      "upgrade_exp": 6555060,
+      "total_exp": 27017530,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 28,
+      "upgrade_exp": 7785330,
+      "total_exp": 33572590,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 29,
+      "upgrade_exp": 9182010,
+      "total_exp": 41357920,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 30,
+      "upgrade_exp": 10705702,
+      "total_exp": 50539930,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 31,
+      "upgrade_exp": 12407472,
+      "total_exp": 61245632,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 32,
+      "upgrade_exp": 14299747,
+      "total_exp": 73653104,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 33,
+      "upgrade_exp": 16395233,
+      "total_exp": 87952851,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 34,
+      "upgrade_exp": 18706896,
+      "total_exp": 104348084,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 35,
+      "upgrade_exp": 21247947,
+      "total_exp": 123054980,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 36,
+      "upgrade_exp": 24031829,
+      "total_exp": 144302927,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 37,
+      "upgrade_exp": 27072201,
+      "total_exp": 168334756,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 38,
+      "upgrade_exp": 30382923,
+      "total_exp": 195406957,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 39,
+      "upgrade_exp": 33978042,
+      "total_exp": 225789880,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 40,
+      "upgrade_exp": 37871772,
+      "total_exp": 259767922,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 41,
+      "upgrade_exp": 44764350,
+      "total_exp": 297639694,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 42,
+      "upgrade_exp": 49853160,
+      "total_exp": 342404044,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 43,
+      "upgrade_exp": 55364580,
+      "total_exp": 392257204,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 44,
+      "upgrade_exp": 61321410,
+      "total_exp": 447621784,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 45,
+      "upgrade_exp": 67747050,
+      "total_exp": 508943194,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 46,
+      "upgrade_exp": 74665500,
+      "total_exp": 576690244,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 47,
+      "upgrade_exp": 82101360,
+      "total_exp": 651355744,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 48,
+      "upgrade_exp": 90079830,
+      "total_exp": 733457104,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 49,
+      "upgrade_exp": 98626710,
+      "total_exp": 823536934,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 50,
+      "upgrade_exp": 107768400,
+      "total_exp": 922163644,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 51,
+      "upgrade_exp": 117531900,
+      "total_exp": 1029932044,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 52,
+      "upgrade_exp": 127944810,
+      "total_exp": 1147463944,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 53,
+      "upgrade_exp": 139035330,
+      "total_exp": 1275408754,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 54,
+      "upgrade_exp": 150832260,
+      "total_exp": 1414444084,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 55,
+      "upgrade_exp": 163365000,
+      "total_exp": 1565276344,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 56,
+      "upgrade_exp": 176663550,
+      "total_exp": 1728641344,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 57,
+      "upgrade_exp": 190758510,
+      "total_exp": 1905304894,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 58,
+      "upgrade_exp": 205681080,
+      "total_exp": 2096063404,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 59,
+      "upgrade_exp": 221463060,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 60,
+      "upgrade_exp": 238136850,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 61,
+      "upgrade_exp": 270272000,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 62,
+      "upgrade_exp": 285169920,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 63,
+      "upgrade_exp": 300718470,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 64,
+      "upgrade_exp": 316943280,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 65,
+      "upgrade_exp": 333870930,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 66,
+      "upgrade_exp": 351529000,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 67,
+      "upgrade_exp": 369946060,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 68,
+      "upgrade_exp": 389151770,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 69,
+      "upgrade_exp": 409176870,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 70,
+      "upgrade_exp": 430053240,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 71,
+      "upgrade_exp": 451813940,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 72,
+      "upgrade_exp": 474493220,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 73,
+      "upgrade_exp": 498126640,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 74,
+      "upgrade_exp": 522751010,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 75,
+      "upgrade_exp": 548404530,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 76,
+      "upgrade_exp": 575126790,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 77,
+      "upgrade_exp": 602958820,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 78,
+      "upgrade_exp": 631943150,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 79,
+      "upgrade_exp": 662123890,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    },
+    {
+      "level": 80,
+      "upgrade_exp": 693546710,
+      "total_exp": 2147483647,
+      "source_confidence": "wiki"
+    }
+  ]
+}

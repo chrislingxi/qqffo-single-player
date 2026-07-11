@@ -1,0 +1,17 @@
+[
+  { "id": "novice_sword", "name": "练习剑", "slot": "weapon", "classIds": ["swordsman"], "levelReq": 1, "quality": "normal", "stats": { "attack": 12 }, "durability": 60 },
+  { "id": "novice_axe", "name": "练习斧", "slot": "weapon", "classIds": ["warrior"], "levelReq": 1, "quality": "normal", "stats": { "attack": 15 }, "durability": 60 },
+  { "id": "novice_blade", "name": "练习双刃", "slot": "weapon", "classIds": ["assassin"], "levelReq": 1, "quality": "normal", "stats": { "attack": 10, "crit": 2 }, "durability": 60 },
+  { "id": "novice_cane", "name": "练习药杖", "slot": "weapon", "classIds": ["medic"], "levelReq": 1, "quality": "normal", "stats": { "magicAttack": 12 }, "durability": 60 },
+  { "id": "novice_staff", "name": "练习法杖", "slot": "weapon", "classIds": ["mage"], "levelReq": 1, "quality": "normal", "stats": { "magicAttack": 16 }, "durability": 60 },
+  { "id": "linen_armor", "name": "布制护衣", "slot": "armor", "classIds": ["all"], "levelReq": 1, "quality": "normal", "stats": { "defense": 8, "maxHp": 40 }, "durability": 70 },
+  { "id": "forest_weapon", "name": "林地武器", "slot": "weapon", "classIds": ["all"], "levelReq": 12, "quality": "fine", "stats": { "attack": 28, "magicAttack": 24 }, "durability": 80 },
+  { "id": "forest_armor", "name": "林地护甲", "slot": "armor", "classIds": ["all"], "levelReq": 12, "quality": "fine", "stats": { "defense": 26, "maxHp": 120 }, "durability": 90 },
+  { "id": "starlit_ring", "name": "星光戒", "slot": "accessory", "classIds": ["all"], "levelReq": 18, "quality": "fine", "stats": { "attack": 8, "magicAttack": 8, "crit": 2 }, "durability": 90 },
+  { "id": "mine_weapon", "name": "矿脉精武", "slot": "weapon", "classIds": ["all"], "levelReq": 28, "quality": "rare", "stats": { "attack": 56, "magicAttack": 52, "crit": 4 }, "durability": 100 },
+  { "id": "mine_armor", "name": "矿纹战衣", "slot": "armor", "classIds": ["all"], "levelReq": 28, "quality": "rare", "stats": { "defense": 58, "maxHp": 260 }, "durability": 110 },
+  { "id": "tower_charm", "name": "宝塔护符", "slot": "accessory", "classIds": ["all"], "levelReq": 30, "quality": "rare", "stats": { "maxHp": 160, "maxMp": 90, "defense": 18 }, "durability": 100 },
+  { "id": "spirit_weapon", "name": "灵泽精武", "slot": "weapon", "classIds": ["all"], "levelReq": 38, "quality": "epic", "stats": { "attack": 96, "magicAttack": 92, "crit": 6 }, "durability": 120 },
+  { "id": "spirit_armor", "name": "灵泽外甲", "slot": "armor", "classIds": ["all"], "levelReq": 38, "quality": "epic", "stats": { "defense": 96, "maxHp": 460 }, "durability": 125 },
+  { "id": "dragon_wing_charm", "name": "龙翼秘宝", "slot": "accessory", "classIds": ["all"], "levelReq": 45, "quality": "legend", "stats": { "attack": 34, "magicAttack": 34, "maxHp": 320, "crit": 5 }, "durability": 130 }
+]
