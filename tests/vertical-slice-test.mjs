@@ -73,6 +73,10 @@ for (const needle of [
   assert(app.includes(needle), `runtime missing vertical-slice behavior: ${needle}`);
 }
 
+const pointIndex = app.indexOf("const point = combatTextPoint();");
+const assassinHitIndex = app.indexOf('if (skill.id === "qingli_yiji")');
+assert(pointIndex > 0 && assassinHitIndex > pointIndex, "assassin skill fx must declare combat text point before use");
+
 for (const needle of ["skill-wheel", "top-menu", "mmo-stage", "rotate-lock", "class-card locked"]) {
   assert(styles.includes(needle.replace(" ", ".")) || styles.includes(needle), `styles missing commercial HUD hook: ${needle}`);
 }

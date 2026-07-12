@@ -40,7 +40,7 @@ const DATA_FILES = {
 
 const SAVE_KEY = "ffo_p2_save_v1";
 const LEGACY_SAVE_KEYS = ["ffo_p1_save_v1"];
-const DATA_VERSION = "p25-assassin-slice-01";
+const DATA_VERSION = "p25-assassin-slice-02";
 const VERTICAL_SLICE = {
   enabled: true,
   classId: "assassin",
@@ -884,6 +884,7 @@ function castSkill(skill) {
     const point = combatTextPoint();
     addFx("破防", point.x, point.y - 18, "#bde8ff", "status");
   }
+  const point = combatTextPoint();
   if (skill.id === "qingli_yiji") {
     combat.enemy.stunnedUntil = now() + 0.8;
     addFx("眩晕", point.x, point.y - 34, "#fff08a", "stun");
@@ -896,7 +897,6 @@ function castSkill(skill) {
   }
   addLog(`${skill.name} -${damage}`);
   const hitCount = skill.hits || (skill.target === "aoe" ? 2 : 1);
-  const point = combatTextPoint();
   for (let i = 0; i < hitCount; i += 1) {
     const shownDamage = Math.max(1, Math.floor(damage / hitCount));
     addFx(`${i === 0 ? skill.name : "连击"} ${crit ? "暴击 " : ""}-${shownDamage}`, point.x + i * 14, point.y - i * 14, crit ? "#ffdc5e" : "#ffe08a", crit ? "crit" : "damage");
