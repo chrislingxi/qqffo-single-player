@@ -10,6 +10,7 @@
     "test:vertical-player": "node tests/vertical-slice-playtest.mjs",
     "test:browser": "node tests/browser-cdp-test.mjs",
     "verify:vertical-slice": "node tests/vertical-slice-test.mjs",
+    "verify:p3-m4": "node tests/p3-m4-quality-gate.mjs",
     "verify:p2-six": "node tools/verify_p2_six_blocks.mjs",
     "audit:p2": "node tools/audit_p2_readiness.mjs",
     "audit:p2:strict": "node tools/audit_p2_readiness.mjs --strict",

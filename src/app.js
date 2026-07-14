@@ -35,19 +35,20 @@ const DATA_FILES = {
   fullActivityCatalog: "data/design/full_activity_catalog.json",
   sourceGaps: "data/design/source_gaps.json",
   p3SystemDetails: "data/design/p3_system_details.json",
+  p3M4Goal: "data/design/p3_m4_goal.json",
   qAssets: "assets/game/qstyle/manifest.json"
 };
 
 const SAVE_KEY = "ffo_p2_save_v1";
 const LEGACY_SAVE_KEYS = ["ffo_p1_save_v1"];
-const DATA_VERSION = "p25-assassin-slice-02";
+const DATA_VERSION = "p30-m4-01";
 const VERTICAL_SLICE = {
   enabled: true,
   classId: "assassin",
   maxLevel: 20,
   startMapId: "taoyuan_village",
-  title: "2.5D 刺客纵切 Demo",
-  tagline: "1-20级主线、自动寻路、生态刷怪、连击战斗、宠物与装备闭环"
+  title: "P3.0 M4 刺客商业纵切",
+  tagline: "横屏 PWA、个性化地图、生态刷怪、刺客连击、宠物装备与任务闭环"
 };
 const app = document.querySelector("#app");
 let data;
@@ -710,8 +711,10 @@ function tickCombat(dt) {
 function tickCombatPosition(dt, combat) {
   if (!combat?.enemy) return;
   const desiredGap = combat.enemy.type === "boss" ? 92 : 74;
-  const targetX = combat.enemyX - desiredGap;
-  const targetY = combat.enemyY + 8;
+  const orbit = Math.sin(combat.elapsed * 1.7) * 18;
+  const side = Math.cos(combat.elapsed * 0.8) > 0 ? -1 : 1;
+  const targetX = combat.enemyX - desiredGap + orbit * side;
+  const targetY = combat.enemyY + 10 + Math.sin(combat.elapsed * 2.2) * 10;
   const dx = targetX - state.x;
   const dy = targetY - state.y;
   const dist = Math.hypot(dx, dy);
@@ -788,11 +791,12 @@ function startCombat(monster, spawn = null) {
     petActionUntil: 0,
     lastSkillName: "",
     skillLabelUntil: 0,
+    telegraphUntil: 0,
     elapsed: 0
   };
   state.codex[monster.id] = true;
   addLog(`遭遇 ${monster.name}`);
-  addFx("", state.x + 84, state.y - 46, "#ffe08a", "ring");
+  addFx("", enemyX, enemyY + 6, monster.type === "boss" ? "#ffbf6f" : "#ffe08a", "ring");
 }
 
 function bestSkill() {
@@ -930,7 +934,8 @@ function markEnemyHit(kind) {
   if (!state.combat?.enemy) return;
   state.combat.enemy.hitFlash = now() + 0.18;
   state.combat.enemyActionUntil = now() + 0.2;
-  addFx("", state.x + 136, state.y - 12, kind === "skill" ? "#ffe08a" : "#fff1ce", kind === "pet" ? "impact" : "slash");
+  const point = combatTextPoint();
+  addFx("", point.x - 40, point.y + 26, kind === "skill" ? "#ffe08a" : "#fff1ce", kind === "pet" ? "impact" : "slash");
 }
 
 function skillColor(skill) {
@@ -968,6 +973,10 @@ function enemyAttack() {
   }
   const stats = getStats();
   const enemy = state.combat.enemy;
+  if (enemy.type === "boss" || enemy.type === "elite") {
+    state.combat.telegraphUntil = now() + 0.42;
+    addFx("", state.combat.enemyX, state.combat.enemyY + 6, "#ff8f5d", "telegraph");
+  }
   if (Math.random() * 100 < stats.dodge) {
     addLog("闪避攻击");
     addFx("闪避", state.x, state.y - 70, "#bde8ff", "status");
@@ -1339,6 +1348,7 @@ function renderGameShell() {
         <canvas id="gameCanvas"></canvas>
         <div class="topbar mmo-identity"></div>
         <div class="mmo-clock">15:05</div>
+        <div class="p3-version">P3.0 M4</div>
         <div class="top-menu"></div>
         <div class="left-quest-tabs"><button class="active">任务</button><button>图鉴</button></div>
         <div class="float-log"></div>
@@ -1347,7 +1357,7 @@ function renderGameShell() {
         <div class="side-menu"></div>
         <div class="skill-wheel"></div>
         <div class="chat-bar"></div>
-        <div class="bottom-dock"></div>
+        <div class="bottom-dock bottom-hotbar"></div>
         <div class="quick"></div>
         <div class="rotate-lock"><strong>请横屏游玩</strong><span>添加到主屏幕后横屏打开，体验完整 PWA 游戏界面。</span></div>
         <section class="hud">
@@ -1401,7 +1411,7 @@ function renderOverlayHud() {
   }
   const mini = document.querySelector(".mini-map");
   if (mini) {
-    mini.innerHTML = `<span>${currentMap().name}</span><i></i>`;
+    mini.innerHTML = renderMiniMap();
   }
   const wheel = document.querySelector(".skill-wheel");
   if (wheel) {
@@ -1433,11 +1443,11 @@ function renderOverlayHud() {
   if (topMenu) {
     const items = [
       ["任务", "quest", "主线牵引"],
+      ["技能", "role", "刺客技能"],
       ["背包", "bag", "装备道具"],
       ["地图", "map", currentMap().name],
       ["宠物", "pet", activePet() ? activePet().name : "未出战"],
-      ["日常", "token", "试炼/猎杀"],
-      ["后期", "tower", "高阶试炼"]
+      ["日常", "token", "试炼/猎杀"]
     ];
     topMenu.innerHTML = items.map(([item, iconType, hint], index) => `
       <button class="mmo-icon ${currentTab === tabFromMenu(item) ? "active" : ""}" data-tab="${tabFromMenu(item)}" title="${item} · ${hint}">
@@ -1469,7 +1479,11 @@ function renderOverlayHud() {
   }
   const dock = document.querySelector(".bottom-dock");
   if (dock) {
-    dock.innerHTML = ["补给", "修理", "回城"].map((item) => `<button data-action="${dockAction(item)}">${item}</button>`).join("");
+    dock.innerHTML = [
+      ["补给", "supply", "potion"],
+      ["修理", "repair", "armor"],
+      ["回城", "home", "map"]
+    ].map(([item, action, icon]) => `<button data-action="${action}" title="${item}"><i class="icon-frame">${iconSvg(icon)}</i><span>${item}</span></button>`).join("");
     dock.onclick = (event) => {
       const action = event.target.dataset.action;
       if (action === "repair") repairAll();
@@ -1480,6 +1494,22 @@ function renderOverlayHud() {
       }
     };
   }
+}
+
+function renderMiniMap() {
+  const map = currentMap();
+  const [mw, mh] = map.size;
+  const playerX = clamp((state.x / mw) * 100, 5, 95);
+  const playerY = clamp((state.y / mh) * 100, 7, 93);
+  const spawnDots = spawnInstancesForMap().slice(0, 12).map((spawn) => {
+    const monster = data.monsterById[spawn.monsterId];
+    const x = clamp((spawn.x / mw) * 100, 5, 95);
+    const y = clamp((spawn.y / mh) * 100, 7, 93);
+    const type = monster?.type === "boss" ? "boss" : monster?.type === "elite" ? "elite" : "mob";
+    return `<i class="mini-map-dot ${type}" style="left:${x}%;top:${y}%"></i>`;
+  }).join("");
+  const target = state.target ? `<i class="mini-map-dot target" style="left:${clamp((state.target.x / mw) * 100, 5, 95)}%;top:${clamp((state.target.y / mh) * 100, 7, 93)}%"></i>` : "";
+  return `<span>${map.name}</span><b class="mini-grid"></b>${spawnDots}${target}<i class="mini-map-dot player" style="left:${playerX}%;top:${playerY}%"></i>`;
 }
 
 function combatStatusText(quest) {
@@ -2245,12 +2275,15 @@ function drawMap(w, h, camera) {
   const grad = ctx.createLinearGradient(0, 0, w, h);
   grad.addColorStop(0, scene.skyA);
   grad.addColorStop(1, scene.skyB);
+  ctx.fillStyle = grad;
   ctx.fillRect(0, 0, w, h);
   drawIsoGround(w, h, camera, scene, profile);
+  drawPainterlyTexture(w, h, camera, scene, profile);
   drawMapWater(w, h, camera, profile);
   drawTerrainSignature(w, h, camera, scene, profile);
   drawSceneProps(w, h, camera, map.type, scene, profile);
   drawForegroundArchitecture(w, h, scene, profile);
+  drawDepthFoliage(w, h, camera, profile);
   drawWeather(w, h, profile);
 }
 
@@ -2331,6 +2364,44 @@ function drawIsoGround(w, h, camera, scene, profile = {}) {
   drawStonePaths(w, h, scene.path || profile.path);
 }
 
+function drawPainterlyTexture(w, h, camera, scene, profile = {}) {
+  const theme = profile.theme || "grass";
+  ctx.save();
+  const seedX = Math.floor(camera.x / 7);
+  const seedY = Math.floor(camera.y / 5);
+  for (let i = 0; i < 90; i += 1) {
+    const x = ((i * 73 + seedX * 11) % Math.ceil(w + 120)) - 60;
+    const y = ((i * 41 + seedY * 17) % Math.ceil(h + 100)) - 50;
+    const r = 10 + (i % 7) * 6;
+    const alpha = theme.includes("wood") || theme.includes("grass") || theme === "bamboo_water" ? 0.13 : 0.08;
+    ctx.fillStyle = i % 4 === 0 ? `rgba(255,238,170,${alpha})` : `rgba(35,83,49,${alpha})`;
+    ctx.beginPath();
+    ctx.ellipse(x, y, r * 1.8, r * 0.72, (i % 5) * 0.35, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  if (theme === "bamboo_water") {
+    const shore = ctx.createLinearGradient(0, 0, w * 0.45, h * 0.45);
+    shore.addColorStop(0, "rgba(47,154,147,.24)");
+    shore.addColorStop(0.52, "rgba(223,202,132,.16)");
+    shore.addColorStop(1, "rgba(46,104,54,0)");
+    ctx.fillStyle = shore;
+    ctx.beginPath();
+    ctx.ellipse(w * 0.14 - camera.x * 0.06, h * 0.18 - camera.y * 0.04, w * 0.5, h * 0.33, -0.18, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  if (["city", "village"].includes(theme)) {
+    ctx.strokeStyle = "rgba(255,246,205,.12)";
+    ctx.lineWidth = 7;
+    for (let y = 20 - (camera.y % 88); y < h; y += 88) {
+      ctx.beginPath();
+      ctx.moveTo(-40, y);
+      ctx.lineTo(w + 40, y - 30);
+      ctx.stroke();
+    }
+  }
+  ctx.restore();
+}
+
 function drawStonePaths(w, h, pathColor = "#d7c897") {
   ctx.save();
   ctx.globalAlpha = 0.38;
@@ -2354,11 +2425,20 @@ function drawStonePaths(w, h, pathColor = "#d7c897") {
 function drawMapWater(w, h, camera, profile = {}) {
   if (!profile.water) return;
   ctx.save();
-  ctx.globalAlpha = 0.72;
-  ctx.fillStyle = profile.water;
+  const water = ctx.createLinearGradient(0, 0, w * 0.42, h * 0.3);
+  water.addColorStop(0, "#88e8d8");
+  water.addColorStop(0.45, profile.water);
+  water.addColorStop(1, "#2f8f98");
+  ctx.globalAlpha = 0.86;
+  ctx.fillStyle = water;
   ctx.beginPath();
   ctx.ellipse(w * 0.08 - camera.x * 0.12, h * 0.15 - camera.y * 0.08, w * 0.42, h * 0.28, -0.22, 0, Math.PI * 2);
   ctx.fill();
+  ctx.strokeStyle = "rgba(238, 213, 135, .32)";
+  ctx.lineWidth = 12;
+  ctx.beginPath();
+  ctx.ellipse(w * 0.12 - camera.x * 0.1, h * 0.22 - camera.y * 0.06, w * 0.46, h * 0.24, -0.18, Math.PI * 0.02, Math.PI * 0.72);
+  ctx.stroke();
   ctx.strokeStyle = "rgba(231,255,242,.45)";
   ctx.lineWidth = 3;
   for (let i = 0; i < 5; i += 1) {
@@ -2367,6 +2447,28 @@ function drawMapWater(w, h, camera, profile = {}) {
     ctx.quadraticCurveTo(w * 0.18 + i * 24, h * 0.13, w * 0.32 + i * 36, h * 0.2);
     ctx.stroke();
   }
+  ctx.restore();
+}
+
+function drawDepthFoliage(w, h, camera, profile = {}) {
+  const theme = profile.theme || "grass";
+  if (!["grass", "plain", "deep_wood", "bamboo_water", "suburb"].includes(theme)) return;
+  ctx.save();
+  const clusters = [
+    [-30, h - 42, 1.2],
+    [w * 0.86, h - 34, 1.05],
+    [w * 0.04, h * 0.1, 0.8],
+    [w * 0.92, h * 0.18, 0.72]
+  ];
+  clusters.forEach(([x, y, s], index) => {
+    ctx.globalAlpha = index < 2 ? 0.8 : 0.42;
+    ctx.fillStyle = index % 2 ? "#386f42" : "#4e9850";
+    for (let i = 0; i < 9; i += 1) {
+      ctx.beginPath();
+      ctx.ellipse(x + i * 18 * s + Math.sin(camera.x * 0.01 + i) * 4, y + Math.sin(i * 1.4) * 12 * s, 26 * s, 12 * s, -0.3 + i * 0.12, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  });
   ctx.restore();
 }
 
@@ -2893,10 +2995,12 @@ function drawCombatEnemy(camera) {
   const flash = (enemy.hitFlash || 0) > now();
   const action = Math.max(0, (state.combat.enemyActionUntil || 0) - now());
   const shake = flash ? Math.sin(now() * 90) * 3 : 0;
-  const baseX = Math.max(state.x + 104, state.combat.enemyX || state.x + 138);
+  const baseX = state.combat.enemyX || state.x + 138;
   const baseY = (state.combat.enemyY || state.y - 4) - 8;
   const x = baseX - camera.x + shake + action * 22;
   const y = baseY - camera.y + Math.sin(now() * 4) * 1.2;
+  drawTargetRing(x, y + 30, enemy);
+  drawCombatTelegraph(x, y + 30);
   ctx.fillStyle = "rgba(0,0,0,.28)";
   ctx.beginPath();
   ctx.ellipse(x, y + 28, 34, 12, 0, 0, Math.PI * 2);
@@ -2916,6 +3020,39 @@ function drawCombatEnemy(camera) {
   if (state.combat.lastSkillName && (state.combat.skillLabelUntil || 0) > now()) {
     drawCastLabel(state.combat.lastSkillName, x, y - 74);
   }
+}
+
+function drawTargetRing(x, y, enemy) {
+  ctx.save();
+  const pulse = 1 + Math.sin(now() * 5) * 0.04;
+  ctx.strokeStyle = enemy.type === "boss" ? "rgba(255, 183, 86, .82)" : enemy.type === "elite" ? "rgba(255, 221, 111, .68)" : "rgba(214, 242, 151, .58)";
+  ctx.lineWidth = enemy.type === "boss" ? 4 : 3;
+  ctx.setLineDash(enemy.type === "boss" ? [10, 6] : []);
+  ctx.beginPath();
+  ctx.ellipse(x, y, 42 * pulse, 15 * pulse, 0, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.globalAlpha = 0.18;
+  ctx.fillStyle = ctx.strokeStyle;
+  ctx.beginPath();
+  ctx.ellipse(x, y, 40, 14, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+
+function drawCombatTelegraph(x, y) {
+  if (!state.combat || (state.combat.telegraphUntil || 0) <= now()) return;
+  const alpha = clamp((state.combat.telegraphUntil - now()) / 0.42, 0, 1);
+  ctx.save();
+  ctx.globalAlpha = 0.28 + alpha * 0.38;
+  ctx.strokeStyle = "#ff8f5d";
+  ctx.fillStyle = "rgba(255, 105, 68, .16)";
+  ctx.lineWidth = 4;
+  ctx.beginPath();
+  ctx.ellipse(x, y, 78, 28, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.stroke();
+  ctx.restore();
 }
 
 function drawFx(camera) {
@@ -2981,6 +3118,15 @@ function drawFx(camera) {
       ctx.lineWidth = fx.type === "ring" ? 4 : 3;
       ctx.beginPath();
       ctx.ellipse(x, y + 20, 28 + fx.age * 32, 10 + fx.age * 10, 0, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    if (fx.type === "telegraph") {
+      ctx.fillStyle = `rgba(255, 107, 74, ${alpha * 0.18})`;
+      ctx.strokeStyle = `rgba(255, 153, 91, ${alpha * 0.78})`;
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.ellipse(x, y + 20, 74 - fx.age * 12, 25 - fx.age * 4, 0, 0, Math.PI * 2);
+      ctx.fill();
       ctx.stroke();
     }
     if (fx.type === "rune") {
@@ -3108,8 +3254,9 @@ function drawPlayer(camera) {
   const combat = state.combat;
   const action = Math.max(0, (combat?.playerActionUntil || 0) - now());
   const shake = flash ? Math.sin(now() * 100) * 2 : 0;
-  const x = state.x - camera.x + shake + action * 42;
-  const y = state.y - camera.y + Math.sin(now() * 4.6) * 1.4;
+  const dir = combatDirection();
+  const x = state.x - camera.x + shake + action * 42 * dir.x;
+  const y = state.y - camera.y + Math.sin(now() * 4.6) * 1.4 + action * 18 * dir.y;
   ctx.fillStyle = "rgba(0,0,0,.28)";
   ctx.beginPath();
   ctx.ellipse(x, y + 28, 34, 12, 0, 0, Math.PI * 2);
@@ -3129,10 +3276,18 @@ function drawPlayer(camera) {
   const pet = activePet();
   if (pet) {
     const petAction = Math.max(0, (combat?.petActionUntil || 0) - now());
-    drawMonsterSprite("white_rabbit", x + 54 + petAction * 52, y + 8, 42, 42);
+    drawMonsterSprite("white_rabbit", x + 54 + petAction * 44 * dir.x, y + 8 + petAction * 12 * dir.y, 42, 42);
     drawNameplate(pet.name, x + 54, y - 26, "#cbe9ff");
   }
   ctx.textAlign = "left";
+}
+
+function combatDirection() {
+  if (!state.combat) return { x: 1, y: 0 };
+  const dx = (state.combat.enemyX || state.x + 1) - state.x;
+  const dy = (state.combat.enemyY || state.y) - state.y;
+  const len = Math.max(1, Math.hypot(dx, dy));
+  return { x: dx / len, y: dy / len };
 }
 
 function drawCastLabel(text, x, y) {

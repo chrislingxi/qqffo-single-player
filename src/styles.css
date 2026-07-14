@@ -75,6 +75,145 @@
   }
 }
 
+/* P3.0 M4 commercial-slice overrides: landscape-first, icon-first, dense RPG HUD. */
+.mini-map {
+  overflow: hidden;
+  border-radius: 50% !important;
+  border: 3px solid rgba(214, 168, 79, .72) !important;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(57, 108, 70, .82), rgba(31, 59, 46, .92) 58%, rgba(22, 30, 24, .96)),
+    repeating-linear-gradient(0deg, transparent 0 15px, rgba(222, 244, 187, .14) 16px),
+    repeating-linear-gradient(90deg, transparent 0 15px, rgba(222, 244, 187, .1) 16px) !important;
+  box-shadow:
+    0 6px 16px rgba(0,0,0,.36),
+    inset 0 0 0 2px rgba(52, 35, 20, .68),
+    inset 0 0 24px rgba(255,236,160,.08) !important;
+}
+
+.mini-map span {
+  position: absolute;
+  left: 50%;
+  top: 7px;
+  transform: translateX(-50%);
+  z-index: 3;
+  max-width: 80%;
+  overflow: hidden;
+  color: #fff0bf !important;
+  font-size: 11px !important;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-shadow: 0 2px 2px #1a120d;
+}
+
+.mini-grid {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(222, 245, 181, .13);
+  background:
+    linear-gradient(90deg, transparent 48%, rgba(231,245,195,.14) 49% 51%, transparent 52%),
+    linear-gradient(0deg, transparent 48%, rgba(231,245,195,.13) 49% 51%, transparent 52%);
+}
+
+.mini-map-dot {
+  position: absolute !important;
+  z-index: 2;
+  width: 5px !important;
+  height: 5px !important;
+  margin: -2px 0 0 -2px;
+  border-radius: 50%;
+  background: #f0e074 !important;
+  box-shadow: 0 0 6px rgba(255,244,152,.8);
+}
+
+.mini-map-dot.elite { background: #ff9b64 !important; }
+.mini-map-dot.boss {
+  width: 8px !important;
+  height: 8px !important;
+  background: #ff5b4c !important;
+}
+.mini-map-dot.target {
+  width: 9px !important;
+  height: 9px !important;
+  border: 2px solid #fff0a5;
+  background: transparent !important;
+}
+.mini-map-dot.player {
+  z-index: 4;
+  width: 8px !important;
+  height: 8px !important;
+  background: #80dfff !important;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.72), 0 0 10px rgba(128,223,255,.92);
+}
+
+.bottom-hotbar {
+  height: 42px !important;
+  padding: 4px 5px !important;
+  border: 1px solid rgba(231, 196, 112, .38) !important;
+  border-radius: 10px !important;
+  background:
+    linear-gradient(180deg, rgba(82, 54, 31, .78), rgba(24, 19, 15, .82)) !important;
+  box-shadow: 0 7px 18px rgba(0,0,0,.34), inset 0 1px rgba(255,235,168,.18) !important;
+}
+
+.bottom-hotbar button {
+  min-width: 44px !important;
+  height: 34px !important;
+  padding: 0 7px !important;
+  display: inline-grid;
+  grid-template-columns: 22px auto;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px !important;
+  border: 1px solid rgba(255, 226, 147, .32) !important;
+  background: radial-gradient(circle at 32% 20%, rgba(255,238,171,.3), rgba(83,56,34,.74)) !important;
+  color: #ffeab3 !important;
+  font-size: 11px !important;
+}
+
+.bottom-hotbar .icon-frame {
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 6px !important;
+}
+
+.game-hud .top-menu .mmo-icon {
+  width: 42px;
+  min-width: 42px;
+}
+
+.game-hud .top-menu .mmo-icon .icon-frame {
+  width: 34px;
+  height: 34px;
+}
+
+@media (orientation: landscape) and (max-width: 940px) {
+  .game-hud .top-menu {
+    right: 76px;
+    gap: 4px;
+    max-width: 47vw;
+  }
+
+  .game-hud .top-menu .mmo-icon {
+    width: 38px;
+    min-width: 38px;
+  }
+
+  .game-hud .top-menu .mmo-icon .icon-frame {
+    width: 31px;
+    height: 31px;
+  }
+
+  .game-hud .top-menu .mmo-icon span {
+    font-size: 10px;
+  }
+
+  .p3-version {
+    display: none;
+  }
+}
+
 /* P2.0 panel and icon rebuild: graphic-first, no text-glyph icons. */
 .game-symbol,
 .skill-rune {
@@ -954,14 +1093,31 @@ body {
   text-shadow: 0 2px 2px rgba(0,0,0,.45);
 }
 
+.p3-version {
+  position: absolute;
+  left: 50%;
+  top: 31px;
+  transform: translateX(-50%);
+  z-index: 6;
+  padding: 1px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 229, 154, .36);
+  background: rgba(42, 30, 20, .42);
+  color: rgba(255, 238, 188, .78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+
 .top-menu {
   position: absolute;
   top: 8px;
-  right: 88px;
+  right: 94px;
   z-index: 7;
   display: flex;
-  gap: 9px;
-  max-width: 42vw;
+  gap: 7px;
+  max-width: 46vw;
   overflow: hidden;
   justify-content: flex-end;
 }
@@ -2406,6 +2562,72 @@ button.danger {
     bottom: 52px;
     width: min(318px, calc(100vw - 176px));
   }
+}
+
+/* Final P3.0 M4 cascade lock. Keep this block last so legacy P1/P2 styles cannot override the current slice. */
+.mini-map {
+  position: absolute;
+  overflow: hidden !important;
+  border-radius: 50% !important;
+  border: 3px solid rgba(214, 168, 79, .72) !important;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(57, 108, 70, .82), rgba(31, 59, 46, .92) 58%, rgba(22, 30, 24, .96)),
+    repeating-linear-gradient(0deg, transparent 0 15px, rgba(222, 244, 187, .14) 16px),
+    repeating-linear-gradient(90deg, transparent 0 15px, rgba(222, 244, 187, .1) 16px) !important;
+  box-shadow: 0 6px 16px rgba(0,0,0,.36), inset 0 0 0 2px rgba(52, 35, 20, .68), inset 0 0 24px rgba(255,236,160,.08) !important;
+}
+
+.mini-map span {
+  position: absolute !important;
+  left: 50%;
+  top: 7px;
+  transform: translateX(-50%);
+  z-index: 4;
+  max-width: 80%;
+  color: #fff0bf !important;
+  font-size: 11px !important;
+  font-weight: 900;
+  text-shadow: 0 2px 2px #1a120d;
+}
+
+.mini-map-dot {
+  position: absolute !important;
+  z-index: 3;
+  width: 5px !important;
+  height: 5px !important;
+  margin: -2px 0 0 -2px;
+  border-radius: 50% !important;
+  background: #f0e074 !important;
+  box-shadow: 0 0 6px rgba(255,244,152,.8) !important;
+}
+
+.mini-map-dot.elite { background: #ff9b64 !important; }
+.mini-map-dot.boss { width: 8px !important; height: 8px !important; background: #ff5b4c !important; }
+.mini-map-dot.target { width: 9px !important; height: 9px !important; border: 2px solid #fff0a5; background: transparent !important; }
+.mini-map-dot.player { z-index: 5; width: 8px !important; height: 8px !important; background: #80dfff !important; box-shadow: 0 0 0 2px rgba(255,255,255,.72), 0 0 10px rgba(128,223,255,.92) !important; }
+
+.bottom-hotbar {
+  height: 42px !important;
+  padding: 4px 5px !important;
+  border: 1px solid rgba(231, 196, 112, .38) !important;
+  border-radius: 10px !important;
+  background: linear-gradient(180deg, rgba(82, 54, 31, .78), rgba(24, 19, 15, .82)) !important;
+  box-shadow: 0 7px 18px rgba(0,0,0,.34), inset 0 1px rgba(255,235,168,.18) !important;
+}
+
+.bottom-hotbar button {
+  min-width: 44px !important;
+  height: 34px !important;
+  padding: 0 7px !important;
+  display: inline-grid !important;
+  grid-template-columns: 22px auto;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px !important;
+  border: 1px solid rgba(255, 226, 147, .32) !important;
+  background: radial-gradient(circle at 32% 20%, rgba(255,238,171,.3), rgba(83,56,34,.74)) !important;
+  color: #ffeab3 !important;
+  font-size: 11px !important;
 }
 
 @media (orientation: landscape) and (max-height: 430px) {

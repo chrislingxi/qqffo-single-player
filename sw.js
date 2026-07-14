@@ -1,4 +1,4 @@
-const CACHE_NAME = "ffo-pwa-v6-p25-hotfix";
+const CACHE_NAME = "ffo-pwa-v7-p30-m4";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -43,6 +43,7 @@ const CORE_ASSETS = [
   "./data/design/full_activity_catalog.json",
   "./data/design/source_gaps.json",
   "./data/design/p3_system_details.json",
+  "./data/design/p3_m4_goal.json",
   "./assets/game/qstyle/manifest.json",
   "./assets/game/qstyle/ai/qqffo-qstyle-concept-sheet-v1.png",
   "./assets/game/qstyle/ai/town-forest-map-v1.png",
