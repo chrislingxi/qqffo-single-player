@@ -1,4 +1,4 @@
-const CACHE_NAME = "ffo-pwa-v7-p30-m4";
+const CACHE_NAME = "ffo-pwa-v8-p30-m4-fastboot";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -7,7 +7,6 @@ const CORE_ASSETS = [
   "./manifest.webmanifest",
   "./assets/app-icon.svg",
   "./assets/pwa/app-icon-192.png",
-  "./assets/pwa/app-icon-512.png",
   "./data/design/classes.json",
   "./data/design/attribute_formulas.json",
   "./data/design/levels.json",
@@ -44,20 +43,7 @@ const CORE_ASSETS = [
   "./data/design/source_gaps.json",
   "./data/design/p3_system_details.json",
   "./data/design/p3_m4_goal.json",
-  "./assets/game/qstyle/manifest.json",
-  "./assets/game/qstyle/ai/qqffo-qstyle-concept-sheet-v1.png",
-  "./assets/game/qstyle/ai/town-forest-map-v1.png",
-  "./assets/game/qstyle/ai/sprites/character_swordsman.png",
-  "./assets/game/qstyle/ai/sprites/character_warrior.png",
-  "./assets/game/qstyle/ai/sprites/character_assassin.png",
-  "./assets/game/qstyle/ai/sprites/character_medic.png",
-  "./assets/game/qstyle/ai/sprites/character_mage.png",
-  "./assets/game/qstyle/ai/sprites/fenfen_rabbit.png",
-  "./assets/game/qstyle/ai/sprites/snail.png",
-  "./assets/game/qstyle/ai/sprites/man_eater_flower.png",
-  "./assets/game/qstyle/ai/sprites/boar.png",
-  "./assets/game/qstyle/ai/sprites/ghost_fire.png",
-  "./assets/game/qstyle/ai/sprites/tongtian_guardian_boss.png"
+  "./assets/game/qstyle/manifest.json"
 ];
 
 self.addEventListener("install", (event) => {
@@ -76,10 +62,19 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+  const url = new URL(event.request.url);
+  const isRuntimeAsset = url.pathname.includes("/assets/game/qstyle/") || url.pathname.includes("/assets/pwa/");
   event.respondWith(
     caches.match(event.request).then((cached) => {
+      if (cached && isRuntimeAsset) {
+        event.waitUntil(fetch(event.request).then((response) => {
+          if (response.ok) caches.open(CACHE_NAME).then((cache) => cache.put(event.request, response.clone()));
+        }).catch(() => {}));
+        return cached;
+      }
       if (cached) return cached;
       return fetch(event.request).then((response) => {
+        if (!response || !response.ok) return response;
         const copy = response.clone();
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
         return response;

@@ -41,7 +41,7 @@ const DATA_FILES = {
 
 const SAVE_KEY = "ffo_p2_save_v1";
 const LEGACY_SAVE_KEYS = ["ffo_p1_save_v1"];
-const DATA_VERSION = "p30-m4-01";
+const DATA_VERSION = "p30-m4-02";
 const VERTICAL_SLICE = {
   enabled: true,
   classId: "assassin",
@@ -61,6 +61,33 @@ let currentTab = "quest";
 let selectedClass = VERTICAL_SLICE.classId;
 let logs = [];
 let spriteImages = {};
+let spritePromises = {};
+let bootProgress = { stage: "准备启动", done: 0, total: 1 };
+
+const CRITICAL_BOOT_SPRITES = [
+  "character_assassin",
+  "fenfen_rabbit",
+  "man_eater_flower",
+  "boar",
+  "white_rabbit"
+];
+
+function renderLoadingScreen(stage = "准备启动", done = 0, total = 1) {
+  bootProgress = { stage, done, total: Math.max(1, total) };
+  if (!app) return;
+  const ratio = clamp(done / bootProgress.total, 0.08, 1);
+  app.innerHTML = `
+    <main class="boot-screen">
+      <section class="boot-card">
+        <span>自由幻想单机</span>
+        <h1>${VERTICAL_SLICE.title}</h1>
+        <p>首次打开或版本更新时会下载本地资料与必要美术素材。资料会缓存在本机，后续进入会更快。</p>
+        <div class="boot-bar"><i style="width:${Math.round(ratio * 100)}%"></i></div>
+        <em>${stage} · ${Math.round(ratio * 100)}%</em>
+      </section>
+    </main>
+  `;
+}
 
 function selectTab(tab) {
   if (!tab) return;
@@ -78,9 +105,15 @@ const pct = (value, max) => `${clamp((value / Math.max(1, max)) * 100, 0, 100)}%
 const now = () => performance.now() / 1000;
 
 async function loadData() {
-  const entries = await Promise.all(
-    Object.entries(DATA_FILES).map(async ([key, path]) => [key, await fetch(`${path}?v=${DATA_VERSION}`, { cache: "reload" }).then((res) => res.json())])
-  );
+  const files = Object.entries(DATA_FILES);
+  let done = 0;
+  renderLoadingScreen("加载本地资料", done, files.length + 2);
+  const entries = await Promise.all(files.map(async ([key, path]) => {
+    const json = await fetch(`${path}?v=${DATA_VERSION}`, { cache: "reload" }).then((res) => res.json());
+    done += 1;
+    if (done === 1 || done % 5 === 0 || done === files.length) renderLoadingScreen("加载本地资料", done, files.length + 2);
+    return [key, json];
+  }));
   data = Object.fromEntries(entries);
   if (data.runtimeEndgameDungeons) {
     data.maps = [...data.maps, ...(data.runtimeEndgameDungeons.maps || [])];
@@ -106,20 +139,52 @@ async function loadData() {
     return acc;
   }, {});
   window.__ffoData = data;
-  await loadSprites();
+  renderLoadingScreen("预热首屏素材", files.length + 1, files.length + 2);
+  await preloadSprites(CRITICAL_BOOT_SPRITES, { blocking: true });
+  renderLoadingScreen("准备进入游戏", files.length + 2, files.length + 2);
 }
 
-async function loadSprites() {
-  const entries = data.qAssets.filter((asset) => asset.q_asset && asset.q_asset !== "missing").map((asset) => {
-    const img = new Image();
-    img.src = asset.q_asset;
-    spriteImages[asset.id] = img;
-    return new Promise((resolve) => {
-      img.onload = resolve;
-      img.onerror = resolve;
-    });
+function requestIdle(fn) {
+  if ("requestIdleCallback" in window) window.requestIdleCallback(fn, { timeout: 1200 });
+  else setTimeout(fn, 80);
+}
+
+async function preloadSprites(ids, options = {}) {
+  const jobs = [...new Set(ids)].map((id) => ensureSprite(id));
+  if (options.blocking) await Promise.all(jobs);
+}
+
+function preloadAllSpritesInBackground() {
+  requestIdle(() => {
+    preloadSprites((data.qAssets || [])
+      .filter((asset) => asset.type !== "art_direction" && asset.type !== "map_background")
+      .map((asset) => asset.id));
   });
-  await Promise.all(entries);
+}
+
+function preloadSpritesForCurrentMap() {
+  if (!data || !state) return;
+  const ids = new Set([`character_${state.classId}`, "white_rabbit"]);
+  spawnInstancesForMap(state.mapId).forEach((spawn) => ids.add(spawn.monsterId));
+  if (state.combat?.enemy?.id) ids.add(state.combat.enemy.id);
+  preloadSprites([...ids]);
+}
+
+function ensureSprite(assetId) {
+  const asset = data?.qAssetById?.[assetId];
+  if (!asset?.q_asset || asset.q_asset === "missing") return Promise.resolve(null);
+  if (spriteImages[asset.id]?.complete && spriteImages[asset.id].naturalWidth > 0) return Promise.resolve(spriteImages[asset.id]);
+  if (spritePromises[asset.id]) return spritePromises[asset.id];
+  const img = new Image();
+  img.decoding = "async";
+  img.loading = "eager";
+  img.src = asset.q_asset;
+  spriteImages[asset.id] = img;
+  spritePromises[asset.id] = new Promise((resolve) => {
+    img.onload = () => resolve(img);
+    img.onerror = () => resolve(null);
+  });
+  return spritePromises[asset.id];
 }
 
 function freshState(classId, name) {
@@ -515,6 +580,7 @@ function setTarget(mapId, x, y, label = "目的地", options = {}) {
     state.y = clamp(120, 0, map.size[1]);
     state.combat = null;
     addLog(options.questWarp ? `任务传送：${from} -> ${map.name}` : `传送至 ${map.name}`);
+    requestIdle(preloadSpritesForCurrentMap);
   }
   const safe = nearestWalkable(mapId, x, y);
   state.target = { mapId, x: safe.x, y: safe.y, label };
@@ -1144,6 +1210,7 @@ function revive() {
   state.y = 320;
   state.combat = null;
   state.dungeon = null;
+  requestIdle(preloadSpritesForCurrentMap);
   const stats = getStats();
   state.hp = Math.floor(stats.maxHp * 0.6);
   state.mp = Math.floor(stats.maxMp * 0.55);
@@ -1158,6 +1225,7 @@ function failDungeon(reason) {
   state.mapId = dungeon?.entryMap || "longcheng";
   state.x = 240;
   state.y = 280;
+  requestIdle(preloadSpritesForCurrentMap);
   const stats = getStats();
   state.hp = Math.floor(stats.maxHp * 0.6);
   state.mp = Math.floor(stats.maxMp * 0.5);
@@ -1229,6 +1297,7 @@ function enterDungeon(id) {
   state.mapId = id;
   state.x = 170;
   state.y = 300;
+  requestIdle(preloadSpritesForCurrentMap);
   state.target = null;
   state.dungeon = {
     id,
@@ -1288,6 +1357,7 @@ function finishDungeon(dungeon) {
   state.mapId = dungeon.entryMap;
   state.x = 240;
   state.y = 280;
+  requestIdle(preloadSpritesForCurrentMap);
 }
 
 function renderCreate() {
@@ -1296,7 +1366,7 @@ function renderCreate() {
     const art = qAssetPath(`character_${classDef.id}`);
     return `
     <div class="class-card ${selectedClass === classDef.id ? "selected" : ""} ${locked ? "locked" : ""}" data-class="${classDef.id}">
-      <div class="class-art class-${classDef.id}">${art ? `<img src="${art}" alt="${classDef.name}" />` : classDef.name.slice(0, 1)}</div>
+      <div class="class-art class-${classDef.id}">${art ? `<img src="${art}" alt="${classDef.name}" loading="lazy" decoding="async" />` : classDef.name.slice(0, 1)}</div>
       <div>
         <h3>${classDef.name}</h3>
         <div class="muted small">${locked ? "纵切版暂未开放" : `${classDef.role} · ${classDef.weapon}`}</div>
@@ -1333,7 +1403,10 @@ function renderCreate() {
     initVitals();
     save();
     renderGameShell();
+    preloadSpritesForCurrentMap();
+    preloadAllSpritesInBackground();
   });
+  requestIdle(() => preloadSprites(data.classes.map((classDef) => `character_${classDef.id}`)));
 }
 
 function qAssetPath(id) {
@@ -1389,6 +1462,7 @@ function renderGameShell() {
   });
   document.querySelector(".drawer-close").addEventListener("click", () => toggleDrawer(false));
   renderGame();
+  preloadSpritesForCurrentMap();
 }
 
 function renderGame() {
@@ -3363,6 +3437,7 @@ function drawSprite(assetId, x, y, w, h) {
     ctx.drawImage(img, x - w / 2, y - h / 2, w, h);
     return;
   }
+  ensureSprite(assetId);
   ctx.fillStyle = "#d96f61";
   ctx.beginPath();
   ctx.arc(x, y, Math.min(w, h) / 2, 0, Math.PI * 2);

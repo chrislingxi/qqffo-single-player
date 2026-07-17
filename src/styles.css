@@ -927,6 +927,75 @@ body {
   overflow: hidden;
 }
 
+.boot-screen {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: max(18px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) max(18px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
+  background:
+    radial-gradient(circle at 22% 18%, rgba(117, 196, 130, .32), transparent 28rem),
+    radial-gradient(circle at 78% 72%, rgba(214, 168, 79, .18), transparent 24rem),
+    linear-gradient(135deg, #101312, #1c241c 60%, #21180f);
+}
+
+.boot-card {
+  width: min(460px, 88vw);
+  display: grid;
+  gap: 10px;
+  padding: 22px;
+  border: 1px solid rgba(231, 196, 112, .34);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(58, 42, 27, .84), rgba(22, 20, 17, .9));
+  box-shadow: 0 18px 50px rgba(0,0,0,.42), inset 0 1px rgba(255,238,180,.2);
+}
+
+.boot-card span {
+  color: #d9b361;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.boot-card h1 {
+  margin: 0;
+  color: #fff0bf;
+  font-size: clamp(22px, 4vw, 32px);
+  letter-spacing: 0;
+}
+
+.boot-card p {
+  margin: 0;
+  color: #d8caaa;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.boot-bar {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 1px solid rgba(255,230,160,.28);
+  background: rgba(16, 12, 9, .7);
+}
+
+.boot-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #77d986, #d8b253 62%, #ffdf8a);
+  box-shadow: 0 0 18px rgba(216, 178, 83, .5);
+  transition: width .22s ease;
+}
+
+.boot-card em {
+  color: #b8d9a5;
+  font-size: 12px;
+  font-style: normal;
+}
+
 .mmo-shell {
   width: 100vw;
   height: 100vh;

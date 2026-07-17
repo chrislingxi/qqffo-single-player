@@ -16,13 +16,17 @@ const spawns = await load("data/design/spawns.json");
 const app = await read("src/app.js");
 const styles = await read("src/styles.css");
 const sw = await read("sw.js");
+const html = await read("index.html");
 const pkg = await load("package.json");
 
 const sceneById = Object.fromEntries(scenes.map((scene) => [scene.mapId, scene]));
 assert(goal.version === "P3.0-M4", "P3.0 M4 goal spec missing or wrong version");
-assert(app.includes('DATA_VERSION = "p30-m4-01"'), "runtime DATA_VERSION must be P3.0 M4");
-assert(sw.includes("ffo-pwa-v7-p30-m4"), "service worker cache must be bumped for P3.0 M4");
+assert(app.includes('DATA_VERSION = "p30-m4-02"'), "runtime DATA_VERSION must be P3.0 M4 fastboot build");
+assert(sw.includes("ffo-pwa-v8-p30-m4-fastboot"), "service worker cache must be bumped for P3.0 M4 fastboot");
 assert(pkg.scripts["verify:p3-m4"] === "node tests/p3-m4-quality-gate.mjs", "package must expose verify:p3-m4");
+assert(html.includes("boot-screen") && styles.includes(".boot-screen"), "fastboot transition screen must be present before app JS loads");
+assert(app.includes("renderLoadingScreen") && app.includes("preloadSpritesForCurrentMap") && app.includes("preloadAllSpritesInBackground"), "runtime must expose staged loading and lazy sprite preload");
+assert(!sw.includes("qqffo-qstyle-concept-sheet-v1.png") && !sw.includes("town-forest-map-v1.png") && !sw.includes("tongtian_guardian_boss.png"), "service worker core cache must not block install on large art assets");
 
 for (const mapId of goal.referenceMaps) {
   const scene = sceneById[mapId];
