@@ -25,6 +25,7 @@ assert(app.includes('DATA_VERSION = "p30-m4-02"'), "runtime DATA_VERSION must be
 assert(sw.includes("ffo-pwa-v8-p30-m4-fastboot"), "service worker cache must be bumped for P3.0 M4 fastboot");
 assert(pkg.scripts["verify:p3-m4"] === "node tests/p3-m4-quality-gate.mjs", "package must expose verify:p3-m4");
 assert(html.includes("boot-screen") && styles.includes(".boot-screen"), "fastboot transition screen must be present before app JS loads");
+assert(html.includes("await import(`./src/app.js") && !html.includes('type="module" src="src/app.js"'), "index must clear stale PWA cache before importing app runtime");
 assert(app.includes("renderLoadingScreen") && app.includes("preloadSpritesForCurrentMap") && app.includes("preloadAllSpritesInBackground"), "runtime must expose staged loading and lazy sprite preload");
 assert(!sw.includes("qqffo-qstyle-concept-sheet-v1.png") && !sw.includes("town-forest-map-v1.png") && !sw.includes("tongtian_guardian_boss.png"), "service worker core cache must not block install on large art assets");
 
