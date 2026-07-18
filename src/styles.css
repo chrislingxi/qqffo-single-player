@@ -3060,3 +3060,140 @@ button.danger {
   width: 18px;
   height: 18px;
 }
+
+/* P3.1 commercial visual lock: target-art-direction HUD material pass. */
+.slice-create::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 236, 154, .16), transparent 28%),
+    radial-gradient(circle at 72% 58%, rgba(108, 232, 205, .12), transparent 30%);
+  mix-blend-mode: screen;
+}
+
+.class-card {
+  border-color: rgba(242, 205, 119, .46) !important;
+  background:
+    linear-gradient(145deg, rgba(44, 30, 21, .9), rgba(17, 23, 20, .82)),
+    radial-gradient(circle at 35% 15%, rgba(255, 230, 150, .24), transparent 36%) !important;
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, .36),
+    inset 0 1px rgba(255, 245, 190, .22),
+    inset 0 -10px 18px rgba(48, 24, 10, .28) !important;
+}
+
+.game-hud .top-menu .mmo-icon i,
+.game-hud .bottom-hotbar button .icon-frame,
+.game-hud .quick button .icon-frame,
+.left-quest-tabs .icon-frame {
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 31% 21%, #fff5bf 0 13%, #e0aa57 34%, #8b552e 66%, #342319 100%) !important;
+  border: 2px solid rgba(255, 228, 149, .9) !important;
+  box-shadow:
+    0 0 0 1px rgba(86, 48, 23, .75),
+    0 6px 13px rgba(0, 0, 0, .34),
+    inset 0 2px 5px rgba(255, 255, 255, .44),
+    inset 0 -7px 12px rgba(58, 27, 12, .45) !important;
+}
+
+.game-hud .top-menu .mmo-icon svg,
+.left-quest-tabs svg,
+.chat-bar .chat-icon svg,
+.bottom-hotbar svg,
+.quick svg {
+  filter: drop-shadow(0 2px 1px rgba(0,0,0,.55));
+}
+
+.mini-map {
+  border: 4px solid rgba(236, 197, 104, .92) !important;
+  background:
+    radial-gradient(circle at 54% 48%, rgba(255,244,177,.2), transparent 45%),
+    linear-gradient(145deg, rgba(56, 106, 61, .94), rgba(20, 45, 35, .96)) !important;
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.42),
+    inset 0 0 0 2px rgba(83, 47, 24, .82),
+    inset 0 0 26px rgba(255,230,136,.12) !important;
+}
+
+.mini-terrain {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mini-terrain.water {
+  left: -18%;
+  top: -7%;
+  width: 62%;
+  height: 48%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(119, 239, 226, .88), rgba(42, 140, 151, .82));
+  box-shadow: inset 0 -6px 10px rgba(255,255,255,.18);
+}
+
+.mini-terrain.path {
+  left: 8%;
+  top: 52%;
+  width: 98%;
+  height: 18%;
+  border-radius: 999px;
+  transform: rotate(-23deg);
+  background: rgba(224, 202, 129, .54);
+  box-shadow: 0 0 10px rgba(224, 202, 129, .18);
+}
+
+.mini-landmark {
+  position: absolute;
+  z-index: 2;
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  border-radius: 50%;
+  background: #ffe49a;
+  box-shadow: 0 0 5px rgba(255, 228, 154, .78);
+}
+
+.mini-map-dot.player {
+  clip-path: polygon(50% 0, 100% 100%, 50% 76%, 0 100%);
+  border-radius: 0 !important;
+}
+
+.skill-wheel button {
+  border-color: rgba(255, 228, 149, .96) !important;
+  background:
+    radial-gradient(circle at 33% 24%, rgba(255, 249, 202, .96) 0 12%, rgba(206, 116, 48, .92) 46%, rgba(50, 25, 21, .96) 100%) !important;
+  box-shadow:
+    0 9px 20px rgba(0,0,0,.42),
+    inset 0 2px 5px rgba(255,255,255,.45),
+    inset 0 -9px 14px rgba(31,16,11,.55) !important;
+}
+
+.skill-wheel .attack-btn {
+  background:
+    radial-gradient(circle at 38% 28%, #fff7c2 0 14%, #e18b35 39%, #78331f 67%, #1d1513 100%) !important;
+  box-shadow:
+    0 0 0 2px rgba(255, 221, 128, .4),
+    0 0 24px rgba(255, 174, 65, .54),
+    0 11px 24px rgba(0,0,0,.44),
+    inset 0 2px 6px rgba(255,255,255,.48) !important;
+}
+
+.skill-wheel button.cooling::before {
+  background:
+    conic-gradient(rgba(12, 14, 14, .78) calc(var(--cool, 0) * 1turn), rgba(255,255,255,.03) 0),
+    rgba(0,0,0,.15) !important;
+}
+
+.quest-track,
+.chat-bar {
+  border-color: rgba(232, 195, 109, .46) !important;
+  background:
+    linear-gradient(90deg, rgba(24, 19, 16, .82), rgba(24, 19, 16, .52)),
+    radial-gradient(circle at 22% 8%, rgba(255, 232, 154, .16), transparent 32%) !important;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.28),
+    inset 0 1px rgba(255, 242, 188, .12) !important;
+}

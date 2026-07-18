@@ -1,0 +1,28 @@
+{
+  "id": "p3_1_commercial_visual_slice",
+  "version": "P3.1-visual",
+  "target": "基于 P3.0 M4 刺客纵切，按商业手游目标图提升全屏地图、首页/HUD icon、右上小地图和稳定打击动态效果。",
+  "visualReference": "商业化横屏 2.5D RPG：全屏地图资产感、金边图形 icon、圆形地形小地图、刺客斩击轨迹、命中爆点、受击顿挫和伤害飘字。",
+  "qualityGates": {
+    "map": [
+      "地图渲染必须包含 commercial backdrop、painterly texture、water/shore/path、foreground foliage、atmospheric lighting。",
+      "芳草林东必须呈现水域、竹桥、竹林、泥路、草丛、怪物生态点。",
+      "程序化图形只能作为分层补充，不能只靠平铺网格表达场景。"
+    ],
+    "icons": [
+      "首页/HUD 系统入口必须是金边圆形图形 icon，具备高光、阴影、红点和按下态。",
+      "右上角小地图必须包含 terrain layer、path layer、water layer、monster dots、target dot、player arrow。",
+      "文字只能作为短 label，不能当 icon 本体。"
+    ],
+    "combatFx": [
+      "普攻和技能必须同时产生 slashArc、impactSpark、shockwave、screenShake、damage pop。",
+      "命中必须有 hit stop 与怪物 knockback/flash，避免站桩贴图感。",
+      "刺客技能需要 shadowDash/afterimage/多段飘字，宠物攻击需要 petClaw。"
+    ],
+    "acceptance": [
+      "新增 P3.1 视觉体验自动门禁。",
+      "浏览器横屏截图检查 HUD 无重叠、地图非空、战斗动效可见。",
+      "发布脚本必须包含 P3.1 视觉体验门禁。"
+    ]
+  }
+}

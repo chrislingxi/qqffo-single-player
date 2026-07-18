@@ -8,6 +8,7 @@ npm run verify:p2-six
 npm run verify:vertical-slice
 npm run verify:p3-m4
 npm run test:ui-experience
+npm run test:p3-visual
 npm run test:smoke
 npm run test:vertical-player
 npm run test:player

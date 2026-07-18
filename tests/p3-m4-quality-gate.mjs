@@ -21,8 +21,8 @@ const pkg = await load("package.json");
 
 const sceneById = Object.fromEntries(scenes.map((scene) => [scene.mapId, scene]));
 assert(goal.version === "P3.0-M4", "P3.0 M4 goal spec missing or wrong version");
-assert(app.includes('DATA_VERSION = "p30-m4-03"'), "runtime DATA_VERSION must be P3.0 M4.1 experience build");
-assert(sw.includes("ffo-pwa-v9-p30-m4-experience"), "service worker cache must be bumped for P3.0 M4.1 experience build");
+assert(app.includes('DATA_VERSION = "p31-visual-01"'), "runtime DATA_VERSION must be P3.1 visual build");
+assert(sw.includes("ffo-pwa-v10-p31-visual"), "service worker cache must be bumped for P3.1 visual build");
 assert(pkg.scripts["verify:p3-m4"] === "node tests/p3-m4-quality-gate.mjs", "package must expose verify:p3-m4");
 assert(html.includes("boot-screen") && styles.includes(".boot-screen"), "fastboot transition screen must be present before app JS loads");
 assert(html.includes("await import(`./src/app.js") && !html.includes('type="module" src="src/app.js"'), "index must clear stale PWA cache before importing app runtime");

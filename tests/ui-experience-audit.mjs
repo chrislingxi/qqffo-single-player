@@ -16,8 +16,8 @@ const [app, styles, html, sw] = await Promise.all([
   read("sw.js")
 ]);
 
-assert(app.includes('DATA_VERSION = "p30-m4-03"') && html.includes('"p30-m4-03"'), "runtime and HTML cache-buster must point at the latest experience build");
-assert(sw.includes("ffo-pwa-v9-p30-m4-experience"), "service worker cache must be bumped for the experience build");
+assert(app.includes('DATA_VERSION = "p31-visual-01"') && html.includes('"p31-visual-01"'), "runtime and HTML cache-buster must point at the latest visual build");
+assert(sw.includes("ffo-pwa-v10-p31-visual"), "service worker cache must be bumped for the visual build");
 assert(app.includes("sideMenu.innerHTML = \"\""), "duplicated right-side module buttons must stay removed from the single-player HUD");
 assert(styles.includes("P3.0 M4.1 EOF lock") && styles.trim().endsWith("}"), "side-menu hide rule must live in the final cascade lock");
 assert(app.includes("chat-icon") && !app.includes("<button>战</button>") && !app.includes("<button data-action=\"save\">存</button>"), "chat/save controls must be graphical buttons, not bare text glyphs");

@@ -36,12 +36,13 @@ const DATA_FILES = {
   sourceGaps: "data/design/source_gaps.json",
   p3SystemDetails: "data/design/p3_system_details.json",
   p3M4Goal: "data/design/p3_m4_goal.json",
+  p31VisualGoal: "data/design/p3_1_visual_goal.json",
   qAssets: "assets/game/qstyle/manifest.json"
 };
 
 const SAVE_KEY = "ffo_p2_save_v1";
 const LEGACY_SAVE_KEYS = ["ffo_p1_save_v1"];
-const DATA_VERSION = "p30-m4-03";
+const DATA_VERSION = "p31-visual-01";
 const VERTICAL_SLICE = {
   enabled: true,
   classId: "assassin",
@@ -122,7 +123,7 @@ async function loadData() {
   }
   data.classById = byId(data.classes);
   data.mapById = byId(data.maps);
-  data.mapSceneById = byId(data.mapScenes);
+  data.mapSceneById = Object.fromEntries(data.mapScenes.map((scene) => [scene.mapId, scene]));
   data.npcById = byId(data.npcs);
   data.monsterById = byId(data.monsters);
   data.itemById = byId(data.items);
@@ -141,6 +142,7 @@ async function loadData() {
   window.__ffoData = data;
   renderLoadingScreen("预热首屏素材", files.length + 1, files.length + 2);
   await preloadSprites(CRITICAL_BOOT_SPRITES, { blocking: true });
+  requestIdle(() => preloadSprites(["map_town_forest_v1"]));
   renderLoadingScreen("准备进入游戏", files.length + 2, files.length + 2);
 }
 
@@ -753,6 +755,7 @@ function tickCombat(dt) {
   if (!state.combat) return;
   const combat = state.combat;
   tickCombatPosition(dt, combat);
+  if ((combat.hitStopUntil || 0) > now()) return;
   combat.elapsed += dt;
   combat.enemy.debuffs = (combat.enemy.debuffs || []).filter((debuff) => debuff.until > now());
   combat.playerTimer -= dt;
@@ -844,7 +847,7 @@ function startCombat(monster, spawn = null) {
     state.x = clamp(enemyX - 78, 60, currentMap().size[0] - 60);
     state.y = clamp(enemyY + 8, 76, currentMap().size[1] - 58);
   }
-  state.combat = {
+      state.combat = {
     enemy: { ...monster, maxHp: monster.hp, hp: monster.hp },
     spawnUid: spawn?.uid || null,
     enemyX,
@@ -858,6 +861,11 @@ function startCombat(monster, spawn = null) {
     lastSkillName: "",
     skillLabelUntil: 0,
     telegraphUntil: 0,
+    hitStopUntil: 0,
+    enemyKnockUntil: 0,
+    enemyKnockX: 0,
+    enemyKnockY: 0,
+    screenShakeUntil: 0,
     elapsed: 0
   };
   state.codex[monster.id] = true;
@@ -885,7 +893,7 @@ function playerAttack() {
     const crit = Math.random() * 100 < stats.crit;
     if (crit) damage = Math.floor(damage * 1.5);
     combat.enemy.hp -= damage;
-    combat.playerActionUntil = now() + 0.22;
+    combat.playerActionUntil = now() + 0.28;
     combat.lastSkillName = "";
     markEnemyHit("attack");
     const point = combatTextPoint();
@@ -943,7 +951,7 @@ function castSkill(skill) {
   if (skill.hits) damage *= skill.hits;
   if (skill.target === "aoe") damage = Math.floor(damage * 1.22);
   combat.enemy.hp -= damage;
-  combat.playerActionUntil = now() + 0.28;
+  combat.playerActionUntil = now() + 0.34;
   combat.lastSkillName = skill.name;
   combat.skillLabelUntil = now() + 0.75;
   markEnemyHit("skill");
@@ -998,10 +1006,21 @@ function combatTextPoint() {
 
 function markEnemyHit(kind) {
   if (!state.combat?.enemy) return;
-  state.combat.enemy.hitFlash = now() + 0.18;
-  state.combat.enemyActionUntil = now() + 0.2;
+  const t = now();
+  const combat = state.combat;
+  const dir = combatDirection();
+  combat.enemy.hitFlash = t + 0.24;
+  combat.enemyActionUntil = t + 0.2;
+  combat.hitStopUntil = t + (kind === "skill" ? 0.09 : 0.055);
+  combat.enemyKnockUntil = t + 0.24;
+  combat.enemyKnockX = dir.x * (kind === "skill" ? 20 : 13);
+  combat.enemyKnockY = dir.y * (kind === "skill" ? 9 : 5);
+  combat.screenShakeUntil = t + (kind === "skill" ? 0.22 : 0.14);
   const point = combatTextPoint();
-  addFx("", point.x - 40, point.y + 26, kind === "skill" ? "#ffe08a" : "#fff1ce", kind === "pet" ? "impact" : "slash");
+  addFx("", point.x - 54, point.y + 32, kind === "skill" ? "#ffe08a" : "#fff1ce", kind === "pet" ? "petClaw" : "slashArc");
+  addFx("", point.x - 18, point.y + 28, kind === "skill" ? "#ffd36e" : "#fff2c0", "impactSpark");
+  addFx("", point.x - 22, point.y + 30, kind === "skill" ? "#fff0a2" : "#ffe8b0", "shockwave");
+  if (kind === "skill") addFx("", state.x + 36, state.y - 24, "#b98cff", "afterimage");
 }
 
 function skillColor(skill) {
@@ -1104,7 +1123,7 @@ function addFx(text, x, y, color = "#fff7dc", type = "status") {
     color,
     type,
     age: 0,
-    life: ["drop", "beam", "burst", "ring", "projectile", "aura", "rune", "flame", "ice", "poison", "light", "spear", "petClaw", "shadowDash", "poisonTrail", "stun"].includes(type) ? 1.8 : 1.15,
+    life: ["drop", "beam", "burst", "ring", "projectile", "aura", "rune", "flame", "ice", "poison", "light", "spear", "petClaw", "shadowDash", "poisonTrail", "stun", "slashArc", "impactSpark", "shockwave", "afterimage"].includes(type) ? 1.8 : 1.15,
     vy: type === "drop" ? 16 : 28
   });
   state.fx = state.fx.slice(-18);
@@ -1573,6 +1592,7 @@ function renderOverlayHud() {
 
 function renderMiniMap() {
   const map = currentMap();
+  const profile = currentSceneProfile(map);
   const [mw, mh] = map.size;
   const playerX = clamp((state.x / mw) * 100, 5, 95);
   const playerY = clamp((state.y / mh) * 100, 7, 93);
@@ -1584,7 +1604,13 @@ function renderMiniMap() {
     return `<i class="mini-map-dot ${type}" style="left:${x}%;top:${y}%"></i>`;
   }).join("");
   const target = state.target ? `<i class="mini-map-dot target" style="left:${clamp((state.target.x / mw) * 100, 5, 95)}%;top:${clamp((state.target.y / mh) * 100, 7, 93)}%"></i>` : "";
-  return `<span>${map.name}</span><b class="mini-grid"></b>${spawnDots}${target}<i class="mini-map-dot player" style="left:${playerX}%;top:${playerY}%"></i>`;
+  const water = profile.water ? '<b class="mini-terrain water"></b>' : "";
+  const path = '<b class="mini-terrain path"></b>';
+  const landmark = (profile.props || []).slice(0, 5).map((prop, index) => {
+    const [, wx, wy] = typeof prop[0] === "string" ? prop : [prop[3], prop[0], prop[1]];
+    return `<i class="mini-landmark" style="left:${clamp((wx / mw) * 100, 7, 93)}%;top:${clamp((wy / mh) * 100, 9, 91)}%;--i:${index}"></i>`;
+  }).join("");
+  return `<span>${map.name}</span><b class="mini-grid"></b>${water}${path}${landmark}${spawnDots}${target}<i class="mini-map-dot player" style="left:${playerX}%;top:${playerY}%"></i>`;
 }
 
 function combatStatusText(quest) {
@@ -2334,6 +2360,7 @@ function renderCanvas() {
     x: clamp(state.x - w / 2, 0, Math.max(0, map.size[0] - w)),
     y: clamp(state.y - h / 2, 0, Math.max(0, map.size[1] - h))
   };
+  applyScreenShake(camera);
   drawMap(w, h, camera);
   drawNavigationAids(camera);
   drawWorldActors(camera);
@@ -2350,14 +2377,66 @@ function drawMap(w, h, camera) {
   grad.addColorStop(1, scene.skyB);
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, w, h);
+  drawCommercialBackdrop(w, h, camera, profile);
   drawIsoGround(w, h, camera, scene, profile);
   drawPainterlyTexture(w, h, camera, scene, profile);
   drawMapWater(w, h, camera, profile);
   drawTerrainSignature(w, h, camera, scene, profile);
+  drawCommercialMapLight(w, h, camera, profile);
   drawSceneProps(w, h, camera, map.type, scene, profile);
   drawForegroundArchitecture(w, h, scene, profile);
   drawDepthFoliage(w, h, camera, profile);
   drawWeather(w, h, profile);
+}
+
+function applyScreenShake(camera) {
+  const combat = state.combat;
+  if (!combat || (combat.screenShakeUntil || 0) <= now()) return;
+  const strength = clamp((combat.screenShakeUntil - now()) / 0.22, 0, 1);
+  camera.x += Math.sin(now() * 110) * 5 * strength;
+  camera.y += Math.cos(now() * 97) * 3 * strength;
+}
+
+function drawCommercialBackdrop(w, h, camera, profile = {}) {
+  if (!["grass", "plain", "deep_wood", "bamboo_water", "suburb", "village"].includes(profile.theme)) return;
+  const asset = data.qAssetById?.map_town_forest_v1;
+  const img = asset ? spriteImages[asset.id] : null;
+  if (!img?.complete || img.naturalWidth <= 0) {
+    ensureSprite("map_town_forest_v1");
+    return;
+  }
+  const scale = Math.max(w / img.naturalWidth, h / img.naturalHeight);
+  const iw = img.naturalWidth * scale;
+  const ih = img.naturalHeight * scale;
+  const dx = (w - iw) / 2 - (camera.x % 48) * 0.12;
+  const dy = (h - ih) / 2 - (camera.y % 42) * 0.1;
+  ctx.save();
+  ctx.globalAlpha = profile.theme === "bamboo_water" ? 0.74 : 0.48;
+  ctx.drawImage(img, dx, dy, iw, ih);
+  ctx.restore();
+}
+
+function drawCommercialMapLight(w, h, camera, profile = {}) {
+  ctx.save();
+  const theme = profile.theme || "grass";
+  const glow = ctx.createRadialGradient(w * 0.42, h * 0.35, 20, w * 0.42, h * 0.35, Math.max(w, h) * 0.72);
+  glow.addColorStop(0, theme === "tower" ? "rgba(255,190,120,.14)" : "rgba(255,242,173,.22)");
+  glow.addColorStop(0.62, "rgba(255,255,255,0)");
+  glow.addColorStop(1, "rgba(6,12,9,.34)");
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, w, h);
+  if (["grass", "deep_wood", "bamboo_water", "suburb"].includes(theme)) {
+    ctx.globalAlpha = 0.22;
+    ctx.strokeStyle = "rgba(255,255,210,.42)";
+    ctx.lineWidth = 16;
+    for (let i = 0; i < 5; i += 1) {
+      ctx.beginPath();
+      ctx.moveTo(w * (0.12 + i * 0.2) - (camera.x % 80) * 0.08, -40);
+      ctx.lineTo(w * (0.02 + i * 0.22), h + 40);
+      ctx.stroke();
+    }
+  }
+  ctx.restore();
 }
 
 function currentSceneProfile(map = currentMap()) {
@@ -3087,11 +3166,12 @@ function drawCombatEnemy(camera) {
   const enemy = state.combat.enemy;
   const flash = (enemy.hitFlash || 0) > now();
   const action = Math.max(0, (state.combat.enemyActionUntil || 0) - now());
+  const knock = Math.max(0, (state.combat.enemyKnockUntil || 0) - now()) / 0.24;
   const shake = flash ? Math.sin(now() * 90) * 3 : 0;
   const baseX = state.combat.enemyX || state.x + 138;
   const baseY = (state.combat.enemyY || state.y - 4) - 8;
-  const x = baseX - camera.x + shake + action * 22;
-  const y = baseY - camera.y + Math.sin(now() * 4) * 1.2;
+  const x = baseX - camera.x + shake + action * 22 + (state.combat.enemyKnockX || 0) * knock;
+  const y = baseY - camera.y + Math.sin(now() * 4) * 1.2 + (state.combat.enemyKnockY || 0) * knock;
   drawTargetRing(x, y + 30, enemy);
   drawCombatTelegraph(x, y + 30);
   ctx.fillStyle = "rgba(0,0,0,.28)";
@@ -3188,6 +3268,15 @@ function drawFx(camera) {
       ctx.beginPath();
       ctx.ellipse(x - 26, y + 18, 34, 12, -0.2, 0, Math.PI * 2);
       ctx.fill();
+    }
+    if (fx.type === "afterimage") {
+      ctx.globalAlpha = alpha * 0.34;
+      ctx.fillStyle = fx.color;
+      for (let i = 0; i < 4; i += 1) {
+        ctx.beginPath();
+        ctx.ellipse(x - 14 * i - fx.age * 28, y + 4 + i * 5, 20 - i * 2, 30 - i * 3, -0.18, 0, Math.PI * 2);
+        ctx.fill();
+      }
     }
     if (fx.type === "poisonTrail") {
       for (let i = 0; i < 10; i += 1) {
@@ -3299,6 +3388,57 @@ function drawFx(camera) {
       ctx.beginPath();
       ctx.arc(x, y, 10 + fx.age * 34, 0, Math.PI * 2);
       ctx.stroke();
+    }
+    if (fx.type === "slashArc") {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(-0.23);
+      const width = 112 + fx.age * 90;
+      const grad = ctx.createLinearGradient(-width * 0.55, 0, width * 0.55, 0);
+      grad.addColorStop(0, "rgba(255,255,255,0)");
+      grad.addColorStop(0.35, fx.color);
+      grad.addColorStop(0.52, "rgba(255,255,255,.95)");
+      grad.addColorStop(1, "rgba(255,190,70,0)");
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = 14 * alpha;
+      ctx.lineCap = "round";
+      ctx.beginPath();
+      ctx.ellipse(0, 0, width * 0.5, 44, 0, -0.1, Math.PI * 0.82);
+      ctx.stroke();
+      ctx.lineWidth = 4 * alpha;
+      ctx.strokeStyle = "rgba(255,255,255,.75)";
+      ctx.stroke();
+      ctx.restore();
+    }
+    if (fx.type === "impactSpark") {
+      ctx.strokeStyle = fx.color;
+      ctx.lineWidth = 3;
+      ctx.lineCap = "round";
+      for (let i = 0; i < 12; i += 1) {
+        const a = i * Math.PI / 6 + fx.age * 1.6;
+        const r1 = 5 + fx.age * 18;
+        const r2 = 26 + fx.age * 38;
+        ctx.beginPath();
+        ctx.moveTo(x + Math.cos(a) * r1, y + Math.sin(a) * r1);
+        ctx.lineTo(x + Math.cos(a) * r2, y + Math.sin(a) * r2);
+        ctx.stroke();
+      }
+      ctx.fillStyle = "rgba(255,255,255,.85)";
+      ctx.beginPath();
+      ctx.arc(x, y, 7 + fx.age * 9, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    if (fx.type === "shockwave") {
+      ctx.strokeStyle = fx.color;
+      ctx.lineWidth = 5 * alpha;
+      ctx.beginPath();
+      ctx.ellipse(x, y + 18, 34 + fx.age * 70, 11 + fx.age * 25, 0, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.globalAlpha = alpha * 0.18;
+      ctx.fillStyle = fx.color;
+      ctx.beginPath();
+      ctx.ellipse(x, y + 18, 30 + fx.age * 64, 10 + fx.age * 20, 0, 0, Math.PI * 2);
+      ctx.fill();
     }
     if (fx.type === "slash" || fx.type === "impact") {
       ctx.strokeStyle = fx.color;

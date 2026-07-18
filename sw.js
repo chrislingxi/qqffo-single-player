@@ -1,4 +1,4 @@
-const CACHE_NAME = "ffo-pwa-v9-p30-m4-experience";
+const CACHE_NAME = "ffo-pwa-v10-p31-visual";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -43,6 +43,7 @@ const CORE_ASSETS = [
   "./data/design/source_gaps.json",
   "./data/design/p3_system_details.json",
   "./data/design/p3_m4_goal.json",
+  "./data/design/p3_1_visual_goal.json",
   "./assets/game/qstyle/manifest.json"
 ];
 
