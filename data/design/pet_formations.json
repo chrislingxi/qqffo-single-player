@@ -1,0 +1,51 @@
+{
+  "source_confidence": "partial",
+  "source_files": [
+    "docs/reference/raw/ffobaike/ffobaike-宠物法阵-QQ自由幻想百科-c3eb8985.html",
+    "docs/reference/raw/official/official-宠物法阵加持文字说明介绍-f9c575b7.html"
+  ],
+  "formations": [
+    {
+      "id": "starter_circle",
+      "original_name": "宠物法阵",
+      "project_name": "灵宠法阵",
+      "level_req": 18,
+      "slots": 3,
+      "effects": [
+        {
+          "stat": "maxHp",
+          "value": 70
+        },
+        {
+          "stat": "attack",
+          "value": 9
+        },
+        {
+          "stat": "magicAttack",
+          "value": 9
+        }
+      ],
+      "source_confidence": "inferred",
+      "gaps": [
+        "六爻位置",
+        "全属性加持",
+        "升级材料"
+      ]
+    },
+    {
+      "id": "p3_six_lines",
+      "original_name": "六爻宠物法阵",
+      "project_name": "六爻灵阵",
+      "level_req": 80,
+      "slots": 6,
+      "effects": [],
+      "source_confidence": "partial",
+      "gaps": [
+        "每爻属性",
+        "宠物要求",
+        "加持数值",
+        "升级消耗"
+      ]
+    }
+  ]
+}

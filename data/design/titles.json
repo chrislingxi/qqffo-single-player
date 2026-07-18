@@ -1,0 +1,30 @@
+{
+  "system": "称号",
+  "source_confidence": "partial",
+  "source_files": [
+    "docs/reference/raw/ffobaike/ffobaike-称号系统-QQ自由幻想百科-673c3147.html"
+  ],
+  "single_player_adaptation": "保留成长与属性追求，剔除交易、排行、多人依赖；材料来源转化为单人副本/日常/挂机循环。",
+  "status": "data_shell_ready",
+  "levels": [
+    {
+      "level": 1,
+      "materials": [],
+      "rewards": [],
+      "source_confidence": "schema_placeholder"
+    }
+  ],
+  "rewards": [],
+  "materials": [],
+  "gaps": [
+    "全量达成条件",
+    "时效",
+    "属性"
+  ],
+  "schema_version": "p3-loop1",
+  "single_player_sources": [
+    "高阶副本",
+    "日常",
+    "挂机刷怪"
+  ]
+}

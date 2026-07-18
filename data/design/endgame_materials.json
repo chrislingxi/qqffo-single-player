@@ -1,0 +1,950 @@
+{
+  "source_confidence": "mixed",
+  "policy": "材料来源优先使用本地官方/百科资料；多人/交易来源转为单人副本、日常或挂机循环。",
+  "materials": [
+    {
+      "id": "p3_mat_1",
+      "original_name": "五彩绢丝",
+      "project_name": "五彩绢丝",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_2",
+      "original_name": "龙翼碎片",
+      "project_name": "龙翼碎片",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_3",
+      "original_name": "祝福石",
+      "project_name": "祝福石",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_4",
+      "original_name": "典籍残页",
+      "project_name": "典籍残页",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_5",
+      "original_name": "战魂精华",
+      "project_name": "战魂精华",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_6",
+      "original_name": "幻神法器",
+      "project_name": "幻神法器",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_7",
+      "original_name": "法宝碎片",
+      "project_name": "法宝碎片",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_8",
+      "original_name": "戒灵精华",
+      "project_name": "戒灵精华",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_9",
+      "original_name": "通天魔劫印记",
+      "project_name": "通天魔劫印记",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_10",
+      "original_name": "高阶副本钥匙",
+      "project_name": "高阶副本钥匙",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_11",
+      "original_name": "终极手之魂",
+      "project_name": "终极手之魂",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_12",
+      "original_name": "荣光宝石",
+      "project_name": "荣光宝石",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_13",
+      "original_name": "秘魂药",
+      "project_name": "秘魂药",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_14",
+      "original_name": "终极面之魂",
+      "project_name": "终极面之魂",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_15",
+      "original_name": "朱雀碎片",
+      "project_name": "朱雀碎片",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_16",
+      "original_name": "终极衣之魂",
+      "project_name": "终极衣之魂",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_17",
+      "original_name": "朱雀套装为绑定在玩家身上的装备，不可解绑。朱雀图谱同样是不可交易的，玩家必须靠自己努力才能获得，朱雀碎片玩家可以相互交易。",
+      "project_name": "朱雀套装为绑定在玩家身上的装备，不可解绑。朱雀图谱同样是不可交易的，玩家必须靠自己努力才能获得，朱雀碎片玩家可以相互交易。",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": false,
+      "source_text_policy": "source_only_needs_structuring"
+    },
+    {
+      "id": "p3_mat_18",
+      "original_name": "对应位置的朱雀图谱 + 朱雀碎片105个 = 朱雀套装",
+      "project_name": "对应位置的朱雀图谱 + 朱雀碎片105个 = 朱雀套装",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": false,
+      "source_text_policy": "source_only_needs_structuring"
+    },
+    {
+      "id": "p3_mat_19",
+      "original_name": "龙套装装备 + 对应位置的朱雀图谱 + 朱雀碎片90个 = 朱雀套装",
+      "project_name": "龙套装装备 + 对应位置的朱雀图谱 + 朱雀碎片90个 = 朱雀套装",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": false,
+      "source_text_policy": "source_only_needs_structuring"
+    },
+    {
+      "id": "p3_mat_20",
+      "original_name": "虎套装装备 + 对应位置的朱雀图谱 + 朱雀碎片45个 = 朱雀套装",
+      "project_name": "虎套装装备 + 对应位置的朱雀图谱 + 朱雀碎片45个 = 朱雀套装",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": false,
+      "source_text_policy": "source_only_needs_structuring"
+    },
+    {
+      "id": "p3_mat_21",
+      "original_name": "破魂·朱雀（战士） ​",
+      "project_name": "破魂·朱雀（战士） ​",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_22",
+      "original_name": "破魂翼·朱雀",
+      "project_name": "破魂翼·朱雀",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_23",
+      "original_name": "破魂顏·朱雀",
+      "project_name": "破魂顏·朱雀",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_24",
+      "original_name": "破魂环·朱雀",
+      "project_name": "破魂环·朱雀",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_25",
+      "original_name": "破魂坠·朱雀",
+      "project_name": "破魂坠·朱雀",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_26",
+      "original_name": "擎力翼·朱雀",
+      "project_name": "擎力翼·朱雀",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_27",
+      "original_name": "终极戒之魂",
+      "project_name": "终极戒之魂",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_28",
+      "original_name": "各种珍贵卡片",
+      "project_name": "各种珍贵卡片",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_29",
+      "original_name": "仙之碎片",
+      "project_name": "仙之碎片",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": true,
+      "source_text_policy": "runtime_safe_label"
+    },
+    {
+      "id": "p3_mat_30",
+      "original_name": "琉璃石（绑），将胸针装备在各大主城的铁匠处花费金币进行拆解可以得到痴心石，1个痴心石+1个枭王石=1个琉璃石（不绑定）。枭王石在货架上有售。",
+      "project_name": "琉璃石（绑），将胸针装备在各大主城的铁匠处花费金币进行拆解可以得到痴心石，1个痴心石+1个枭王石=1个琉璃石（不绑定）。枭王石在货架上有售。",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": false,
+      "source_text_policy": "source_only_needs_structuring"
+    },
+    {
+      "id": "p3_mat_31",
+      "original_name": "原本司马卿家是朝中大官，因父亲犯密谋造反被全家满门抄斩，只剩他落荒而逃。无奈自己皮毛功夫还是被赶来的追兵杀死抛入河中，尸体漂到了清幽小径，无奈此处已不能还魂，游魂中被妖王后看中。 妖王后用尸合咒将司马卿的魂体重新注入在强化过的尸体中，自此，这孤魂便放弃了司马卿这个名字，他要妖王后下令，众人必须称其万妖皇……",
+      "project_name": "原本司马卿家是朝中大官，因父亲犯密谋造反被全家满门抄斩，只剩他落荒而逃。无奈自己皮毛功夫还是被赶来的追兵杀死抛入河中，尸体漂到了清幽小径，无奈此处已不能还魂，游魂中被妖王后看中。 妖王后用尸合咒将司马卿的魂体重新注入在强化过的尸体中，自此，这孤魂便放弃了司马卿这个名字，他要妖王后下令，众人必须称其万妖皇……",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": false,
+      "source_text_policy": "source_only_needs_structuring"
+    },
+    {
+      "id": "p3_mat_32",
+      "original_name": "获得根据等级计算相应数值的宝石精华。轮回记忆碎片10个。",
+      "project_name": "获得根据等级计算相应数值的宝石精华。轮回记忆碎片10个。",
+      "used_by": [],
+      "known_sources": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog",
+      "gaps": [
+        "精确掉落率",
+        "绑定系统",
+        "可交易/不可交易边界"
+      ],
+      "runtime_enabled": false,
+      "source_text_policy": "source_only_needs_structuring"
+    }
+  ],
+  "schema_version": "p3-agent-loop-02",
+  "runtime_policy": "materials 保留候选资料；runtime_materials 是单机运行可展示/可掉落材料清单。",
+  "runtime_materials": [
+    {
+      "id": "p3_mat_1",
+      "original_name": "五彩绢丝",
+      "project_name": "五彩绢丝",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_2",
+      "original_name": "龙翼碎片",
+      "project_name": "龙翼碎片",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_3",
+      "original_name": "祝福石",
+      "project_name": "祝福石",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_4",
+      "original_name": "典籍残页",
+      "project_name": "典籍残页",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_5",
+      "original_name": "战魂精华",
+      "project_name": "战魂精华",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_6",
+      "original_name": "幻神法器",
+      "project_name": "幻神法器",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_7",
+      "original_name": "法宝碎片",
+      "project_name": "法宝碎片",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_8",
+      "original_name": "戒灵精华",
+      "project_name": "戒灵精华",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_9",
+      "original_name": "通天魔劫印记",
+      "project_name": "通天魔劫印记",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_10",
+      "original_name": "高阶副本钥匙",
+      "project_name": "高阶副本钥匙",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_11",
+      "original_name": "终极手之魂",
+      "project_name": "终极手之魂",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_12",
+      "original_name": "荣光宝石",
+      "project_name": "荣光宝石",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_13",
+      "original_name": "秘魂药",
+      "project_name": "秘魂药",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_14",
+      "original_name": "终极面之魂",
+      "project_name": "终极面之魂",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_15",
+      "original_name": "朱雀碎片",
+      "project_name": "朱雀碎片",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_16",
+      "original_name": "终极衣之魂",
+      "project_name": "终极衣之魂",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_21",
+      "original_name": "破魂·朱雀（战士）",
+      "project_name": "破魂·朱雀（战士）",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_22",
+      "original_name": "破魂翼·朱雀",
+      "project_name": "破魂翼·朱雀",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_23",
+      "original_name": "破魂顏·朱雀",
+      "project_name": "破魂顏·朱雀",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_24",
+      "original_name": "破魂环·朱雀",
+      "project_name": "破魂环·朱雀",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_25",
+      "original_name": "破魂坠·朱雀",
+      "project_name": "破魂坠·朱雀",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_26",
+      "original_name": "擎力翼·朱雀",
+      "project_name": "擎力翼·朱雀",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_27",
+      "original_name": "终极戒之魂",
+      "project_name": "终极戒之魂",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_28",
+      "original_name": "各种珍贵卡片",
+      "project_name": "各种珍贵卡片",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    },
+    {
+      "id": "p3_mat_29",
+      "original_name": "仙之碎片",
+      "project_name": "仙之碎片",
+      "used_by": [],
+      "single_player_sources": [
+        "高阶副本",
+        "通天塔/通天魔劫塔",
+        "后期日常"
+      ],
+      "source_confidence": "inferred_from_catalog"
+    }
+  ]
+}

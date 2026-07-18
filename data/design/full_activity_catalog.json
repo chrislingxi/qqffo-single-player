@@ -1,0 +1,133 @@
+{
+  "source_confidence": "mixed",
+  "activities": [
+    {
+      "original_name": "试炼",
+      "project_name": "试炼·单机",
+      "single_player_adaptation": "多人/队伍步骤转为宠物/幻神助战或战力门槛。",
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "removed_system_codes": [
+          "party",
+          "ranking",
+          "trade"
+        ],
+        "assist_replacement": "宠物/幻神助战或本地战力门槛",
+        "source_text_policy": "single_player_adaptation 是设计说明；运行 UI 使用 single_player_runtime。"
+      }
+    },
+    {
+      "original_name": "珍珠海域",
+      "project_name": "珍珠海域·单机",
+      "single_player_adaptation": "多人/队伍步骤转为宠物/幻神助战或战力门槛。",
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "removed_system_codes": [
+          "party",
+          "ranking",
+          "trade"
+        ],
+        "assist_replacement": "宠物/幻神助战或本地战力门槛",
+        "source_text_policy": "single_player_adaptation 是设计说明；运行 UI 使用 single_player_runtime。"
+      }
+    },
+    {
+      "original_name": "保卫战",
+      "project_name": "保卫战·单机",
+      "single_player_adaptation": "多人/队伍步骤转为宠物/幻神助战或战力门槛。",
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "removed_system_codes": [
+          "party",
+          "ranking",
+          "trade"
+        ],
+        "assist_replacement": "宠物/幻神助战或本地战力门槛",
+        "source_text_policy": "single_player_adaptation 是设计说明；运行 UI 使用 single_player_runtime。"
+      }
+    },
+    {
+      "original_name": "天魔劫",
+      "project_name": "天魔劫·单机",
+      "single_player_adaptation": "多人/队伍步骤转为宠物/幻神助战或战力门槛。",
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "removed_system_codes": [
+          "party",
+          "ranking",
+          "trade"
+        ],
+        "assist_replacement": "宠物/幻神助战或本地战力门槛",
+        "source_text_policy": "single_player_adaptation 是设计说明；运行 UI 使用 single_player_runtime。"
+      }
+    },
+    {
+      "original_name": "通天塔",
+      "project_name": "通天塔·单机",
+      "single_player_adaptation": "多人/队伍步骤转为宠物/幻神助战或战力门槛。",
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "removed_system_codes": [
+          "party",
+          "ranking",
+          "trade"
+        ],
+        "assist_replacement": "宠物/幻神助战或本地战力门槛",
+        "source_text_policy": "single_player_adaptation 是设计说明；运行 UI 使用 single_player_runtime。"
+      }
+    },
+    {
+      "original_name": "怪物猎杀令",
+      "project_name": "怪物猎杀令·单机",
+      "single_player_adaptation": "多人/队伍步骤转为宠物/幻神助战或战力门槛。",
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "removed_system_codes": [
+          "party",
+          "ranking",
+          "trade"
+        ],
+        "assist_replacement": "宠物/幻神助战或本地战力门槛",
+        "source_text_policy": "single_player_adaptation 是设计说明；运行 UI 使用 single_player_runtime。"
+      }
+    },
+    {
+      "original_name": "通天魔劫塔",
+      "project_name": "通天魔劫塔·单机",
+      "single_player_adaptation": "多人/队伍步骤转为宠物/幻神助战或战力门槛。",
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "missing",
+      "single_player_runtime": {
+        "entry_mode": "solo",
+        "party_requirement": "none",
+        "removed_system_codes": [
+          "party",
+          "ranking",
+          "trade"
+        ],
+        "assist_replacement": "宠物/幻神助战或本地战力门槛",
+        "source_text_policy": "single_player_adaptation 是设计说明；运行 UI 使用 single_player_runtime。"
+      }
+    }
+  ],
+  "schema_version": "p3-agent-loop-02",
+  "runtime_policy": "activities 保留来源说明；single_player_runtime 给游戏使用。"
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "dungeon_nest",
+    "name": "花妖巢穴·单机试炼",
+    "original_name": "花妖巢穴",
+    "levelReq": 15,
+    "entryMap": "fangcao_east",
+    "waves": [
+      { "monsterIds": ["man_eater_flower", "boar"], "count": 6 },
+      { "monsterIds": ["elite_boar"], "count": 1 },
+      { "monsterIds": ["flower_queen"], "count": 1 }
+    ],
+    "rewards": { "exp": 6200, "gold": 600, "items": ["forest_weapon", "starlit_ring"] },
+    "source_confidence": "single_player_slice_balance",
+    "notes": "P2.5 刺客1-20纵切版尾段经验收束，奖励为本地单机平衡。"
+  },
+  {
+    "id": "dungeon_tower",
+    "name": "纯阳宝塔·初阶",
+    "original_name": "纯阳宝塔",
+    "levelReq": 25,
+    "entryMap": "longcheng",
+    "waves": [
+      { "monsterIds": ["ghost_fire", "tree_demon"], "count": 8 },
+      { "monsterIds": ["elite_boar"], "count": 1 },
+      { "monsterIds": ["tower_guardian"], "count": 1 }
+    ],
+    "rewards": { "exp": 3600, "gold": 1200, "items": ["mine_weapon", "tower_charm"] },
+    "source_confidence": "inferred"
+  },
+  {
+    "id": "dungeon_lingze",
+    "name": "灵泽殿·单机",
+    "original_name": "灵泽殿",
+    "levelReq": 35,
+    "entryMap": "lingze_field",
+    "waves": [
+      { "monsterIds": ["ghost_fire", "spirit_guardian"], "count": 8 },
+      { "monsterIds": ["spirit_guardian"], "count": 3 },
+      { "monsterIds": ["tower_guardian"], "count": 1 }
+    ],
+    "rewards": { "exp": 9200, "gold": 3200, "items": ["spirit_weapon", "soul_charm"] },
+    "source_confidence": "inferred"
+  },
+  {
+    "id": "dungeon_dragon_relic",
+    "name": "龙翼秘宝·单机",
+    "original_name": "龙翼秘宝",
+    "levelReq": 45,
+    "entryMap": "lingze_field",
+    "waves": [
+      { "monsterIds": ["spirit_guardian"], "count": 6 },
+      { "monsterIds": ["tower_guardian"], "count": 2 },
+      { "monsterIds": ["dragon_relic_boss"], "count": 1 }
+    ],
+    "rewards": { "exp": 16000, "gold": 5200, "items": ["dragon_wing_charm", "spirit_armor"] },
+    "source_confidence": "official_name_inferred_rule"
+  }
+]

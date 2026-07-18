@@ -1,0 +1,30 @@
+{
+  "system": "法宝",
+  "source_confidence": "partial",
+  "source_files": [
+    "docs/reference/raw/p3_official_supplement/ffo.qq.com_act_a20120328years_fabao.htm.html"
+  ],
+  "single_player_adaptation": "保留成长与属性追求，剔除交易、排行、多人依赖；材料来源转化为单人副本/日常/挂机循环。",
+  "status": "data_shell_ready",
+  "levels": [
+    {
+      "level": 1,
+      "materials": [],
+      "rewards": [],
+      "source_confidence": "schema_placeholder"
+    }
+  ],
+  "rewards": [],
+  "materials": [],
+  "gaps": [
+    "全量法宝",
+    "秘/真系列材料",
+    "附魂/加工公式"
+  ],
+  "schema_version": "p3-loop1",
+  "single_player_sources": [
+    "高阶副本",
+    "日常",
+    "挂机刷怪"
+  ]
+}

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "trial",
+    "name": "试炼",
+    "levelReq": 12,
+    "dailyLimit": 3,
+    "target": { "type": "kill_any", "count": 18 },
+    "rewards": { "exp": 4200, "gold": 520, "items": ["pet_food"] },
+    "source_file": "docs/reference/raw/ffobaike/ffobaike-试炼-QQ自由幻想百科-804b0d31.html",
+    "source_confidence": "single_player_slice_balance",
+    "notes": "P2.5 刺客1-20纵切版将试炼作为18-20级收口日课，经验为本地单机平衡。"
+  },
+  {
+    "id": "hunt_order",
+    "name": "怪物猎杀令",
+    "levelReq": 18,
+    "dailyLimit": 5,
+    "target": { "type": "kill_any", "count": 25 },
+    "rewards": { "exp": 2400, "gold": 760, "items": ["repair_kit"] },
+    "source_file": "docs/reference/raw/ffobaike/ffobaike-怪物猎杀令-混包-QQ自由幻想百科-303c76b7.html",
+    "source_confidence": "official_name_inferred_rule"
+  },
+  {
+    "id": "tower_daily",
+    "name": "通天塔",
+    "levelReq": 28,
+    "dailyLimit": 2,
+    "dungeonId": "dungeon_tower",
+    "rewards": { "exp": 4200, "gold": 1250, "items": ["ghost_ash"] },
+    "source_file": "docs/reference/raw/ffobaike/ffobaike-通天塔-QQ自由幻想百科-3ab622cd.html",
+    "source_confidence": "official_name_inferred_rule"
+  },
+  {
+    "id": "pearl_sea",
+    "name": "珍珠海域",
+    "levelReq": 32,
+    "dailyLimit": 2,
+    "target": { "type": "kill_any", "count": 32 },
+    "rewards": { "exp": 5200, "gold": 1550, "items": ["white_rabbit_fur"] },
+    "source_file": "docs/reference/raw/ffobaike/ffobaike-珍珠海域-QQ自由幻想百科-ee4c60d7.html",
+    "source_confidence": "official_name_inferred_rule"
+  }
+]

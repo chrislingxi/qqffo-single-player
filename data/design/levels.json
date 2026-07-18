@@ -1,0 +1,101 @@
+{
+  "source_confidence": "inferred",
+  "maxLevel": 110,
+  "attributePointsPerLevel": 4,
+  "skillPointsPerLevel": 1,
+  "expCurve": {
+    "base": 90,
+    "growth": 1.18,
+    "flat": 28
+  },
+  "milestones": [
+    {
+      "level": 1,
+      "unlock": [
+        "主线任务",
+        "普通攻击"
+      ]
+    },
+    {
+      "level": 3,
+      "unlock": [
+        "主动技能1",
+        "自动寻路"
+      ]
+    },
+    {
+      "level": 5,
+      "unlock": [
+        "自动战斗",
+        "装备修理"
+      ]
+    },
+    {
+      "level": 8,
+      "unlock": [
+        "支线任务",
+        "自动补给"
+      ]
+    },
+    {
+      "level": 10,
+      "unlock": [
+        "宠物捕捉"
+      ]
+    },
+    {
+      "level": 15,
+      "unlock": [
+        "第一个单人副本"
+      ]
+    },
+    {
+      "level": 25,
+      "unlock": [
+        "初阶宝塔"
+      ]
+    },
+    {
+      "level": 35,
+      "unlock": [
+        "飞升前置",
+        "通天塔日常"
+      ]
+    },
+    {
+      "level": 55,
+      "unlock": [
+        "P2个人可用毕业"
+      ]
+    },
+    {
+      "level": 80,
+      "unlock": [
+        "P3高阶地图",
+        "飞升任务链"
+      ]
+    },
+    {
+      "level": 90,
+      "unlock": [
+        "幻神",
+        "典籍卡",
+        "称号养成"
+      ]
+    },
+    {
+      "level": 100,
+      "unlock": [
+        "装备祝福",
+        "龙翼秘宝"
+      ]
+    },
+    {
+      "level": 110,
+      "unlock": [
+        "P3毕业追求",
+        "翅膀雕花"
+      ]
+    }
+  ]
+}

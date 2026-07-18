@@ -1,0 +1,141 @@
+{
+  "source_confidence": "partial",
+  "maps": [
+    {
+      "id": "p3_map_1",
+      "original_name": "夜影村",
+      "project_name": "夜影村",
+      "level_range": [
+        80,
+        90
+      ],
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "gaps": [
+        "地图原图",
+        "坐标",
+        "怪物分布",
+        "完整产出"
+      ]
+    },
+    {
+      "id": "p3_map_2",
+      "original_name": "迷雾沼泽",
+      "project_name": "迷雾沼泽",
+      "level_range": [
+        83,
+        93
+      ],
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "gaps": [
+        "地图原图",
+        "坐标",
+        "怪物分布",
+        "完整产出"
+      ]
+    },
+    {
+      "id": "p3_map_3",
+      "original_name": "冰火双螺",
+      "project_name": "冰火双螺",
+      "level_range": [
+        86,
+        96
+      ],
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "gaps": [
+        "地图原图",
+        "坐标",
+        "怪物分布",
+        "完整产出"
+      ]
+    },
+    {
+      "id": "p3_map_4",
+      "original_name": "灵泽殿",
+      "project_name": "灵泽殿",
+      "level_range": [
+        89,
+        99
+      ],
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "gaps": [
+        "地图原图",
+        "坐标",
+        "怪物分布",
+        "完整产出"
+      ]
+    },
+    {
+      "id": "p3_map_5",
+      "original_name": "先祖山",
+      "project_name": "先祖山",
+      "level_range": [
+        92,
+        102
+      ],
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "gaps": [
+        "地图原图",
+        "坐标",
+        "怪物分布",
+        "完整产出"
+      ]
+    },
+    {
+      "id": "p3_map_6",
+      "original_name": "八仙东海战",
+      "project_name": "八仙东海战",
+      "level_range": [
+        95,
+        105
+      ],
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "gaps": [
+        "地图原图",
+        "坐标",
+        "怪物分布",
+        "完整产出"
+      ]
+    },
+    {
+      "id": "p3_map_7",
+      "original_name": "妖皇府",
+      "project_name": "妖皇府",
+      "level_range": [
+        98,
+        108
+      ],
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "gaps": [
+        "地图原图",
+        "坐标",
+        "怪物分布",
+        "完整产出"
+      ]
+    },
+    {
+      "id": "p3_map_8",
+      "original_name": "昆仑雪",
+      "project_name": "昆仑雪",
+      "level_range": [
+        101,
+        110
+      ],
+      "source_file": "docs/prd/p3-feature-audit.md",
+      "source_confidence": "partial",
+      "gaps": [
+        "地图原图",
+        "坐标",
+        "怪物分布",
+        "完整产出"
+      ]
+    }
+  ]
+}

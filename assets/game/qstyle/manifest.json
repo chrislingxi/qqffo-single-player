@@ -1,0 +1,262 @@
+[
+  {
+    "id": "ghost_fire",
+    "type": "monster",
+    "original_name": "鬼火",
+    "original_asset": "assets/reference/original/monsters/ghost_fire.jpg",
+    "q_asset": "assets/game/qstyle/ai/sprites/ghost_fire.png",
+    "source_confidence": "official",
+    "q_method": "original_reference_q_stylized",
+    "asset_maturity": "ai_q_runtime_v1"
+  },
+  {
+    "id": "fenfen_rabbit",
+    "type": "monster",
+    "original_name": "粉粉兔",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/fenfen_rabbit.png",
+    "source_confidence": "official_text_only",
+    "q_method": "official_text_plus_white_rabbit_reference",
+    "asset_maturity": "ai_q_runtime_v1"
+  },
+  {
+    "id": "snail",
+    "type": "monster",
+    "original_name": "小蜗牛怪",
+    "original_asset": "assets/reference/original/monsters/big_snail.jpg",
+    "q_asset": "assets/game/qstyle/ai/sprites/snail.png",
+    "source_confidence": "official_reference_related",
+    "asset_maturity": "ai_q_runtime_v1"
+  },
+  {
+    "id": "man_eater_flower",
+    "type": "monster",
+    "original_name": "食人花",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/man_eater_flower.png",
+    "source_confidence": "official_text_only",
+    "asset_maturity": "ai_q_runtime_v1"
+  },
+  {
+    "id": "boar",
+    "type": "monster",
+    "original_name": "野猪",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/boar.png",
+    "source_confidence": "official_text_only",
+    "asset_maturity": "ai_q_runtime_v1"
+  },
+  {
+    "id": "tree_demon",
+    "type": "monster",
+    "original_name": "树妖",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/man_eater_flower.png",
+    "source_confidence": "official_text_only",
+    "asset_maturity": "ai_q_runtime_alias_v1"
+  },
+  {
+    "id": "white_rabbit",
+    "type": "monster",
+    "original_name": "白兔",
+    "original_asset": "assets/reference/original/monsters/white_rabbit.jpg",
+    "q_asset": "assets/game/qstyle/ai/sprites/fenfen_rabbit.png",
+    "source_confidence": "official",
+    "asset_maturity": "ai_q_runtime_alias_v1"
+  },
+  {
+    "id": "walking_bird",
+    "type": "monster",
+    "original_name": "步行鸟",
+    "original_asset": "assets/reference/original/monsters/fire_bird.jpg",
+    "q_asset": "assets/game/qstyle/ai/sprites/boar.png",
+    "source_confidence": "official_reference_related",
+    "q_method": "temporary_runtime_alias_until_individual_ai_asset",
+    "asset_maturity": "ai_q_runtime_alias_v1"
+  },
+  {
+    "id": "elite_boar",
+    "type": "monster",
+    "original_name": "野猪头目",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/boar.png",
+    "source_confidence": "inferred",
+    "q_method": "runtime_alias_scaled_boar",
+    "asset_maturity": "ai_q_runtime_alias_v1"
+  },
+  {
+    "id": "flower_queen",
+    "type": "monster",
+    "original_name": "花妖头目",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/man_eater_flower.png",
+    "source_confidence": "inferred",
+    "q_method": "runtime_alias_scaled_flower",
+    "asset_maturity": "ai_q_runtime_alias_v1"
+  },
+  {
+    "id": "tower_guardian",
+    "type": "monster",
+    "original_name": "纯阳宝塔守卫",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/ghost_fire.png",
+    "source_confidence": "inferred",
+    "q_method": "runtime_alias_until_individual_ai_asset",
+    "asset_maturity": "ai_q_runtime_alias_v1"
+  },
+  {
+    "id": "spirit_guardian",
+    "type": "monster",
+    "original_name": "灵泽守卫",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/ghost_fire.png",
+    "source_confidence": "inferred",
+    "q_method": "runtime_alias_until_individual_ai_asset",
+    "asset_maturity": "ai_q_runtime_alias_v1"
+  },
+  {
+    "id": "dragon_relic_boss",
+    "type": "monster",
+    "original_name": "龙翼秘宝守护者",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/ghost_fire.png",
+    "source_confidence": "inferred",
+    "q_method": "runtime_alias_until_individual_ai_asset",
+    "asset_maturity": "ai_q_runtime_alias_v1"
+  },
+  {
+    "id": "character_swordsman",
+    "type": "character",
+    "original_name": "剑客",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/character_swordsman.png",
+    "source_confidence": "official_text_only",
+    "asset_maturity": "ai_q_runtime_v1"
+  },
+  {
+    "id": "character_warrior",
+    "type": "character",
+    "original_name": "战士",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/character_warrior.png",
+    "source_confidence": "official_text_only",
+    "asset_maturity": "ai_q_runtime_v1"
+  },
+  {
+    "id": "character_assassin",
+    "type": "character",
+    "original_name": "刺客",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/character_assassin.png",
+    "source_confidence": "official_text_only",
+    "asset_maturity": "ai_q_runtime_v1"
+  },
+  {
+    "id": "character_medic",
+    "type": "character",
+    "original_name": "药师",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/character_medic.png",
+    "source_confidence": "official_text_only",
+    "asset_maturity": "ai_q_runtime_v1"
+  },
+  {
+    "id": "character_mage",
+    "type": "character",
+    "original_name": "术士",
+    "original_asset": "missing",
+    "q_asset": "assets/game/qstyle/ai/sprites/character_mage.png",
+    "source_confidence": "official_text_only",
+    "asset_maturity": "ai_q_runtime_v1"
+  },
+  {
+    "id": "qstyle_concept_sheet_v1",
+    "type": "art_direction",
+    "original_name": "2.0 Q版商业风格设定板",
+    "original_asset": "docs/reference/image-index.csv",
+    "q_asset": "assets/game/qstyle/ai/qqffo-qstyle-concept-sheet-v1.png",
+    "source_confidence": "local_reference_plus_ai_derivative",
+    "q_method": "ai_chibi_restylization_from_localized_feature_references",
+    "asset_maturity": "ai_concept_target_v1"
+  },
+  {
+    "id": "map_town_forest_v1",
+    "type": "map_background",
+    "original_name": "主城/野外横屏底图",
+    "original_asset": "docs/reference/image-index.csv",
+    "q_asset": "assets/game/qstyle/ai/town-forest-map-v1.png",
+    "source_confidence": "local_reference_plus_ai_derivative",
+    "q_method": "ai_chibi_restylization_from_localized_map_and_ui_references",
+    "asset_maturity": "ai_q_runtime_v1"
+  },
+  {
+    "id": "p32_bamboo_water_battlefield",
+    "type": "map_background",
+    "original_name": "P3.2 竹水秘径商业纵切底图",
+    "original_asset": "docs/visual-target/p3_2_game_interface_effect_v1.png",
+    "q_asset": "assets/game/qstyle/p32/bamboo-water-battlefield.png",
+    "source_confidence": "local_reference_plus_ai_derivative",
+    "q_method": "ai_clean_map_background_from_p32_effect_target",
+    "asset_maturity": "p32_commercial_runtime_v1"
+  },
+  {
+    "id": "p32_combat_foreground",
+    "type": "combat_foreground",
+    "original_name": "P3.2 刺客战斗前景层",
+    "original_asset": "docs/visual-target/p3_2_game_interface_effect_v1.png",
+    "q_asset": "assets/game/qstyle/p32/combat-foreground.png",
+    "source_confidence": "local_reference_plus_ai_derivative",
+    "q_method": "ai_chromakey_foreground_from_p32_effect_target",
+    "asset_maturity": "p32_commercial_runtime_v1"
+  },
+  {
+    "id": "p33_taoyuan_village",
+    "type": "map_background",
+    "original_name": "P3.3 桃源村新手村底图",
+    "original_asset": "docs/reference/markdown/official/official-QQ自由幻想-资料专区-8da41f02.md",
+    "q_asset": "assets/game/qstyle/p33/taoyuan-village.png",
+    "source_confidence": "official_name_plus_ai_derivative",
+    "q_method": "ai_map_background_from_local_design_role",
+    "asset_maturity": "p33_runtime_map_v1"
+  },
+  {
+    "id": "p33_fangcao_meadow",
+    "type": "map_background",
+    "original_name": "P3.3 芳草林野外底图",
+    "original_asset": "docs/reference/markdown/official_deep/2_4_1.htm.md",
+    "q_asset": "assets/game/qstyle/p33/fangcao-meadow.png",
+    "source_confidence": "official_name_plus_ai_derivative",
+    "q_method": "ai_map_background_from_local_design_role",
+    "asset_maturity": "p33_runtime_map_v1"
+  },
+  {
+    "id": "p33_yangyuan_plain",
+    "type": "map_background",
+    "original_name": "P3.3 阳原平原中底图",
+    "original_asset": "docs/reference/markdown/official/official-QQ自由幻想-资料专区-8da41f02.md",
+    "q_asset": "assets/game/qstyle/p33/yangyuan-plain.png",
+    "source_confidence": "official_name_plus_ai_derivative",
+    "q_method": "ai_map_background_from_local_design_role",
+    "asset_maturity": "p33_runtime_map_v1"
+  },
+  {
+    "id": "p33_flower_nest",
+    "type": "map_background",
+    "original_name": "P3.3 花妖巢穴副本底图",
+    "original_asset": "docs/prd/p1-p3-prd.md",
+    "q_asset": "assets/game/qstyle/p33/flower-nest.png",
+    "source_confidence": "single_player_slice_balance",
+    "q_method": "ai_map_background_from_local_design_role",
+    "asset_maturity": "p33_runtime_map_v1"
+  },
+  {
+    "id": "runtime_endgame_通天魔劫塔_monster_1_通天魔劫塔守关BOSS",
+    "type": "boss",
+    "original_name": "通天魔劫塔守关BOSS",
+    "original_asset": "docs/reference/assets/entity_localized/dungeon_boss_or_monster/pworld-tongtianmojieta/001-通天魔劫塔-dec3837211.png",
+    "q_asset": "assets/game/qstyle/ai/sprites/tongtian_guardian_boss.png",
+    "source_confidence": "local_reference_plus_ai_derivative",
+    "q_method": "ai_chibi_boss_sprite_from_localized_tower_reference",
+    "asset_maturity": "ai_q_runtime_v1"
+  }
+]

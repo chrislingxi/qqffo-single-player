@@ -1,0 +1,14 @@
+{
+  "source_confidence": "inferred",
+  "source_file": "docs/prd/p1-p3-prd.md",
+  "formulas": {
+    "maxHp": "120 + vit * 12 + level * growth.hp",
+    "maxMp": "60 + spi * 8 + int * 3 + level * growth.mp",
+    "attack": "8 + str * 2.2 + agi * 0.4 + level * growth.atk + equipment.attack",
+    "magicAttack": "8 + int * 2.6 + spi * 0.6 + level * growth.matk + equipment.magicAttack",
+    "defense": "4 + vit * 1.4 + level * growth.def + equipment.defense",
+    "hit": "82 + agi * 0.45",
+    "crit": "5 + agi * 0.18",
+    "dodge": "3 + agi * 0.16"
+  }
+}

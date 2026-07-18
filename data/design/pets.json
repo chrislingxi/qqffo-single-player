@@ -1,0 +1,7 @@
+[
+  { "id": "fenfen_bunny_pet", "name": "粉粉兔", "original_name": "粉粉兔", "catchFrom": "fenfen_rabbit", "levelReq": 10, "growthType": "swift", "base": { "hp": 110, "attack": 18, "defense": 5 }, "skill": "蹦跳扑击", "source_file": "docs/reference/markdown/official_deep/2_4_1.htm.md", "source_confidence": "inferred", "notes": "怪物名来自官方；捕捉为单机化改造，宠物资质待补官方宠物资料。" },
+  { "id": "snail_pet", "name": "小蜗牛怪", "original_name": "小蜗牛怪", "catchFrom": "snail", "levelReq": 10, "growthType": "sturdy", "base": { "hp": 150, "attack": 14, "defense": 11 }, "skill": "硬壳护主", "source_confidence": "inferred" },
+  { "id": "bird_pet", "name": "步行鸟", "original_name": "步行鸟", "catchFrom": "walking_bird", "levelReq": 12, "growthType": "swift", "base": { "hp": 140, "attack": 22, "defense": 8 }, "skill": "疾跑啄击", "source_confidence": "inferred" },
+  { "id": "flower_pet", "name": "食人花", "original_name": "食人花", "catchFrom": "man_eater_flower", "levelReq": 14, "growthType": "spirit", "base": { "hp": 170, "attack": 24, "defense": 10 }, "skill": "花粉治愈", "source_confidence": "inferred" },
+  { "id": "boar_pet", "name": "野猪", "original_name": "野猪", "catchFrom": "boar", "levelReq": 16, "growthType": "sturdy", "base": { "hp": 210, "attack": 34, "defense": 16 }, "skill": "冲撞", "source_confidence": "inferred" }
+]

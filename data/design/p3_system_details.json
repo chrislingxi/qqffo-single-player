@@ -1,0 +1,742 @@
+{
+  "schema_version": "p3-agent-loop-01",
+  "generated_from": [
+    "docs/reference/markdown/ffobaike_entity/pworld-tongtianmojieta.md",
+    "docs/reference/markdown/ffobaike_entity/system-longyi.md",
+    "docs/reference/markdown/ffobaike_entity/system-poker.md",
+    "docs/reference/markdown/ffobaike_entity/system-star-suit.md",
+    "docs/reference/markdown/ffobaike_entity/system-diaohua.md",
+    "docs/reference/markdown/ffobaike_entity/system-bazhewushuang.md"
+  ],
+  "source_confidence": "wiki_structured_reference",
+  "copyright_note": "仅做本地规则考据和原创化设计参考；运行资产不直接复用原图。",
+  "systems": [
+    {
+      "id": "tongtian_mojieta",
+      "original_name": "通天魔劫塔",
+      "project_name": "通天魔劫塔·单机",
+      "category": "endgame_dungeon",
+      "source_file": "docs/reference/markdown/ffobaike_entity/pworld-tongtianmojieta.md",
+      "source_confidence": "wiki",
+      "rules": {
+        "level_requirement": "30级以上",
+        "entry": "龙城—裴头陀",
+        "daily_free_entries": 1,
+        "floors": 30,
+        "boss_timer_seconds": 300,
+        "shared_revives_original": 5,
+        "boss_summon_rule": "每层BOSS由队长进入下一层时召唤",
+        "single_player_adaptation": "组队与队长规则改为单人逐层确认；5次共享复活改为单人塔内复活次数。"
+      },
+      "rewards": [
+        {
+          "item": "100银道具若干",
+          "probability": "1%"
+        },
+        {
+          "item": "千幻戒指魂石",
+          "probability": "10%"
+        },
+        {
+          "item": "千幻项链魂石",
+          "probability": "10%"
+        },
+        {
+          "item": "千幻项链",
+          "probability": "1%"
+        },
+        {
+          "item": "各种品质千幻项链变装",
+          "probability": "0.02%"
+        },
+        {
+          "item": "见习千幻项链/见习千幻戒指",
+          "source": "重复任务：消灭那个人",
+          "probability": "random_by_level"
+        }
+      ],
+      "gaps": [
+        "30层逐层BOSS名称与属性",
+        "逐层掉落权重",
+        "单机自动战斗门槛"
+      ]
+    },
+    {
+      "id": "dragon_wing_treasure",
+      "original_name": "龙翼秘宝",
+      "project_name": "龙翼秘宝",
+      "category": "late_growth_equipment",
+      "source_file": "docs/reference/markdown/ffobaike_entity/system-longyi.md",
+      "source_confidence": "wiki",
+      "equip_requirements": {
+        "reputation_gt": 6000,
+        "physical": {
+          "strength_gt": 600,
+          "constitution_gt": 500
+        },
+        "magical": {
+          "wisdom_gt": 600,
+          "constitution_gt": 500
+        }
+      },
+      "synthesis": {
+        "formula": "龙翼法宝灵韵*9 + 困龙渊宝石*3 + 困龙泪*1 = 随机龙翼秘宝",
+        "later_source_note": "无泪四郊BOSS移除后，名誉达到24000可通过冲锋战场获得龙翼法宝灵韵",
+        "single_player_sources": [
+          "通天魔劫塔",
+          "困龙渊·单机",
+          "高阶日常兑换"
+        ]
+      },
+      "processing": {
+        "max_level": 10,
+        "formula": "龙翼法宝灵韵*3 + 加工石*10",
+        "failure_downgrade": false,
+        "hidden_property": "加工成功或失败后有几率产生最大生命+50",
+        "success_rates": [
+          [
+            "0->1",
+            50
+          ],
+          [
+            "1->2",
+            50
+          ],
+          [
+            "2->3",
+            50
+          ],
+          [
+            "3->4",
+            50
+          ],
+          [
+            "4->5",
+            50
+          ],
+          [
+            "5->6",
+            30
+          ],
+          [
+            "6->7",
+            30
+          ],
+          [
+            "7->8",
+            30
+          ],
+          [
+            "8->9",
+            30
+          ],
+          [
+            "9->10",
+            30
+          ]
+        ]
+      },
+      "strengthen": {
+        "formula": "困龙渊宝石*3 + 困龙泪*1",
+        "failure_can_reduce_attribute": true,
+        "rows": [
+          {
+            "attributes": [
+              "攻击",
+              "魔法攻击"
+            ],
+            "success_effect": "+1/2/3",
+            "success_rate": "50%",
+            "fail_effect": "-1/2",
+            "fail_rate": "50%"
+          },
+          {
+            "attributes": [
+              "韧性等级",
+              "坚定等级",
+              "防御",
+              "魔法防御"
+            ],
+            "success_effect": "+1/2",
+            "success_rate": "40%",
+            "fail_effect": "-1/2",
+            "fail_rate": "60%"
+          },
+          {
+            "attributes": [
+              "最终命中率",
+              "最终回避率"
+            ],
+            "success_effect": "+1",
+            "success_rate": "20%",
+            "fail_effect": "-1/2/3",
+            "fail_rate": "80%"
+          },
+          {
+            "attributes": [
+              "对昏迷免疫"
+            ],
+            "success_effect": "+1%",
+            "success_rate": "20%",
+            "fail_effect": "-1%/2%/3%",
+            "fail_rate": "80%"
+          },
+          {
+            "attributes": [
+              "最大生命"
+            ],
+            "success_effect": "+25",
+            "success_rate": "20%",
+            "fail_effect": "-25/50/75",
+            "fail_rate": "80%"
+          },
+          {
+            "attributes": [
+              "技能暴击率"
+            ],
+            "success_effect": "+100",
+            "success_rate": "20%",
+            "fail_effect": "-100/200/300",
+            "fail_rate": "80%"
+          }
+        ]
+      },
+      "base_attributes": [
+        {
+          "level": 0,
+          "stat": "伤害抗性",
+          "value": 60
+        },
+        {
+          "level": 0,
+          "stat": "攻击/魔法攻击/体质",
+          "value": "0~40（基于加工等级）"
+        },
+        {
+          "level": 1,
+          "stat": "命中",
+          "value": 100
+        },
+        {
+          "level": 2,
+          "stat": "最大负重",
+          "value": 888
+        },
+        {
+          "level": 3,
+          "stat": "防御",
+          "value": 60
+        },
+        {
+          "level": 4,
+          "stat": "敏捷",
+          "value": 60
+        },
+        {
+          "level": 5,
+          "stat": "魔法防御",
+          "value": 60
+        },
+        {
+          "level": 6,
+          "stat": "灵巧",
+          "value": 60
+        },
+        {
+          "level": 7,
+          "stat": "精神",
+          "value": 60
+        },
+        {
+          "level": 8,
+          "stat": "力量",
+          "value": 60
+        },
+        {
+          "level": 9,
+          "stat": "智慧",
+          "value": 60
+        },
+        {
+          "level": 10,
+          "stat": "攻击",
+          "value": "60~100（基于加工等级）"
+        },
+        {
+          "level": 11,
+          "stat": "魔法攻击",
+          "value": "60~100（基于加工等级）"
+        },
+        {
+          "level": 12,
+          "stat": "体质",
+          "value": "60~100（基于加工等级）"
+        }
+      ],
+      "class_socket_attributes": {
+        "战士": [
+          "攻击+15~45",
+          "韧性等级+10~30",
+          "最终命中率+1~7",
+          "技能暴击率+300~1000"
+        ],
+        "剑客": [
+          "攻击+15~45",
+          "坚定等级+10~30",
+          "魔法防御+20~50",
+          "对昏迷免疫+1%~5%"
+        ],
+        "刺客": [
+          "攻击+15~45",
+          "韧性等级+10~30",
+          "攻击速度+90~150",
+          "最终回避率+1~7"
+        ],
+        "术士": [
+          "魔法攻击+15~45",
+          "韧性等级+10~30",
+          "防御+20~50",
+          "最大生命+275~500"
+        ],
+        "药师": [
+          "魔法攻击+15~45",
+          "韧性等级+10~30",
+          "防御+20~50",
+          "最大生命+275~500"
+        ]
+      },
+      "gaps": [
+        "合成材料在单机日常中的精确掉落率",
+        "完整加工石合成材料来源"
+      ]
+    },
+    {
+      "id": "codex_cards",
+      "original_name": "典籍卡",
+      "category": "late_growth_collection",
+      "source_file": "docs/reference/markdown/ffobaike_entity/system-poker.md",
+      "source_confidence": "wiki",
+      "rules": {
+        "total_cards": 54,
+        "ranks": [
+          "灰",
+          "绿",
+          "蓝",
+          "紫",
+          "橙"
+        ],
+        "max_stars": 5
+      },
+      "rank_up": [
+        {
+          "from": "灰",
+          "to": "绿",
+          "material": "低级升阶卡",
+          "count": 5,
+          "jade_cost": 50
+        },
+        {
+          "from": "绿",
+          "to": "蓝",
+          "material": "低级升阶卡",
+          "count": 50,
+          "jade_cost": 500
+        },
+        {
+          "from": "蓝",
+          "to": "紫",
+          "material": "高级升阶卡",
+          "count": 25,
+          "jade_cost": 25000
+        },
+        {
+          "from": "紫",
+          "to": "橙",
+          "material": "高级升阶卡",
+          "count": 50,
+          "jade_cost": 50000
+        }
+      ],
+      "star_up": [
+        {
+          "from": 0,
+          "to": 1,
+          "material": "同名灰卡",
+          "count": 5
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "material": "同名绿卡",
+          "count": 5
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "material": "同名蓝卡",
+          "count": 5
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "material": "同名紫卡",
+          "count": 5
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "material": "同名橙卡",
+          "count": 5
+        }
+      ],
+      "gaps": [
+        "54张卡逐项属性已在源文但尚未全量解析成数组",
+        "典籍卡具体产出概率"
+      ]
+    },
+    {
+      "id": "equipment_blessing",
+      "original_name": "装备祝福",
+      "category": "equipment_growth",
+      "source_file": "docs/reference/markdown/ffobaike_entity/system-star-suit.md",
+      "source_confidence": "wiki",
+      "rules": {
+        "bless_adds_star_on_success": true,
+        "failure_may_reduce_star": true,
+        "lucky_charm_prevents_downgrade": true,
+        "lucky_charm_disabled_from_star": 13,
+        "set_requires_blessed_pieces": 9
+      },
+      "materials": [
+        {
+          "name": "初级祝福晶石",
+          "best_range": "0-3星"
+        },
+        {
+          "name": "中级祝福晶石",
+          "best_range": "4-6星"
+        },
+        {
+          "name": "高级祝福晶石",
+          "best_range": "7-9星"
+        },
+        {
+          "name": "超级祝福晶石",
+          "best_range": "10-12星"
+        },
+        {
+          "name": "完美祝福晶石",
+          "best_range": "13星以上"
+        },
+        {
+          "name": "幸运符",
+          "effect": "失败免降级"
+        },
+        {
+          "name": "黄金祝福凭证",
+          "effect": "成功率达到80%以上时自动触发失败免降"
+        }
+      ],
+      "set_bonuses": [
+        {
+          "star": 3,
+          "max_hp": 200,
+          "attack": 20
+        },
+        {
+          "star": 6,
+          "max_hp": 400,
+          "attack": 40
+        },
+        {
+          "star": 7,
+          "max_hp": 500,
+          "attack": 50
+        },
+        {
+          "star": 8,
+          "max_hp": 600,
+          "attack": 60
+        },
+        {
+          "star": 9,
+          "max_hp": 800,
+          "attack": 80
+        },
+        {
+          "star": 10,
+          "max_hp": 1000,
+          "attack": 100
+        },
+        {
+          "star": 11,
+          "max_hp": 1200,
+          "attack": 120
+        },
+        {
+          "star": 12,
+          "max_hp": 2000,
+          "attack": 150,
+          "penetration": 60
+        },
+        {
+          "star": 13,
+          "max_hp": 2500,
+          "attack": 180,
+          "penetration": 80
+        },
+        {
+          "star": 14,
+          "max_hp": 3000,
+          "attack": 210,
+          "penetration": 100
+        },
+        {
+          "star": 15,
+          "max_hp": 4000,
+          "attack": 300,
+          "penetration": 200
+        }
+      ],
+      "gaps": [
+        "推荐祝福方案完整概率表尚未结构化",
+        "不同部位祝福公式需继续拆表"
+      ]
+    },
+    {
+      "id": "wing_carving",
+      "original_name": "翅膀雕花",
+      "category": "wing_growth",
+      "source_file": "docs/reference/markdown/ffobaike_entity/system-diaohua.md",
+      "source_confidence": "wiki",
+      "rules": {
+        "npc": "龙城中央NPC雕花使者",
+        "process_material": "五彩绢丝",
+        "max_process_level": 15,
+        "protection_levels": [
+          3,
+          10
+        ],
+        "max_feathers_per_wing": 5,
+        "max_set_attributes": 6,
+        "wing_keeps_original_process_level_after_carving": true,
+        "wing_after_carving": {
+          "can_process": true,
+          "can_socket": false,
+          "can_soul_attach": true
+        }
+      },
+      "exchange": [
+        {
+          "process_level": 5,
+          "output": "百雀灵"
+        },
+        {
+          "process_level": 10,
+          "output": "孔雀翎"
+        },
+        {
+          "process_level": 15,
+          "output": "凤凰羽"
+        }
+      ],
+      "feather_compatibility": {
+        "百雀灵": [
+          "暗之翼",
+          "恶魔翅膀",
+          "极*恶魔翅膀",
+          "魔*恶魔翅膀",
+          "光之翼",
+          "天使翅膀",
+          "极*天使翅膀",
+          "神*天使翅膀"
+        ],
+        "孔雀翎": [
+          "烈焰之翼（恶魔）",
+          "极*烈焰之翼（恶魔）",
+          "幻想之翼（天使）",
+          "极*幻想之翼（天使）"
+        ],
+        "凤凰羽": [
+          "魔*烈焰之翼（恶魔）",
+          "幻*烈焰之翼（恶魔）",
+          "秘*烈焰之翼（恶魔）",
+          "神*幻想之翼（天使）",
+          "灵*幻想之翼（天使）",
+          "秘*幻想之翼（天使）"
+        ]
+      },
+      "set_bonuses": {
+        "百雀灵": [
+          "最大负重+600",
+          "体质+10",
+          "灵巧+10",
+          "生命+200",
+          "力量+10/智慧+10"
+        ],
+        "孔雀翎": [
+          "最大负重+2000",
+          "敏捷+40/精神+40",
+          "体质+40",
+          "攻击+20/魔法攻击+20",
+          "生命+1000 + 力量+40/智慧+40"
+        ],
+        "凤凰羽": [
+          "最大负重+3000",
+          "敏捷+70/精神+70",
+          "体质+70",
+          "攻击+30/魔法攻击+30",
+          "力量+70/生命+1500"
+        ]
+      },
+      "gaps": [
+        "五彩绢丝来源详情",
+        "全翅膀图标与外观参考仍需二创资产化"
+      ]
+    },
+    {
+      "id": "golden_spirit_bazhe",
+      "original_name": "黄金灵与霸者无双",
+      "category": "spirit_battle_power",
+      "source_file": "docs/reference/markdown/ffobaike_entity/system-bazhewushuang.md",
+      "source_confidence": "wiki",
+      "golden_spirit_examples": [
+        {
+          "name": "戒灵天使*黄金",
+          "attributes": [
+            "体质+100",
+            "镇定+20",
+            "坚韧+20"
+          ]
+        },
+        {
+          "name": "戒灵恶魔*黄金",
+          "attributes": [
+            "力量+100",
+            "智慧+100",
+            "负重+3000"
+          ]
+        },
+        {
+          "name": "黄金羽灵·玄天火舞",
+          "attributes": [
+            "生命+4000",
+            "法力+4000",
+            "战斗力+100",
+            "体质+100",
+            "镇定+20",
+            "坚韧+20"
+          ]
+        },
+        {
+          "name": "黄金羽灵·九幽冰歌",
+          "attributes": [
+            "物理攻击+300",
+            "法术攻击+300",
+            "战斗力+100",
+            "力量+100",
+            "智慧+100",
+            "负重+3000"
+          ]
+        }
+      ],
+      "bazhe_levels": [
+        {
+          "level": 1,
+          "attack": 50,
+          "magic_attack": 50,
+          "hp": 0,
+          "battle_power": 0
+        },
+        {
+          "level": 2,
+          "attack": 50,
+          "magic_attack": 50,
+          "hp": 300,
+          "battle_power": 50
+        },
+        {
+          "level": 3,
+          "attack": 65,
+          "magic_attack": 65,
+          "hp": 400,
+          "battle_power": 75
+        },
+        {
+          "level": 4,
+          "attack": 75,
+          "magic_attack": 75,
+          "hp": 500,
+          "battle_power": 100
+        },
+        {
+          "level": 5,
+          "attack": 85,
+          "magic_attack": 85,
+          "hp": 600,
+          "battle_power": 120
+        },
+        {
+          "level": 6,
+          "attack": 95,
+          "magic_attack": 95,
+          "hp": 700,
+          "battle_power": 135
+        },
+        {
+          "level": 7,
+          "attack": 105,
+          "magic_attack": 105,
+          "hp": 800,
+          "battle_power": 150
+        },
+        {
+          "level": 8,
+          "attack": 115,
+          "magic_attack": 115,
+          "hp": 900,
+          "battle_power": 165
+        },
+        {
+          "level": 9,
+          "attack": 120,
+          "magic_attack": 120,
+          "hp": 1000,
+          "battle_power": 170
+        },
+        {
+          "level": 10,
+          "attack": 130,
+          "magic_attack": 130,
+          "hp": 1100,
+          "battle_power": 180
+        },
+        {
+          "level": 11,
+          "attack": 140,
+          "magic_attack": 140,
+          "hp": 1200,
+          "battle_power": 190
+        },
+        {
+          "awakening": "壹",
+          "attack": 147,
+          "magic_attack": 147,
+          "hp": 1260,
+          "battle_power": 190
+        },
+        {
+          "awakening": "贰",
+          "attack": 154,
+          "magic_attack": 154,
+          "hp": 1320,
+          "battle_power": 190
+        }
+      ],
+      "gaps": [
+        "黄金灵全量外形与获得方式需要继续拆表",
+        "霸者觉醒贰之后等级源文未完全结构化"
+      ]
+    }
+  ]
+}

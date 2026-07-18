@@ -1,0 +1,207 @@
+[
+  {
+    "mapId": "taoyuan_village",
+    "theme": "village",
+    "ground": ["#b7b58f", "#87966f", "#d5c68f"],
+    "path": "#d7c18a",
+    "water": null,
+    "weather": "sun",
+    "props": [
+      ["shop", 150, 470, 1.35],
+      ["stall", 330, 535, 0.95],
+      ["well", 555, 235, 0.7],
+      ["lantern", 115, 260, 0.75],
+      ["tree", 890, 510, 0.85],
+      ["gate", 905, 260, 0.72]
+    ],
+    "notes": "桃源村按新手村处理：瓦屋、摊位、井、暖色石路。"
+  },
+  {
+    "mapId": "fangcao",
+    "theme": "grass",
+    "ground": ["#82b665", "#5f934e", "#cdbd7d"],
+    "path": "#cdbd7d",
+    "water": null,
+    "weather": "pollen",
+    "props": [
+      ["tree", 135, 470, 1.1],
+      ["tree", 850, 270, 0.9],
+      ["flower", 450, 235, 1],
+      ["flower", 740, 515, 0.9],
+      ["stone", 305, 390, 0.75],
+      ["bush", 1000, 600, 1.2]
+    ],
+    "notes": "芳草林突出草地、花簇和低等级刷怪区。"
+  },
+  {
+    "mapId": "fangcao_east",
+    "theme": "bamboo_water",
+    "ground": ["#75ac62", "#4f8957", "#bfae78"],
+    "path": "#d0bf86",
+    "water": "#4ebfc0",
+    "weather": "pollen",
+    "props": [
+      ["bamboo", 155, 190, 1.2],
+      ["bridge", 280, 260, 1],
+      ["rock", 560, 180, 0.85],
+      ["flower", 780, 455, 0.95],
+      ["bamboo", 965, 225, 1],
+      ["bush", 950, 565, 1.1]
+    ],
+    "notes": "芳草林东对标参考图的水域、竹桥、草坡。"
+  },
+  {
+    "mapId": "fangcao_west",
+    "theme": "deep_wood",
+    "ground": ["#6ea05f", "#4d784b", "#bda977"],
+    "path": "#c4aa72",
+    "water": null,
+    "weather": "leaf",
+    "props": [
+      ["tree", 170, 475, 1.3],
+      ["tree", 410, 245, 0.95],
+      ["stone", 620, 510, 0.9],
+      ["bush", 850, 285, 1.25],
+      ["flower", 990, 560, 0.8]
+    ],
+    "notes": "芳草林西更密林，适合蜗牛和步行鸟分散刷新。"
+  },
+  {
+    "mapId": "yangyuan_mid",
+    "theme": "plain",
+    "ground": ["#9fa76c", "#7d8d58", "#d2bc78"],
+    "path": "#d5bd7b",
+    "water": null,
+    "weather": "dust",
+    "props": [
+      ["rock", 180, 505, 1],
+      ["tree", 405, 255, 0.8],
+      ["stone", 690, 430, 0.9],
+      ["bush", 930, 610, 1],
+      ["lantern", 1040, 270, 0.7]
+    ],
+    "notes": "阳原平原中用开阔黄绿地表和野猪巡游空间。"
+  },
+  {
+    "mapId": "longcheng",
+    "theme": "city",
+    "ground": ["#9a9582", "#6f756b", "#c6b78c"],
+    "path": "#bfb295",
+    "water": null,
+    "weather": "spark",
+    "props": [
+      ["gate", 760, 260, 1.15],
+      ["shop", 185, 505, 1.25],
+      ["stall", 420, 555, 1],
+      ["lantern", 995, 310, 0.9],
+      ["well", 585, 360, 0.75]
+    ],
+    "notes": "龙城是主城石板、城门、商铺，不放野怪。"
+  },
+  {
+    "mapId": "longcheng_south",
+    "theme": "suburb",
+    "ground": ["#88a969", "#5e8058", "#cbb47d"],
+    "path": "#d5bc80",
+    "water": null,
+    "weather": "leaf",
+    "props": [
+      ["tree", 130, 470, 1.15],
+      ["rock", 320, 250, 0.75],
+      ["bush", 690, 520, 1.1],
+      ["tree", 980, 300, 0.95]
+    ],
+    "notes": "龙城南郊是白兔、树妖活动的城郊林地。"
+  },
+  {
+    "mapId": "longcheng_north",
+    "theme": "mist_wood",
+    "ground": ["#768a68", "#4d6357", "#a99d7a"],
+    "path": "#b9aa82",
+    "water": null,
+    "weather": "mist",
+    "props": [
+      ["tree", 150, 470, 1.05],
+      ["lantern", 415, 250, 0.8],
+      ["stone", 630, 520, 1],
+      ["bush", 860, 300, 1.15],
+      ["tree", 1030, 565, 0.9]
+    ],
+    "notes": "龙城北郊偏阴冷，承接鬼火。"
+  },
+  {
+    "mapId": "lingze_field",
+    "theme": "spirit",
+    "ground": ["#6f9574", "#49685d", "#98b0a0"],
+    "path": "#a9b78c",
+    "water": "#5bb6a8",
+    "weather": "spirit",
+    "props": [
+      ["crystal", 170, 450, 1],
+      ["rune", 470, 305, 1.1],
+      ["crystal", 770, 525, 0.9],
+      ["tree", 1010, 260, 0.85]
+    ],
+    "notes": "灵泽荒原用蓝绿灵光、法阵、晶石作为后期地图识别。"
+  },
+  {
+    "mapId": "dungeon_nest",
+    "theme": "nest",
+    "ground": ["#7f6a58", "#473a35", "#9b765d"],
+    "path": "#8f6958",
+    "water": null,
+    "weather": "spore",
+    "props": [
+      ["rune", 450, 320, 1.15],
+      ["flower", 250, 470, 1.25],
+      ["root", 720, 260, 1],
+      ["crystal", 750, 520, 0.75]
+    ],
+    "notes": "花妖巢穴为室内巢穴，偏暗、有菌孢与根系。"
+  },
+  {
+    "mapId": "dungeon_tower",
+    "theme": "tower",
+    "ground": ["#69606b", "#312b36", "#867866"],
+    "path": "#80716c",
+    "water": null,
+    "weather": "rain",
+    "props": [
+      ["rune", 455, 335, 1.35],
+      ["lantern", 225, 240, 0.9],
+      ["lantern", 805, 240, 0.9],
+      ["gate", 730, 505, 0.85]
+    ],
+    "notes": "纯阳宝塔按端游参考的暗色石板、雨线、法阵处理。"
+  },
+  {
+    "mapId": "dungeon_lingze",
+    "theme": "spirit_hall",
+    "ground": ["#5f7773", "#2f454d", "#7e9b91"],
+    "path": "#879f96",
+    "water": "#4ca6a2",
+    "weather": "spirit",
+    "props": [
+      ["rune", 470, 340, 1.45],
+      ["crystal", 250, 500, 1],
+      ["crystal", 780, 245, 1],
+      ["lantern", 830, 520, 0.75]
+    ],
+    "notes": "灵泽殿单机副本更强灵光与法阵。"
+  },
+  {
+    "mapId": "dungeon_dragon_relic",
+    "theme": "dragon_relic",
+    "ground": ["#70614e", "#2e303a", "#aa8055"],
+    "path": "#9b7352",
+    "water": null,
+    "weather": "ember",
+    "props": [
+      ["rune", 470, 350, 1.5],
+      ["crystal", 260, 520, 1],
+      ["gate", 760, 260, 0.95],
+      ["lantern", 845, 540, 0.9]
+    ],
+    "notes": "龙翼秘宝使用暗金、遗迹、火星表现毕业副本感。"
+  }
+]

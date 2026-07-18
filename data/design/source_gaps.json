@@ -1,0 +1,166 @@
+{
+  "generated_from": [
+    "docs/prd/p3-feature-audit.md",
+    "docs/reference/entities/feature-coverage-audit.json"
+  ],
+  "policy": "缺失或矛盾内容优先补官方资料；没有官方可证时标记缺口，不用推断替代完整对标。",
+  "gaps": [
+    {
+      "system": "幻神",
+      "source_confidence": "uncertain",
+      "source_files": [
+        "docs/reference/raw/p3_official_supplement/ffo.qq.com_webplat_info_news_version3_120_3487_3488_3490_m3157_200902_120995.shtml.html"
+      ],
+      "gaps": [
+        "解锁规则",
+        "升级经验",
+        "技能",
+        "全量属性"
+      ]
+    },
+    {
+      "system": "法宝",
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/raw/p3_official_supplement/ffo.qq.com_act_a20120328years_fabao.htm.html"
+      ],
+      "gaps": [
+        "全量法宝",
+        "秘/真系列材料",
+        "附魂/加工公式"
+      ]
+    },
+    {
+      "system": "灵",
+      "source_confidence": "wiki_structured_reference",
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/system-bazhewushuang.md"
+      ],
+      "gaps": [
+        "黄金灵全量获得方式",
+        "霸者觉醒后续全等级",
+        "升级材料/解锁公式"
+      ],
+      "resolved_locally": [
+        "黄金灵示例属性",
+        "霸者无双1-11级属性",
+        "霸者觉醒壹/贰属性"
+      ]
+    },
+    {
+      "system": "战魂",
+      "source_confidence": "uncertain",
+      "source_files": [
+        "docs/reference/raw/p3_official_supplement/ffo.qq.com_gicp_news_814_18713379.html.html"
+      ],
+      "gaps": [
+        "槽位",
+        "品质",
+        "升级",
+        "套装效果"
+      ]
+    },
+    {
+      "system": "典籍卡",
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/raw/official/official-典籍卡牌属性介绍-8eb6ed28.html"
+      ],
+      "gaps": [
+        "产出概率",
+        "54张卡属性数组全量解析"
+      ],
+      "resolved_locally": [
+        "54张卡规则",
+        "5品阶/5星级",
+        "升阶材料",
+        "升星材料"
+      ]
+    },
+    {
+      "system": "称号",
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/raw/ffobaike/ffobaike-称号系统-QQ自由幻想百科-673c3147.html"
+      ],
+      "gaps": [
+        "全量达成条件",
+        "时效",
+        "属性"
+      ]
+    },
+    {
+      "system": "装备祝福",
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/raw/ffobaike/ffobaike-装备祝福系统-QQ自由幻想百科-7ae8bd88.html"
+      ],
+      "gaps": [
+        "推荐祝福方案完整概率表",
+        "部位公式"
+      ],
+      "resolved_locally": [
+        "祝福材料分层",
+        "失败降级/幸运符规则",
+        "9件套装星级属性"
+      ]
+    },
+    {
+      "system": "龙翼秘宝",
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/raw/ffobaike/ffobaike-龙翼秘宝-QQ自由幻想百科-d5304206.html"
+      ],
+      "gaps": [
+        "单机掉落率",
+        "完整加工石材料来源"
+      ],
+      "resolved_locally": [
+        "穿戴要求",
+        "合成公式",
+        "加工等级/成功率",
+        "强化材料/成功率",
+        "基础属性",
+        "孔属性"
+      ]
+    },
+    {
+      "system": "翅膀雕花",
+      "source_confidence": "partial",
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/system-diaohua.md"
+      ],
+      "gaps": [
+        "五彩绢丝来源",
+        "全翅膀图标原创化资产"
+      ],
+      "resolved_locally": [
+        "加工上限",
+        "保护等级",
+        "翎羽兑换",
+        "翎羽适配翅膀",
+        "套装属性"
+      ]
+    },
+    {
+      "system": "通天魔劫塔",
+      "source_confidence": "wiki_structured_reference",
+      "source_files": [
+        "docs/reference/markdown/ffobaike_entity/pworld-tongtianmojieta.md"
+      ],
+      "gaps": [
+        "30层逐层BOSS名称与属性",
+        "逐层掉落权重",
+        "单机自动战斗门槛"
+      ],
+      "resolved_locally": [
+        "规则",
+        "层数",
+        "入口",
+        "基础奖励概率",
+        "重复任务"
+      ]
+    }
+  ],
+  "schema_version": "p3-agent-loop-01"
+}
