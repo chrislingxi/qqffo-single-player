@@ -1,4 +1,4 @@
-const CACHE_NAME = "ffo-pwa-v11-p32-commercial";
+const CACHE_NAME = "ffo-pwa-v12-p33-rpg";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -46,7 +46,11 @@ const CORE_ASSETS = [
   "./data/design/p3_1_visual_goal.json",
   "./assets/game/qstyle/manifest.json",
   "./assets/game/qstyle/p32/bamboo-water-battlefield.png",
-  "./assets/game/qstyle/p32/combat-foreground.png"
+  "./assets/game/qstyle/p32/combat-foreground.png",
+  "./assets/game/qstyle/p33/taoyuan-village.png",
+  "./assets/game/qstyle/p33/fangcao-meadow.png",
+  "./assets/game/qstyle/p33/yangyuan-plain.png",
+  "./assets/game/qstyle/p33/flower-nest.png"
 ];
 
 self.addEventListener("install", (event) => {

@@ -42,7 +42,7 @@ const DATA_FILES = {
 
 const SAVE_KEY = "ffo_p2_save_v1";
 const LEGACY_SAVE_KEYS = ["ffo_p1_save_v1"];
-const DATA_VERSION = "p32-commercial-visual-01";
+const DATA_VERSION = "p33-rpg-slice-01";
 const VERTICAL_SLICE = {
   enabled: true,
   classId: "assassin",
@@ -54,7 +54,15 @@ const VERTICAL_SLICE = {
 const P32_SHOWCASE = (() => {
   try {
     const params = new URLSearchParams(location.search);
-    return params.has("visual") || params.has("p32");
+    return (params.has("visual") || params.has("p32")) && !params.has("p33") && !params.has("rpg");
+  } catch {
+    return false;
+  }
+})();
+const P33_EXPERIENCE = (() => {
+  try {
+    const params = new URLSearchParams(location.search);
+    return params.has("p33") || params.has("rpg");
   } catch {
     return false;
   }
@@ -69,6 +77,14 @@ const P32_SLICE = {
   y: 486,
   enemy: { id: "man_eater_flower", x: 720, y: 462 }
 };
+const P33_MAP_BACKGROUNDS = {
+  taoyuan_village: "p33_taoyuan_village",
+  fangcao: "p33_fangcao_meadow",
+  fangcao_east: "p32_bamboo_water_battlefield",
+  yangyuan_mid: "p33_yangyuan_plain",
+  dungeon_nest: "p33_flower_nest"
+};
+const P33_CORE_MAPS = ["taoyuan_village", "fangcao", "fangcao_east", "yangyuan_mid", "longcheng", "dungeon_nest"];
 const app = document.querySelector("#app");
 let data;
 let state;
@@ -86,6 +102,10 @@ let bootProgress = { stage: "准备启动", done: 0, total: 1 };
 const CRITICAL_BOOT_SPRITES = [
   "p32_bamboo_water_battlefield",
   "p32_combat_foreground",
+  "p33_taoyuan_village",
+  "p33_fangcao_meadow",
+  "p33_yangyuan_plain",
+  "p33_flower_nest",
   "character_assassin",
   "fenfen_rabbit",
   "man_eater_flower",
@@ -162,7 +182,12 @@ async function loadData() {
   window.__ffoData = data;
   renderLoadingScreen("预热首屏素材", files.length + 1, files.length + 2);
   await preloadSprites(CRITICAL_BOOT_SPRITES, { blocking: true });
-  requestIdle(() => preloadSprites(["map_town_forest_v1", "p32_bamboo_water_battlefield", "p32_combat_foreground"]));
+  requestIdle(() => preloadSprites([
+    "map_town_forest_v1",
+    "p32_bamboo_water_battlefield",
+    "p32_combat_foreground",
+    ...Object.values(P33_MAP_BACKGROUNDS)
+  ]));
   renderLoadingScreen("准备进入游戏", files.length + 2, files.length + 2);
 }
 
@@ -270,9 +295,10 @@ function freshState(classId, name) {
       dungeons: 0,
       playSeconds: 0
     },
-    verticalSlice: P32_SHOWCASE ? "p3_2_commercial_visual_showcase" : VERTICAL_SLICE.enabled ? "assassin_1_20" : null
+    verticalSlice: P33_EXPERIENCE ? "p3_3_20min_assassin_rpg_slice" : P32_SHOWCASE ? "p3_2_commercial_visual_showcase" : VERTICAL_SLICE.enabled ? "assassin_1_20" : null
   };
   if (P32_SHOWCASE) applyP32ShowcaseStateToFreshState(nextState);
+  if (P33_EXPERIENCE) applyP33ExperienceStateToFreshState(nextState);
   return nextState;
 }
 
@@ -301,6 +327,31 @@ function applyP32ShowcaseStateToFreshState(targetState) {
   targetState.stats.kills = 26;
   targetState.stats.quests = 3;
   targetState.autoQuest = false;
+}
+
+function applyP33ExperienceStateToFreshState(targetState) {
+  targetState.name = "影刃";
+  targetState.gold = 680;
+  targetState.mapId = VERTICAL_SLICE.startMapId;
+  targetState.x = 230;
+  targetState.y = 284;
+  targetState.autoQuest = true;
+  targetState.autoPath = true;
+  targetState.autoCombat = true;
+  targetState.autoSupply = true;
+  targetState.activeQuestId = "m1";
+  targetState.inventory = [
+    { id: "small_hp", qty: 18 },
+    { id: "small_mp", qty: 14 },
+    { id: "pet_food", qty: 6 },
+    { id: "skill_pill", qty: 1 }
+  ].filter((item) => data.itemById[item.id]);
+  targetState.journey = {
+    version: "P3.3",
+    title: "刺客 1-20 级完整体验",
+    startedAt: Date.now(),
+    milestones: ["桃源村启程"]
+  };
 }
 
 function makeEquipment(id) {
@@ -522,6 +573,10 @@ function activeQuest() {
   return next || null;
 }
 
+function nextLockedMainQuest() {
+  return data.quests.find((quest) => quest.chain === "main" && !state.completedQuests.includes(quest.id) && state.level < quest.levelReq) || null;
+}
+
 function canAcceptQuest(quest) {
   if (state.completedQuests.includes(quest.id)) return false;
   if (state.level < quest.levelReq) return false;
@@ -546,15 +601,15 @@ function guideQuest(quest = activeQuest()) {
     setTarget(npc.mapId, npc.x, npc.y, `拜访 ${npc.name}`, { questWarp: true });
   } else if (objective.type === "kill" || objective.type === "kill_any") {
     const targetMonster = objective.type === "kill_any" ? monsterForLevel() : data.monsterById[objective.target];
-    const spawn = spawnForMonster(targetMonster.id);
+    const spawn = spawnForMonster(targetMonster.id, quest.mapId);
     setTarget(spawn.mapId, spawn.x, spawn.y, `讨伐 ${targetMonster.name}`, { questWarp: true });
   } else if (objective.type === "collect") {
     const drop = data.drops.find((table) => table.drops.some((item) => item.id === objective.target));
-    const spawn = spawnForMonster(drop?.monsterId || monsterForLevel().id);
+    const spawn = spawnForMonster(drop?.monsterId || monsterForLevel().id, quest.mapId);
     setTarget(spawn.mapId, spawn.x, spawn.y, `收集 ${itemName(objective.target)}`, { questWarp: true });
   } else if (objective.type === "catch_pet") {
     const pet = data.petById[objective.target];
-    const spawn = spawnForMonster(pet.catchFrom);
+    const spawn = spawnForMonster(pet.catchFrom, quest.mapId);
     setTarget(spawn.mapId, spawn.x, spawn.y, `捕捉 ${pet.name}`, { questWarp: true });
   } else if (objective.type === "dungeon") {
     enterDungeon(objective.target);
@@ -631,6 +686,8 @@ function setTarget(mapId, x, y, label = "目的地", options = {}) {
     state.y = clamp(120, 0, map.size[1]);
     state.combat = null;
     addLog(options.questWarp ? `任务传送：${from} -> ${map.name}` : `传送至 ${map.name}`);
+    addJourneyMilestone(`抵达${map.name}`);
+    addFx(map.name, state.x, state.y - 72, "#ffe08a", "beam");
     requestIdle(preloadSpritesForCurrentMap);
   }
   const safe = nearestWalkable(mapId, x, y);
@@ -638,8 +695,10 @@ function setTarget(mapId, x, y, label = "目的地", options = {}) {
   ensureWorldSpawns();
 }
 
-function spawnForMonster(monsterId) {
-  return data.spawns.find((spawn) => spawn.monsterIds.includes(monsterId)) || data.spawns[0];
+function spawnForMonster(monsterId, preferredMapId = null) {
+  return data.spawns.find((spawn) => spawn.monsterIds.includes(monsterId) && spawn.mapId === preferredMapId)
+    || data.spawns.find((spawn) => spawn.monsterIds.includes(monsterId))
+    || data.spawns[0];
 }
 
 function spawnInstancesForMap(mapId = state.mapId) {
@@ -1238,7 +1297,7 @@ function progressPetCatch(enemy) {
   if (!quest || quest.objective.type !== "catch_pet") return;
   const petDef = data.petById[quest.objective.target];
   if (petDef.catchFrom !== enemy.id || state.level < petDef.levelReq) return;
-  if (Math.random() < 0.35 || !state.pets.length) {
+  if (P33_EXPERIENCE || Math.random() < 0.35 || !state.pets.length) {
     const pet = {
       uid: `${petDef.id}_${Date.now()}`,
       id: petDef.id,
@@ -1392,8 +1451,17 @@ function completeQuest(quest) {
   if (reward.gold) state.gold += reward.gold;
   (reward.items || []).forEach((id) => addItem(id, 1));
   addLog(`完成任务：${quest.title}`);
+  addJourneyMilestone(quest.title);
   if (quest.next && state.level >= data.questById[quest.next].levelReq) state.activeQuestId = quest.next;
   else state.activeQuestId = null;
+  if (P33_EXPERIENCE && state.autoQuest) setTimeout(() => guideQuest(), 650);
+}
+
+function addJourneyMilestone(text) {
+  if (!P33_EXPERIENCE || !state.journey) return;
+  const last = state.journey.milestones.at(-1);
+  if (last !== text) state.journey.milestones.push(text);
+  state.journey.milestones = state.journey.milestones.slice(-4);
 }
 
 function enterDungeon(id) {
@@ -1524,12 +1592,12 @@ function qAssetPath(id) {
 
 function renderGameShell() {
   app.innerHTML = `
-    <main class="mmo-shell game-hud ${P32_SHOWCASE ? "p32-showcase" : ""}">
+    <main class="mmo-shell game-hud ${P32_SHOWCASE ? "p32-showcase" : ""} ${P33_EXPERIENCE ? "p33-experience" : ""}">
       <section class="stage mmo-stage">
         <canvas id="gameCanvas"></canvas>
         <div class="topbar mmo-identity"></div>
         <div class="mmo-clock">15:05</div>
-        <div class="p3-version">${P32_SHOWCASE ? "P3.2 VISUAL" : "P3.0 M4"}</div>
+        <div class="p3-version">${P33_EXPERIENCE ? "P3.3 RPG" : P32_SHOWCASE ? "P3.2 VISUAL" : "P3.0 M4"}</div>
         <div class="top-menu"></div>
         <div class="left-quest-tabs">
           <button class="active" title="任务追踪" aria-label="任务追踪"><i class="icon-frame">${iconSvg("quest")}</i><span>任务</span></button>
@@ -1537,6 +1605,7 @@ function renderGameShell() {
         </div>
         <div class="float-log"></div>
         <div class="quest-track"></div>
+        <div class="journey-track"></div>
         <div class="mini-map"></div>
         <div class="side-menu"></div>
         <div class="skill-wheel"></div>
@@ -1591,14 +1660,18 @@ function renderOverlayHud() {
   const track = document.querySelector(".quest-track");
   if (track) {
     const progress = quest ? `${Math.min(questProgress(quest), quest.objective.count)}/${quest.objective.count}` : "";
+    const locked = quest ? null : nextLockedMainQuest();
     track.innerHTML = quest
       ? `<div class="quest-main"><strong>${quest.title}</strong><em>${progress}</em></div><span>${objectiveText(quest)}</span>`
-      : `<div class="quest-main"><strong>主线阶段完成</strong><em>自由</em></div><span>刷副本、养宠、加工装备</span>`;
+      : locked
+        ? `<div class="quest-main"><strong>练级衔接</strong><em>Lv.${state.level}/${locked.levelReq}</em></div><span>升到 Lv.${locked.levelReq} 后继续：${locked.title}</span>`
+        : `<div class="quest-main"><strong>主线阶段完成</strong><em>自由</em></div><span>刷副本、养宠、加工装备</span>`;
   }
   const mini = document.querySelector(".mini-map");
   if (mini) {
     mini.innerHTML = renderMiniMap();
   }
+  renderJourneyTrack(quest);
   const wheel = document.querySelector(".skill-wheel");
   if (wheel) {
     const skills = activeSkills().slice(0, 4);
@@ -1640,6 +1713,16 @@ function renderOverlayHud() {
         ["副本", "weapon", "试炼"],
         ["宠物", "pet", activePet() ? activePet().name : "未出战"]
       ]
+      : P33_EXPERIENCE
+        ? [
+          ["主线", "quest", "20分钟体验"],
+          ["技能", "role", "刺客连击"],
+          ["背包", "bag", "装备成长"],
+          ["宠物", "pet", activePet() ? activePet().name : "待捕捉"],
+          ["地图", "map", currentMap().name],
+          ["日常", "token", "试炼"],
+          ["副本", "tower", "花妖巢穴"]
+        ]
       : [
         ["任务", "quest", "主线牵引"],
         ["技能", "role", "刺客技能"],
@@ -1691,6 +1774,36 @@ function renderOverlayHud() {
       }
     };
   }
+}
+
+function renderJourneyTrack(quest) {
+  const node = document.querySelector(".journey-track");
+  if (!node) return;
+  if (!P33_EXPERIENCE) {
+    node.innerHTML = "";
+    return;
+  }
+  const chapter = p33ChapterLabel();
+  const mapIndex = Math.max(0, P33_CORE_MAPS.indexOf(state.mapId));
+  const mapProgress = Math.round(((mapIndex + 1) / P33_CORE_MAPS.length) * 100);
+  const levelProgress = Math.round((state.level / VERTICAL_SLICE.maxLevel) * 100);
+  const progress = clamp(Math.max(levelProgress, mapProgress), 4, 100);
+  const milestones = (state.journey?.milestones || ["桃源村启程"]).slice(-3);
+  node.innerHTML = `
+    <div class="journey-head"><strong>${chapter}</strong><span>Lv.${state.level}/20 · ${progress}%</span></div>
+    <div class="journey-bar"><i style="width:${progress}%"></i></div>
+    <div class="journey-next">${quest ? objectiveText(quest) : nextLockedMainQuest() ? `练级至 Lv.${nextLockedMainQuest().levelReq}：${nextLockedMainQuest().title}` : "自由刷怪、养宠、打副本"}</div>
+    <div class="journey-marks">${milestones.map((item) => `<em>${item}</em>`).join("")}</div>
+  `;
+}
+
+function p33ChapterLabel() {
+  if (state.dungeon) return "第五幕 花妖巢穴";
+  if (state.mapId === "dungeon_nest") return "第五幕 花妖巢穴";
+  if (state.level >= 16) return "第四幕 阳原试炼";
+  if (state.level >= 11 || activePet()) return "第三幕 宠物与进阶";
+  if (state.level >= 6 || ["fangcao", "fangcao_east", "yangyuan_mid"].includes(state.mapId)) return "第二幕 芳草林讨伐";
+  return "第一幕 桃源村启程";
 }
 
 function renderMiniMap() {
@@ -2475,7 +2588,7 @@ function drawMap(w, h, camera) {
   const map = currentMap();
   const profile = currentSceneProfile(map);
   const scene = sceneTheme(map.type, profile);
-  if (drawP32ShowcaseBackdrop(w, h, camera, profile)) {
+  if (drawP33MapBackdrop(w, h, camera, profile) || drawP32ShowcaseBackdrop(w, h, camera, profile)) {
     drawCommercialMapLight(w, h, camera, profile);
     drawWeather(w, h, profile);
     return;
@@ -2495,6 +2608,32 @@ function drawMap(w, h, camera) {
   drawForegroundArchitecture(w, h, scene, profile);
   drawDepthFoliage(w, h, camera, profile);
   drawWeather(w, h, profile);
+}
+
+function drawP33MapBackdrop(w, h, camera, profile = {}) {
+  if (!P33_EXPERIENCE) return false;
+  const assetId = P33_MAP_BACKGROUNDS[state.mapId];
+  if (!assetId) return false;
+  const img = spriteImages[assetId];
+  if (!img?.complete || img.naturalWidth <= 0) {
+    ensureSprite(assetId);
+    return false;
+  }
+  const scale = Math.max(w / img.naturalWidth, h / img.naturalHeight);
+  const iw = img.naturalWidth * scale;
+  const ih = img.naturalHeight * scale;
+  const parallaxX = (camera.x - currentMap().size[0] * 0.5 + w * 0.5) * 0.045;
+  const parallaxY = (camera.y - currentMap().size[1] * 0.5 + h * 0.5) * 0.04;
+  ctx.save();
+  ctx.drawImage(img, (w - iw) / 2 - parallaxX, (h - ih) / 2 - parallaxY, iw, ih);
+  const shade = ctx.createRadialGradient(w * 0.5, h * 0.46, Math.min(w, h) * 0.15, w * 0.5, h * 0.46, Math.max(w, h) * 0.74);
+  shade.addColorStop(0, "rgba(255,255,255,0)");
+  shade.addColorStop(0.72, "rgba(0,0,0,0)");
+  shade.addColorStop(1, profile.theme === "nest" ? "rgba(10,3,18,.42)" : "rgba(4,10,7,.34)");
+  ctx.fillStyle = shade;
+  ctx.fillRect(0, 0, w, h);
+  ctx.restore();
+  return true;
 }
 
 function drawP32ShowcaseBackdrop(w, h, camera, profile = {}) {
@@ -3254,7 +3393,9 @@ function drawWorldActors(camera) {
       draw: () => {
         const x = spawn.x - camera.x;
         const y = spawn.y - camera.y;
-        const size = monster.type === "boss" ? 78 : monster.type === "elite" ? 64 : 52;
+        const size = P33_EXPERIENCE
+          ? monster.type === "boss" ? 104 : monster.type === "elite" ? 82 : 66
+          : monster.type === "boss" ? 78 : monster.type === "elite" ? 64 : 52;
         drawMonsterSprite(monster.id, x, y - 12 + Math.sin(now() * 2 + spawn.phase) * 2, size, size);
         drawHealthBar(x, y - 46, size, 0.95, monster.type === "boss" ? "#d84844" : "#e07962");
         ctx.fillStyle = "#ffe7a8";
@@ -3353,9 +3494,9 @@ function drawCombatEnemy(camera) {
   drawTargetRing(x, y + 30, enemy);
   drawCombatTelegraph(x, y + 30);
   ctx.fillStyle = "rgba(0,0,0,.28)";
-  const enemySize = P32_SHOWCASE ? 92 : 68;
+  const enemySize = P32_SHOWCASE ? 92 : P33_EXPERIENCE ? enemy.type === "boss" ? 112 : enemy.type === "elite" ? 92 : 78 : 68;
   ctx.beginPath();
-  ctx.ellipse(x, y + 28, P32_SHOWCASE ? 46 : 34, P32_SHOWCASE ? 16 : 12, 0, 0, Math.PI * 2);
+  ctx.ellipse(x, y + 28, P32_SHOWCASE ? 46 : P33_EXPERIENCE ? 42 : 34, P32_SHOWCASE ? 16 : P33_EXPERIENCE ? 15 : 12, 0, 0, Math.PI * 2);
   ctx.fill();
   drawMonsterSprite(enemy.id, x, y - 2, enemySize, enemySize);
   if (flash) {
@@ -3367,8 +3508,8 @@ function drawCombatEnemy(camera) {
     ctx.fill();
     ctx.restore();
   }
-  drawHealthBar(x, y - (P32_SHOWCASE ? 62 : 46), P32_SHOWCASE ? 100 : 76, enemy.hp / enemy.maxHp, "#df6b59");
-  drawNameplate(enemy.name, x, y - (P32_SHOWCASE ? 74 : 56), "#ffe08a");
+  drawHealthBar(x, y - (P32_SHOWCASE ? 62 : P33_EXPERIENCE ? 58 : 46), P32_SHOWCASE ? 100 : P33_EXPERIENCE ? 92 : 76, enemy.hp / enemy.maxHp, "#df6b59");
+  drawNameplate(enemy.name, x, y - (P32_SHOWCASE ? 74 : P33_EXPERIENCE ? 70 : 56), "#ffe08a");
   if (state.combat.lastSkillName && (state.combat.skillLabelUntil || 0) > now()) {
     drawCastLabel(state.combat.lastSkillName, x, y - 74);
   }
@@ -3744,12 +3885,12 @@ function drawPlayer(camera) {
   const y = state.y - camera.y + Math.sin(now() * 4.6) * 1.4 + action * 18 * dir.y;
   ctx.fillStyle = "rgba(0,0,0,.28)";
   ctx.beginPath();
-  const playerW = P32_SHOWCASE ? 116 : 68;
-  const playerH = P32_SHOWCASE ? 136 : 80;
-  ctx.ellipse(x, y + 30, P32_SHOWCASE ? 54 : 34, P32_SHOWCASE ? 18 : 12, 0, 0, Math.PI * 2);
+  const playerW = P32_SHOWCASE ? 116 : P33_EXPERIENCE ? 86 : 68;
+  const playerH = P32_SHOWCASE ? 136 : P33_EXPERIENCE ? 104 : 80;
+  ctx.ellipse(x, y + 30, P32_SHOWCASE ? 54 : P33_EXPERIENCE ? 42 : 34, P32_SHOWCASE ? 18 : P33_EXPERIENCE ? 15 : 12, 0, 0, Math.PI * 2);
   ctx.fill();
-  drawNameplate(`${state.name}`, x, y - (P32_SHOWCASE ? 84 : 56), "#f4d36f");
-  drawSprite(`character_${state.classId}`, x, y - (P32_SHOWCASE ? 16 : 6), playerW, playerH);
+  drawNameplate(`${state.name}`, x, y - (P32_SHOWCASE ? 84 : P33_EXPERIENCE ? 70 : 56), "#f4d36f");
+  drawSprite(`character_${state.classId}`, x, y - (P32_SHOWCASE ? 16 : P33_EXPERIENCE ? 12 : 6), playerW, playerH);
   if (flash) {
     ctx.save();
     ctx.globalAlpha = 0.32;
@@ -3759,11 +3900,11 @@ function drawPlayer(camera) {
     ctx.fill();
     ctx.restore();
   }
-  drawHealthBar(x, y - (P32_SHOWCASE ? 62 : 38), P32_SHOWCASE ? 96 : 72, state.hp / getStats().maxHp, "#80d86e");
+  drawHealthBar(x, y - (P32_SHOWCASE ? 62 : P33_EXPERIENCE ? 48 : 38), P32_SHOWCASE ? 96 : P33_EXPERIENCE ? 88 : 72, state.hp / getStats().maxHp, "#80d86e");
   const pet = activePet();
   if (pet) {
     const petAction = Math.max(0, (combat?.petActionUntil || 0) - now());
-    const petSize = P32_SHOWCASE ? 58 : 42;
+    const petSize = P32_SHOWCASE ? 58 : P33_EXPERIENCE ? 54 : 42;
     drawMonsterSprite("white_rabbit", x + 62 + petAction * 44 * dir.x, y + 16 + petAction * 12 * dir.y, petSize, petSize);
     drawNameplate(pet.name, x + 62, y - 26, "#cbe9ff");
   }
@@ -3982,11 +4123,12 @@ async function boot() {
     localStorage.removeItem(SAVE_KEY);
     LEGACY_SAVE_KEYS.forEach((key) => localStorage.removeItem(key));
   }
-  state = P32_SHOWCASE ? freshState(VERTICAL_SLICE.classId, P32_SLICE.heroName) : loadSave();
+  state = (P32_SHOWCASE || P33_EXPERIENCE) ? freshState(VERTICAL_SLICE.classId, P33_EXPERIENCE ? "影刃" : P32_SLICE.heroName) : loadSave();
   if (state) {
     initVitals();
     if (P32_SHOWCASE) enterP32ShowcaseCombat();
     renderGameShell();
+    if (P33_EXPERIENCE) setTimeout(() => guideQuest(), 320);
   } else {
     renderCreate();
   }

@@ -210,6 +210,46 @@
     "asset_maturity": "p32_commercial_runtime_v1"
   },
   {
+    "id": "p33_taoyuan_village",
+    "type": "map_background",
+    "original_name": "P3.3 桃源村新手村底图",
+    "original_asset": "docs/reference/markdown/official/official-QQ自由幻想-资料专区-8da41f02.md",
+    "q_asset": "assets/game/qstyle/p33/taoyuan-village.png",
+    "source_confidence": "official_name_plus_ai_derivative",
+    "q_method": "ai_map_background_from_local_design_role",
+    "asset_maturity": "p33_runtime_map_v1"
+  },
+  {
+    "id": "p33_fangcao_meadow",
+    "type": "map_background",
+    "original_name": "P3.3 芳草林野外底图",
+    "original_asset": "docs/reference/markdown/official_deep/2_4_1.htm.md",
+    "q_asset": "assets/game/qstyle/p33/fangcao-meadow.png",
+    "source_confidence": "official_name_plus_ai_derivative",
+    "q_method": "ai_map_background_from_local_design_role",
+    "asset_maturity": "p33_runtime_map_v1"
+  },
+  {
+    "id": "p33_yangyuan_plain",
+    "type": "map_background",
+    "original_name": "P3.3 阳原平原中底图",
+    "original_asset": "docs/reference/markdown/official/official-QQ自由幻想-资料专区-8da41f02.md",
+    "q_asset": "assets/game/qstyle/p33/yangyuan-plain.png",
+    "source_confidence": "official_name_plus_ai_derivative",
+    "q_method": "ai_map_background_from_local_design_role",
+    "asset_maturity": "p33_runtime_map_v1"
+  },
+  {
+    "id": "p33_flower_nest",
+    "type": "map_background",
+    "original_name": "P3.3 花妖巢穴副本底图",
+    "original_asset": "docs/prd/p1-p3-prd.md",
+    "q_asset": "assets/game/qstyle/p33/flower-nest.png",
+    "source_confidence": "single_player_slice_balance",
+    "q_method": "ai_map_background_from_local_design_role",
+    "asset_maturity": "p33_runtime_map_v1"
+  },
+  {
     "id": "runtime_endgame_通天魔劫塔_monster_1_通天魔劫塔守关BOSS",
     "type": "boss",
     "original_name": "通天魔劫塔守关BOSS",

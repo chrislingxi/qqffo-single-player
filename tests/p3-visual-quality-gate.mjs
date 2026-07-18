@@ -20,16 +20,19 @@ const [goal, app, styles, html, sw, manifest] = await Promise.all([
 ]);
 
 assert(goal.version === "P3.1-visual", "P3.1 visual goal must be present");
-assert(app.includes('DATA_VERSION = "p32-commercial-visual-01"') && html.includes('"p32-commercial-visual-01"'), "P3.2 runtime cache-buster missing");
-assert(sw.includes("ffo-pwa-v11-p32-commercial") && sw.includes("p3_1_visual_goal.json"), "P3.2 service worker cache missing");
+assert(app.includes('DATA_VERSION = "p33-rpg-slice-01"') && html.includes('"p33-rpg-slice-01"'), "P3.3 runtime cache-buster missing");
+assert(sw.includes("ffo-pwa-v12-p33-rpg") && sw.includes("p3_1_visual_goal.json"), "P3.3 service worker cache missing");
 assert(app.includes("data.mapSceneById = Object.fromEntries(data.mapScenes.map((scene) => [scene.mapId, scene]))"), "runtime must index scene profiles by mapId");
 assert(manifest.some((asset) => asset.id === "p32_bamboo_water_battlefield" && asset.asset_maturity === "p32_commercial_runtime_v1"), "P3.2 commercial battlefield asset missing from manifest");
 assert(manifest.some((asset) => asset.id === "p32_combat_foreground" && asset.asset_maturity === "p32_commercial_runtime_v1"), "P3.2 commercial combat foreground asset missing from manifest");
+assert(manifest.some((asset) => asset.id === "p33_taoyuan_village" && asset.asset_maturity === "p33_runtime_map_v1"), "P3.3 playable map asset missing from manifest");
 
 for (const hook of [
   "drawCommercialBackdrop",
   "drawCommercialMapLight",
   "drawP32ShowcaseBackdrop",
+  "drawP33MapBackdrop",
+  "P33_EXPERIENCE",
   "p32_bamboo_water_battlefield",
   "p32_combat_foreground",
   "drawP32CombatForeground",
@@ -61,6 +64,8 @@ for (const styleHook of [
   ".p32-showcase .top-menu",
   ".p32-showcase .skill-wheel",
   ".p32-showcase .quest-track",
+  ".p33-experience .skill-wheel",
+  ".p33-experience .quest-track",
   ".skill-wheel .attack-btn",
   ".mini-terrain.water",
   ".mini-map-dot.player",
@@ -70,4 +75,4 @@ for (const styleHook of [
 }
 
 assert(!app.includes("<button>战</button>") && !app.includes("<button data-action=\"save\">存</button>"), "text glyph buttons must not return");
-console.log("P3.2 commercial visual quality gate passed");
+console.log("P3.3 commercial visual quality gate passed");

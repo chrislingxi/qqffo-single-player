@@ -3623,3 +3623,377 @@ button.danger {
     height: 62px !important;
   }
 }
+
+/* P3.3 RPG experience lock: production-style HUD applied to the full 20-minute assassin loop. */
+.p33-experience .mmo-stage {
+  background: #07120c !important;
+  overflow: hidden !important;
+}
+
+.p33-experience .mmo-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 48% 48%, rgba(255, 229, 138, .16), transparent 26%),
+    radial-gradient(circle at 18% 20%, rgba(73, 224, 210, .14), transparent 28%),
+    linear-gradient(90deg, rgba(0, 0, 0, .32), transparent 22%, transparent 74%, rgba(0, 0, 0, .26));
+  mix-blend-mode: screen;
+}
+
+.p33-experience .mmo-stage::after {
+  z-index: 2;
+  box-shadow: inset 0 0 54px rgba(0,0,0,.72), inset 0 -30px 68px rgba(0,0,0,.48);
+}
+
+.p33-experience .mmo-stage > :not(canvas) {
+  z-index: 5;
+}
+
+.p33-experience .mmo-identity {
+  left: 10px !important;
+  top: 8px !important;
+  width: min(352px, 41vw) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.p33-experience .identity {
+  min-height: 88px;
+  align-items: flex-start !important;
+}
+
+.p33-experience .portrait {
+  width: 82px !important;
+  height: 82px !important;
+  border-radius: 50% !important;
+  border: 4px solid rgba(246, 211, 126, .96) !important;
+  background:
+    radial-gradient(circle at 34% 23%, rgba(255,255,255,.32), transparent 26%),
+    radial-gradient(circle at 50% 50%, rgba(48, 30, 64, .92), rgba(17, 17, 20, .96)) !important;
+  box-shadow:
+    0 0 0 2px rgba(67, 36, 18, .92),
+    0 8px 18px rgba(0,0,0,.45),
+    inset 0 0 18px rgba(255, 221, 132, .18) !important;
+}
+
+.p33-experience .portrait::after {
+  content: "刺";
+  position: absolute;
+  left: -8px;
+  bottom: -8px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffeec2;
+  font-size: 15px;
+  font-weight: 1000;
+  background: radial-gradient(circle at 36% 26%, #5d4b2b, #15110c 72%);
+  border: 2px solid rgba(237, 198, 112, .95);
+  text-shadow: 0 2px 2px #000;
+}
+
+.p33-experience .bar {
+  height: 14px !important;
+  border-radius: 0 12px 12px 0 !important;
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%);
+  border: 1px solid rgba(255, 232, 151, .5) !important;
+  background: rgba(13, 15, 12, .76) !important;
+}
+
+.p33-experience .meta {
+  color: #ffc35e !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  text-shadow: 0 2px 0 #4b160c;
+}
+
+.p33-experience .top-menu {
+  top: 12px !important;
+  left: min(414px, 42vw) !important;
+  right: 154px !important;
+  max-width: none !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  overflow: visible !important;
+}
+
+.p33-experience .top-menu .mmo-icon {
+  width: 56px !important;
+  min-width: 56px !important;
+  filter: drop-shadow(0 7px 7px rgba(0,0,0,.45));
+}
+
+.p33-experience .top-menu .mmo-icon .icon-frame {
+  width: 46px !important;
+  height: 46px !important;
+  border-width: 3px !important;
+}
+
+.p33-experience .top-menu .mmo-icon span {
+  display: block !important;
+  color: #fff1bd !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  text-shadow: 0 2px 2px #1b1008;
+}
+
+.p33-experience .mini-map {
+  top: 20px !important;
+  right: 14px !important;
+  width: 126px !important;
+  height: 126px !important;
+  border-width: 4px !important;
+}
+
+.p33-experience .mini-map span {
+  top: -23px !important;
+  padding: 2px 18px;
+  border-radius: 999px;
+  color: #fff1c3 !important;
+  font-size: 14px !important;
+  background: linear-gradient(90deg, rgba(47,30,16,.85), rgba(99,64,28,.75), rgba(47,30,16,.85));
+  border: 1px solid rgba(234, 199, 113, .56);
+}
+
+.p33-experience .left-quest-tabs {
+  left: 0 !important;
+  top: 128px !important;
+  width: 38px !important;
+  z-index: 7 !important;
+}
+
+.p33-experience .left-quest-tabs button {
+  width: 38px !important;
+  height: 78px !important;
+  border-radius: 0 !important;
+  background: linear-gradient(180deg, rgba(92, 64, 32, .95), rgba(22, 21, 15, .9)) !important;
+}
+
+.p33-experience .left-quest-tabs button span {
+  writing-mode: vertical-rl;
+  font-size: 15px !important;
+  color: #ffe7ae !important;
+}
+
+.p33-experience .quest-track {
+  left: 45px !important;
+  top: 128px !important;
+  width: min(320px, 35vw) !important;
+  max-width: none !important;
+  padding: 12px 14px !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(234, 193, 102, .62) !important;
+  background:
+    linear-gradient(90deg, rgba(12, 24, 18, .78), rgba(13, 20, 16, .58)),
+    radial-gradient(circle at 88% 28%, rgba(130, 80, 255, .17), transparent 22%) !important;
+  backdrop-filter: blur(4px);
+}
+
+.p33-experience .quest-main strong {
+  color: #ffe079 !important;
+  font-size: 16px !important;
+}
+
+.p33-experience .quest-track span {
+  color: #fff7dc !important;
+  font-size: 14px !important;
+}
+
+.journey-track {
+  position: absolute;
+  left: 45px;
+  top: 248px;
+  width: min(320px, 35vw);
+  display: none;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(134, 214, 120, .42);
+  background: linear-gradient(90deg, rgba(10, 22, 15, .72), rgba(17, 20, 14, .54));
+  backdrop-filter: blur(4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.28);
+}
+
+.p33-experience .journey-track {
+  display: grid;
+}
+
+.journey-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #fff1bd;
+  font-weight: 900;
+}
+
+.journey-head span,
+.journey-next,
+.journey-marks em {
+  color: #cfe9b6;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.journey-bar {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(6, 12, 8, .66);
+  border: 1px solid rgba(220, 247, 170, .24);
+}
+
+.journey-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7ee68a, #efd06d 65%, #ff9f5a);
+  box-shadow: 0 0 14px rgba(226, 214, 99, .42);
+}
+
+.journey-marks {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.journey-marks em {
+  max-width: 96px;
+  padding: 2px 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(252, 224, 132, .12);
+  color: #ffe8a4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.p33-experience .quick,
+.p33-experience .bottom-dock {
+  display: none !important;
+}
+
+.p33-experience .skill-wheel {
+  right: 24px !important;
+  bottom: 30px !important;
+  width: 250px !important;
+  height: 220px !important;
+  transform: none !important;
+}
+
+.p33-experience .skill-wheel button {
+  width: 66px !important;
+  height: 66px !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  border-width: 3px !important;
+}
+
+.p33-experience .skill-wheel .attack-btn {
+  right: 54px !important;
+  bottom: 32px !important;
+  width: 112px !important;
+  height: 112px !important;
+}
+
+.p33-experience .skill-wheel .attack-btn .icon-frame {
+  width: 76px !important;
+  height: 76px !important;
+}
+
+.p33-experience .skill-wheel button:not(.attack-btn) .skill-icon {
+  width: 44px !important;
+  height: 44px !important;
+}
+
+.p33-experience .skill-wheel button span {
+  display: block !important;
+  position: absolute;
+  left: 50%;
+  bottom: -19px;
+  transform: translateX(-50%);
+  color: #fff2c2;
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+  text-shadow: 0 2px 2px #000;
+}
+
+.p33-experience .chat-bar {
+  left: 270px !important;
+  right: 388px !important;
+  bottom: 20px !important;
+  height: 70px !important;
+  min-width: 280px;
+  padding: 8px 12px !important;
+  border-radius: 10px !important;
+  background: linear-gradient(90deg, rgba(19, 17, 14, .82), rgba(19, 17, 14, .54)) !important;
+  backdrop-filter: blur(4px);
+}
+
+.p33-experience .float-log {
+  display: none !important;
+}
+
+.p33-experience .p3-version {
+  display: none !important;
+}
+
+@media (orientation: landscape) and (max-height: 430px) {
+  .p33-experience .mini-map {
+    width: 112px !important;
+    height: 112px !important;
+    right: 10px !important;
+    top: 20px !important;
+  }
+
+  .p33-experience .top-menu {
+    left: 350px !important;
+    right: 128px !important;
+    gap: 5px !important;
+  }
+
+  .p33-experience .top-menu .mmo-icon {
+    width: 48px !important;
+    min-width: 48px !important;
+  }
+
+  .p33-experience .top-menu .mmo-icon .icon-frame {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .p33-experience .top-menu .mmo-icon span {
+    font-size: 11px !important;
+  }
+
+  .p33-experience .quest-track {
+    width: 270px !important;
+  }
+
+  .p33-experience .journey-track {
+    top: 236px !important;
+    width: 270px !important;
+  }
+
+  .p33-experience .skill-wheel {
+    right: 10px !important;
+    bottom: 18px !important;
+    transform: scale(.84) !important;
+    transform-origin: right bottom;
+  }
+
+  .p33-experience .chat-bar {
+    left: 250px !important;
+    right: 270px !important;
+    bottom: 10px !important;
+    height: 62px !important;
+  }
+}

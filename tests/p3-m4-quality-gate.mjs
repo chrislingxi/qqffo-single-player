@@ -21,8 +21,8 @@ const pkg = await load("package.json");
 
 const sceneById = Object.fromEntries(scenes.map((scene) => [scene.mapId, scene]));
 assert(goal.version === "P3.0-M4", "P3.0 M4 goal spec missing or wrong version");
-assert(app.includes('DATA_VERSION = "p32-commercial-visual-01"'), "runtime DATA_VERSION must be P3.2 visual build");
-assert(sw.includes("ffo-pwa-v11-p32-commercial"), "service worker cache must be bumped for P3.2 visual build");
+assert(app.includes('DATA_VERSION = "p33-rpg-slice-01"'), "runtime DATA_VERSION must be P3.3 RPG build");
+assert(sw.includes("ffo-pwa-v12-p33-rpg"), "service worker cache must be bumped for P3.3 RPG build");
 assert(pkg.scripts["verify:p3-m4"] === "node tests/p3-m4-quality-gate.mjs", "package must expose verify:p3-m4");
 assert(html.includes("boot-screen") && styles.includes(".boot-screen"), "fastboot transition screen must be present before app JS loads");
 assert(html.includes("await import(`./src/app.js") && !html.includes('type="module" src="src/app.js"'), "index must clear stale PWA cache before importing app runtime");
@@ -54,6 +54,7 @@ for (const mapId of ["fangcao", "fangcao_east", "yangyuan_mid", "dungeon_nest"])
 for (const needle of [
   "drawPainterlyTexture",
   "drawDepthFoliage",
+  "drawP33MapBackdrop",
   "drawTargetRing",
   "drawCombatTelegraph",
   "drawWorldActors",
@@ -70,7 +71,8 @@ for (const needle of [
   ".mini-map-dot",
   ".p3-version",
   ".mmo-icon",
-  ".skill-wheel"
+  ".skill-wheel",
+  ".p33-experience .skill-wheel"
 ]) {
   assert(styles.includes(needle), `P3.0 M4 style hook missing: ${needle}`);
 }
