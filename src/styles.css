@@ -2633,6 +2633,126 @@ button.danger {
   }
 }
 
+/* P3.0 M4.1 final cascade lock: old duplicated CSS must not re-open clutter. */
+.game-hud .side-menu,
+.mmo-stage .side-menu {
+  display: none !important;
+}
+
+.chat-bar .chat-icon {
+  width: 30px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  padding: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+}
+
+.chat-bar .chat-icon .icon-frame {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+}
+
+.chat-bar .chat-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.skill-wheel button span {
+  pointer-events: none;
+}
+
+@media (orientation: landscape) and (max-height: 430px) {
+  .game-hud .chat-bar {
+    left: 8px !important;
+    right: 128px !important;
+    bottom: 8px !important;
+    height: 32px !important;
+  }
+
+  .game-hud .quick {
+    left: 8px !important;
+    bottom: 76px !important;
+    grid-template-columns: repeat(2, minmax(92px, 1fr)) !important;
+  }
+
+  .game-hud .mini-map {
+    right: 4px !important;
+    top: 8px !important;
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .game-hud .top-menu {
+    right: 74px !important;
+    max-width: 47vw !important;
+  }
+}
+
+/* P3.0 M4.1 experience lock: keep the iPhone landscape playfield clean. */
+.game-hud .side-menu,
+.mmo-stage .side-menu {
+  display: none !important;
+}
+
+.chat-bar .chat-icon {
+  width: 30px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  padding: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+}
+
+.chat-bar .chat-icon .icon-frame {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+}
+
+.chat-bar .chat-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.skill-wheel button span {
+  pointer-events: none;
+}
+
+@media (orientation: landscape) and (max-height: 430px) {
+  .game-hud .chat-bar {
+    left: 8px !important;
+    right: 128px !important;
+    bottom: 8px !important;
+    height: 32px !important;
+  }
+
+  .game-hud .quick {
+    left: 8px !important;
+    bottom: 76px !important;
+    grid-template-columns: repeat(2, minmax(92px, 1fr)) !important;
+  }
+
+  .game-hud .mini-map {
+    right: 4px !important;
+    top: 8px !important;
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .game-hud .top-menu {
+    right: 74px !important;
+    max-width: 47vw !important;
+  }
+}
+
 /* Final P3.0 M4 cascade lock. Keep this block last so legacy P1/P2 styles cannot override the current slice. */
 .mini-map {
   position: absolute;
@@ -2849,4 +2969,94 @@ button.danger {
     bottom: 52px;
     width: min(318px, calc(100vw - 176px));
   }
+}
+
+/* P3.0 M4.1 EOF lock: final rules override legacy duplicated blocks. */
+.game-hud .side-menu,
+.mmo-stage .side-menu {
+  display: none !important;
+}
+
+.chat-bar .chat-icon {
+  width: 30px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  padding: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+}
+
+.chat-bar .chat-icon .icon-frame {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+}
+
+.chat-bar .chat-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.skill-wheel button span {
+  pointer-events: none;
+}
+
+@media (orientation: landscape) and (max-height: 430px) {
+  .game-hud .chat-bar {
+    left: 8px !important;
+    right: 128px !important;
+    bottom: 8px !important;
+    height: 32px !important;
+  }
+
+  .game-hud .quick {
+    left: 8px !important;
+    bottom: 76px !important;
+    grid-template-columns: repeat(2, minmax(92px, 1fr)) !important;
+  }
+
+  .game-hud .mini-map {
+    right: 4px !important;
+    top: 8px !important;
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .game-hud .top-menu {
+    right: 74px !important;
+    max-width: 47vw !important;
+  }
+}
+
+.left-quest-tabs {
+  width: 34px !important;
+  gap: 6px !important;
+}
+
+.left-quest-tabs button {
+  width: 34px !important;
+  min-height: 42px !important;
+  height: 42px !important;
+  padding: 3px 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  gap: 1px !important;
+  writing-mode: horizontal-tb !important;
+  letter-spacing: 0 !important;
+  font-size: 9px !important;
+}
+
+.left-quest-tabs .icon-frame {
+  width: 21px;
+  height: 21px;
+  display: grid;
+  place-items: center;
+}
+
+.left-quest-tabs svg {
+  width: 18px;
+  height: 18px;
 }

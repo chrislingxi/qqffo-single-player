@@ -41,7 +41,7 @@ const DATA_FILES = {
 
 const SAVE_KEY = "ffo_p2_save_v1";
 const LEGACY_SAVE_KEYS = ["ffo_p1_save_v1"];
-const DATA_VERSION = "p30-m4-02";
+const DATA_VERSION = "p30-m4-03";
 const VERTICAL_SLICE = {
   enabled: true,
   classId: "assassin",
@@ -1423,7 +1423,10 @@ function renderGameShell() {
         <div class="mmo-clock">15:05</div>
         <div class="p3-version">P3.0 M4</div>
         <div class="top-menu"></div>
-        <div class="left-quest-tabs"><button class="active">任务</button><button>图鉴</button></div>
+        <div class="left-quest-tabs">
+          <button class="active" title="任务追踪" aria-label="任务追踪"><i class="icon-frame">${iconSvg("quest")}</i><span>任务</span></button>
+          <button title="怪物图鉴" aria-label="怪物图鉴"><i class="icon-frame">${iconSvg("pet")}</i><span>图鉴</span></button>
+        </div>
         <div class="float-log"></div>
         <div class="quest-track"></div>
         <div class="mini-map"></div>
@@ -1469,7 +1472,7 @@ function renderGame() {
   if (!state) return;
   renderTopbar();
   renderQuick();
-  renderPanel();
+  renderPanel({ force: document.querySelector(".hud")?.classList.contains("open") });
   renderOverlayHud();
   renderCanvas();
 }
@@ -1532,20 +1535,18 @@ function renderOverlayHud() {
   }
   const sideMenu = document.querySelector(".side-menu");
   if (sideMenu) {
-    sideMenu.innerHTML = [["背包", "bag"], ["地图", "map"], ["日常", "token"]].map(([item, iconType]) => `
-      <button class="round-tool ${currentTab === tabFromMenu(item) ? "active" : ""}" data-tab="${tabFromMenu(item)}"><i class="icon-frame">${iconSvg(iconType)}</i><span>${item}</span></button>
-    `).join("");
-    sideMenu.onclick = onHudMenuClick;
+    sideMenu.innerHTML = "";
+    sideMenu.onclick = null;
   }
   const chat = document.querySelector(".chat-bar");
   if (chat) {
     chat.innerHTML = `
-      <button>战</button>
+      <button class="chat-icon" title="战斗状态" aria-label="战斗状态"><i class="icon-frame">${iconSvg("weapon")}</i></button>
       <span>${combatStatusText(quest)}</span>
-      <button data-action="save">存</button>
+      <button class="chat-icon" data-action="save" title="保存进度" aria-label="保存进度"><i class="icon-frame">${iconSvg("item")}</i></button>
     `;
     chat.onclick = (event) => {
-      if (event.target.dataset.action === "save") {
+      if (event.target.closest("button")?.dataset.action === "save") {
         save();
         addLog("已保存");
       }
@@ -1623,6 +1624,7 @@ function onHudMenuClick(event) {
 
 function toggleDrawer(open) {
   document.querySelector(".hud")?.classList.toggle("open", open);
+  if (open) renderPanel({ force: true });
 }
 
 function renderTopbar() {
@@ -1684,11 +1686,14 @@ function renderQuick() {
   };
 }
 
-function renderPanel() {
+function renderPanel(options = {}) {
+  const body = document.querySelector(".panel-body");
+  const hud = document.querySelector(".hud");
+  if (!body || !hud) return;
   document.querySelectorAll(".tabs button").forEach((button) => {
     button.classList.toggle("active", button.dataset.tab === currentTab);
   });
-  const body = document.querySelector(".panel-body");
+  if (!options.force && !hud.classList.contains("open")) return;
   if (currentTab === "quest") body.innerHTML = questPanel();
   if (currentTab === "role") body.innerHTML = rolePanel();
   if (currentTab === "bag") body.innerHTML = bagPanel();
@@ -1697,7 +1702,7 @@ function renderPanel() {
   if (currentTab === "activity") body.innerHTML = activityPanel();
   if (currentTab === "endgame") body.innerHTML = endgamePanel();
   body.onclick = onPanelClick;
-  document.querySelector(".hud").ondblclick = () => toggleDrawer(false);
+  hud.ondblclick = () => toggleDrawer(false);
 }
 
 function panelFrame(title, subtitle, iconType, content, actions = "") {
@@ -2330,14 +2335,8 @@ function renderCanvas() {
     y: clamp(state.y - h / 2, 0, Math.max(0, map.size[1] - h))
   };
   drawMap(w, h, camera);
-  drawMarkers(camera);
-  if (state.combat && (state.combat.enemyY || 0) > state.y) {
-    drawPlayer(camera);
-    drawCombatEnemy(camera);
-  } else {
-    drawCombatEnemy(camera);
-    drawPlayer(camera);
-  }
+  drawNavigationAids(camera);
+  drawWorldActors(camera);
   drawFx(camera);
   drawCombatHud(w);
 }
@@ -3005,27 +3004,12 @@ function drawWeather(w, h, profile = {}) {
 }
 
 function drawMarkers(camera) {
+  drawNavigationAids(camera);
+  drawWorldActors(camera);
+}
+
+function drawNavigationAids(camera) {
   drawSpawnZoneHints(camera);
-  data.npcs.filter((npc) => npc.mapId === state.mapId).forEach((npc) => {
-    const x = npc.x - camera.x;
-    const y = npc.y - camera.y;
-    drawNpc(x, y, npc.name);
-  });
-  spawnInstancesForMap().forEach((spawn) => {
-    if (spawn.uid === state.combat?.spawnUid) return;
-    const x = spawn.x - camera.x;
-    const y = spawn.y - camera.y;
-    const monster = data.monsterById[spawn.monsterId];
-    if (!monster) return;
-    const size = monster.type === "boss" ? 78 : monster.type === "elite" ? 64 : 52;
-    drawMonsterSprite(monster.id, x, y - 12 + Math.sin(now() * 2 + spawn.phase) * 2, size, size);
-    drawHealthBar(x, y - 46, size, 0.95, monster.type === "boss" ? "#d84844" : "#e07962");
-    ctx.fillStyle = "#ffe7a8";
-    ctx.font = "700 12px system-ui";
-    ctx.textAlign = "center";
-    ctx.fillText(monster.name, x, y + 32);
-    ctx.textAlign = "left";
-  });
   if (state.target) {
     ctx.strokeStyle = "#e9c66c";
     ctx.lineWidth = 2;
@@ -3036,6 +3020,41 @@ function drawMarkers(camera) {
     ctx.stroke();
     ctx.setLineDash([]);
   }
+}
+
+function drawWorldActors(camera) {
+  const actors = [];
+  data.npcs.filter((npc) => npc.mapId === state.mapId).forEach((npc) => {
+    actors.push({
+      y: npc.y,
+      draw: () => drawNpc(npc.x - camera.x, npc.y - camera.y, npc.name)
+    });
+  });
+  spawnInstancesForMap().forEach((spawn) => {
+    if (spawn.uid === state.combat?.spawnUid) return;
+    const monster = data.monsterById[spawn.monsterId];
+    if (!monster) return;
+    actors.push({
+      y: spawn.y,
+      draw: () => {
+        const x = spawn.x - camera.x;
+        const y = spawn.y - camera.y;
+        const size = monster.type === "boss" ? 78 : monster.type === "elite" ? 64 : 52;
+        drawMonsterSprite(monster.id, x, y - 12 + Math.sin(now() * 2 + spawn.phase) * 2, size, size);
+        drawHealthBar(x, y - 46, size, 0.95, monster.type === "boss" ? "#d84844" : "#e07962");
+        ctx.fillStyle = "#ffe7a8";
+        ctx.font = "700 12px system-ui";
+        ctx.textAlign = "center";
+        ctx.fillText(monster.name, x, y + 32);
+        ctx.textAlign = "left";
+      }
+    });
+  });
+  if (state.combat) {
+    actors.push({ y: state.combat.enemyY || state.y - 4, draw: () => drawCombatEnemy(camera) });
+  }
+  actors.push({ y: state.y, draw: () => drawPlayer(camera) });
+  actors.sort((a, b) => a.y - b.y).forEach((actor) => actor.draw());
 }
 
 function drawSpawnZoneHints(camera) {
@@ -3438,10 +3457,102 @@ function drawSprite(assetId, x, y, w, h) {
     return;
   }
   ensureSprite(assetId);
-  ctx.fillStyle = "#d96f61";
+  drawFallbackSprite(assetId, x, y, w, h);
+}
+
+function drawFallbackSprite(assetId, x, y, w, h) {
+  const id = String(assetId || "");
+  ctx.save();
+  ctx.fillStyle = "rgba(0,0,0,.2)";
   ctx.beginPath();
-  ctx.arc(x, y, Math.min(w, h) / 2, 0, Math.PI * 2);
+  ctx.ellipse(x, y + h * 0.35, w * 0.34, h * 0.11, 0, 0, Math.PI * 2);
   ctx.fill();
+  if (id.startsWith("character_")) {
+    const palette = id.includes("assassin") ? ["#2f5d50", "#ffe2b7", "#9b5cff"] : ["#4e6c88", "#ffe2b7", "#d6a84f"];
+    ctx.fillStyle = palette[1];
+    ctx.beginPath();
+    ctx.arc(x, y - h * 0.22, w * 0.18, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = palette[0];
+    ctx.beginPath();
+    ctx.roundRect?.(x - w * 0.24, y - h * 0.04, w * 0.48, h * 0.48, 8);
+    if (!ctx.roundRect) roundRect(x - w * 0.24, y - h * 0.04, w * 0.48, h * 0.48, 8);
+    ctx.fill();
+    ctx.strokeStyle = "#e9f7ff";
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.moveTo(x - w * 0.34, y + h * 0.1);
+    ctx.lineTo(x - w * 0.48, y + h * 0.24);
+    ctx.moveTo(x + w * 0.34, y + h * 0.1);
+    ctx.lineTo(x + w * 0.5, y - h * 0.12);
+    ctx.stroke();
+    ctx.fillStyle = palette[2];
+    ctx.beginPath();
+    ctx.ellipse(x + w * 0.12, y - h * 0.34, w * 0.16, h * 0.09, -0.5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+    return;
+  }
+  if (/rabbit|fenfen|white/.test(id)) {
+    ctx.fillStyle = "#fff6e5";
+    ctx.beginPath();
+    ctx.ellipse(x, y, w * 0.28, h * 0.24, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.ellipse(x - w * 0.12, y - h * 0.24, w * 0.08, h * 0.24, -0.25, 0, Math.PI * 2);
+    ctx.ellipse(x + w * 0.12, y - h * 0.24, w * 0.08, h * 0.24, 0.25, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "#3f2a24";
+    ctx.beginPath();
+    ctx.arc(x - w * 0.08, y - h * 0.02, 2.4, 0, Math.PI * 2);
+    ctx.arc(x + w * 0.08, y - h * 0.02, 2.4, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+    return;
+  }
+  if (/flower|tree|man_eater/.test(id)) {
+    ctx.fillStyle = "#66a653";
+    ctx.fillRect(x - w * 0.08, y - h * 0.06, w * 0.16, h * 0.34);
+    for (let i = 0; i < 8; i += 1) {
+      ctx.fillStyle = i % 2 ? "#ff805f" : "#ffd062";
+      ctx.beginPath();
+      ctx.ellipse(x + Math.cos(i) * w * 0.2, y - h * 0.18 + Math.sin(i) * h * 0.13, w * 0.13, h * 0.09, i, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.fillStyle = "#482b23";
+    ctx.beginPath();
+    ctx.arc(x, y - h * 0.18, w * 0.12, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+    return;
+  }
+  if (/boar|lion|巨熊|bear/.test(id)) {
+    ctx.fillStyle = "#b1844c";
+    ctx.beginPath();
+    ctx.ellipse(x, y, w * 0.34, h * 0.25, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "#e0b66b";
+    ctx.beginPath();
+    ctx.arc(x + w * 0.24, y - h * 0.1, w * 0.16, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = "#f6e4b8";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(x + w * 0.3, y - h * 0.02);
+    ctx.lineTo(x + w * 0.43, y + h * 0.06);
+    ctx.stroke();
+    ctx.restore();
+    return;
+  }
+  ctx.fillStyle = "#84dfff";
+  ctx.beginPath();
+  ctx.ellipse(x, y, w * 0.24, h * 0.32, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = "rgba(167, 103, 255, .55)";
+  ctx.beginPath();
+  ctx.arc(x, y - h * 0.08, Math.min(w, h) * 0.16, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
 }
 
 function onCanvasTap(event) {

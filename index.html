@@ -35,7 +35,7 @@
             "caches" in window ? caches.keys().then((keys) => Promise.all(keys.map((key) => caches.delete(key)))) : Promise.resolve()
           ]).catch(() => {});
         }
-        await import(`./src/app.js?v=${reset ? Date.now() : "p30-m4-02"}`);
+        await import(`./src/app.js?v=${reset ? Date.now() : "p30-m4-03"}`);
         if ("serviceWorker" in navigator) {
           window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
         }

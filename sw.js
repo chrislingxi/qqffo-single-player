@@ -1,4 +1,4 @@
-const CACHE_NAME = "ffo-pwa-v8-p30-m4-fastboot";
+const CACHE_NAME = "ffo-pwa-v9-p30-m4-experience";
 const CORE_ASSETS = [
   "./",
   "./index.html",

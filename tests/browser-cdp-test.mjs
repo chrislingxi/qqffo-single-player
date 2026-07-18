@@ -154,6 +154,7 @@ try {
         hasTabs: document.querySelectorAll('.tabs button').length,
         hasTopMenu: document.querySelectorAll('.top-menu .mmo-icon').length,
         hasSideMenu: document.querySelectorAll('.side-menu .round-tool').length,
+        sideMenuVisible: getComputedStyle(document.querySelector('.side-menu')).display !== 'none',
         hasChat: Boolean(document.querySelector('.chat-bar')),
         hasQuestTrack: Boolean(document.querySelector('.quest-track')),
         hasMiniMap: Boolean(document.querySelector('.mini-map')),
@@ -170,7 +171,7 @@ try {
   if (state.canvasWidth < 760 || state.canvasHeight < 340) throw new Error("Canvas is too small on landscape mobile viewport");
   if (!state.hasHud || state.hasTabs !== 7) throw new Error("HUD tabs did not render");
   if (state.hudOpen) throw new Error("Drawer panel should not cover the default MMO playfield");
-  if (state.hasTopMenu !== 6 || state.hasSideMenu !== 3 || !state.hasChat || !state.hasQuestTrack || !state.hasMiniMap || !state.hasSkillWheel) {
+  if (state.hasTopMenu !== 6 || state.hasSideMenu !== 0 || state.sideMenuVisible || !state.hasChat || !state.hasQuestTrack || !state.hasMiniMap || !state.hasSkillWheel) {
     throw new Error("P3 MMO HUD did not render completely");
   }
   if (state.forbiddenText) throw new Error("Single-player build contains social/fake-player text");
