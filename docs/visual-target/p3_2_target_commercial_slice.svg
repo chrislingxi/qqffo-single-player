@@ -1,0 +1,272 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#61e0d0"/>
+      <stop offset="1" stop-color="#168f86"/>
+    </linearGradient>
+    <linearGradient id="grass" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7fcf58"/>
+      <stop offset="1" stop-color="#2f7d3c"/>
+    </linearGradient>
+    <linearGradient id="mud" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#d3b377"/>
+      <stop offset="1" stop-color="#987047"/>
+    </linearGradient>
+    <radialGradient id="gold" cx="35%" cy="25%" r="72%">
+      <stop stop-color="#fff2a6"/>
+      <stop offset=".42" stop-color="#d59a3c"/>
+      <stop offset=".72" stop-color="#7c4620"/>
+      <stop offset="1" stop-color="#2f1b12"/>
+    </radialGradient>
+    <radialGradient id="jade" cx="40%" cy="35%" r="70%">
+      <stop stop-color="#dbffe2"/>
+      <stop offset=".48" stop-color="#74c983"/>
+      <stop offset="1" stop-color="#12412d"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#08160c" flood-opacity=".55"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="tile" width="64" height="32" patternUnits="userSpaceOnUse" patternTransform="skewX(-24)">
+      <path d="M0 0H64V32H0Z" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
+    </pattern>
+    <style>
+      .ui-text{font-family:PingFang SC,Heiti SC,Arial,sans-serif;fill:#fff6d2;font-weight:700;text-shadow:0 2px 3px #281000}
+      .small{font-size:22px}.mid{font-size:30px}.big{font-size:42px}
+      .label{font-family:PingFang SC,Heiti SC,Arial,sans-serif;fill:#ffe98e;font-weight:800;stroke:#3d210d;stroke-width:3px;paint-order:stroke}
+      .panel{fill:#1e1610;fill-opacity:.82;stroke:#b87931;stroke-width:3}
+      .slot{fill:#171811;stroke:#a16d2d;stroke-width:2}
+      .bar-bg{fill:#22170e;stroke:#b87931;stroke-width:2}
+      .hp{fill:#e44935}.mp{fill:#3d8dec}.xp{fill:#f5c23c}
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#07120b"/>
+  <g clip-path="url(#screen)">
+    <path d="M0 0H1600V900H0Z" fill="url(#grass)"/>
+    <path d="M0 0H520C455 130 390 205 294 254C210 297 104 320 0 330Z" fill="url(#water)"/>
+    <path d="M45 0C150 82 250 136 382 156C304 238 162 293 0 306V0Z" fill="#5fe8dc" opacity=".18"/>
+    <path d="M420 230C660 220 803 309 955 397C1103 483 1290 504 1600 448V610C1294 656 1070 629 884 515C699 402 550 347 386 387C246 421 120 511 0 620V455C127 338 259 251 420 230Z" fill="url(#mud)" opacity=".95"/>
+    <path d="M0 610C130 522 244 459 381 423C542 381 694 442 874 550C1047 654 1280 699 1600 650V900H0Z" fill="#347f3e" opacity=".58"/>
+    <rect width="1600" height="900" fill="url(#tile)" opacity=".55"/>
+
+    <g opacity=".96">
+      <path d="M125 130C205 108 286 103 364 128" stroke="#365920" stroke-width="22" stroke-linecap="round"/>
+      <path d="M135 156C216 132 290 129 356 150" stroke="#769b3d" stroke-width="16" stroke-linecap="round"/>
+      <path d="M134 121L354 153M155 111L377 142M111 147L331 180" stroke="#213812" stroke-width="8" opacity=".9"/>
+      <circle cx="112" cy="146" r="10" fill="#b6d56b"/>
+      <circle cx="373" cy="140" r="10" fill="#b6d56b"/>
+    </g>
+
+    <g opacity=".95">
+      <ellipse cx="132" cy="347" rx="120" ry="42" fill="#184f2f"/>
+      <ellipse cx="139" cy="333" rx="105" ry="38" fill="#2b7b42"/>
+      <circle cx="70" cy="313" r="44" fill="#3b944d"/>
+      <circle cx="128" cy="290" r="54" fill="#4ca85a"/>
+      <circle cx="190" cy="310" r="44" fill="#3c9550"/>
+      <rect x="118" y="337" width="32" height="104" fill="#8b5b28"/>
+      <path d="M95 211C115 105 138 62 165 28M154 206C181 92 226 38 280 2M222 223C273 104 340 50 421 15" stroke="#2e6f35" stroke-width="18" stroke-linecap="round"/>
+      <path d="M81 154C123 144 154 149 186 179M139 118C192 113 235 127 276 171M213 137C270 119 325 128 381 172" stroke="#63b65c" stroke-width="10" stroke-linecap="round"/>
+    </g>
+
+    <g>
+      <ellipse cx="940" cy="182" rx="72" ry="24" fill="#234729" opacity=".45"/>
+      <path d="M908 132l33-54 55 22-21 62z" fill="#b6b9a6"/>
+      <path d="M1017 148l45-63 63 47-34 70z" fill="#d2d5c0"/>
+      <ellipse cx="1375" cy="704" rx="142" ry="50" fill="#1f542f" opacity=".45"/>
+      <circle cx="1310" cy="653" r="58" fill="#3b9a55"/>
+      <circle cx="1375" cy="626" r="74" fill="#54b568"/>
+      <circle cx="1450" cy="662" r="56" fill="#3c9855"/>
+      <path d="M1160 76C1195 130 1204 201 1187 286M1233 62C1265 143 1263 224 1238 310M1298 80C1348 150 1364 228 1344 328" stroke="#235e35" stroke-width="15" stroke-linecap="round"/>
+      <path d="M1152 111C1205 98 1246 106 1280 144M1220 150C1271 136 1330 148 1372 194M1272 106C1327 89 1389 104 1437 151" stroke="#66be62" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="262" cy="222" r="12" fill="#ffe595" opacity=".8"/>
+      <circle cx="722" cy="140" r="10" fill="#ffe595" opacity=".7"/>
+      <circle cx="1236" cy="516" r="11" fill="#ffe595" opacity=".8"/>
+    </g>
+
+    <g opacity=".8">
+      <circle cx="236" cy="184" r="32" fill="#3fd0b8"/>
+      <circle cx="236" cy="184" r="52" fill="none" stroke="#d3fff4" stroke-opacity=".35" stroke-width="5"/>
+      <ellipse cx="308" cy="83" rx="50" ry="22" fill="#89d06c"/>
+      <path d="M308 61v44" stroke="#3c8f40" stroke-width="5"/>
+      <circle cx="273" cy="274" r="10" fill="#cbd6ba"/>
+      <circle cx="301" cy="256" r="13" fill="#e1e7d1"/>
+      <circle cx="328" cy="235" r="8" fill="#cbd6ba"/>
+    </g>
+
+    <g filter="url(#shadow)">
+      <g transform="translate(610 515)">
+        <ellipse cx="0" cy="58" rx="58" ry="20" fill="#07120b" opacity=".38"/>
+        <path d="M-27 30C-52 6-50-43-12-72C20-96 65-76 70-34C75 8 40 50-5 48Z" fill="#c59a49"/>
+        <path d="M-40 2C-66-10-76-44-54-68C-30-94 14-77 22-42C31-7-9 17-40 2Z" fill="#e0c16a"/>
+        <path d="M-51-55C-61-76-51-96-31-102C-16-81-21-63-43-48M-4-77C-6-104 12-118 38-111C44-83 28-64 0-56" fill="#5d4126"/>
+        <path d="M28-58C48-41 53-16 44 3M-18-36C-1-22 7-7 5 13" stroke="#3e2817" stroke-width="8" stroke-linecap="round"/>
+        <text class="label" x="-44" y="-100" font-size="28">巨熊</text>
+        <rect x="-50" y="-88" width="100" height="9" rx="5" fill="#18220f"/>
+        <rect x="-50" y="-88" width="82" height="9" rx="5" fill="#61d15e"/>
+      </g>
+      <g transform="translate(1040 325)">
+        <ellipse cx="0" cy="58" rx="62" ry="20" fill="#07120b" opacity=".38"/>
+        <path d="M-34 22C-58-16-47-61-9-81C31-102 77-69 70-25C65 12 28 44-17 44Z" fill="#8ed9d8"/>
+        <path d="M-10-78C-4-112 21-126 49-112C40-83 21-65-10-64" fill="#376a77"/>
+        <path d="M-60-35C-83-49-91-75-76-96C-47-83-38-59-49-30" fill="#376a77"/>
+        <text class="label" x="-44" y="-108" font-size="28">云中怪</text>
+        <rect x="-50" y="-96" width="100" height="9" rx="5" fill="#18220f"/>
+        <rect x="-50" y="-96" width="100" height="9" rx="5" fill="#61d15e"/>
+      </g>
+      <g transform="translate(1240 523)">
+        <ellipse cx="0" cy="56" rx="56" ry="19" fill="#07120b" opacity=".38"/>
+        <path d="M-35 30C-70-15-40-75 24-78C78-74 92-11 49 27C22 52-12 51-35 30Z" fill="#d5a15f"/>
+        <path d="M-39-29C-61-45-62-72-42-91C-14-72-18-43-39-29M30-61C46-88 76-91 98-73C81-44 56-35 30-61" fill="#5a3720"/>
+        <text class="label" x="-42" y="-104" font-size="28">巨熊</text>
+        <rect x="-50" y="-92" width="100" height="9" rx="5" fill="#18220f"/>
+        <rect x="-50" y="-92" width="94" height="9" rx="5" fill="#61d15e"/>
+      </g>
+    </g>
+
+    <g transform="translate(815 445)" filter="url(#shadow)">
+      <ellipse cx="0" cy="86" rx="70" ry="25" fill="#051009" opacity=".45"/>
+      <circle cx="0" cy="4" r="72" fill="none" stroke="#9afff8" stroke-width="5" stroke-opacity=".55"/>
+      <circle cx="0" cy="4" r="48" fill="none" stroke="#fff2a6" stroke-width="4" stroke-opacity=".7"/>
+      <path d="M-62 18C-98-20-80-78-26-80C33-86 88-44 82 18C40 7 0 8-62 18Z" fill="#f7e5b7"/>
+      <circle cx="-18" cy="-48" r="31" fill="#ffe0b6"/>
+      <path d="M-50-49C-29-84 4-85 22-58C6-63-16-61-50-49Z" fill="#76422c"/>
+      <path d="M-50-11L-15 0L22-15L34 48L-29 53Z" fill="#405c69"/>
+      <path d="M-72-19L-108-45M35-20L93-44" stroke="#f2fbff" stroke-width="10" stroke-linecap="round"/>
+      <path d="M-104-45L-146-81M93-44L146-79" stroke="#b7fbff" stroke-width="6" stroke-linecap="round"/>
+      <path d="M16-80C75-168 162-149 200-86C134-111 78-91 36-36Z" fill="#baf8ff" opacity=".72" filter="url(#glow)"/>
+      <path d="M35-32C145-104 275-107 372-47" stroke="#e7fbff" stroke-width="22" stroke-linecap="round" opacity=".72" filter="url(#glow)"/>
+      <path d="M34-35C164-56 253-13 342 55" stroke="#5cf9ff" stroke-width="8" stroke-linecap="round" opacity=".9"/>
+      <path d="M50-5C177-9 270 45 336 109" stroke="#fff1a6" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+      <circle cx="320" cy="60" r="54" fill="none" stroke="#dcfcff" stroke-width="8" opacity=".75"/>
+      <circle cx="320" cy="60" r="26" fill="#ffffff" opacity=".55"/>
+      <text class="label" x="166" y="-88" font-size="42">暴击 8742</text>
+      <text class="label" x="-38" y="-126" font-size="28">Lv.20 刺客</text>
+      <rect x="-60" y="-114" width="120" height="10" rx="5" fill="#19220f"/>
+      <rect x="-60" y="-114" width="108" height="10" rx="5" fill="#61d15e"/>
+    </g>
+
+    <g transform="translate(940 570)" filter="url(#shadow)">
+      <ellipse cx="0" cy="35" rx="40" ry="14" fill="#07120b" opacity=".4"/>
+      <circle cx="-10" cy="-18" r="26" fill="#fff"/>
+      <path d="M-35-15C-62-45-54-89-35-104C-16-69-8-45-17-16M8-16C4-50 21-83 45-96C60-61 50-31 18-13" fill="#fff"/>
+      <circle cx="-18" cy="-21" r="4" fill="#1c150c"/>
+      <circle cx="2" cy="-21" r="4" fill="#1c150c"/>
+      <path d="M-40 9C-70 18-87 3-80-21C-45-20-27-10-20 9" fill="#c9a55c"/>
+      <text class="label" x="-44" y="-72" font-size="28">小宠</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="22" y="18" width="394" height="132" rx="16" fill="#20160e" fill-opacity=".82" stroke="#c78c43" stroke-width="3"/>
+      <circle cx="82" cy="84" r="52" fill="url(#gold)" stroke="#ffe69a" stroke-width="4"/>
+      <text class="ui-text big" x="69" y="101">刺</text>
+      <text class="ui-text mid" x="148" y="54">54188</text>
+      <text class="ui-text small" x="249" y="54">Lv.20 刺客</text>
+      <rect class="bar-bg" x="146" y="70" width="235" height="16" rx="8"/>
+      <rect class="hp" x="149" y="73" width="205" height="10" rx="5"/>
+      <rect class="bar-bg" x="146" y="93" width="235" height="16" rx="8"/>
+      <rect class="mp" x="149" y="96" width="186" height="10" rx="5"/>
+      <rect class="bar-bg" x="146" y="116" width="235" height="14" rx="7"/>
+      <rect class="xp" x="149" y="119" width="126" height="8" rx="4"/>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="26" y="176" width="365" height="214" rx="14" fill="#20160e" fill-opacity=".78" stroke="#b87931" stroke-width="3"/>
+      <rect x="26" y="176" width="56" height="214" rx="14" fill="#e4ba65"/>
+      <text class="ui-text mid" x="40" y="246" writing-mode="tb">任务</text>
+      <text class="ui-text small" x="102" y="220">主线 · 竹林异动</text>
+      <text class="ui-text small" x="102" y="258">前往竹桥水域调查</text>
+      <rect x="99" y="282" width="196" height="45" rx="12" fill="#2b2418" stroke="#6ee787" stroke-width="3"/>
+      <circle cx="124" cy="304" r="8" fill="#77f486"/>
+      <text class="ui-text small" x="142" y="313">任务传送/寻路</text>
+      <text class="ui-text small" x="102" y="361" opacity=".8">目标：击败巨熊 2/5</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="1218" y="22" width="336" height="336" rx="168" fill="#142d22" stroke="#c89345" stroke-width="5"/>
+      <path d="M1228 126C1325 96 1422 104 1540 68V211C1434 252 1336 238 1228 279Z" fill="#3f9a4d"/>
+      <path d="M1225 51C1308 75 1387 77 1460 42C1498 27 1529 31 1550 42V132C1450 150 1348 132 1225 162Z" fill="#48d2c9"/>
+      <path d="M1290 271C1372 235 1437 226 1527 242" stroke="#c59a65" stroke-width="23" stroke-linecap="round"/>
+      <circle cx="1390" cy="184" r="12" fill="#ff4c41"/>
+      <circle cx="1322" cy="251" r="8" fill="#f7dd4e"/>
+      <circle cx="1470" cy="115" r="8" fill="#f7dd4e"/>
+      <path d="M1386 187l-18 44l44-18z" fill="#ffffff"/>
+      <text class="ui-text small" x="1320" y="46">芳草林东</text>
+      <g transform="translate(1190 62)">
+        <circle cx="0" cy="0" r="28" fill="url(#gold)"/><text class="ui-text small" x="-13" y="8">任</text>
+        <circle cx="0" cy="62" r="28" fill="url(#gold)"/><text class="ui-text small" x="-13" y="70">宠</text>
+        <circle cx="0" cy="124" r="28" fill="url(#gold)"/><text class="ui-text small" x="-13" y="132">包</text>
+      </g>
+      <g transform="translate(1564 90)">
+        <circle cx="0" cy="0" r="24" fill="url(#jade)"/>
+        <circle cx="0" cy="52" r="24" fill="url(#jade)"/>
+        <circle cx="0" cy="104" r="24" fill="url(#jade)"/>
+      </g>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="1188" y="374" width="366" height="378" rx="16" class="panel"/>
+      <rect x="1188" y="374" width="366" height="54" fill="#6b381d" opacity=".85"/>
+      <text class="ui-text mid" x="1216" y="410">宠物</text>
+      <text class="ui-text small" x="1296" y="407" opacity=".75">属性</text>
+      <text class="ui-text small" x="1368" y="407" opacity=".75">技能</text>
+      <rect x="1212" y="448" width="128" height="124" rx="10" fill="#11150f" stroke="#7b6334" stroke-width="3"/>
+      <g transform="translate(1276 515)">
+        <circle cx="-10" cy="-24" r="31" fill="#fff"/>
+        <path d="M-40-21C-72-56-58-103-36-118C-18-82-10-52-20-22M8-22C5-58 23-96 51-111C66-72 55-37 20-19" fill="#fff"/>
+        <circle cx="-22" cy="-28" r="4" fill="#1c150c"/>
+        <circle cx="1" cy="-28" r="4" fill="#1c150c"/>
+      </g>
+      <text class="ui-text small" x="1362" y="468">Lv. 8</text>
+      <text class="ui-text small" x="1362" y="505">信赖 73</text>
+      <rect class="bar-bg" x="1360" y="528" width="158" height="12" rx="6"/><rect class="hp" x="1363" y="531" width="132" height="6" rx="3"/>
+      <rect class="bar-bg" x="1360" y="551" width="158" height="12" rx="6"/><rect class="mp" x="1363" y="554" width="98" height="6" rx="3"/>
+      <text class="ui-text small" x="1215" y="608">攻击 128   防御 76   命中 42</text>
+      <text class="ui-text small" x="1215" y="642">力量 31   体质 28   敏捷 24</text>
+      <text class="ui-text small" x="1215" y="676">魔攻 18   魔防 34   精神 16</text>
+      <g transform="translate(1215 700)">
+        <rect class="slot" x="0" y="0" width="48" height="48" rx="6"/><circle cx="24" cy="24" r="16" fill="#ff9c33"/>
+        <rect class="slot" x="60" y="0" width="48" height="48" rx="6"/><path d="M72 31C88 5 100 18 96 38" stroke="#9bf4ff" stroke-width="8"/>
+        <rect class="slot" x="120" y="0" width="48" height="48" rx="6"/>
+        <rect class="slot" x="180" y="0" width="48" height="48" rx="6"/>
+        <rect class="slot" x="240" y="0" width="48" height="48" rx="6"/>
+      </g>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="18" y="692" width="440" height="168" rx="14" fill="#10110e" fill-opacity=".68" stroke="#94642d"/>
+      <text class="ui-text small" x="38" y="728" fill="#87e77c">[系统] 获得经验 +2860</text>
+      <text class="ui-text small" x="38" y="765" fill="#ff8070">[战斗] 巨熊受到暴击伤害</text>
+      <text class="ui-text small" x="38" y="802" fill="#fff6d2">[附近] 竹桥水域有异动...</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <path d="M452 774H1004L1075 850H382Z" fill="#281a11" fill-opacity=".9" stroke="#c89345" stroke-width="3"/>
+      <g transform="translate(470 788)">
+        <rect class="slot" x="0" y="0" width="54" height="54" rx="8"/><path d="M9 45L46 8" stroke="#dff" stroke-width="8"/><text class="ui-text small" x="14" y="82">1</text>
+        <rect class="slot" x="64" y="0" width="54" height="54" rx="8"/><circle cx="91" cy="27" r="22" fill="#a253ff"/><text class="ui-text small" x="78" y="82">2</text>
+        <rect class="slot" x="128" y="0" width="54" height="54" rx="8"/><path d="M139 42C157 3 176 16 171 46" stroke="#6efbff" stroke-width="9"/><text class="ui-text small" x="142" y="82">3</text>
+        <rect class="slot" x="192" y="0" width="54" height="54" rx="8"/><path d="M202 44C238 38 235 9 213 11" stroke="#ffac36" stroke-width="10"/><text class="ui-text small" x="206" y="82">4</text>
+        <rect class="slot" x="256" y="0" width="54" height="54" rx="8"/><circle cx="283" cy="27" r="22" fill="#7ee271"/><text class="ui-text small" x="270" y="82">5</text>
+        <rect class="slot" x="320" y="0" width="54" height="54" rx="8"/><path d="M333 13h28v28h-28z" fill="#e0c27c"/><text class="ui-text small" x="334" y="82">6</text>
+        <rect class="slot" x="384" y="0" width="54" height="54" rx="8"/><path d="M395 43L421 8L433 43Z" fill="#ffec80"/><text class="ui-text small" x="398" y="82">7</text>
+        <rect class="slot" x="448" y="0" width="54" height="54" rx="8"/><circle cx="475" cy="27" r="18" fill="#3eb3ff"/><text class="ui-text small" x="462" y="82">8</text>
+      </g>
+    </g>
+
+    <g filter="url(#shadow)">
+      <circle cx="1456" cy="779" r="72" fill="url(#gold)" stroke="#ffe69a" stroke-width="5"/>
+      <text class="ui-text big" x="1417" y="795">攻</text>
+      <circle cx="1362" cy="818" r="42" fill="url(#gold)"/><path d="M1342 826C1362 788 1387 801 1382 836" stroke="#b9fbff" stroke-width="9" fill="none"/>
+      <circle cx="1366" cy="720" r="42" fill="url(#gold)"/><path d="M1346 724L1388 699M1352 695L1384 730" stroke="#fff4ae" stroke-width="8"/>
+      <circle cx="1466" cy="682" r="42" fill="url(#gold)"/><circle cx="1466" cy="682" r="21" fill="#9d54ff"/>
+    </g>
+  </g>
+  <clipPath id="screen"><rect x="0" y="0" width="1600" height="900" rx="0"/></clipPath>
+</svg>

@@ -190,6 +190,26 @@
     "asset_maturity": "ai_q_runtime_v1"
   },
   {
+    "id": "p32_bamboo_water_battlefield",
+    "type": "map_background",
+    "original_name": "P3.2 竹水秘径商业纵切底图",
+    "original_asset": "docs/visual-target/p3_2_game_interface_effect_v1.png",
+    "q_asset": "assets/game/qstyle/p32/bamboo-water-battlefield.png",
+    "source_confidence": "local_reference_plus_ai_derivative",
+    "q_method": "ai_clean_map_background_from_p32_effect_target",
+    "asset_maturity": "p32_commercial_runtime_v1"
+  },
+  {
+    "id": "p32_combat_foreground",
+    "type": "combat_foreground",
+    "original_name": "P3.2 刺客战斗前景层",
+    "original_asset": "docs/visual-target/p3_2_game_interface_effect_v1.png",
+    "q_asset": "assets/game/qstyle/p32/combat-foreground.png",
+    "source_confidence": "local_reference_plus_ai_derivative",
+    "q_method": "ai_chromakey_foreground_from_p32_effect_target",
+    "asset_maturity": "p32_commercial_runtime_v1"
+  },
+  {
     "id": "runtime_endgame_通天魔劫塔_monster_1_通天魔劫塔守关BOSS",
     "type": "boss",
     "original_name": "通天魔劫塔守关BOSS",

@@ -42,7 +42,7 @@ const DATA_FILES = {
 
 const SAVE_KEY = "ffo_p2_save_v1";
 const LEGACY_SAVE_KEYS = ["ffo_p1_save_v1"];
-const DATA_VERSION = "p31-visual-01";
+const DATA_VERSION = "p32-commercial-visual-01";
 const VERTICAL_SLICE = {
   enabled: true,
   classId: "assassin",
@@ -50,6 +50,24 @@ const VERTICAL_SLICE = {
   startMapId: "taoyuan_village",
   title: "P3.0 M4 刺客商业纵切",
   tagline: "横屏 PWA、个性化地图、生态刷怪、刺客连击、宠物装备与任务闭环"
+};
+const P32_SHOWCASE = (() => {
+  try {
+    const params = new URLSearchParams(location.search);
+    return params.has("visual") || params.has("p32");
+  } catch {
+    return false;
+  }
+})();
+const P32_SLICE = {
+  mapId: "fangcao_east",
+  title: "P3.2 商业视觉纵切",
+  mapName: "竹水秘径",
+  heroName: "影刃",
+  level: 20,
+  x: 548,
+  y: 486,
+  enemy: { id: "man_eater_flower", x: 720, y: 462 }
 };
 const app = document.querySelector("#app");
 let data;
@@ -66,6 +84,8 @@ let spritePromises = {};
 let bootProgress = { stage: "准备启动", done: 0, total: 1 };
 
 const CRITICAL_BOOT_SPRITES = [
+  "p32_bamboo_water_battlefield",
+  "p32_combat_foreground",
   "character_assassin",
   "fenfen_rabbit",
   "man_eater_flower",
@@ -142,7 +162,7 @@ async function loadData() {
   window.__ffoData = data;
   renderLoadingScreen("预热首屏素材", files.length + 1, files.length + 2);
   await preloadSprites(CRITICAL_BOOT_SPRITES, { blocking: true });
-  requestIdle(() => preloadSprites(["map_town_forest_v1"]));
+  requestIdle(() => preloadSprites(["map_town_forest_v1", "p32_bamboo_water_battlefield", "p32_combat_foreground"]));
   renderLoadingScreen("准备进入游戏", files.length + 2, files.length + 2);
 }
 
@@ -193,7 +213,7 @@ function freshState(classId, name) {
   if (VERTICAL_SLICE.enabled) classId = VERTICAL_SLICE.classId;
   const classDef = data.classById[classId];
   const weapon = data.equipment.find((item) => item.classIds.includes(classId) && item.slot === "weapon");
-  return {
+  const nextState = {
     createdAt: Date.now(),
     name: name || "幻想者",
     classId,
@@ -205,9 +225,9 @@ function freshState(classId, name) {
     skillPoints: 0,
     hp: 0,
     mp: 0,
-    mapId: VERTICAL_SLICE.startMapId,
-    x: 240,
-    y: 260,
+    mapId: P32_SHOWCASE ? P32_SLICE.mapId : VERTICAL_SLICE.startMapId,
+    x: P32_SHOWCASE ? P32_SLICE.x : 240,
+    y: P32_SHOWCASE ? P32_SLICE.y : 260,
     target: null,
     manualUntil: 0,
     autoPath: true,
@@ -250,8 +270,37 @@ function freshState(classId, name) {
       dungeons: 0,
       playSeconds: 0
     },
-    verticalSlice: VERTICAL_SLICE.enabled ? "assassin_1_20" : null
+    verticalSlice: P32_SHOWCASE ? "p3_2_commercial_visual_showcase" : VERTICAL_SLICE.enabled ? "assassin_1_20" : null
   };
+  if (P32_SHOWCASE) applyP32ShowcaseStateToFreshState(nextState);
+  return nextState;
+}
+
+function applyP32ShowcaseStateToFreshState(targetState) {
+  targetState.name = P32_SLICE.heroName;
+  targetState.level = P32_SLICE.level;
+  targetState.exp = 620;
+  targetState.gold = 48291;
+  targetState.freeAttr = 0;
+  targetState.skillPoints = 0;
+  targetState.attr = { str: 48, int: 3, vit: 28, agi: 42, spi: 16, dex: 38 };
+  targetState.inventory = [
+    { id: "small_hp", qty: 18 },
+    { id: "small_mp", qty: 14 },
+    { id: "rabbit_fur", qty: 8 },
+    { id: "flower_petal", qty: 3 },
+    { id: "pet_food", qty: 6 },
+    { id: "skill_pill", qty: 2 }
+  ].filter((item) => data.itemById[item.id]);
+  targetState.equipment.weapon = makeEquipment("forest_weapon") || targetState.equipment.weapon;
+  targetState.equipment.armor = makeEquipment("forest_armor") || targetState.equipment.armor;
+  targetState.progression.firstJob = true;
+  targetState.completedQuests = ["m1", "m2", "m3"];
+  targetState.activeQuestId = "s5";
+  targetState.questProgress.s5 = 3;
+  targetState.stats.kills = 26;
+  targetState.stats.quests = 3;
+  targetState.autoQuest = false;
 }
 
 function makeEquipment(id) {
@@ -773,7 +822,17 @@ function tickCombat(dt) {
     enemyAttack();
     combat.enemyTimer = combat.enemy.type === "boss" ? 1.25 : 1.55;
   }
-  if (combat.enemy.hp <= 0) finishEnemy();
+  if (combat.enemy.hp <= 0) {
+    if (P32_SHOWCASE) {
+      combat.enemy.hp = Math.floor(combat.enemy.maxHp * 0.68);
+      combat.playerTimer = 0.16;
+      combat.enemyTimer = 1.1;
+      addFx("暴击 2846", combat.enemyX + 76, combat.enemyY - 108, "#ffcf62", "crit");
+      addFx("", combat.enemyX - 28, combat.enemyY - 36, "#ffd46f", "impactSpark");
+      return;
+    }
+    finishEnemy();
+  }
   if (state.hp <= 0) revive();
 }
 
@@ -871,6 +930,36 @@ function startCombat(monster, spawn = null) {
   state.codex[monster.id] = true;
   addLog(`遭遇 ${monster.name}`);
   addFx("", enemyX, enemyY + 6, monster.type === "boss" ? "#ffbf6f" : "#ffe08a", "ring");
+}
+
+function enterP32ShowcaseCombat() {
+  if (!P32_SHOWCASE || state.combat) return;
+  ensureWorldSpawns();
+  const enemyBase = data.monsterById[P32_SLICE.enemy.id] || data.monsters.find((monster) => monster.mapIds?.includes(state.mapId));
+  const enemy = enemyBase ? {
+    ...enemyBase,
+    level: 20,
+    hp: 6800,
+    attack: Math.max(18, Math.floor((enemyBase.attack || 20) * 0.7)),
+    defense: Math.max(8, enemyBase.defense || 8),
+    exp: Math.max(1200, enemyBase.exp || 0)
+  } : null;
+  if (!enemy) return;
+  const spawn = {
+    uid: "p32_showcase_enemy",
+    monsterId: enemy.id,
+    x: P32_SLICE.enemy.x,
+    y: P32_SLICE.enemy.y,
+    phase: 0,
+    alive: true
+  };
+  startCombat(enemy, spawn);
+  state.combat.playerTimer = 0.02;
+  state.combat.enemyTimer = 1.4;
+  addFx("暴击 2846", P32_SLICE.enemy.x + 76, P32_SLICE.enemy.y - 112, "#ffcf62", "crit");
+  addFx("", P32_SLICE.x + 90, P32_SLICE.y - 34, "#ffd46f", "slashArc");
+  addFx("", P32_SLICE.enemy.x + 6, P32_SLICE.enemy.y - 44, "#fff3b0", "impactSpark");
+  addFx("", P32_SLICE.x + 4, P32_SLICE.y + 24, "#a764ff", "rune");
 }
 
 function bestSkill() {
@@ -1435,12 +1524,12 @@ function qAssetPath(id) {
 
 function renderGameShell() {
   app.innerHTML = `
-    <main class="mmo-shell game-hud">
+    <main class="mmo-shell game-hud ${P32_SHOWCASE ? "p32-showcase" : ""}">
       <section class="stage mmo-stage">
         <canvas id="gameCanvas"></canvas>
         <div class="topbar mmo-identity"></div>
         <div class="mmo-clock">15:05</div>
-        <div class="p3-version">P3.0 M4</div>
+        <div class="p3-version">${P32_SHOWCASE ? "P3.2 VISUAL" : "P3.0 M4"}</div>
         <div class="top-menu"></div>
         <div class="left-quest-tabs">
           <button class="active" title="任务追踪" aria-label="任务追踪"><i class="icon-frame">${iconSvg("quest")}</i><span>任务</span></button>
@@ -1489,6 +1578,7 @@ function renderGameShell() {
 
 function renderGame() {
   if (!state) return;
+  window.__ffoState = state;
   renderTopbar();
   renderQuick();
   renderPanel({ force: document.querySelector(".hud")?.classList.contains("open") });
@@ -1512,6 +1602,9 @@ function renderOverlayHud() {
   const wheel = document.querySelector(".skill-wheel");
   if (wheel) {
     const skills = activeSkills().slice(0, 4);
+    if (P32_SHOWCASE && skills.length < 4) {
+      skills.push({ id: "p32_burst_showcase", name: "爆发", mp: 0, cooldown: 12, power: 1.8, target: "single", stat: "attack", type: "active" });
+    }
     const nowTime = now();
     wheel.innerHTML = `
       <button data-action="manualAttack" class="attack-btn ${state.autoCombat ? "active" : ""}" title="普攻/自动战斗"><i class="icon-frame">${iconSvg("weapon")}</i><span>普攻</span></button>
@@ -1537,14 +1630,24 @@ function renderOverlayHud() {
   }
   const topMenu = document.querySelector(".top-menu");
   if (topMenu) {
-    const items = [
-      ["任务", "quest", "主线牵引"],
-      ["技能", "role", "刺客技能"],
-      ["背包", "bag", "装备道具"],
-      ["地图", "map", currentMap().name],
-      ["宠物", "pet", activePet() ? activePet().name : "未出战"],
-      ["日常", "token", "试炼/猎杀"]
-    ];
+    const items = P32_SHOWCASE
+      ? [
+        ["福利", "item", "奖励"],
+        ["商城", "bag", "补给"],
+        ["排行", "token", "单机成长"],
+        ["寻宝", "map", "探索"],
+        ["日常", "quest", "循环任务"],
+        ["副本", "weapon", "试炼"],
+        ["宠物", "pet", activePet() ? activePet().name : "未出战"]
+      ]
+      : [
+        ["任务", "quest", "主线牵引"],
+        ["技能", "role", "刺客技能"],
+        ["背包", "bag", "装备道具"],
+        ["地图", "map", currentMap().name],
+        ["宠物", "pet", activePet() ? activePet().name : "未出战"],
+        ["日常", "token", "试炼/猎杀"]
+      ];
     topMenu.innerHTML = items.map(([item, iconType, hint], index) => `
       <button class="mmo-icon ${currentTab === tabFromMenu(item) ? "active" : ""}" data-tab="${tabFromMenu(item)}" title="${item} · ${hint}">
         <i class="icon-frame">${iconSvg(iconType)}</i><span>${item}</span>${index < 3 ? "<b></b>" : ""}
@@ -1610,7 +1713,7 @@ function renderMiniMap() {
     const [, wx, wy] = typeof prop[0] === "string" ? prop : [prop[3], prop[0], prop[1]];
     return `<i class="mini-landmark" style="left:${clamp((wx / mw) * 100, 7, 93)}%;top:${clamp((wy / mh) * 100, 9, 91)}%;--i:${index}"></i>`;
   }).join("");
-  return `<span>${map.name}</span><b class="mini-grid"></b>${water}${path}${landmark}${spawnDots}${target}<i class="mini-map-dot player" style="left:${playerX}%;top:${playerY}%"></i>`;
+  return `<span>${P32_SHOWCASE ? P32_SLICE.mapName : map.name}</span><b class="mini-grid"></b>${water}${path}${landmark}${spawnDots}${target}<i class="mini-map-dot player" style="left:${playerX}%;top:${playerY}%"></i>`;
 }
 
 function combatStatusText(quest) {
@@ -1660,7 +1763,7 @@ function renderTopbar() {
     <div class="identity">
       <div class="portrait">${qAssetPath(`character_${state.classId}`) ? `<img src="${qAssetPath(`character_${state.classId}`)}" alt="${classDef.name}" />` : `<span>${classDef.name[0]}</span>`}</div>
       <div class="bars">
-        <div class="name-line"><strong>${state.name}</strong><span class="pill">Lv.${state.level} ${classDef.name}</span><span class="pill">${currentMap().name}</span></div>
+        <div class="name-line"><strong>${state.name}</strong><span class="pill">Lv.${state.level} ${classDef.name}</span><span class="pill">${P32_SHOWCASE ? P32_SLICE.mapName : currentMap().name}</span></div>
         <div class="bar hp"><i style="width:${pct(state.hp, stats.maxHp)}"></i></div>
         <div class="bar mp"><i style="width:${pct(state.mp, stats.maxMp)}"></i></div>
         <div class="bar xp"><i style="width:${pct(state.exp, expToNext())}"></i></div>
@@ -2372,6 +2475,11 @@ function drawMap(w, h, camera) {
   const map = currentMap();
   const profile = currentSceneProfile(map);
   const scene = sceneTheme(map.type, profile);
+  if (drawP32ShowcaseBackdrop(w, h, camera, profile)) {
+    drawCommercialMapLight(w, h, camera, profile);
+    drawWeather(w, h, profile);
+    return;
+  }
   const grad = ctx.createLinearGradient(0, 0, w, h);
   grad.addColorStop(0, scene.skyA);
   grad.addColorStop(1, scene.skyB);
@@ -2387,6 +2495,30 @@ function drawMap(w, h, camera) {
   drawForegroundArchitecture(w, h, scene, profile);
   drawDepthFoliage(w, h, camera, profile);
   drawWeather(w, h, profile);
+}
+
+function drawP32ShowcaseBackdrop(w, h, camera, profile = {}) {
+  if (!P32_SHOWCASE || state.mapId !== P32_SLICE.mapId) return false;
+  const img = spriteImages.p32_bamboo_water_battlefield;
+  if (!img?.complete || img.naturalWidth <= 0) {
+    ensureSprite("p32_bamboo_water_battlefield");
+    return false;
+  }
+  const scale = Math.max(w / img.naturalWidth, h / img.naturalHeight);
+  const iw = img.naturalWidth * scale;
+  const ih = img.naturalHeight * scale;
+  const parallaxX = (camera.x - P32_SLICE.x + w / 2) * 0.06;
+  const parallaxY = (camera.y - P32_SLICE.y + h / 2) * 0.05;
+  ctx.save();
+  ctx.drawImage(img, (w - iw) / 2 - parallaxX, (h - ih) / 2 - parallaxY, iw, ih);
+  const vignette = ctx.createRadialGradient(w * 0.52, h * 0.46, Math.min(w, h) * 0.1, w * 0.52, h * 0.46, Math.max(w, h) * 0.72);
+  vignette.addColorStop(0, "rgba(255,255,255,0)");
+  vignette.addColorStop(0.7, "rgba(0,0,0,0)");
+  vignette.addColorStop(1, "rgba(4,10,7,.42)");
+  ctx.fillStyle = vignette;
+  ctx.fillRect(0, 0, w, h);
+  ctx.restore();
+  return true;
 }
 
 function applyScreenShake(camera) {
@@ -3102,6 +3234,10 @@ function drawNavigationAids(camera) {
 }
 
 function drawWorldActors(camera) {
+  if (P32_SHOWCASE && state.mapId === P32_SLICE.mapId) {
+    drawP32ShowcaseActors(camera);
+    return;
+  }
   const actors = [];
   data.npcs.filter((npc) => npc.mapId === state.mapId).forEach((npc) => {
     actors.push({
@@ -3134,6 +3270,48 @@ function drawWorldActors(camera) {
   }
   actors.push({ y: state.y, draw: () => drawPlayer(camera) });
   actors.sort((a, b) => a.y - b.y).forEach((actor) => actor.draw());
+}
+
+function drawP32ShowcaseActors(camera) {
+  const actors = [
+    { y: 315, draw: () => drawP32AmbientMonster("walking_bird", 382, 314, 72, camera) },
+    { y: 300, draw: () => drawP32AmbientMonster("fenfen_rabbit", 878, 305, 76, camera) },
+    { y: 552, draw: () => drawP32AmbientMonster("ghost_fire", 806, 552, 64, camera) },
+    { y: state.y, draw: () => drawP32CombatForeground(camera) }
+  ];
+  actors.sort((a, b) => a.y - b.y).forEach((actor) => actor.draw());
+}
+
+function drawP32CombatForeground(camera) {
+  const img = spriteImages.p32_combat_foreground;
+  if (!img?.complete || img.naturalWidth <= 0) {
+    ensureSprite("p32_combat_foreground");
+    drawCombatEnemy(camera);
+    drawPlayer(camera);
+    return;
+  }
+  const x = state.x - camera.x;
+  const y = state.y - camera.y;
+  const width = Math.min(620, Math.max(500, canvas.clientWidth * 0.46));
+  const height = width * (img.naturalHeight / img.naturalWidth);
+  ctx.save();
+  ctx.globalAlpha = 0.98;
+  ctx.drawImage(img, x - width * 0.42, y - height * 0.56, width, height);
+  ctx.restore();
+  drawHealthBar(x + width * 0.23, y - height * 0.24, 108, (state.combat?.enemy?.hp || 1) / (state.combat?.enemy?.maxHp || 1), "#df6b59");
+  drawNameplate(state.combat?.enemy?.name || "食人花", x + width * 0.23, y - height * 0.31, "#ffe08a");
+  drawHealthBar(x - width * 0.22, y - height * 0.26, 96, state.hp / getStats().maxHp, "#80d86e");
+  drawNameplate(state.name, x - width * 0.22, y - height * 0.34, "#f4d36f");
+}
+
+function drawP32AmbientMonster(monsterId, wx, wy, size, camera) {
+  if (state.combat?.enemy?.id === monsterId && Math.hypot(wx - state.combat.enemyX, wy - state.combat.enemyY) < 80) return;
+  const monster = data.monsterById[monsterId] || { name: monsterId, type: "normal" };
+  const x = wx - camera.x;
+  const y = wy - camera.y + Math.sin(now() * 2 + wx * 0.01) * 2;
+  drawMonsterSprite(monsterId, x, y - 10, size, size);
+  drawHealthBar(x, y - size * 0.58, size * 0.9, 0.9, "#df6b59");
+  drawNameplate(monster.name, x, y - size * 0.7, "#ffe08a");
 }
 
 function drawSpawnZoneHints(camera) {
@@ -3175,10 +3353,11 @@ function drawCombatEnemy(camera) {
   drawTargetRing(x, y + 30, enemy);
   drawCombatTelegraph(x, y + 30);
   ctx.fillStyle = "rgba(0,0,0,.28)";
+  const enemySize = P32_SHOWCASE ? 92 : 68;
   ctx.beginPath();
-  ctx.ellipse(x, y + 28, 34, 12, 0, 0, Math.PI * 2);
+  ctx.ellipse(x, y + 28, P32_SHOWCASE ? 46 : 34, P32_SHOWCASE ? 16 : 12, 0, 0, Math.PI * 2);
   ctx.fill();
-  drawMonsterSprite(enemy.id, x, y - 2, 68, 68);
+  drawMonsterSprite(enemy.id, x, y - 2, enemySize, enemySize);
   if (flash) {
     ctx.save();
     ctx.globalAlpha = 0.38;
@@ -3188,8 +3367,8 @@ function drawCombatEnemy(camera) {
     ctx.fill();
     ctx.restore();
   }
-  drawHealthBar(x, y - 46, 76, enemy.hp / enemy.maxHp, "#df6b59");
-  drawNameplate(enemy.name, x, y - 56, "#ffe08a");
+  drawHealthBar(x, y - (P32_SHOWCASE ? 62 : 46), P32_SHOWCASE ? 100 : 76, enemy.hp / enemy.maxHp, "#df6b59");
+  drawNameplate(enemy.name, x, y - (P32_SHOWCASE ? 74 : 56), "#ffe08a");
   if (state.combat.lastSkillName && (state.combat.skillLabelUntil || 0) > now()) {
     drawCastLabel(state.combat.lastSkillName, x, y - 74);
   }
@@ -3229,6 +3408,7 @@ function drawCombatTelegraph(x, y) {
 }
 
 function drawFx(camera) {
+  drawP32PersistentCombatVfx(camera);
   (state.fx || []).forEach((fx) => {
     const x = fx.x - camera.x;
     const y = fx.y - camera.y;
@@ -3468,6 +3648,78 @@ function drawFx(camera) {
   ctx.textAlign = "left";
 }
 
+function drawP32PersistentCombatVfx(camera) {
+  if (!P32_SHOWCASE || !state.combat) return;
+  const px = state.x - camera.x;
+  const py = state.y - camera.y;
+  const ex = (state.combat.enemyX || P32_SLICE.enemy.x) - camera.x;
+  const ey = (state.combat.enemyY || P32_SLICE.enemy.y) - camera.y;
+  const t = now();
+  ctx.save();
+  ctx.globalCompositeOperation = "lighter";
+
+  ctx.save();
+  ctx.translate(px + 74, py - 10);
+  ctx.rotate(-0.18 + Math.sin(t * 3) * 0.025);
+  const arc = ctx.createLinearGradient(-34, 0, 230, 0);
+  arc.addColorStop(0, "rgba(255,255,255,0)");
+  arc.addColorStop(0.18, "rgba(255,236,154,.9)");
+  arc.addColorStop(0.5, "rgba(255,180,42,.95)");
+  arc.addColorStop(0.82, "rgba(255,246,203,.72)");
+  arc.addColorStop(1, "rgba(255,176,47,0)");
+  ctx.strokeStyle = arc;
+  ctx.lineWidth = 18;
+  ctx.lineCap = "round";
+  ctx.beginPath();
+  ctx.ellipse(72, 0, 132, 44, 0, -0.08, Math.PI * 0.86);
+  ctx.stroke();
+  ctx.lineWidth = 5;
+  ctx.strokeStyle = "rgba(255,255,255,.82)";
+  ctx.stroke();
+  ctx.restore();
+
+  const pulse = 0.75 + Math.sin(t * 9) * 0.18;
+  ctx.strokeStyle = `rgba(255, 215, 98, ${0.68 + pulse * 0.2})`;
+  ctx.lineWidth = 4;
+  ctx.lineCap = "round";
+  for (let i = 0; i < 18; i += 1) {
+    const a = i * Math.PI / 9 + t * 0.9;
+    const r1 = 8 + (i % 3) * 3;
+    const r2 = 42 + (i % 4) * 9;
+    ctx.beginPath();
+    ctx.moveTo(ex + Math.cos(a) * r1, ey - 34 + Math.sin(a) * r1);
+    ctx.lineTo(ex + Math.cos(a) * r2, ey - 34 + Math.sin(a) * r2);
+    ctx.stroke();
+  }
+
+  const rune = ctx.createRadialGradient(px, py + 32, 8, px, py + 32, 74);
+  rune.addColorStop(0, "rgba(181,101,255,.18)");
+  rune.addColorStop(0.55, "rgba(124,76,255,.32)");
+  rune.addColorStop(1, "rgba(124,76,255,0)");
+  ctx.fillStyle = rune;
+  ctx.beginPath();
+  ctx.ellipse(px, py + 32, 82, 29, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.strokeStyle = "rgba(194,122,255,.75)";
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.ellipse(px, py + 32, 68 + Math.sin(t * 4) * 4, 24 + Math.sin(t * 4) * 2, 0, 0, Math.PI * 2);
+  ctx.stroke();
+
+  ctx.globalCompositeOperation = "source-over";
+  ctx.textAlign = "center";
+  ctx.font = "900 44px ui-serif, STKaiti, KaiTi, serif";
+  ctx.lineWidth = 6;
+  ctx.strokeStyle = "rgba(76, 23, 10, .78)";
+  ctx.fillStyle = "#ffd169";
+  ctx.strokeText("暴击 2846", ex + 28, ey - 116);
+  ctx.fillText("暴击 2846", ex + 28, ey - 116);
+  ctx.font = "900 27px ui-serif, STKaiti, KaiTi, serif";
+  ctx.strokeText("1473", ex + 118, ey - 38);
+  ctx.fillText("1473", ex + 118, ey - 38);
+  ctx.restore();
+}
+
 function drawNpc(x, y, name) {
   ctx.fillStyle = "rgba(0,0,0,.24)";
   ctx.beginPath();
@@ -3492,10 +3744,12 @@ function drawPlayer(camera) {
   const y = state.y - camera.y + Math.sin(now() * 4.6) * 1.4 + action * 18 * dir.y;
   ctx.fillStyle = "rgba(0,0,0,.28)";
   ctx.beginPath();
-  ctx.ellipse(x, y + 28, 34, 12, 0, 0, Math.PI * 2);
+  const playerW = P32_SHOWCASE ? 116 : 68;
+  const playerH = P32_SHOWCASE ? 136 : 80;
+  ctx.ellipse(x, y + 30, P32_SHOWCASE ? 54 : 34, P32_SHOWCASE ? 18 : 12, 0, 0, Math.PI * 2);
   ctx.fill();
-  drawNameplate(`${state.name}`, x, y - 56, "#f4d36f");
-  drawSprite(`character_${state.classId}`, x, y - 6, 68, 80);
+  drawNameplate(`${state.name}`, x, y - (P32_SHOWCASE ? 84 : 56), "#f4d36f");
+  drawSprite(`character_${state.classId}`, x, y - (P32_SHOWCASE ? 16 : 6), playerW, playerH);
   if (flash) {
     ctx.save();
     ctx.globalAlpha = 0.32;
@@ -3505,12 +3759,13 @@ function drawPlayer(camera) {
     ctx.fill();
     ctx.restore();
   }
-  drawHealthBar(x, y - 38, 72, state.hp / getStats().maxHp, "#80d86e");
+  drawHealthBar(x, y - (P32_SHOWCASE ? 62 : 38), P32_SHOWCASE ? 96 : 72, state.hp / getStats().maxHp, "#80d86e");
   const pet = activePet();
   if (pet) {
     const petAction = Math.max(0, (combat?.petActionUntil || 0) - now());
-    drawMonsterSprite("white_rabbit", x + 54 + petAction * 44 * dir.x, y + 8 + petAction * 12 * dir.y, 42, 42);
-    drawNameplate(pet.name, x + 54, y - 26, "#cbe9ff");
+    const petSize = P32_SHOWCASE ? 58 : 42;
+    drawMonsterSprite("white_rabbit", x + 62 + petAction * 44 * dir.x, y + 16 + petAction * 12 * dir.y, petSize, petSize);
+    drawNameplate(pet.name, x + 62, y - 26, "#cbe9ff");
   }
   ctx.textAlign = "left";
 }
@@ -3572,7 +3827,7 @@ function roundRect(x, y, width, height, radius) {
 }
 
 function drawCombatHud(w) {
-  if (!state.combat) return;
+  if (!state.combat || P32_SHOWCASE) return;
   const enemy = state.combat.enemy;
   ctx.fillStyle = "rgba(54, 32, 22, 0.72)";
   roundRect(w / 2 - 120, 24, 240, 42, 10);
@@ -3727,9 +3982,10 @@ async function boot() {
     localStorage.removeItem(SAVE_KEY);
     LEGACY_SAVE_KEYS.forEach((key) => localStorage.removeItem(key));
   }
-  state = loadSave();
+  state = P32_SHOWCASE ? freshState(VERTICAL_SLICE.classId, P32_SLICE.heroName) : loadSave();
   if (state) {
     initVitals();
+    if (P32_SHOWCASE) enterP32ShowcaseCombat();
     renderGameShell();
   } else {
     renderCreate();

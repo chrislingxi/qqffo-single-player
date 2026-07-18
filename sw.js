@@ -1,4 +1,4 @@
-const CACHE_NAME = "ffo-pwa-v10-p31-visual";
+const CACHE_NAME = "ffo-pwa-v11-p32-commercial";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -44,7 +44,9 @@ const CORE_ASSETS = [
   "./data/design/p3_system_details.json",
   "./data/design/p3_m4_goal.json",
   "./data/design/p3_1_visual_goal.json",
-  "./assets/game/qstyle/manifest.json"
+  "./assets/game/qstyle/manifest.json",
+  "./assets/game/qstyle/p32/bamboo-water-battlefield.png",
+  "./assets/game/qstyle/p32/combat-foreground.png"
 ];
 
 self.addEventListener("install", (event) => {
